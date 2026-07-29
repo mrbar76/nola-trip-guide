@@ -640,8 +640,13 @@
 
   function favoritesView(){
     var ids=favs();var items=allPlaces().filter(function(p){return ids.indexOf(p.id)>=0;});
-    return '<div class="sec-title" style="margin-top:6px">Favorites</div>'+
-      (items.length?items.map(rowCard).join(''):'<div class="empty">Tap ☆ on any place to save it here.</div>');
+    if(!items.length)return '<div class="sec-title" style="margin-top:6px">Favorites</div>'+
+      '<div class="empty">Tap ☆ on any place to save it here.</div>';
+    var mapped=items.filter(function(p){return p.lat&&p.lng;});
+    if(mapped.length)setTimeout(function(){mountMap('favmap',[29.958,-90.064],13,mapped);},0);
+    return '<div class="sec-title" style="margin-top:6px">Favorites ('+items.length+')</div>'+
+      (mapped.length?'<div class="minimap" id="favmap" style="height:190px"></div>':'')+
+      items.map(rowCard).join('');
   }
   function notFound(){return '<div class="empty">Not found. <span class="btn" data-nav="#/">Home</span></div>';}
 
