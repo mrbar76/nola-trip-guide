@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover" />
+<title>New Orleans — Avi &amp; Lilach</title>
+<meta name="description" content="A mobile trip companion for New Orleans: maps, eat-safe restaurants, history & plans." />
+<meta name="theme-color" content="#241f1a" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" href="favicon-32.png" sizes="32x32" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="NOLA Guide" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<style>
+  :root{
+    --ink:#241b12; --paper:#f7f0e2; --paper2:#efe4cf; --card:#fffaef;
+    --purple:#5b2a86; --green:#0a7d4c; --teal:#0b6e6e; --gold:#c9962f; --gold2:#a1751b;
+    --wine:#8a2231; --iron:#241f1a; --eat:#c2571f; --skip:#9a4a44;
+    --line:rgba(36,27,18,.14); --muted:#6a6153;
+    --shadow:0 1px 2px rgba(36,27,18,.05),0 8px 22px rgba(36,27,18,.09);
+    --topbar:56px; --tabbar:60px;
+    --safe-t:env(safe-area-inset-top,0px); --safe-b:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    color:var(--ink);background:var(--paper);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased;overscroll-behavior-y:none;
+  }
+  a{color:var(--purple);text-decoration:none}
+  .serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif}
+
+  /* Top bar */
+  #topbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:calc(var(--topbar) + var(--safe-t));
+    padding-top:var(--safe-t);background:var(--iron);color:#f4ead4;display:flex;align-items:center;
+    gap:6px;padding-left:8px;padding-right:8px;border-bottom:1px solid rgba(201,150,47,.35)}
+  #topbar .tb-btn{width:40px;height:40px;border:0;background:transparent;color:#f4ead4;font-size:22px;
+    border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+  #topbar .tb-btn:active{background:rgba(255,255,255,.1)}
+  #topbar .tb-title{flex:1;font-weight:700;font-size:17px;text-align:center;white-space:nowrap;
+    overflow:hidden;text-overflow:ellipsis}
+  #topbar .tb-title small{display:block;font-weight:400;font-size:11px;color:var(--gold);letter-spacing:.04em}
+  #backBtn[hidden]{visibility:hidden}
+
+  /* View */
+  #view{padding:calc(var(--topbar) + var(--safe-t) + 8px) 14px calc(var(--tabbar) + var(--safe-b) + 18px)}
+  .view-map #view{padding:calc(var(--topbar) + var(--safe-t)) 0 0 0}
+
+  /* Tab bar */
+  #tabbar{position:fixed;bottom:0;left:0;right:0;z-index:1000;height:calc(var(--tabbar) + var(--safe-b));
+    padding-bottom:var(--safe-b);background:var(--iron);display:flex;border-top:1px solid rgba(201,150,47,.35)}
+  #tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+    color:#b7ab90;font-size:10.5px;letter-spacing:.02em;text-decoration:none;padding-top:6px}
+  #tabbar a .ic{font-size:20px;line-height:1}
+  #tabbar a.on{color:var(--gold)}
+
+  /* Building blocks */
+  h1,h2,h3{margin:0}
+  .sec-title{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);
+    font-weight:700;margin:18px 2px 8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+    overflow:hidden;margin-bottom:12px}
+  .pad{padding:14px 16px}
+  .row{display:flex;gap:10px;align-items:center}
+  .muted{color:var(--muted)}
+  .chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;letter-spacing:.03em;
+    padding:3px 9px;border-radius:999px;background:var(--paper2);color:var(--ink);border:1px solid var(--line)}
+  .chip.sm{font-size:10px;padding:2px 7px}
+  .tag{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+    padding:2px 7px;border-radius:999px}
+  .t-book{background:var(--wine)} .t-free{background:var(--green)} .t-kosher{background:var(--teal)}
+  .t-veg{background:#3f7d24} .t-star{background:#b8860b} .t-fish{background:var(--teal)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-size:14px;font-weight:600;
+    padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--paper2);color:var(--ink);
+    cursor:pointer;text-decoration:none}
+  .btn.primary{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .btn.gold{background:var(--gold);color:#241f1a;border-color:var(--gold2)}
+  .btn.block{display:flex;width:100%}
+  .btn-row{display:flex;gap:8px;flex-wrap:wrap}
+  .star{background:transparent;border:0;font-size:22px;cursor:pointer;color:#c9b489;line-height:1;padding:2px}
+  .star.on{color:#e0a92a}
+  .pill-scroll{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
+  .pill-scroll::-webkit-scrollbar{display:none}
+  .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
+    border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+  .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+
+  /* hero */
+  .hero{border-radius:18px;color:#fdf6e6;padding:18px 16px;margin-bottom:12px;position:relative;overflow:hidden;
+    background:linear-gradient(150deg,rgba(24,15,36,.94),rgba(10,44,30,.9)),
+      repeating-linear-gradient(45deg,rgba(201,150,47,.10) 0 20px,transparent 20px 40px),var(--iron)}
+  .hero h1{font-size:26px;font-weight:800}
+  .hero .kick{color:var(--gold);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:6px}
+  .hero .sub{color:#eadfca;font-size:14px;margin-top:4px}
+  .count{font-size:13px;background:rgba(255,250,239,.12);border:1px solid rgba(201,150,47,.35);
+    border-radius:12px;padding:8px 12px;margin-top:12px;color:#f4ecd8}
+
+  .eatline{background:rgba(11,110,110,.14);border:1px solid rgba(11,110,110,.4);border-radius:12px;
+    padding:10px 12px;font-size:13px;color:#20443f;margin-bottom:12px}
+  .eatline b{color:#0b6e6e}
+  .eatline .no{color:var(--skip)}
+
+  /* list rows */
+  .rowcard{display:flex;gap:12px;align-items:stretch;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:10px;cursor:pointer}
+  .rowcard .thumb{width:96px;min-height:96px;flex:0 0 96px;background:var(--paper2);position:relative;
+    background-size:cover;background-position:center}
+  .rowcard .thumb .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rowcard .body{flex:1;padding:10px 12px;min-width:0}
+  .rowcard .body h3{font-size:16px;font-weight:700;line-height:1.2}
+  .rowcard .meta{font-size:12px;color:var(--muted);margin-top:2px}
+  .rowcard .vibe{font-size:13px;margin-top:5px;color:#3f382d;display:-webkit-box;-webkit-line-clamp:2;
+    -webkit-box-orient:vertical;overflow:hidden}
+  .rating{font-weight:700;color:#8a5a00}
+  .price{color:var(--muted)}
+  .fav-abs{position:absolute;top:4px;right:4px}
+
+  /* detail */
+  .cover{height:200px;background:var(--paper2);background-size:cover;background-position:center;position:relative;
+    border-radius:16px;overflow:hidden;margin-bottom:12px;display:flex;align-items:flex-end}
+  .cover .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:64px;
+    background:linear-gradient(150deg,var(--purple),var(--green))}
+  .cover .grad{position:absolute;inset:0;background:linear-gradient(transparent,rgba(0,0,0,.55))}
+  .cover .cap{position:relative;color:#fff;padding:14px;z-index:1}
+  .cover .cap h1{font-size:24px;font-weight:800;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .cover .cap .m{font-size:13px;opacity:.95}
+
+  .menuwrap{border:1px dashed var(--line);border-radius:14px;padding:6px 14px;background:#fffdf7}
+  .menu-item{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .menu-item:last-child{border-bottom:0}
+  .menu-item .mi-name{font-weight:600}
+  .menu-item .mi-note{font-size:12px;color:var(--muted)}
+  .menu-item .mi-price{font-weight:700;color:#7a5300;white-space:nowrap}
+  .skipbox{background:rgba(154,74,68,.08);border:1px solid rgba(154,74,68,.25);border-radius:10px;
+    padding:8px 12px;font-size:13px;color:var(--skip);margin-top:10px}
+
+  .fact{display:flex;gap:9px;padding:8px 0;border-bottom:1px dashed var(--line);font-size:14px}
+  .fact:last-child{border-bottom:0}
+  .fact .b{color:var(--gold2);font-size:15px}
+  details.more{margin-top:8px}
+  details.more summary{cursor:pointer;color:var(--purple);font-weight:600;font-size:14px;list-style:none}
+  details.more summary::-webkit-details-marker{display:none}
+
+  .minimap{height:160px;border-radius:14px;overflow:hidden;margin:4px 0 12px;border:1px solid var(--line)}
+  #bigmap{position:absolute;top:calc(var(--topbar) + var(--safe-t) + 46px);left:0;right:0;
+    bottom:calc(var(--tabbar) + var(--safe-b));width:100%}
+  .mapbar{position:fixed;top:calc(var(--topbar) + var(--safe-t));left:0;right:0;z-index:600;
+    background:var(--paper);padding:6px 10px;border-bottom:1px solid var(--line)}
+  .map-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;
+    min-height:150px;text-align:center;color:var(--muted);font-size:26px;padding:20px;line-height:1.6}
+  .map-fallback br+*{font-size:14px}
+
+  .walk-stop{display:flex;gap:12px;padding:8px 0}
+  .walk-stop .num{flex:0 0 24px;height:24px;border-radius:50%;background:var(--gold);color:#241f1a;
+    font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .walk-stop .wl{font-size:14px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:14px;cursor:pointer;display:flex;flex-direction:column;gap:4px}
+  .qcard .qic{font-size:24px}
+  .qcard .qt{font-weight:700;font-size:15px}
+  .qcard .qs{font-size:12px;color:var(--muted)}
+
+  .check{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .check:last-child{border-bottom:0}
+  .check input{width:22px;height:22px;accent-color:var(--green);flex:0 0 auto}
+  .check .ck-b{font-weight:600}
+  .check.done .ck-b{text-decoration:line-through;color:var(--muted)}
+  .check .ck-s{font-size:12px;color:var(--muted)}
+
+  .searchbar{display:flex;gap:8px;margin-bottom:10px}
+  .searchbar input{flex:1;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+    background:var(--card)}
+  .empty{text-align:center;color:var(--muted);padding:40px 20px}
+
+  .budget-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .budget-row.total{font-weight:800;border-bottom:0;font-size:17px}
+  .leaflet-popup-content{margin:10px 12px;font-size:14px}
+  .leaflet-popup-content .pp-t{font-weight:700}
+  .leaflet-popup-content a{font-weight:600}
+</style>
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <button class="tb-btn" id="backBtn" aria-label="Back" hidden>‹</button>
+    <div class="tb-title" id="title">New Orleans</div>
+    <button class="tb-btn" id="searchBtn" aria-label="Search" data-nav="#/search">⌕</button>
+  </header>
+
+  <main id="view"></main>
+
+  <nav id="tabbar">
+    <a data-nav="#/" data-tab="home"><span class="ic">🏠</span>Home</a>
+    <a data-nav="#/map" data-tab="map"><span class="ic">🗺️</span>Map</a>
+    <a data-nav="#/eat" data-tab="eat"><span class="ic">🍽️</span>Eat</a>
+    <a data-nav="#/plan" data-tab="plan"><span class="ic">🗓️</span>Plan</a>
+    <a data-nav="#/more" data-tab="more"><span class="ic">☰</span>More</a>
+  </nav>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.DATA || {};
+  var view = document.getElementById('view');
+  var titleEl = document.getElementById('title');
+  var backBtn = document.getElementById('backBtn');
+  var liveMaps = [];
+
+  // ---------- helpers ----------
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function el(id){return document.getElementById(id);}
+  function clearMaps(){liveMaps.forEach(function(m){try{m.remove();}catch(e){}});liveMaps=[];}
+  var CATCOLOR={eat:'#c2571f',see:'#5b2a86',landmark:'#5b2a86',music:'#8a2231',museum:'#a1751b',
+    park:'#0a7d4c',shop:'#0b6e6e'};
+  function catColor(c){return CATCOLOR[c]||'#5b2a86';}
+  function mapsUrl(p){return p.mapsUrl||('https://www.google.com/maps/search/?api=1&query='+
+    (p.lat&&p.lng?p.lat+','+p.lng:encodeURIComponent(p.name+' New Orleans')));}
+  function dirUrl(p){return 'https://www.google.com/maps/dir/?api=1&destination='+
+    (p.lat&&p.lng?p.lat+','+p.lng:encodeURIComponent(p.name+' New Orleans'));}
+
+  // data access
+  function restaurants(){return DATA.restaurants||[];}
+  function sights(){return DATA.sights||[];}
+  function districts(){return DATA.districts||[];}
+  function allPlaces(){
+    return restaurants().map(function(r){return Object.assign({type:'r',category:'eat'},r);})
+      .concat(sights().map(function(s){return Object.assign({type:'s'},s);}));
+  }
+  function findR(id){return restaurants().filter(function(x){return x.id===id;})[0];}
+  function findS(id){return sights().filter(function(x){return x.id===id;})[0];}
+  function findD(id){return districts().filter(function(x){return x.id===id;})[0];}
+  function dName(id){var d=findD(id);return d?d.name:id;}
+
+  // favorites & checks
+  function ls(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
+  function favs(){return ls('nola_favs',[]);}
+  function isFav(id){return favs().indexOf(id)>=0;}
+  function toggleFav(id){var f=favs();var i=f.indexOf(id);if(i<0)f.push(id);else f.splice(i,1);
+    localStorage.setItem('nola_favs',JSON.stringify(f));}
+  function checks(){return ls('nola_checks',{});}
+  function setCheck(k,v){var c=checks();c[k]=v;localStorage.setItem('nola_checks',JSON.stringify(c));}
+
+  function starBtn(id){return '<button class="star'+(isFav(id)?' on':'')+'" data-fav="'+esc(id)+
+    '" aria-label="Save">'+(isFav(id)?'★':'☆')+'</button>';}
+  function ratingBits(p){var s='';if(p.rating)s+='<span class="rating">★ '+p.rating+'</span> ';
+    if(p.price)s+='<span class="price">'+esc(p.price)+'</span>';return s;}
+
+  // thumbnail with fallback emoji
+  function thumbStyle(p){return p.photoUrl?(' style="background-image:url(\''+esc(p.photoUrl)+'\')"'):'';}
+  function catEmoji(c){return {eat:'🍽️',see:'📸',landmark:'🏛️',music:'🎷',museum:'🖼️',park:'🌳',shop:'🛍️'}[c]||'📍';}
+
+  // ---------- Leaflet ----------
+  function tileLayer(){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {maxZoom:19,attribution:'&copy; OpenStreetMap'});}
+  function mountMap(id,center,zoom,items){
+    var node=el(id);if(!node)return null;
+    if(typeof L==='undefined'){node.innerHTML='<div class="map-fallback">🗺️<br>Map needs a connection to load.</div>';return null;}
+    try{
+    var m=L.map(node,{zoomControl:true,attributionControl:true}).setView(center,zoom);
+    tileLayer().addTo(m);
+    (items||[]).forEach(function(p){
+      if(!p.lat||!p.lng)return;
+      var mk=L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:catColor(p.category),
+        fillOpacity:.95});
+      var href='#/'+(p.type==='r'?'r':'s')+'/'+p.id;
+      mk.bindPopup('<div class="pp-t">'+esc(p.name)+'</div>'+
+        '<div class="muted" style="font-size:12px">'+esc(p.area_label||dName(p.district)||'')+'</div>'+
+        '<a href="'+href+'">Details ›</a>');
+      mk.addTo(m);
+    });
+    liveMaps.push(m);
+    setTimeout(function(){try{m.invalidateSize();}catch(e){}},60);
+    return m;
+    }catch(err){node.innerHTML='<div class="map-fallback">🗺️<br>Map unavailable right now.</div>';return null;}
+  }
+
+  // ---------- views ----------
+  function daysToTrip(){
+    var start=new Date(2026,6,31,9,0);var now=new Date();
+    return Math.ceil((start-now)/86400000);
+  }
+  function homeView(){
+    var d=daysToTrip();
+    var count = d>0 ? (d+' day'+(d===1?'':'s')+' until New Orleans 🎺')
+              : (d>-4 ? 'Bienvenue — enjoy every minute!' : 'Laissez les bons temps rouler');
+    var html=''+
+    '<div class="hero"><div class="kick">Jul 31 – Aug 3, 2026</div>'+
+      '<h1 class="serif">🎺 New Orleans</h1>'+
+      '<div class="sub">Avi &amp; Lilach · Hampton Inn, French Quarter</div>'+
+      '<div class="count">'+esc(count)+'</div></div>'+
+    '<div class="eatline">🐟 <b>You eat:</b> finned &amp; scaled fish + vegetarian. '+
+      '<span class="no">Skip shellfish, catfish, pork, turtle, gator.</span></div>'+
+    whatsOn()+
+    '<div class="sec-title">Jump in</div>'+
+    '<div class="grid2">'+
+      qcard('#/map','🗺️','Map','Every spot, pinned')+
+      qcard('#/eat','🍽️','Where to eat','Menus you can order from')+
+      qcard('#/d/fq','🏛️','Neighborhoods','History &amp; walks')+
+      qcard('#/satchmo','🎺','Satchmo Fest','Best sets both days')+
+    '</div>'+
+    '<div class="sec-title">The days</div>'+ daysList();
+    return html;
+  }
+  function qcard(nav,ic,t,s){return '<div class="qcard" data-nav="'+nav+'"><span class="qic">'+ic+
+    '</span><span class="qt">'+t+'</span><span class="qs">'+s+'</span></div>';}
+  function whatsOn(){
+    var evs=(DATA.schedule||[]).map(function(e){return {t:new Date(e.when),e:e};});
+    var now=new Date();var next=null;
+    for(var i=0;i<evs.length;i++){if(evs[i].t>now){next=evs[i].e;break;}}
+    if(!next)return '';
+    var when=new Date(next.when);
+    var lbl=when.toLocaleDateString(undefined,{weekday:'short'})+' '+
+      when.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});
+    return '<div class="card pad"><div class="sec-title" style="margin:0 0 6px">Next up '+
+      (next.star?'<span class="tag t-star">★ the one</span>':'')+'</div>'+
+      '<div class="row" style="justify-content:space-between"><div><div style="font-weight:700;font-size:17px">'+
+      esc(next.title)+'</div><div class="muted" style="font-size:13px">'+esc(next.where||'')+'</div></div>'+
+      '<div class="chip">'+esc(lbl)+'</div></div>'+
+      (next.nav?'<a class="btn block gold" style="margin-top:10px" data-nav="'+next.nav+'">'+
+        esc(next.cta||'Open')+'</a>':'')+'</div>';
+  }
+  function daysList(){
+    return (DATA.days||[]).map(function(d){
+      return '<div class="card pad"><div class="row" style="justify-content:space-between">'+
+        '<div style="font-weight:700">'+esc(d.day)+' · '+esc(d.area)+'</div>'+
+        (d.district?'<span class="chip sm" '+'data-nav="#/d/'+d.district+'">map ›</span>':'')+'</div>'+
+        '<div class="muted" style="font-size:14px;margin-top:4px">'+d.plan+'</div></div>';
+    }).join('');
+  }
+
+  function eatView(state){
+    state=state||{};var dist=state.d||'all';
+    var list=restaurants().filter(function(r){return dist==='all'||r.district===dist;});
+    var chips='<div class="pill-scroll">'+filterChip('All','#/eat',dist==='all')+
+      districts().map(function(d){return filterChip(d.short||d.name,'#/eat?d='+d.id,dist===d.id);}).join('')+'</div>';
+    var rows=list.map(rowCard).join('') || '<div class="empty">No spots here yet.</div>';
+    return '<div class="sec-title" style="margin-top:6px">Eat-safe spots ('+list.length+')</div>'+
+      '<div class="muted" style="font-size:13px;margin:-4px 2px 8px">Curated to what you can order. '+
+      'Prices &amp; ratings approx — verify on the day.</div>'+chips+rows;
+  }
+  function filterChip(label,nav,on){return '<button class="filter'+(on?' on':'')+'" data-nav="'+nav+'">'+
+    esc(label)+'</button>';}
+  function rowCard(p){
+    var type=p.menu?'r':'s';
+    return '<div class="rowcard" data-nav="#/'+type+'/'+p.id+'">'+
+      '<div class="thumb"'+thumbStyle(p)+'>'+(p.photoUrl?'':'<span class="ph">'+catEmoji(p.category||'eat')+'</span>')+
+        '<div class="fav-abs">'+starBtn(p.id)+'</div></div>'+
+      '<div class="body"><h3>'+esc(p.name)+'</h3>'+
+        '<div class="meta">'+ratingBits(p)+(p.cuisine?' · '+esc(p.cuisine):'')+
+          ' · '+esc(p.area_label||dName(p.district))+'</div>'+
+        '<div class="vibe">'+esc(p.vibe||p.blurb||'')+'</div></div></div>';
+  }
+
+  function restaurantView(id){
+    var p=findR(id);if(!p)return notFound();
+    var tags='';var TL={kosher:'Certified kosher',veg:'Veg-friendly',fish:'Fish-forward',book:'Reserve ahead'};
+    (p.tags||[]).forEach(function(t){tags+='<span class="tag t-'+t+'">'+esc(TL[t]||t)+'</span> ';});
+    var menu=(p.menu||[]).map(function(m){return '<div class="menu-item"><div><div class="mi-name">'+esc(m.item)+
+      '</div>'+(m.note?'<div class="mi-note">'+esc(m.note)+'</div>':'')+'</div>'+
+      '<div class="mi-price">'+esc(m.price||'')+'</div></div>';}).join('');
+    return coverBlock(p)+
+      '<div class="row" style="justify-content:space-between;margin-bottom:8px">'+
+        '<div>'+ratingBits(p)+(p.rating_note?' <span class="muted" style="font-size:12px">'+esc(p.rating_note)+'</span>':'')+'</div>'+
+        starBtn(p.id)+'</div>'+
+      (p.vibe?'<p style="margin:0 0 10px">'+esc(p.vibe)+'</p>':'')+
+      (tags?'<div style="margin-bottom:10px">'+tags+'</div>':'')+
+      '<div class="sec-title" style="margin-top:4px">What you can eat</div>'+
+      '<div class="menuwrap">'+(menu||'<div class="muted" style="padding:10px 0">Menu coming.</div>')+'</div>'+
+      (p.avoid_note?'<div class="skipbox">🚫 Skip here: '+esc(p.avoid_note)+'</div>':'')+
+      (p.kosher_style_fit?'<p class="muted" style="font-size:13px;margin-top:10px">'+esc(p.kosher_style_fit)+'</p>':'')+
+      '<div class="btn-row" style="margin-top:14px">'+
+        '<a class="btn primary" href="'+dirUrl(p)+'" target="_blank" rel="noopener">🧭 Directions</a>'+
+        (p.reserveUrl?'<a class="btn gold" href="'+esc(p.reserveUrl)+'" target="_blank" rel="noopener">📅 Reserve</a>':'')+
+        (p.website?'<a class="btn" href="'+esc(p.website)+'" target="_blank" rel="noopener">Website</a>':'')+
+      '</div>'+
+      ((p.lat&&p.lng)?'<div class="minimap" id="mini" style="margin-top:14px"></div>':'');
+  }
+  function coverBlock(p){
+    var bg=p.photoUrl?(' style="background-image:url(\''+esc(p.photoUrl)+'\')"'):'';
+    return '<div class="cover"'+bg+'>'+(p.photoUrl?'':'<div class="ph">'+catEmoji(p.category||'eat')+'</div>')+
+      '<div class="grad"></div><div class="cap"><h1 class="serif">'+esc(p.name)+'</h1>'+
+      '<div class="m">'+esc(p.cuisine||p.category||'')+' · '+esc(p.area_label||dName(p.district))+'</div></div></div>';
+  }
+
+  function sightView(id){
+    var p=findS(id);if(!p)return notFound();
+    return coverBlock(p)+
+      '<div class="row" style="justify-content:space-between;margin-bottom:8px">'+
+        '<div>'+(p.free?'<span class="tag t-free">Free</span> ':'')+
+        (p.hours_note?'<span class="chip sm">'+esc(p.hours_note)+'</span>':'')+'</div>'+starBtn(p.id)+'</div>'+
+      (p.blurb?'<p style="margin:0 0 10px">'+esc(p.blurb)+'</p>':'')+
+      (p.secret?'<div class="card pad" style="background:#fffdf3"><div class="sec-title" style="margin:0 0 4px">🔎 On the spot</div>'+
+        esc(p.secret)+'</div>':'')+
+      '<div class="btn-row" style="margin-top:6px">'+
+        '<a class="btn primary" href="'+dirUrl(p)+'" target="_blank" rel="noopener">🧭 Directions</a>'+
+        (p.wiki?'<a class="btn" href="'+esc(p.wiki)+'" target="_blank" rel="noopener">📖 Wikipedia</a>':'')+
+        '<span class="btn" data-nav="#/d/'+p.district+'">Area ›</span>'+
+      '</div>'+
+      ((p.lat&&p.lng)?'<div class="minimap" id="mini" style="margin-top:14px"></div>':'');
+  }
+
+  function districtView(id){
+    var d=findD(id);if(!d)return notFound();
+    var see=sights().filter(function(s){return s.district===id;});
+    var eats=restaurants().filter(function(r){return r.district===id;});
+    var secrets=(d.secrets||[]).map(function(s){return '<div class="fact"><span class="b">◆</span><div>'+esc(s)+'</div></div>';}).join('');
+    var walk=d.walk?('<div class="sec-title">'+esc(d.walk.title||'Self-guided walk')+'</div>'+
+      (d.walk.summary?'<div class="muted" style="font-size:13px;margin:-4px 2px 8px">'+esc(d.walk.summary)+'</div>':'')+
+      '<div class="card pad">'+(d.walk.stops||[]).map(function(st,i){return '<div class="walk-stop"><div class="num">'+(i+1)+
+        '</div><div class="wl">'+esc(st)+'</div></div>';}).join('')+'</div>'):'';
+    return '<h1 class="serif" style="font-size:24px;margin:2px 2px 2px">'+esc(d.name)+'</h1>'+
+      '<div class="muted" style="font-size:14px;margin:0 2px 10px">'+esc(d.blurb||'')+'</div>'+
+      '<div class="minimap" id="mini"></div>'+
+      '<div class="sec-title">History</div>'+
+      '<div class="card pad"><p style="margin:0">'+esc(d.history_short||'')+'</p>'+
+        (d.history_more?'<details class="more"><summary>Read more ›</summary><p style="margin:8px 0 0">'+
+          esc(d.history_more)+'</p></details>':'')+'</div>'+
+      (secrets?'<div class="sec-title">Secrets &amp; details</div><div class="card pad">'+secrets+'</div>':'')+
+      walk+
+      (see.length?'<div class="sec-title">See &amp; do ('+see.length+')</div>'+see.map(rowCard).join(''):'')+
+      (eats.length?'<div class="sec-title">Eat here ('+eats.length+')</div>'+eats.map(rowCard).join(''):'');
+  }
+
+  function mapView(state){
+    state=state||{};var dist=state.d||'all';var food=state.food==='1';
+    var items=allPlaces().filter(function(p){
+      if(dist!=='all'&&p.district!==dist)return false;
+      if(food&&p.type!=='r')return false;return true;});
+    var chips='<div class="pill-scroll">'+
+      filterChip('All','#/map',dist==='all'&&!food)+
+      filterChip('🍽️ Eat only','#/map?food=1',food&&dist==='all')+
+      districts().map(function(d){return filterChip(d.short||d.name,'#/map?d='+d.id,dist===d.id&&!food);}).join('')+
+      '</div>';
+    setTimeout(function(){mountMap('bigmap',[29.958,-90.064],13,items);},0);
+    return '<div class="mapbar">'+chips+'</div><div id="bigmap"></div>';
+  }
+
+  function planView(){
+    var b=(DATA.bookings||[]).map(function(x){
+      var k='bk_'+x.id;var done=x.done||checks()[k];
+      return '<label class="check'+(done?' done':'')+'"><input type="checkbox" data-check="'+k+'"'+(done?' checked':'')+'>'+
+        '<div><div class="ck-b">'+esc(x.title)+'</div><div class="ck-s">'+esc(x.note||'')+'</div></div></label>';
+    }).join('');
+    var fixed=(DATA.fixed||[]).map(function(f){return '<div class="fact"><span class="b">•</span><div>'+f+'</div></div>';}).join('');
+    var tobook=(DATA.tobook||[]).map(function(t){return '<div class="fact"><span class="b">▸</span><div>'+t+'</div></div>';}).join('');
+    var deals=(DATA.deals||[]).map(function(d){return '<div class="card pad"><div style="font-weight:700">'+esc(d.t)+
+      '</div><div class="muted" style="font-size:14px;margin-top:3px">'+esc(d.d)+'</div></div>';}).join('');
+    var budget=(DATA.budget||[]).map(function(r){return '<div class="budget-row'+(r.total?' total':'')+'"><div>'+
+      esc(r.k)+'</div><div>'+esc(r.v)+'</div></div>';}).join('');
+    return '<div class="sec-title" style="margin-top:6px">Bookings</div>'+
+      '<div class="card pad">'+b+'</div>'+
+      '<div class="sec-title">Fixed times</div><div class="card pad">'+fixed+'</div>'+
+      '<div class="sec-title">Still to book</div><div class="card pad">'+tobook+'</div>'+
+      (deals?'<div class="sec-title">Deals</div>'+deals:'')+
+      (budget?'<div class="sec-title">Budget (2 people)</div><div class="card pad">'+budget+'</div>':'');
+  }
+
+  function satchmoView(){
+    var s=DATA.satchmo||{};
+    var star=s.star?'<div class="card pad" style="border:1.5px solid var(--gold);background:#fffaf0">'+
+      '<span class="tag t-star">★ the one</span><div style="font-weight:800;font-size:18px;margin-top:6px">'+
+      esc(s.star)+'</div></div>':'';
+    var day=function(name,arr){return arr&&arr.length?'<div class="sec-title">'+name+'</div><div class="card pad">'+
+      arr.map(function(x){return '<div class="fact"><span class="b">🎷</span><div>'+esc(x)+'</div></div>';}).join('')+'</div>':'';};
+    return '<h1 class="serif" style="font-size:24px;margin:4px 2px">🎺 Satchmo SummerFest</h1>'+
+      '<div class="muted" style="font-size:14px;margin:0 2px 10px">'+esc(s.note||'Free both days at the Old U.S. Mint.')+'</div>'+
+      star+day('Sunday',s.sunday)+day('Saturday',s.saturday)+
+      (s.food?'<div class="eatline">🐟 <b>Fest food for you:</b> '+esc(s.food)+'</div>':'');
+  }
+
+  function moreView(){
+    return '<div class="sec-title" style="margin-top:6px">More</div>'+
+      '<div class="grid2">'+
+        qcard('#/search','⌕','Search','Find any place')+
+        qcard('#/favorites','★','Favorites','Your saved spots')+
+        qcard('#/satchmo','🎺','Satchmo Fest','Set times')+
+        qcard('#/plan','🗓️','Plan &amp; budget','Bookings, deals')+
+      '</div>'+
+      '<div class="sec-title">All neighborhoods</div>'+
+      districts().map(function(d){return '<div class="rowcard" data-nav="#/d/'+d.id+'" style="cursor:pointer">'+
+        '<div class="thumb" style="background:linear-gradient(150deg,var(--purple),var(--green))"><span class="ph" style="color:#fff">'+
+        (d.emoji||'📍')+'</span></div><div class="body"><h3>'+esc(d.name)+'</h3>'+
+        '<div class="vibe">'+esc(d.blurb||'')+'</div></div></div>';}).join('')+
+      '<div class="card pad muted" style="font-size:12px;margin-top:8px">Menus, prices &amp; ratings are approximate '+
+      'and may be dated — confirm on the day. Add to your home screen for an app-like, offline-friendly guide.</div>';
+  }
+
+  function searchView(){
+    return '<div class="searchbar"><input id="q" type="search" placeholder="Search places, food, neighborhoods…" '+
+      'autocomplete="off" autofocus></div><div id="qres"></div>';
+  }
+  function runSearch(q){
+    q=(q||'').trim().toLowerCase();var box=el('qres');if(!box)return;
+    if(!q){box.innerHTML='<div class="empty">Try “fish”, “beignet”, “Garden District”…</div>';return;}
+    var items=allPlaces().filter(function(p){
+      var hay=(p.name+' '+(p.cuisine||'')+' '+(p.vibe||p.blurb||'')+' '+(p.area_label||'')+' '+
+        (p.tags||[]).join(' ')+' '+(p.category||'')).toLowerCase();
+      return hay.indexOf(q)>=0;});
+    box.innerHTML = items.length?items.slice(0,40).map(rowCard).join(''):'<div class="empty">Nothing found.</div>';
+  }
+
+  function favoritesView(){
+    var ids=favs();var items=allPlaces().filter(function(p){return ids.indexOf(p.id)>=0;});
+    return '<div class="sec-title" style="margin-top:6px">Favorites</div>'+
+      (items.length?items.map(rowCard).join(''):'<div class="empty">Tap ☆ on any place to save it here.</div>');
+  }
+  function notFound(){return '<div class="empty">Not found. <span class="btn" data-nav="#/">Home</span></div>';}
+
+  // ---------- router ----------
+  var TABS={'':'home','map':'map','eat':'eat','plan':'plan','more':'more'};
+  function parseQuery(s){var o={};(s||'').split('&').forEach(function(kv){if(!kv)return;var p=kv.split('=');
+    o[decodeURIComponent(p[0])]=decodeURIComponent(p[1]||'');});return o;}
+  function router(){
+    clearMaps();
+    var raw=location.hash.replace(/^#\/?/,'');
+    var q={};var qi=raw.indexOf('?');if(qi>=0){q=parseQuery(raw.slice(qi+1));raw=raw.slice(0,qi);}
+    var parts=raw.split('/');var route=parts[0]||'';var arg=parts[1]||'';
+    var titleHTML='New Orleans', back=true, html='';
+    if(route===''){html=homeView();titleHTML='New Orleans <small>Jul 31 – Aug 3</small>';back=false;}
+    else if(route==='map'){html=mapView(q);titleHTML='Map';back=false;}
+    else if(route==='eat'){html=eatView(q);titleHTML='Where to eat';back=false;}
+    else if(route==='plan'){html=planView();titleHTML='Plan';back=false;}
+    else if(route==='more'){html=moreView();titleHTML='More';back=false;}
+    else if(route==='r'){var rr=findR(arg);html=restaurantView(arg);titleHTML=esc(rr?rr.name:'Not found');}
+    else if(route==='s'){var ss=findS(arg);html=sightView(arg);titleHTML=esc(ss?ss.name:'Not found');}
+    else if(route==='d'){var dd0=findD(arg);html=districtView(arg);titleHTML=esc(dd0?dd0.name:'Not found');}
+    else if(route==='satchmo'){html=satchmoView();titleHTML='Satchmo';back=true;}
+    else if(route==='search'){html=searchView();titleHTML='Search';back=true;}
+    else if(route==='favorites'){html=favoritesView();titleHTML='Favorites';back=true;}
+    else {html=notFound();titleHTML='New Orleans';}
+
+    document.body.className = route==='map'?'view-map':'';
+    view.innerHTML=html;
+    titleEl.innerHTML=titleHTML;
+    backBtn.hidden=!back;
+    // active tab
+    [].forEach.call(document.querySelectorAll('#tabbar a'),function(a){
+      a.classList.toggle('on',a.getAttribute('data-tab')===(TABS[route]||''));});
+    window.scrollTo(0,0);
+
+    // post-mount
+    if(el('mini')){var pm=findR(arg)||findS(arg);var dd=findD(arg);
+      if(pm&&pm.lat)mountMap('mini',[pm.lat,pm.lng],15,[Object.assign({type:(route==='r'?'r':'s')},pm)]);
+      else if(dd)mountMap('mini',[dd.center_lat||29.958,dd.center_lng||-90.064],dd.zoom||14,
+        allPlaces().filter(function(p){return p.district===dd.id;}));}
+    if(route==='search'){var qi2=el('q');if(qi2){qi2.addEventListener('input',function(){runSearch(qi2.value);});
+      runSearch('');qi2.focus();}}
+  }
+
+  // ---------- events ----------
+  function navigate(h){if(location.hash===h){router();}else{location.hash=h;}}
+  document.addEventListener('click',function(e){
+    var chk=e.target.closest&&e.target.closest('[data-check]');
+    if(chk&&e.target.tagName==='INPUT'){setCheck(chk.getAttribute('data-check'),e.target.checked);
+      var lab=e.target.closest('.check');if(lab)lab.classList.toggle('done',e.target.checked);return;}
+    var fav=e.target.closest&&e.target.closest('[data-fav]');
+    if(fav){e.preventDefault();e.stopPropagation();toggleFav(fav.getAttribute('data-fav'));
+      // update just this star + any duplicates
+      var id=fav.getAttribute('data-fav');var on=isFav(id);
+      [].forEach.call(document.querySelectorAll('[data-fav="'+id.replace(/"/g,'')+'"]'),function(b){
+        b.classList.toggle('on',on);b.textContent=on?'★':'☆';});return;}
+    var nav=e.target.closest&&e.target.closest('[data-nav]');
+    if(nav){e.preventDefault();navigate(nav.getAttribute('data-nav'));return;}
+  });
+  backBtn.addEventListener('click',function(){history.length>1?history.back():navigate('#/');});
+  window.addEventListener('hashchange',router);
+
+  // service worker
+  if('serviceWorker' in navigator){window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});});}
+
+  router();
+})();
+</script>
+</body>
+</html>
