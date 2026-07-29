@@ -88,6 +88,9 @@
   .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
   .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .filt-lbl{align-self:center;flex:0 0 auto;font-size:10px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--gold2);padding-right:2px}
+  .pill-scroll .filt-lbl:first-child{padding-left:2px}
 
   /* hero */
   .hero{border-radius:18px;color:#fdf6e6;padding:18px 16px;margin-bottom:12px;position:relative;overflow:hidden;
@@ -199,6 +202,7 @@
     <a data-nav="#/" data-tab="home"><span class="ic">🏠</span>Home</a>
     <a data-nav="#/map" data-tab="map"><span class="ic">🗺️</span>Map</a>
     <a data-nav="#/eat" data-tab="eat"><span class="ic">🍽️</span>Eat</a>
+    <a data-nav="#/do" data-tab="do"><span class="ic">🎭</span>Do</a>
     <a data-nav="#/plan" data-tab="plan"><span class="ic">🗓️</span>Plan</a>
     <a data-nav="#/more" data-tab="more"><span class="ic">☰</span>More</a>
   </nav>
@@ -260,6 +264,17 @@
   function thumbStyle(p){return p.photoUrl?(' style="background-image:url(\''+esc(p.photoUrl)+'\')"'):'';}
   function catEmoji(c){return {eat:'🍽️',see:'📸',landmark:'🏛️',music:'🎷',museum:'🖼️',park:'🌳',shop:'🛍️'}[c]||'📍';}
 
+  // filter/price helpers
+  function priceNum(s){var m=String(s==null?'':s).match(/\$\s?([0-9]+(?:\.[0-9]+)?)/);return m?parseFloat(m[1]):null;}
+  function avgPlatePrice(r){var ps=(r.menu||[]).map(function(m){return priceNum(m.price);})
+    .filter(function(x){return x!=null;});
+    if(!ps.length)return null;return ps.reduce(function(a,b){return a+b;},0)/ps.length;}
+  function priceBand(r){return (r.price||'').length||99;}
+  // build a hash like '#/eat?d=gd&t=Seafood' by merging current state with overrides
+  function qnav(base,state,keys,ov){var s=Object.assign({},state,ov);var parts=[];
+    keys.forEach(function(k){if(s[k]&&s[k]!=='all')parts.push(k+'='+encodeURIComponent(s[k]));});
+    return base+(parts.length?'?'+parts.join('&'):'');}
+
   // ---------- Leaflet ----------
   function tileLayer(){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {maxZoom:19,attribution:'&copy; OpenStreetMap'});}
@@ -273,10 +288,12 @@
       if(!p.lat||!p.lng)return;
       var mk=L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:catColor(p.category),
         fillOpacity:.95});
-      var href='#/'+(p.type==='r'?'r':'s')+'/'+p.id;
+      var link=p.type==='e'
+        ? (p.url?'<a href="'+esc(p.url)+'" target="_blank" rel="noopener">Details ›</a>':'')
+        : '<a href="#/'+(p.type==='r'?'r':'s')+'/'+p.id+'">Details ›</a>';
       mk.bindPopup('<div class="pp-t">'+esc(p.name)+'</div>'+
         '<div class="muted" style="font-size:12px">'+esc(p.area_label||dName(p.district)||'')+'</div>'+
-        '<a href="'+href+'">Details ›</a>');
+        link);
       mk.addTo(m);
     });
     liveMaps.push(m);
@@ -304,8 +321,10 @@
     whatsOn()+
     '<div class="sec-title">Jump in</div>'+
     '<div class="grid2">'+
+      qcard('#/eat','🍽️','Where to eat','Full menus you can order from')+
+      qcard('#/do','🎭','Things to do','Sights, museums, music, shops')+
+      qcard('#/whatson','🎉','What’s on','Events during your trip')+
       qcard('#/map','🗺️','Map','Every spot, pinned')+
-      qcard('#/eat','🍽️','Where to eat','Menus you can order from')+
       qcard('#/d/fq','🏛️','Neighborhoods','History &amp; walks')+
       qcard('#/satchmo','🎺','Satchmo Fest','Best sets both days')+
     '</div>'+
@@ -340,14 +359,40 @@
   }
 
   function eatView(state){
-    state=state||{};var dist=state.d||'all';
-    var list=restaurants().filter(function(r){return dist==='all'||r.district===dist;});
-    var chips='<div class="pill-scroll">'+filterChip('All','#/eat',dist==='all')+
-      districts().map(function(d){return filterChip(d.short||d.name,'#/eat?d='+d.id,dist===d.id);}).join('')+'</div>';
-    var rows=list.map(rowCard).join('') || '<div class="empty">No spots here yet.</div>';
+    state=state||{};
+    var K=['d','t','p','r','sort'];
+    var dist=state.d||'all',typ=state.t||'all',pr=state.p||'all',rt=state.r||'all',sort=state.sort||'rating';
+    // types present across all restaurants
+    var typeSet={};restaurants().forEach(function(r){(r.filters||[]).forEach(function(f){typeSet[f]=1;});});
+    var types=Object.keys(typeSet).sort();
+    var list=restaurants().filter(function(r){
+      if(dist!=='all'&&r.district!==dist)return false;
+      if(typ!=='all'&&(r.filters||[]).indexOf(typ)<0)return false;
+      if(pr!=='all'&&(r.price||'')!==pr)return false;
+      if(rt!=='all'&&!(Number(r.rating)>=parseFloat(rt)))return false;
+      return true;});
+    list=list.slice().sort(function(a,b){
+      if(sort==='price')return priceBand(a)-priceBand(b)||((avgPlatePrice(a)||1e9)-(avgPlatePrice(b)||1e9));
+      if(sort==='avg')return (avgPlatePrice(a)||1e9)-(avgPlatePrice(b)||1e9);
+      return (Number(b.rating)||0)-(Number(a.rating)||0);});
+    function row(label,items){return '<div class="pill-scroll"><span class="filt-lbl">'+label+'</span>'+items+'</div>';}
+    var distRow=row('Area',filterChip('All',qnav('#/eat',state,K,{d:'all'}),dist==='all')+
+      districts().map(function(d){return filterChip(d.short||d.name,qnav('#/eat',state,K,{d:d.id}),dist===d.id);}).join(''));
+    var typeRow=types.length?row('Type',filterChip('Any',qnav('#/eat',state,K,{t:'all'}),typ==='all')+
+      types.map(function(t){return filterChip(t,qnav('#/eat',state,K,{t:t}),typ===t);}).join('')):'';
+    var prRow=row('Price',filterChip('Any',qnav('#/eat',state,K,{p:'all'}),pr==='all')+
+      ['$','$$','$$$','$$$$'].map(function(p){return filterChip(p,qnav('#/eat',state,K,{p:p}),pr===p);}).join(''));
+    var rtRow=row('Rating',filterChip('Any',qnav('#/eat',state,K,{r:'all'}),rt==='all')+
+      ['4.5','4'].map(function(x){return filterChip(x+'★+',qnav('#/eat',state,K,{r:x}),rt===x);}).join(''));
+    var sortRow=row('Sort',
+      filterChip('Top rated',qnav('#/eat',state,K,{sort:'rating'}),sort==='rating')+
+      filterChip('$ low→high',qnav('#/eat',state,K,{sort:'price'}),sort==='price')+
+      filterChip('Plate $ low',qnav('#/eat',state,K,{sort:'avg'}),sort==='avg'));
+    var rows=list.map(rowCard).join('') || '<div class="empty">No spots match these filters.</div>';
     return '<div class="sec-title" style="margin-top:6px">Eat-safe spots ('+list.length+')</div>'+
       '<div class="muted" style="font-size:13px;margin:-4px 2px 8px">Curated to what you can order. '+
-      'Prices &amp; ratings approx — verify on the day.</div>'+chips+rows;
+      'Prices &amp; ratings approx — verify on the day.</div>'+distRow+typeRow+prRow+rtRow+sortRow+
+      '<div style="height:6px"></div>'+rows;
   }
   function filterChip(label,nav,on){return '<button class="filter'+(on?' on':'')+'" data-nav="'+nav+'">'+
     esc(label)+'</button>';}
@@ -358,7 +403,8 @@
         '<div class="fav-abs">'+starBtn(p.id)+'</div></div>'+
       '<div class="body"><h3>'+esc(p.name)+'</h3>'+
         '<div class="meta">'+ratingBits(p)+(p.cuisine?' · '+esc(p.cuisine):'')+
-          ' · '+esc(p.area_label||dName(p.district))+'</div>'+
+          ' · '+esc(p.area_label||dName(p.district))+
+          (p.menu&&avgPlatePrice(p)?' · <span class="muted">~$'+Math.round(avgPlatePrice(p))+'/plate</span>':'')+'</div>'+
         '<div class="vibe">'+esc(p.vibe||p.blurb||'')+'</div></div></div>';
   }
 
@@ -375,6 +421,11 @@
         starBtn(p.id)+'</div>'+
       (p.vibe?'<p style="margin:0 0 10px">'+esc(p.vibe)+'</p>':'')+
       (tags?'<div style="margin-bottom:10px">'+tags+'</div>':'')+
+      '<div class="btn-row" style="margin-bottom:4px">'+
+        (p.dinner_estimate?'<span class="chip">💵 ~'+esc(p.dinner_estimate)+'</span>':'')+
+        (avgPlatePrice(p)?'<span class="chip">~$'+Math.round(avgPlatePrice(p))+'/plate avg</span>':'')+
+        ((p.menu||[]).length?'<span class="chip">'+(p.menu||[]).length+' items you can order</span>':'')+
+      '</div>'+
       '<div class="sec-title" style="margin-top:4px">What you can eat</div>'+
       '<div class="menuwrap">'+(menu||'<div class="muted" style="padding:10px 0">Menu coming.</div>')+'</div>'+
       (p.avoid_note?'<div class="skipbox">🚫 Skip here: '+esc(p.avoid_note)+'</div>':'')+
@@ -433,17 +484,92 @@
   }
 
   function mapView(state){
-    state=state||{};var dist=state.d||'all';var food=state.food==='1';
+    state=state||{};var K=['d','food','c'];
+    var dist=state.d||'all';var food=state.food==='1';var cat=state.c||'';
     var items=allPlaces().filter(function(p){
       if(dist!=='all'&&p.district!==dist)return false;
-      if(food&&p.type!=='r')return false;return true;});
+      if(food&&p.type!=='r')return false;
+      if(cat&&(p.type!=='s'||p.category!==cat))return false;
+      return true;});
+    var CATLABEL={see:'📸 See',landmark:'🏛️ Landmarks',museum:'🖼️ Museums',music:'🎷 Music',park:'🌳 Parks',shop:'🛍️ Shops'};
+    var order=['see','landmark','museum','music','park','shop'];
+    var catSet={};sights().forEach(function(s){catSet[s.category]=1;});
+    var catChips=order.filter(function(c){return catSet[c];})
+      .map(function(c){return filterChip(CATLABEL[c]||c,qnav('#/map',state,K,{c:c,food:''}),cat===c);}).join('');
     var chips='<div class="pill-scroll">'+
-      filterChip('All','#/map',dist==='all'&&!food)+
-      filterChip('🍽️ Eat only','#/map?food=1',food&&dist==='all')+
-      districts().map(function(d){return filterChip(d.short||d.name,'#/map?d='+d.id,dist===d.id&&!food);}).join('')+
+      filterChip('All',qnav('#/map',state,K,{d:'all',food:'',c:''}),dist==='all'&&!food&&!cat)+
+      filterChip('🍽️ Eat only',qnav('#/map',state,K,{food:'1',c:''}),food&&!cat)+
+      catChips+
+      districts().map(function(d){return filterChip(d.short||d.name,qnav('#/map',state,K,{d:d.id}),dist===d.id);}).join('')+
       '</div>';
     setTimeout(function(){mountMap('bigmap',[29.958,-90.064],13,items);},0);
     return '<div class="mapbar">'+chips+'</div><div id="bigmap"></div>';
+  }
+
+  function doView(state){
+    state=state||{};var K=['d','c','free'];
+    var dist=state.d||'all',cat=state.c||'all',free=state.free||'all';
+    var CATLABEL={see:'Attractions',landmark:'Landmarks',museum:'Museums',music:'Live music',park:'Parks',shop:'Shops'};
+    var order=['see','landmark','museum','music','park','shop'];
+    var catSet={};sights().forEach(function(s){catSet[s.category]=1;});
+    var cats=order.filter(function(c){return catSet[c];});
+    var list=sights().filter(function(s){
+      if(dist!=='all'&&s.district!==dist)return false;
+      if(cat!=='all'&&s.category!==cat)return false;
+      if(free==='1'&&!s.free)return false;
+      return true;});
+    function rowf(label,items){return '<div class="pill-scroll"><span class="filt-lbl">'+label+'</span>'+items+'</div>';}
+    var catRow=rowf('Type',filterChip('All',qnav('#/do',state,K,{c:'all'}),cat==='all')+
+      cats.map(function(c){return filterChip(CATLABEL[c]||c,qnav('#/do',state,K,{c:c}),cat===c);}).join(''));
+    var areaRow=rowf('Area',filterChip('All',qnav('#/do',state,K,{d:'all'}),dist==='all')+
+      districts().map(function(d){return filterChip(d.short||d.name,qnav('#/do',state,K,{d:d.id}),dist===d.id);}).join(''));
+    var freeRow=rowf('Cost',filterChip('All',qnav('#/do',state,K,{free:'all'}),free==='all')+
+      filterChip('Free',qnav('#/do',state,K,{free:'1'}),free==='1'));
+    var rows=list.map(rowCard).join('')||'<div class="empty">Nothing matches these filters.</div>';
+    return '<div class="sec-title" style="margin-top:6px">Things to do ('+list.length+')</div>'+
+      '<div class="muted" style="font-size:13px;margin:-4px 2px 8px">Attractions, museums, landmarks, live music &amp; local shops.</div>'+
+      catRow+areaRow+freeRow+'<div style="height:6px"></div>'+rows;
+  }
+
+  function eventList(){return (DATA.events||[]).slice().sort(function(a,b){
+    return new Date(a.when)-new Date(b.when);});}
+  function evTime(d){return d.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'});}
+  function evDay(d){return d.toLocaleDateString(undefined,{weekday:'long',month:'short',day:'numeric'});}
+  var EV_EMOJI={music:'🎷',festival:'🎉',market:'🛍️',art:'🎨',food:'🍽️'};
+  function whatsOnView(){
+    var evs=eventList();
+    if(!evs.length)return '<div class="sec-title" style="margin-top:6px">What’s on</div>'+
+      '<div class="empty">Local events for your dates are being added — check back soon.</div>';
+    var groups={},order=[];
+    evs.forEach(function(e){var k=new Date(e.when).toDateString();
+      if(!groups[k]){groups[k]=[];order.push(k);}groups[k].push(e);});
+    var html='<div class="muted" style="font-size:13px;margin:6px 2px 8px">Happening around town during your trip. '+
+      'Times &amp; prices approximate — verify before you go.</div>'+
+      '<div class="minimap" id="evmap" style="height:180px"></div>';
+    order.forEach(function(k){
+      html+='<div class="sec-title">'+esc(evDay(new Date(k)))+'</div>';
+      groups[k].forEach(function(e){
+        var t=new Date(e.when);
+        var cost=e.free?' · <span style="color:var(--green);font-weight:600">Free</span>'
+                :(e.cost?' · '+esc(e.cost):'');
+        html+='<div class="card pad">'+
+          '<div class="row" style="justify-content:space-between;align-items:flex-start">'+
+            '<div style="font-weight:700;font-size:16px">'+(EV_EMOJI[e.category]||'📍')+' '+esc(e.title)+
+              (e.star?' <span class="tag t-star">★</span>':'')+'</div>'+
+            '<div class="chip">'+esc(evTime(t))+'</div></div>'+
+          '<div class="muted" style="font-size:13px;margin-top:3px">'+esc(e.where||'')+cost+'</div>'+
+          (e.blurb?'<div style="font-size:14px;margin-top:6px">'+esc(e.blurb)+'</div>':'')+
+          (e.url?'<a class="btn" style="margin-top:8px" href="'+esc(e.url)+'" target="_blank" rel="noopener">Details ›</a>':'')+
+        '</div>';
+      });
+    });
+    setTimeout(function(){
+      var pts=evs.filter(function(e){return e.lat&&e.lng;}).map(function(e){
+        return {name:e.title,lat:e.lat,lng:e.lng,category:e.category,type:'e',id:e.id,url:e.url,area_label:e.where};});
+      if(pts.length)mountMap('evmap',[29.958,-90.064],13,pts);
+      else{var n=el('evmap');if(n)n.style.display='none';}
+    },0);
+    return html;
   }
 
   function planView(){
@@ -482,6 +608,8 @@
   function moreView(){
     return '<div class="sec-title" style="margin-top:6px">More</div>'+
       '<div class="grid2">'+
+        qcard('#/do','🎭','Things to do','Sights, museums, music')+
+        qcard('#/whatson','🎉','What’s on','Events on your dates')+
         qcard('#/search','⌕','Search','Find any place')+
         qcard('#/favorites','★','Favorites','Your saved spots')+
         qcard('#/satchmo','🎺','Satchmo Fest','Set times')+
@@ -518,7 +646,7 @@
   function notFound(){return '<div class="empty">Not found. <span class="btn" data-nav="#/">Home</span></div>';}
 
   // ---------- router ----------
-  var TABS={'':'home','map':'map','eat':'eat','plan':'plan','more':'more'};
+  var TABS={'':'home','map':'map','eat':'eat','do':'do','plan':'plan','more':'more'};
   function parseQuery(s){var o={};(s||'').split('&').forEach(function(kv){if(!kv)return;var p=kv.split('=');
     o[decodeURIComponent(p[0])]=decodeURIComponent(p[1]||'');});return o;}
   function router(){
@@ -530,6 +658,8 @@
     if(route===''){html=homeView();titleHTML='New Orleans <small>Jul 31 – Aug 3</small>';back=false;}
     else if(route==='map'){html=mapView(q);titleHTML='Map';back=false;}
     else if(route==='eat'){html=eatView(q);titleHTML='Where to eat';back=false;}
+    else if(route==='do'){html=doView(q);titleHTML='Things to do';back=false;}
+    else if(route==='whatson'){html=whatsOnView();titleHTML='What’s on';back=false;}
     else if(route==='plan'){html=planView();titleHTML='Plan';back=false;}
     else if(route==='more'){html=moreView();titleHTML='More';back=false;}
     else if(route==='r'){var rr=findR(arg);html=restaurantView(arg);titleHTML=esc(rr?rr.name:'Not found');}
