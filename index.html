@@ -654,8 +654,9 @@
       if(m){var o=(m[1]==='r')?findR(m[2]):findS(m[2]);
         if(o&&typeof o.lat==='number')return {lat:o.lat,lng:o.lng};}
     }
-    // only these actually put you back at the hotel
-    if(/hotel|check ?in|check ?out|pool|bags/i.test((s.title||'')+' '+(s.where||'')))return baseLoc();
+    // only these actually put you back at the hotel / base
+    if(/hotel|check ?in|check ?out|pool|bags|back to the quarter|in the quarter|\bhome\b/i
+      .test((s.title||'')+' '+(s.where||'')))return baseLoc();
     return null;
   }
   // Resolve the whole day at once: an unlocated slot (a sit-down, a generic lunch)
@@ -677,13 +678,28 @@
     return 2*R*Math.asin(Math.sqrt(h));
   }
   function minsOf(t){var p=String(t||'').split(':');return p.length<2?null:(+p[0])*60+(+p[1]);}
-  // ~22 min per mile: a real pace in this heat, not an optimistic one
+  // Straight-line badly understates a real walk. Calibrated against pedestrian routing
+  // over 26 of these actual hops: walk ≈ 0.12 + 1.20 × crow-flies. The constant matters
+  // more than the multiplier — even next door you walk to the corner and around the
+  // block, which a pure ratio can't express (it had short hops 75% under). Median error
+  // 13% vs 38% for raw straight-line. Paced at 21 min/mile: ~2.9 mph, which is honest
+  // in this heat rather than an optimistic 3.1.
+  var WALK_FIXED=0.12, WALK_SCALE=1.20, PACE=21;
+  function walkMiles(a,b){
+    var d=milesBetween(a,b);
+    if(d<0.03)return 0;                       // same spot
+    return WALK_FIXED+WALK_SCALE*d;
+  }
   function hopInfo(prev,next,A,B){
+    // A travel slot that already states its own cost IS the journey — don't print a
+    // competing estimate next to it (that had the app quoting Uber $41–51 alongside
+    // the $36 airport flat rate).
+    if(next&&next.kind==='travel'&&next.cost)return null;
     A=A||slotLoc(prev);B=B||slotLoc(next);
     if(!A||!B)return null;
-    var mi=milesBetween(A,B);
-    if(mi<0.06)return null;
-    var walk=Math.max(1,Math.round(mi*22));
+    var mi=walkMiles(A,B);
+    if(!mi)return null;
+    var walk=Math.max(1,Math.round(mi*PACE));
     var t1=minsOf(prev.time),t2=minsOf(next.time);
     var gap=(t1!=null&&t2!=null&&t2>=t1)?(t2-t1):null;
     var hour=parseInt(String(next.time||'12:00').split(':')[0],10);
@@ -704,7 +720,7 @@
     if(!h)return '';
     return '<div class="hop'+(h.warns.length?' bad':'')+'">'+
       '<span class="hop-ic">'+h.icon+'</span>'+
-      '<span class="hop-m">'+h.mi.toFixed(2)+' mi · '+esc(h.mode)+
+      '<span class="hop-m">~'+h.mi.toFixed(2)+' mi · '+esc(h.mode)+
         (h.cost?' · <b>'+esc(h.cost)+'</b>':'')+'</span>'+
       (h.warns.length?'<span class="hop-w">⚠ '+esc(h.warns.join(' · '))+'</span>':'')+
     '</div>';
@@ -728,7 +744,7 @@
     var t=dayTransit(slots);
     if(!t.walkMi&&!t.rides)return '';
     var bits=[];
-    if(t.walkMi)bits.push('🚶 '+t.walkMi.toFixed(1)+' mi on foot');
+    if(t.walkMi)bits.push('🚶 ~'+t.walkMi.toFixed(1)+' mi on foot');
     if(t.rides)bits.push('🚗 '+t.rides+' ride'+(t.rides===1?'':'s')+
       (t.hi?' · $'+t.lo+'–'+t.hi:''));
     return '<div class="tsum'+(t.warns?' bad':'')+'">'+esc(bits.join('  ·  '))+

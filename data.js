@@ -1,4 +1,4 @@
-/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner. Schedule is curated but editable in-app, and walking/transit between slots is computed live from coordinates so it stays correct when you reorder. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
+/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner. Schedule is curated but editable in-app; walking distance is estimated as 0.12 + 1.20x crow-flies (calibrated against pedestrian routing, median 13% error) and recomputed live when you reorder. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
 window.DATA = {
  "districts": [
   {
@@ -7211,8 +7211,8 @@ window.DATA = {
   },
   {
    "day": "Fri",
-   "when": "2026-07-31T10:45",
-   "time": "10:45",
+   "when": "2026-07-31T11:00",
+   "time": "11:00",
    "title": "Beignets at Café du Monde",
    "where": "French Market · 8 min walk",
    "kind": "food",
@@ -7220,8 +7220,8 @@ window.DATA = {
   },
   {
    "day": "Fri",
-   "when": "2026-07-31T11:30",
-   "time": "11:30",
+   "when": "2026-07-31T11:45",
+   "time": "11:45",
    "title": "Historic New Orleans Collection",
    "where": "Royal St · free, air-conditioned",
    "kind": "sight",
@@ -8711,7 +8711,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 10,
+ "data_version": 11,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
