@@ -1,4 +1,4 @@
-/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner — a dish defined by its meat is not listed as "order it without the meat". Curated hour-by-hour schedule, editable in-app. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
+/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner. Schedule is curated but editable in-app, and walking/transit between slots is computed live from coordinates so it stays correct when you reorder. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
 window.DATA = {
  "districts": [
   {
@@ -7188,7 +7188,9 @@ window.DATA = {
    "title": "Land at MSY",
    "where": "Louis Armstrong International",
    "kind": "travel",
-   "booked": true
+   "booked": true,
+   "lat": 29.9934,
+   "lng": -90.258
   },
   {
    "day": "Fri",
@@ -7282,7 +7284,9 @@ window.DATA = {
    "title": "Walk to the Voodoo Lounge",
    "where": "718 N Rampart St, corner of Orleans · ~7 min from Galatoire's",
    "note": "Check in at the box office inside. Have the QR ticket open before you get there.",
-   "cost": "Free"
+   "cost": "Free",
+   "lat": 29.9601,
+   "lng": -90.0699
   },
   {
    "day": "Fri",
@@ -7294,7 +7298,9 @@ window.DATA = {
    "note": "Runs 1 hour 45 min, so you are back out around 9:45pm. Booked for 2 adults under Avi Bar.",
    "booked": true,
    "cost": "Paid · 2× adult",
-   "star": true
+   "star": true,
+   "lat": 29.9601,
+   "lng": -90.0699
   },
   {
    "day": "Fri",
@@ -7320,7 +7326,9 @@ window.DATA = {
    "title": "Head to the Warehouse District",
    "where": "20-min walk, or streetcar / short Uber",
    "kind": "travel",
-   "cost": "Walk free · streetcar $1.25 · Uber $8–10"
+   "cost": "Walk free · streetcar $1.25 · Uber $8–10",
+   "lat": 29.943,
+   "lng": -90.0705
   },
   {
    "day": "Sat",
@@ -7378,7 +7386,9 @@ window.DATA = {
    "where": "Julia St · free · 4-min walk from the museums",
    "kind": "event",
    "star": true,
-   "warn": "61% chance of storms this evening — it runs anyway, locals just carry on"
+   "warn": "61% chance of storms this evening — it runs anyway, locals just carry on",
+   "lat": 29.9436,
+   "lng": -90.0684
   },
   {
    "day": "Sat",
@@ -7406,7 +7416,9 @@ window.DATA = {
    "where": "Canal St → Washington Ave · 25 min, shaded",
    "kind": "travel",
    "nav": "#/s/st-charles-streetcar",
-   "cost": "$1.25 · or a $3 all-day pass"
+   "cost": "$1.25 · or a $3 all-day pass",
+   "lat": 29.9285,
+   "lng": -90.0842
   },
   {
    "day": "Sun",
@@ -7462,7 +7474,9 @@ window.DATA = {
    "title": "Satchmo SummerFest — Day 2",
    "where": "Old U.S. Mint · free · 16-min walk",
    "kind": "event",
-   "nav": "#/satchmo"
+   "nav": "#/satchmo",
+   "lat": 29.96222,
+   "lng": -90.05833
   },
   {
    "day": "Sun",
@@ -7472,7 +7486,9 @@ window.DATA = {
    "where": "Festival closer. This is the one.",
    "kind": "music",
    "nav": "#/satchmo",
-   "star": true
+   "star": true,
+   "lat": 29.96222,
+   "lng": -90.05833
   },
   {
    "day": "Sun",
@@ -7544,7 +7560,9 @@ window.DATA = {
    "title": "Collect bags, taxi to MSY",
    "where": "Leave 2h15 before the flight",
    "kind": "travel",
-   "cost": "$36 flat"
+   "cost": "$36 flat",
+   "lat": 29.9934,
+   "lng": -90.258
   },
   {
    "day": "Mon",
@@ -7553,7 +7571,9 @@ window.DATA = {
    "title": "Flight home",
    "where": "Delta · MSY → home",
    "kind": "travel",
-   "booked": true
+   "booked": true,
+   "lat": 29.9934,
+   "lng": -90.258
   }
  ],
  "days": [
@@ -8691,7 +8711,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 9,
+ "data_version": 10,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
@@ -8779,5 +8799,10 @@ window.DATA = {
     "night_detail": "A chance of showers and thunderstorms. Partly cloudy, with a low around 78. Southwest wind around 5 mph."
    }
   ]
+ },
+ "base": {
+  "name": "Hampton Inn (French Quarter)",
+  "lat": 29.956,
+  "lng": -90.0685
  }
 };

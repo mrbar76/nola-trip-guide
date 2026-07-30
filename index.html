@@ -101,6 +101,17 @@
   .s-body{flex:1;min-width:0}
   .s-title{font-size:14px;font-weight:600;line-height:1.35}
   .s-where{font-size:12px;color:var(--muted);margin-top:1px}
+  .hop{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;margin:0 0 0 30px;padding:3px 0 5px;
+    font-size:11.5px;color:var(--muted);border-left:2px dotted var(--line);padding-left:10px}
+  .hop-ic{flex:0 0 auto;font-size:12px}
+  .hop-m{flex:1 1 auto;min-width:0}
+  .hop-m b{color:#7a5300}
+  .hop.bad{border-left-color:rgba(154,74,68,.55)}
+  .hop-w{flex:1 1 100%;color:var(--skip);font-weight:600;line-height:1.4}
+  .tsum{margin-top:10px;padding:8px 10px;border-radius:10px;font-size:12px;font-weight:600;
+    background:var(--paper2);border:1px solid var(--line);color:#3f382d}
+  .tsum.bad{background:rgba(154,74,68,.08);border-color:rgba(154,74,68,.3)}
+  .tsum-w{font-weight:600;color:var(--skip);font-size:11.5px;margin-top:3px}
   .s-note{font-size:12px;color:#3f382d;margin-top:3px;line-height:1.45}
   .s-cost{font-size:11.5px;color:#7a5300;font-weight:600;margin-top:2px}
   .s-warn{font-size:11.5px;color:var(--purple);font-weight:600;margin-top:3px;line-height:1.4}
@@ -632,6 +643,99 @@
     }
     return days[0];
   }
+  // ---- live transit between whatever order the slots are actually in ----
+  function baseLoc(){var b=DATA.base;return (b&&typeof b.lat==='number')?{lat:b.lat,lng:b.lng}:null;}
+  // An explicit location if the slot has one; null means "wherever you already are".
+  function ownLoc(s){
+    if(!s)return null;
+    if(typeof s.lat==='number'&&typeof s.lng==='number')return {lat:s.lat,lng:s.lng};
+    if(s.nav){
+      var m=/^#\/(r|s)\/(.+)$/.exec(s.nav);
+      if(m){var o=(m[1]==='r')?findR(m[2]):findS(m[2]);
+        if(o&&typeof o.lat==='number')return {lat:o.lat,lng:o.lng};}
+    }
+    // only these actually put you back at the hotel
+    if(/hotel|check ?in|check ?out|pool|bags/i.test((s.title||'')+' '+(s.where||'')))return baseLoc();
+    return null;
+  }
+  // Resolve the whole day at once: an unlocated slot (a sit-down, a generic lunch)
+  // stays where you already were rather than inventing a trip back to the hotel.
+  function resolveLocs(slots){
+    var out=[],carry=baseLoc();
+    for(var i=0;i<slots.length;i++){
+      var own=ownLoc(slots[i]);
+      if(own){carry=own;out.push(own);}else{out.push(carry);}
+    }
+    return out;
+  }
+  function slotLoc(s){return ownLoc(s)||baseLoc();}
+  function milesBetween(a,b){
+    var R=3958.8,rad=function(x){return x*Math.PI/180;};
+    var dLat=rad(b.lat-a.lat),dLon=rad(b.lng-a.lng);
+    var h=Math.sin(dLat/2)*Math.sin(dLat/2)+
+      Math.cos(rad(a.lat))*Math.cos(rad(b.lat))*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+  function minsOf(t){var p=String(t||'').split(':');return p.length<2?null:(+p[0])*60+(+p[1]);}
+  // ~22 min per mile: a real pace in this heat, not an optimistic one
+  function hopInfo(prev,next,A,B){
+    A=A||slotLoc(prev);B=B||slotLoc(next);
+    if(!A||!B)return null;
+    var mi=milesBetween(A,B);
+    if(mi<0.06)return null;
+    var walk=Math.max(1,Math.round(mi*22));
+    var t1=minsOf(prev.time),t2=minsOf(next.time);
+    var gap=(t1!=null&&t2!=null&&t2>=t1)?(t2-t1):null;
+    var hour=parseInt(String(next.time||'12:00').split(':')[0],10);
+    var hot=hour>=11&&hour<16;
+    var icon='🚶',mode,cost=null;
+    if(mi<=0.6){mode=walk+' min walk';}
+    else if(mi<=1.2){mode=walk+' min walk';cost='or Uber $8–10';}
+    else {icon='🚗';mode='too far to walk ('+walk+' min)';
+      cost='Uber ~$'+Math.max(8,Math.round(7+mi*2.4))+'–'+Math.max(11,Math.round(9+mi*3.0));}
+    var warns=[];
+    if(gap!=null&&mi>0.15&&gap<walk+5)
+      warns.push('only '+gap+' min between these, and the hop alone is '+walk+' min');
+    if(hot&&mi>0.6)warns.push('11am–4pm heat — '+walk+' min on foot will hurt');
+    return {mi:mi,walk:walk,icon:icon,mode:mode,cost:cost,warns:warns,ride:mi>1.2};
+  }
+  function hopRow(prev,next,A,B){
+    var h=hopInfo(prev,next,A,B);
+    if(!h)return '';
+    return '<div class="hop'+(h.warns.length?' bad':'')+'">'+
+      '<span class="hop-ic">'+h.icon+'</span>'+
+      '<span class="hop-m">'+h.mi.toFixed(2)+' mi · '+esc(h.mode)+
+        (h.cost?' · <b>'+esc(h.cost)+'</b>':'')+'</span>'+
+      (h.warns.length?'<span class="hop-w">⚠ '+esc(h.warns.join(' · '))+'</span>':'')+
+    '</div>';
+  }
+  // recomputed every render, so it always matches the current order
+  function dayTransit(slots){
+    var walkMi=0,lo=0,hi=0,rides=0,warns=0;
+    var L=resolveLocs(slots);
+    for(var i=1;i<slots.length;i++){
+      var h=hopInfo(slots[i-1],slots[i],L[i-1],L[i]);
+      if(!h)continue;
+      warns+=h.warns.length?1:0;
+      if(h.ride){rides++;
+        var m=/\$(\d+)–(\d+)/.exec(h.cost||'');
+        if(m){lo+=+m[1];hi+=+m[2];}
+      } else walkMi+=h.mi;
+    }
+    return {walkMi:walkMi,lo:lo,hi:hi,rides:rides,warns:warns};
+  }
+  function transitSummary(slots){
+    var t=dayTransit(slots);
+    if(!t.walkMi&&!t.rides)return '';
+    var bits=[];
+    if(t.walkMi)bits.push('🚶 '+t.walkMi.toFixed(1)+' mi on foot');
+    if(t.rides)bits.push('🚗 '+t.rides+' ride'+(t.rides===1?'':'s')+
+      (t.hi?' · $'+t.lo+'–'+t.hi:''));
+    return '<div class="tsum'+(t.warns?' bad':'')+'">'+esc(bits.join('  ·  '))+
+      (t.warns?'<div class="tsum-w">'+t.warns+(t.warns===1?' hop needs':' hops need')+
+        ' a look — see the ⚠ above</div>':'')+'</div>';
+  }
+
   function slotRow(day,s,i,n,editable){
     var done=isDone(day,s);
     return '<div class="slot'+(done?' done':'')+(s.star?' star':'')+'">'+
@@ -672,7 +776,12 @@
       if(d.forecast_date)html+=wxLine(d.forecast_date);
       html+='<div class="card pad">';
       if(!slots.length)html+='<div class="muted" style="font-size:13px">Nothing scheduled.</div>';
-      else slots.forEach(function(s,i){html+=slotRow(day,s,i,slots.length,true);});
+      else {var L=resolveLocs(slots);
+        slots.forEach(function(s,i){
+          if(i>0)html+=hopRow(slots[i-1],s,L[i-1],L[i]);
+          html+=slotRow(day,s,i,slots.length,true);
+        });}
+      if(slots.length>1)html+=transitSummary(slots);
       html+='<div class="btn-row" style="margin-top:10px">'+
         (open===day
           ? '<span class="btn" data-nav="#/schedule'+(only?'?day='+only:'')+'">Done adding</span>'
@@ -728,7 +837,12 @@
         '<span class="chip sm" data-nav="#/schedule">Full schedule ›</span></div>'+
       (d.forecast_date?wxLine(d.forecast_date):'')+
       '<div class="card pad">'+
-        show.map(function(s,i){return slotRow(day,s,start+i,slots.length,false);}).join('')+
+        (function(){var L=resolveLocs(slots);
+          return show.map(function(s,i){
+            var k=start+i;
+            return (i>0?hopRow(slots[k-1],s,L[k-1],L[k]):'')+slotRow(day,s,k,slots.length,false);
+          }).join('');})()+
+        transitSummary(slots)+
         '<div class="btn-row" style="margin-top:10px">'+
           '<span class="btn gold block" data-nav="#/schedule?day='+esc(day)+'">Open '+esc(day)+' · change it ›</span>'+
         '</div>'+
