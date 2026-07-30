@@ -1,4 +1,4 @@
-/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, geo/quality-validated. */
+/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, width-capped for mobile. */
 window.DATA = {
  "districts": [
   {
@@ -180,7 +180,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/St._Louis_Cathedral,_New_Orleans",
    "hours_note": "Open to visitors daily ~9:30am-4pm (last entry 3:45pm); closed during Mass/weddings",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Cathedral_new_orleans.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cathedral_new_orleans.jpg/960px-Cathedral_new_orleans.jpg"
   },
   {
    "id": "french-market",
@@ -194,7 +194,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/French_Market",
    "hours_note": "Shops & farmers/flea market daily ~10am-6pm (flea vendors wind down by 5pm)",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/French_Market%2C_New_Orleans.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/French_Market%2C_New_Orleans.JPG/960px-French_Market%2C_New_Orleans.JPG"
   },
   {
    "id": "royal-street",
@@ -208,7 +208,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Royal_Street,_New_Orleans",
    "hours_note": "Street always open; pedestrian mall 11am-4pm weekdays, 11am-7pm weekends; shops ~10am-5pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG/960px-Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG"
   },
   {
    "id": "old-ursuline-convent",
@@ -222,7 +222,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
    "hours_note": "Tue–Sat 10am–3pm; closed Sun–Mon. Adults $10",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/960px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "frenchmen-street",
@@ -236,7 +236,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Frenchmen_Street",
    "hours_note": "Public street, always open; clubs mostly nightly from evening",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Frenchman_Street_%2855148394755%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Frenchman_Street_%2855148394755%29.jpg/960px-Frenchman_Street_%2855148394755%29.jpg"
   },
   {
    "id": "jazz-museum-old-mint",
@@ -278,7 +278,7 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily 11–6, 21+ only",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/CardTheGrunewaldNewOr.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/CardTheGrunewaldNewOr.jpg/960px-CardTheGrunewaldNewOr.jpg"
   },
   {
    "id": "pharmacy-museum",
@@ -292,7 +292,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Pharmacy_Museum",
    "hours_note": "Tue-Sat 11-4",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/New_Orleans_Pharmacy_Museum.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/New_Orleans_Pharmacy_Museum.jpg/960px-New_Orleans_Pharmacy_Museum.jpg"
   },
   {
    "id": "preservation-hall",
@@ -334,7 +334,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Louisiana_Music_Factory",
    "hours_note": "Daily 11-6",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg/960px-Louisiana_Music_Factory_%2855151878003%29.jpg"
   },
   {
    "id": "national-wwii-museum",
@@ -348,7 +348,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/National_WWII_Museum",
    "hours_note": "Open daily 9am-5pm; closed Thanksgiving, Christmas Eve/Day, and Mardi Gras Day",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/1280px-B-17_at_the_National_World_War_II_Museum.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/960px-B-17_at_the_National_World_War_II_Museum.JPG"
   },
   {
    "id": "ogden-museum",
@@ -362,7 +362,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Ogden_Museum_of_Southern_Art",
    "hours_note": "Daily 10–5, Thu until 8",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg/960px-Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg"
   },
   {
    "id": "contemporary-arts-center",
@@ -376,7 +376,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Contemporary_Arts_Center_(New_Orleans)",
    "hours_note": "Wed–Mon 11–5, closed Tue",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Contemporary_Arts_Center_New_Orleans.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Contemporary_Arts_Center_New_Orleans.jpg/960px-Contemporary_Arts_Center_New_Orleans.jpg"
   },
   {
    "id": "msje",
@@ -404,7 +404,7 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Most galleries Tue-Sat ~11am-5pm; hours vary by gallery, many closed Sun-Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg/960px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg"
   },
   {
    "id": "lafayette-cemetery-1",
@@ -418,7 +418,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Lafayette_Cemetery",
    "hours_note": "Closed to the public for restoration as of 2026; call 504-658-3781 to confirm access",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg/960px-Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg"
   },
   {
    "id": "st-charles-streetcar",
@@ -432,7 +432,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/St._Charles_Streetcar_Line",
    "hours_note": "Runs 24 hours daily; $1.25 exact change per ride, or $3 all-day Jazzy Pass",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg/960px-Streetcar_in_New_Orleans%2C_USA1.jpg"
   },
   {
    "id": "magazine-street",
@@ -460,7 +460,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Audubon_Park_(New_Orleans)",
    "hours_note": "Daily 5am-10pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/AudubonPark1.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/960px-AudubonPark1.JPG"
   },
   {
    "id": "garden-district-mansions",
@@ -474,7 +474,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Garden_District,_New_Orleans",
    "hours_note": "Streets accessible daily; daylight best",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/960px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "tipitinas",
@@ -488,7 +488,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Tipitina's",
    "hours_note": "Doors typically 8pm on show nights",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Tip%27s_Building_2019.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tip%27s_Building_2019.jpg/1280px-Tip%27s_Building_2019.jpg"
   },
   {
    "id": "studio-be",
@@ -530,7 +530,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Museum_of_Art",
    "hours_note": "Tue-Sun 10am-5pm (Wed to 7pm); closed Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "besthoff-sculpture-garden",
@@ -558,7 +558,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/City_Park_(New_Orleans)",
    "hours_note": "Daily, 30 min before sunrise to 30 min after sunset (park grounds free; individual attractions charge)",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/City_Park_Bayou_Bridge.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/960px-City_Park_Bayou_Bridge.JPG"
   },
   {
    "id": "bayou-st-john",
@@ -572,7 +572,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Bayou_St._John",
    "hours_note": "Open public waterway and banks, accessible year-round",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg/960px-Bayou_St_John_by_Spanish_Fort_2009.jpg"
   },
   {
    "id": "faulkner-house-books",
@@ -614,7 +614,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
    "hours_note": "Tue–Sat 10–3, closed Sun–Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/960px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "arthur-roger-gallery",
@@ -642,7 +642,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Maple_Leaf_Bar",
    "hours_note": "Doors 7pm, shows 8pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/OakStreetParty16June2007B.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/OakStreetParty16June2007B.jpg/960px-OakStreetParty16June2007B.jpg"
   },
   {
    "id": "garden-district-book-shop",
@@ -656,7 +656,7 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Mon–Sat 10–6, Sun 12–4",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/960px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "the-fly-riverview-park",
@@ -670,7 +670,7 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily 5am-10pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/AudubonPark1.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/960px-AudubonPark1.JPG"
   },
   {
    "id": "milton-h-latter-memorial-library",
@@ -726,7 +726,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Botanical_Garden",
    "hours_note": "Tue-Sun 10am-4:30pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/New_Orleans_Botanical_Garden_2011.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/New_Orleans_Botanical_Garden_2011.jpg/960px-New_Orleans_Botanical_Garden_2011.jpg"
   },
   {
    "id": "sydney-and-walda-besthoff-sculpture-garden",
@@ -754,7 +754,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Pitot_House",
    "hours_note": "Wed–Fri 10–3, last tour 2pm; $5",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/PitotHouseBayouStJohn.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PitotHouseBayouStJohn.jpg/960px-PitotHouseBayouStJohn.jpg"
   },
   {
    "id": "chickie-wah-wah",
@@ -796,7 +796,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Beauregard-Keyes_House",
    "hours_note": "Tours Mon-Sat on the hour, 10am-3pm; adults $10",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg/960px-BK_Historic_House_and_Gardens_%2855151949439%29.jpg"
   },
   {
    "id": "blaine-kerns-mardi-gras-world",
@@ -810,7 +810,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Mardi_Gras_World",
    "hours_note": "Daily 9am-5:30pm; last tour 4:30pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg/960px-Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg"
   },
   {
    "id": "le-bon-temps-roule",
@@ -838,7 +838,7 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Prytania_Theatre",
    "hours_note": "Open daily per showtimes; box office opens ~30 min before first film",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg/960px-Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg"
   },
   {
    "id": "angelo-brocatos",
@@ -852,7 +852,7 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Angelo_Brocato's",
    "hours_note": "Tue–Sun 10am–10pm (Sun to 9pm), closed Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/MidCityBrocatosOpen.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/MidCityBrocatosOpen.jpg/960px-MidCityBrocatosOpen.jpg"
   },
   {
    "id": "couturie-forest",
@@ -866,7 +866,7 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily sunrise–sunset",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/City_Park_Bayou_Bridge.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/960px-City_Park_Bayou_Bridge.JPG"
   }
  ],
  "restaurants": [
@@ -950,7 +950,7 @@ window.DATA = {
    "reserveUrl": null,
    "reserve_priority": false,
    "website": "https://www.cafedumonde.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/960px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
   },
   {
    "id": "galatoires",
@@ -1095,7 +1095,7 @@ window.DATA = {
    "reserveUrl": "https://www.galatoires.com/reservations",
    "reserve_priority": true,
    "website": "https://www.galatoires.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/2009-0228-NOLA-004-Galatoires.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/960px-2009-0228-NOLA-004-Galatoires.jpg"
   },
   {
    "id": "gw-fins",
@@ -1260,7 +1260,7 @@ window.DATA = {
    "reserveUrl": null,
    "reserve_priority": false,
    "website": "https://www.napoleonhouse.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/960px-The_Napoleon_House_-_New_Orleans_February_2026.jpg"
   },
   {
    "id": "sylvain",
@@ -1459,7 +1459,7 @@ window.DATA = {
    "website": "https://www.strochmarket.com",
    "reserveUrl": null,
    "reserve_priority": false,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/MarignyAcrossFromSpigaJuly08.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/960px-MarignyAcrossFromSpigaJuly08.jpg"
   },
   {
    "id": "peche-seafood-grill",
@@ -1568,7 +1568,7 @@ window.DATA = {
    "reserve_priority": true,
    "website": "https://www.pecherestaurant.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/peche-seafood-grill",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/960px-New_Orleans_CBD_1_Oct_2016_24.jpg"
   },
   {
    "id": "compere-lapin",
@@ -1647,7 +1647,7 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/compere-lapin",
    "website": "http://comperelapin.com/",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/960px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
   },
   {
    "id": "seaworthy",
@@ -1848,7 +1848,7 @@ window.DATA = {
    "website": "https://www.commanderspalace.com",
    "reserveUrl": "https://www.opentable.com/r/commanders-palace-new-orleans",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/2009-0301-NOLA-001-CommandersPalace.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/960px-2009-0301-NOLA-001-CommandersPalace.jpg"
   },
   {
    "id": "la-petite-grocery",
@@ -2917,7 +2917,7 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://morningcallnola.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Morning_Call_NOLA_Interior_WPA.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/960px-Morning_Call_NOLA_Interior_WPA.jpg"
   },
   {
    "id": "ralphs-on-the-park",
@@ -3025,7 +3025,7 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/ralphs-on-the-park",
    "website": "https://www.ralphsonthepark.com",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "monas-cafe",
@@ -3854,7 +3854,7 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/cafe-degas",
    "website": "https://cafedegas.com",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "n7",
@@ -4359,7 +4359,7 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/brennans",
    "website": "https://www.brennansneworleans.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/960px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
   },
   {
    "id": "herbsaint",
@@ -4467,7 +4467,7 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/herbsaint",
    "website": "https://herbsaint.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Old_Absinthe_House_%2855151882008%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/960px-Old_Absinthe_House_%2855151882008%29.jpg"
   },
   {
    "id": "meril",
@@ -6357,5 +6357,5 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 3
+ "data_version": 4
 };
