@@ -1,4 +1,4 @@
-/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner. Schedule is curated but editable in-app; walking distance is estimated as 0.12 + 1.20x crow-flies (calibrated against pedestrian routing, median 13% error) and recomputed live when you reorder. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
+/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner. Schedule is curated but editable in-app; walking is estimated as 0.12 + 1.20x crow-flies (calibrated against pedestrian routing) and recomputed live when you reorder or swap. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
 window.DATA = {
  "districts": [
   {
@@ -7178,6 +7178,117 @@ window.DATA = {
    "photoUrl": null,
    "menu_source": "https://lolasneworleans.com/new-orleans-lola-s-food-menu",
    "menu_confidence": "approximate"
+  },
+  {
+   "id": "pelican-club",
+   "name": "The Pelican Club",
+   "district": "fq",
+   "area_label": "French Quarter",
+   "cuisine": "Contemporary Creole",
+   "vibe": "A converted 19th-century Creole townhouse tucked down pedestrian Exchange Place, open since 1990. Contemporary Creole cooking with French, Italian and Asian leanings — white tablecloths without being stiff.",
+   "price": "$$$$",
+   "rating": 4.5,
+   "rating_note": "Google 4.5 (~773 reviews); Yelp 674 reviews",
+   "lat": 29.9545783,
+   "lng": -90.0669243,
+   "dinner_estimate": "$70–90 per person (three courses run $62 and up before drinks)",
+   "website": "https://www.pelicanclub.com",
+   "reserveUrl": "https://www.opentable.com/the-pelican-club-new-orleans",
+   "photoUrl": null,
+   "coverUrl": null,
+   "menu_source": "https://www.pelicanclub.com/wp-content/uploads/2026/05/DINNER-MENU.pdf",
+   "menu_confidence": "verified",
+   "menu": [
+    {
+     "item": "Vegan Carrot Coconut Ginger Soup",
+     "price": "$10",
+     "course": "starter",
+     "note": "Vegan as served"
+    },
+    {
+     "item": "Beet, Walnut & Goat Cheese Salad",
+     "price": "$17",
+     "course": "starter",
+     "note": "Golden and purple beets, arugula, pickled red onion, creamy dijon — vegetarian, and the menu notes a vegan option"
+    },
+    {
+     "item": "Caesar Salad",
+     "price": "$17",
+     "course": "starter",
+     "note": "Comes with Spanish boquerones (white anchovies), which are fine for you — the menu also offers a vegetarian version if you would rather"
+    },
+    {
+     "item": "Whole Crispy Fish",
+     "price": "$38",
+     "course": "main",
+     "note": "Sweet citrus chili sauce, jasmine rice — eligible exactly as written, and the standout main for you here"
+    },
+    {
+     "item": "Panéed Gulf Fish",
+     "price": "$38",
+     "course": "main",
+     "note": "Ask for it without the crawfish étouffée; the jalapeño hollandaise, brabant potatoes and haricots verts are all fine"
+    },
+    {
+     "item": "Louisiana Cioppino — vegetarian version",
+     "price": "$38",
+     "course": "main",
+     "note": "The standard pot is shrimp, mussels, clams and calamari, but the menu states a vegan or vegetarian option is available — ask for that"
+    },
+    {
+     "item": "Bread Service",
+     "price": "$6",
+     "course": "side",
+     "note": "Homemade focaccia and butter"
+    },
+    {
+     "item": "White Chocolate Bread Pudding",
+     "price": "$10",
+     "course": "dessert",
+     "note": "White and dark chocolate sauces"
+    },
+    {
+     "item": "Coconut Cream Pie",
+     "price": "$10",
+     "course": "dessert"
+    },
+    {
+     "item": "Bourbon Pecan Pie",
+     "price": "$10",
+     "course": "dessert"
+    },
+    {
+     "item": "Chocolate Decadence Cake",
+     "price": "$10",
+     "course": "dessert",
+     "note": "Almonds, caramel drizzle"
+    },
+    {
+     "item": "Grand Marnier Crème Brûlée",
+     "price": "$10",
+     "course": "dessert",
+     "note": "With fresh fruit"
+    },
+    {
+     "item": "Sorbet & Fresh Fruit",
+     "price": "$10",
+     "course": "dessert"
+    }
+   ],
+   "avoid_note": "Most of this menu is off-limits: shrimp bisque, the shrimp/chicken/andouille gumbo, seafood martini, seared scallops, baked oysters (bacon), escargots, quail, BBQ shrimp, and every meat main — lamb, pork chop, fried chicken, ribeye, short rib. The standard cioppino is shellfish, so you must ask for the vegetarian pot.",
+   "kosher_style_fit": "Workable and worth the booking: one fish main that needs no changes, a second that just needs the crawfish left off, three eligible starters and the whole dessert list. The kitchen prints vegetarian and vegan alternatives against several dishes, so they are used to the question — mention it when you sit down.",
+   "reserve_priority": true,
+   "tags": [
+    "fish",
+    "veg",
+    "book"
+   ],
+   "filters": [
+    "Cajun/Creole",
+    "Seafood",
+    "Fine dining",
+    "Southern"
+   ]
   }
  ],
  "schedule": [
@@ -7269,12 +7380,15 @@ window.DATA = {
    "day": "Fri",
    "when": "2026-07-31T18:00",
    "time": "18:00",
-   "title": "Dinner — Galatoire's",
-   "where": "Bourbon St · 1 min from the hotel",
+   "title": "Dinner — The Pelican Club",
+   "where": "312 Exchange Place · quiet pedestrian alley off Bienville",
    "kind": "food",
-   "nav": "#/r/galatoires",
-   "reserve": true,
-   "note": "Mention the 8pm tour when you sit down — you have about 1h40, which is enough here but not leisurely."
+   "nav": "#/r/pelican-club",
+   "note": "Reservation confirmed for 2. Mention the 8pm ghost tour when you sit down — three courses here is not a rushed meal, and you want to leave by about 7:45.",
+   "lat": 29.9545783,
+   "lng": -90.0669243,
+   "booked": true,
+   "cost": "Booked · 2 people"
   },
   {
    "day": "Fri",
@@ -7282,8 +7396,8 @@ window.DATA = {
    "time": "19:45",
    "kind": "travel",
    "title": "Walk to the Voodoo Lounge",
-   "where": "718 N Rampart St, corner of Orleans · ~7 min from Galatoire's",
-   "note": "Check in at the box office inside. Have the QR ticket open before you get there.",
+   "where": "718 N Rampart St, corner of Orleans · ~13 min from Exchange Place",
+   "note": "Check in at the box office inside. Have the QR ticket open before you get there — 15 minutes is enough for this walk but not much more.",
    "cost": "Free",
    "lat": 29.9601,
    "lng": -90.0699
@@ -7737,16 +7851,16 @@ window.DATA = {
    "done": false
   },
   {
-   "id": "galatoires",
-   "title": "Galatoire's (Fri dinner)",
-   "note": "Reserve on Resy",
-   "done": false
-  },
-  {
    "id": "commanders",
    "title": "Commander's Palace (Sun brunch)",
    "note": "Reserve on Resy",
    "done": false
+  },
+  {
+   "id": "pelican",
+   "title": "The Pelican Club (Fri dinner)",
+   "note": "Fri 31 Jul 6:00pm · 2 people · CONFIRMED on OpenTable",
+   "done": true
   },
   {
    "id": "boat",
@@ -7759,14 +7873,15 @@ window.DATA = {
   "<b>Flights:</b> land MSY Fri 9:25am · depart Mon 6:59pm",
   "<b>Hotel:</b> check in Fri 3pm · check out Mon 11am",
   "Ghost &amp; Vampire Combo — Fri 8:00pm, check in at Voodoo Lounge, 718 N Rampart <b>(paid, 2× adult)</b>",
+  "<b>Dinner:</b> The Pelican Club — Fri 6:00pm, 2 people <b>(confirmed)</b>",
   "White Linen Night — Sat 6–9pm",
   "<b style='color:#8a2231'>⭐ Kermit Ruffins — Sun 6:40pm</b>",
-  "<b>Reserve:</b> Galatoire's (Fri) · Commander's brunch (Sun) · Steamboat cruise (optional) Mon 11:30am"
+  "Reserve: Commander's brunch (Sun) · Steamboat cruise (optional) Mon 11:30am"
  ],
  "tobook": [
   "WWII Museum $36/pp · nationalww2museum.org",
   "Boat — Steamboat Natchez $30.52 · Groupon &nbsp;or&nbsp; Creole Queen $45 · Groupon",
-  "Galatoire's (Fri) · Shaya · Commander's brunch (Sun) — Resy",
+  "Shaya · Commander's brunch (Sun) — Resy",
   "Nothing to book for Satchmo — free entry both days. Sunday 6:40p Kermit Ruffins is the one to be there for."
  ],
  "deals": [
@@ -8711,7 +8826,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 11,
+ "data_version": 12,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
