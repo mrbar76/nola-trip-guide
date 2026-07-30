@@ -1,4 +1,4 @@
-/* NOLA Guide data. Restaurants/sights/events researched; prices, ratings & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, geo/quality-validated. */
+/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, geo/quality-validated. */
 window.DATA = {
  "districts": [
   {
@@ -414,7 +414,7 @@ window.DATA = {
    "lat": 29.9281,
    "lng": -90.0847,
    "blurb": "Founded in 1833, this walled city of the dead in the heart of the Garden District is famous for its crumbling above-ground marble tombs, cast-iron gates, and moss-draped magnolias. It set the scene for Anne Rice's vampire novels and countless films, a hauntingly beautiful maze of family crypts.",
-   "secret": "Because New Orleans sits below sea level, the dead are buried above ground in 'oven' vaults that act as natural crematories in the summer heat, letting a single family tomb hold dozens of generations. Note: after years of restoration the cemetery remains closed to casual walk-in visitors as of 2026, so check status before you go and view it through the iron fences if the gates are locked.",
+   "secret": "Because New Orleans sits below sea level, the dead are buried above ground in 'oven' vaults that act as natural crematories in the summer heat, letting a single family tomb hold dozens of generations. Note: after years of restoration the cemetery remains closed to casual walk-in visitors as of 2026, so check status before you go and view it through the iron fences if the gates are locked. A guided “Garden District & Lafayette Cemetery Walking Tour” can usually get you inside even while general walk-in access is closed — see Tours in Plan.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Lafayette_Cemetery",
    "hours_note": "Closed to the public for restoration as of 2026; call 504-658-3781 to confirm access",
@@ -5447,6 +5447,10 @@ window.DATA = {
    "v": "$135–150"
   },
   {
+   "k": "Optional tours (if you add any)",
+   "v": "$0–150"
+  },
+  {
    "k": "Total for two",
    "v": "$710–875",
    "total": true
@@ -6257,6 +6261,99 @@ window.DATA = {
    "star": false,
    "url": "https://www.dbaneworleans.com/shows/",
    "blurb": "Trombonist Corey Henry's funk-and-brass Treme Funktet plays its long-running Monday-night residency at d.b.a. — a great low-key end to the trip. Monday 9:30 p.m. residency follows the weekly pattern; cover estimated — verify."
+  }
+ ],
+ "tours": [
+  {
+   "id": "garden-district-cemetery-tour",
+   "name": "Garden District & Lafayette Cemetery Walking Tour",
+   "district": "gd",
+   "category": "history",
+   "duration": "~2 hours",
+   "price": "~$25–30/person",
+   "blurb": "Right now this is the real way to see inside Lafayette Cemetery No. 1 — a small-group guided walk through the Garden District's oak-lined streets and mansions, ending at the cemetery with a guide who can get you past the closed gates.",
+   "discount_note": "Multiple operators (Viator/Historic New Orleans Tours) list this on Groupon at a discount — search “Garden District Lafayette Cemetery tour” on Groupon before booking direct.",
+   "url": "https://www.viator.com/tours/New-Orleans/Garden-District-Lafayette-Cemetery-1-Tour/d675-289336P3",
+   "diet_note": "No food/drink stops — fully compatible."
+  },
+  {
+   "id": "fq-history-walking-tour",
+   "name": "French Quarter History Walking Tour",
+   "district": "fq",
+   "category": "history",
+   "duration": "90 min",
+   "price": "From $19 for 2 (Groupon) / ~$20–25pp direct",
+   "blurb": "A budget-friendly 90-minute walk through Quarter architecture, history and culture with a local guide.",
+   "discount_note": "La Vie Orleans Tours on Groupon: $19 for two people (normally $40) — one of the best-value tours in the city.",
+   "url": "https://www.groupon.com/deals/la-vie-orleans-tours-llc-1",
+   "diet_note": "No food/drink stops — fully compatible."
+  },
+  {
+   "id": "fq-cocktail-history-tour",
+   "name": "French Quarter Cocktail History Tour",
+   "district": "fq",
+   "category": "cocktail",
+   "duration": "~3 hours",
+   "price": "~$59–79/person",
+   "blurb": "An evening walk covering the origins of the Sazerac, the Daiquiri and absinthe, with a tasting at each of four historic bars.",
+   "discount_note": "Check Groupon/Viator for “New Orleans Cocktail History Walking Tour” — pricing varies by season.",
+   "url": "https://www.viator.com/tours/New-Orleans/New-Orleans-Cocktail-History-Walking-Tour-in-the-French-Quarter/d675-6484FRQCK",
+   "diet_note": "Drink-only stops, no food included — easy to keep to your diet. 21+, evening/optional."
+  },
+  {
+   "id": "voodoo-museum-tour",
+   "name": "New Orleans Historic Voodoo Museum",
+   "district": "fq",
+   "category": "museum",
+   "duration": "~30–45 min self-guided (guided add-on ~1hr)",
+   "price": "$10 general admission; guided walking add-on ~$36",
+   "blurb": "A small, atmospheric museum on the real history of New Orleans Voodoo as a folk religion — an easy add-on near Bourbon St.",
+   "discount_note": "Occasionally listed on Groupon via Viator; that listing doesn't accept extra promo codes, so compare to the door price first.",
+   "url": "https://voodoomuseum.com/",
+   "diet_note": "No food involved."
+  },
+  {
+   "id": "mardi-gras-world-tour",
+   "name": "Mardi Gras World Float Den Tour",
+   "district": "wh",
+   "category": "tour",
+   "duration": "1 hour, departs every 30 min, 9:30a–4:30p",
+   "price": "~$25 adult",
+   "blurb": "Guided walk through the working warehouse where Mardi Gras parade floats are built — giant sculpted figures up close, with a king cake sample (vegetarian) included.",
+   "discount_note": "Up to 18–35% off via Groupon and coupon sites (NewOrleansCoupons.com, WorthEPenny) — worth a quick check before buying at the door.",
+   "url": "https://www.mardigrasworld.com/",
+   "diet_note": "King cake sample is vegetarian; safe as-is."
+  },
+  {
+   "id": "swamp-tour-day-trip",
+   "name": "Jean Lafitte Swamp & Airboat Tour",
+   "district": null,
+   "category": "outdoors",
+   "duration": "~2–3 hrs + ~30–40 min transit each way",
+   "price": "From ~$20.70–$70/person",
+   "blurb": "Gators, cypress swamp and Cajun wildlife just outside the city on a covered pontoon or airboat. Most operators include hotel pickup.",
+   "discount_note": "Jean Lafitte Swamp Tours from $20.70 (46% off); Bayou Swamp Tours and Ultimate Swamp Adventures also currently discounted on Groupon.",
+   "url": "https://www.groupon.com/deals/jean-lafitte-tours-4",
+   "diet_note": "No food included on most tours — fine as-is.",
+   "note": "Time-tight on a 4-day trip — best fit for a quiet Monday morning before your evening flight, or skip if you'd rather stay in the city."
+  }
+ ],
+ "tips": [
+  {
+   "t": "🚋 Getting around",
+   "d": "RTA Jazzy Pass — $3 unlimited day pass covers every streetcar, bus & ferry (single ride $1.25). Buy in the free “Le Pass” app, or exact change at streetcar fareboxes."
+  },
+  {
+   "t": "🥵 Heat & weather",
+   "d": "Early August in New Orleans runs hot and humid (90s°F). Drink water often, save outdoor walks for morning/evening, and expect a daily pop-up thunderstorm — a light rain layer earns its space in the bag."
+  },
+  {
+   "t": "💵 Tipping",
+   "d": "18–20% at sit-down restaurants; $1–2/drink at bars; tip walking-tour guides and street musicians in cash."
+  },
+  {
+   "t": "🚕 Night moves",
+   "d": "The French Quarter/Marigny is very walkable by day. For Garden District ↔ Quarter at night, Uber/Lyft is easy and cheap (~$10–15)."
   }
  ]
 };
