@@ -1,4 +1,4 @@
-/* NOLA Guide data. Restaurants/sights/events researched; prices, ratings & 2026 event dates approximate — verify on the day. */
+/* NOLA Guide data. Restaurants/sights/events researched; prices, ratings & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, geo/quality-validated. */
 window.DATA = {
  "districts": [
   {
@@ -165,7 +165,8 @@ window.DATA = {
    "secret": "Laid out in 1721 as the Place d'Armes, the square was redesigned in 1850 after the Place des Vosges in Paris. Look at Jackson's hat on the bronze statue: it tips its brim toward the cathedral, a nod supposedly ordered so the general would always greet the church. The inscription on the base, 'The Union Must and Shall Be Preserved,' was carved on orders of Union General Benjamin 'Beast' Butler during the Civil War occupation, to the enduring annoyance of locals.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Jackson_Square,_New_Orleans",
-   "hours_note": "Gates open daily ~8am, closing 6-7pm (seasonal); pedestrian mall always accessible"
+   "hours_note": "Gates open daily ~8am, closing 6-7pm (seasonal); pedestrian mall always accessible",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Jackson_Square%2C_French_Quarter.jpg"
   },
   {
    "id": "st-louis-cathedral",
@@ -178,7 +179,8 @@ window.DATA = {
    "secret": "The current 1850 structure is the third church on this spot; the first burned in the Good Friday fire of 1788. Step into St. Anthony's Garden behind the cathedral at night to see the towering white marble Sacred Heart statue floodlit against the wall, casting a dramatic 'shadow of Christ' onto the building, an unofficial local landmark. Free self-guided visits are welcome between Masses; a $1 brochure funds upkeep.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/St._Louis_Cathedral,_New_Orleans",
-   "hours_note": "Open to visitors daily ~9:30am-4pm (last entry 3:45pm); closed during Mass/weddings"
+   "hours_note": "Open to visitors daily ~9:30am-4pm (last entry 3:45pm); closed during Mass/weddings",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Cathedral_new_orleans.jpg"
   },
   {
    "id": "french-market",
@@ -191,7 +193,8 @@ window.DATA = {
    "secret": "Billed as the oldest public market in the country, the site was a Native American trading post before European settlement and has operated continuously since the 1790s. The colonnaded Halle des Boucheries (butchers' market) building dates to 1813. Cafe du Monde at the upriver end has served the same three-item menu of beignets and chicory cafe au lait since 1862 and never closes except Christmas.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/French_Market",
-   "hours_note": "Shops & farmers/flea market daily ~10am-6pm (flea vendors wind down by 5pm)"
+   "hours_note": "Shops & farmers/flea market daily ~10am-6pm (flea vendors wind down by 5pm)",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/French_Market%2C_New_Orleans.JPG"
   },
   {
    "id": "royal-street",
@@ -204,7 +207,8 @@ window.DATA = {
    "secret": "Antique dealers here go back over a century: Royal Antiques has traded since 1899, and M.S. Rau, founded 1912, fills a 40,000-square-foot showroom with museum-grade pieces. The central blocks between Bienville and St. Ann close to cars midday, turning the street into an impromptu stage, so time a stroll for early afternoon to catch the best buskers. Peek up: the ornate ironwork galleries are among the most photographed in the city.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Royal_Street,_New_Orleans",
-   "hours_note": "Street always open; pedestrian mall 11am-4pm weekdays, 11am-7pm weekends; shops ~10am-5pm"
+   "hours_note": "Street always open; pedestrian mall 11am-4pm weekdays, 11am-7pm weekends; shops ~10am-5pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG"
   },
   {
    "id": "old-ursuline-convent",
@@ -217,7 +221,8 @@ window.DATA = {
    "secret": "The steep cypress staircase is the sole surviving element of the original 1734 convent, salvaged and reused when the current building went up in 1752 — the oldest wooden structure of its kind in the country. Look up at the second-floor windows tied to the enduring 'Casket Girls' legend, named for the coffin-shaped chests the young French brides supposedly carried.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
-   "hours_note": "Tue–Sat 10am–3pm; closed Sun–Mon. Adults $10"
+   "hours_note": "Tue–Sat 10am–3pm; closed Sun–Mon. Adults $10",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "frenchmen-street",
@@ -230,7 +235,8 @@ window.DATA = {
    "secret": "Nearly every club has no cover — the musicians play for tips, so drop cash in the bucket and don't camp on a barstool without buying a drink. After dark, duck into the Frenchmen Art Market in the lot mid-block: an open-air night bazaar of local artists that most first-timers walk right past.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Frenchmen_Street",
-   "hours_note": "Public street, always open; clubs mostly nightly from evening"
+   "hours_note": "Public street, always open; clubs mostly nightly from evening",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Frenchman_Street_%2855148394755%29.jpg"
   },
   {
    "id": "jazz-museum-old-mint",
@@ -243,7 +249,8 @@ window.DATA = {
    "secret": "Time your visit for the free 2pm live concerts held most open days in the third-floor performance hall — an intimate set from working New Orleans musicians included with admission. The star artifact is the battered cornet Louis Armstrong learned to play as a boy in the Colored Waif's Home.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Mint",
-   "hours_note": "Tue–Sun 10am–4:30pm; closed Mon. Adults ~$11"
+   "hours_note": "Tue–Sun 10am–4:30pm; closed Mon. Adults ~$11",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/1907_NOMintpostcard.jpg"
   },
   {
    "id": "historic-new-orleans-collection",
@@ -256,7 +263,8 @@ window.DATA = {
    "secret": "Admission is free but timed tickets are required — grab one at the front desk or reserve online. Don't skip the hidden courtyard of the 1792 Merieult House, one of the few Quarter buildings to survive the great fire of 1794, and ask about the free docent-led architecture tours.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/The_Historic_New_Orleans_Collection",
-   "hours_note": "Tue–Sat 9:30am–4:30pm, Sun 10:30am–4:30pm; closed Mon"
+   "hours_note": "Tue–Sat 9:30am–4:30pm, Sun 10:30am–4:30pm; closed Mon",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/MerieultHouse.jpg"
   },
   {
    "id": "sazerac-house",
@@ -269,7 +277,8 @@ window.DATA = {
    "secret": "It's completely free but you must be 21+ with valid ID, and reservations are strongly recommended to guarantee entry. Watch the working micro-distillery on-site actually producing rye whiskey and Peychaud's Bitters through glass walls.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily 11–6, 21+ only"
+   "hours_note": "Daily 11–6, 21+ only",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/CardTheGrunewaldNewOr.jpg"
   },
   {
    "id": "pharmacy-museum",
@@ -282,7 +291,8 @@ window.DATA = {
    "secret": "The building belonged to Louis Dufilho Jr., who became the country's first licensed pharmacist in 1816; ask about the cast-iron 'poison ring' cases and the lush hidden courtyard out back.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Pharmacy_Museum",
-   "hours_note": "Tue-Sat 11-4"
+   "hours_note": "Tue-Sat 11-4",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/New_Orleans_Pharmacy_Museum.jpg"
   },
   {
    "id": "preservation-hall",
@@ -295,7 +305,8 @@ window.DATA = {
    "secret": "There are no advance requirements to hear it well, but line up 30-45 minutes before a set for general admission, cash tips get requests played, and by tradition asking for 'The Saints' costs a $20 tip because they play it so often.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Preservation_Hall",
-   "hours_note": "Shows nightly, sets around 5-10pm; doors ~30 min before each set"
+   "hours_note": "Shows nightly, sets around 5-10pm; doors ~30 min before each set",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/PreservationHall_2008.jpg"
   },
   {
    "id": "steamboat-natchez",
@@ -308,7 +319,8 @@ window.DATA = {
    "secret": "Skip the top deck for a few minutes and head below to the open engine room, where you can watch the original 1920s-era steam engines (salvaged from an earlier vessel) actually driving the paddlewheel while the engineer explains the works.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Natchez_(1975_steamboat)",
-   "hours_note": "Daily harbor cruises, roughly 11:30am & 2:30pm plus evening dinner sailings; departs Toulouse St Wharf"
+   "hours_note": "Daily harbor cruises, roughly 11:30am & 2:30pm plus evening dinner sailings; departs Toulouse St Wharf",
+   "photoUrl": null
   },
   {
    "id": "louisiana-music-factory",
@@ -321,7 +333,8 @@ window.DATA = {
    "secret": "Stop by on a Saturday afternoon for a free live in-store set with complimentary beer; the shop moved from Decatur Street to its Frenchmen Street home in 2014, putting it in the heart of the music district.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Louisiana_Music_Factory",
-   "hours_note": "Daily 11-6"
+   "hours_note": "Daily 11-6",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg"
   },
   {
    "id": "national-wwii-museum",
@@ -334,7 +347,8 @@ window.DATA = {
    "secret": "Your ticket comes with a personalized 'dog tag' you scan at kiosks to follow one real service member's story through the war, and the museum stands here specifically to honor Andrew Higgins, whose local boat works Eisenhower credited with winning the war.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/National_WWII_Museum",
-   "hours_note": "Open daily 9am-5pm; closed Thanksgiving, Christmas Eve/Day, and Mardi Gras Day"
+   "hours_note": "Open daily 9am-5pm; closed Thanksgiving, Christmas Eve/Day, and Mardi Gras Day",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/1280px-B-17_at_the_National_World_War_II_Museum.JPG"
   },
   {
    "id": "ogden-museum",
@@ -347,7 +361,8 @@ window.DATA = {
    "secret": "Time your visit for 'Ogden After Hours' on Thursday evenings, when the atrium fills with live Louisiana music and the galleries stay open late — one of the best low-key live-music experiences in the Arts District.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Ogden_Museum_of_Southern_Art",
-   "hours_note": "Daily 10–5, Thu until 8"
+   "hours_note": "Daily 10–5, Thu until 8",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg"
   },
   {
    "id": "contemporary-arts-center",
@@ -360,7 +375,8 @@ window.DATA = {
    "secret": "The building was once a Katz & Besthoff (K&B) drugstore warehouse — the exposed brick and heavy timber bones are original. Admission is free on the first Saturday of each month during the neighborhood art walk.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Contemporary_Arts_Center_(New_Orleans)",
-   "hours_note": "Wed–Mon 11–5, closed Tue"
+   "hours_note": "Wed–Mon 11–5, closed Tue",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Contemporary_Arts_Center_New_Orleans.jpg"
   },
   {
    "id": "msje",
@@ -373,7 +389,8 @@ window.DATA = {
    "secret": "Many objects here were salvaged from small-town Southern synagogues that closed as their Jewish communities dwindled, so pieces like the Torah ark and pews are actual survivors of vanished congregations rather than reproductions.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Museum_of_the_Southern_Jewish_Experience",
-   "hours_note": "Open 10am-5pm, closed Tuesdays"
+   "hours_note": "Open 10am-5pm, closed Tuesdays",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Museum_of_the_Southern_Jewish_Experience.jpg"
   },
   {
    "id": "julia-street-galleries",
@@ -386,7 +403,8 @@ window.DATA = {
    "secret": "Time your visit for the first Saturday in October, when the district throws 'Art for Arts' Sake' (running since 1980) and every gallery opens its doors for a free evening block party with wine, live music, and new shows. Otherwise, the first Saturday of any month brings smaller gallery openings.",
    "free": true,
    "wiki": null,
-   "hours_note": "Most galleries Tue-Sat ~11am-5pm; hours vary by gallery, many closed Sun-Mon"
+   "hours_note": "Most galleries Tue-Sat ~11am-5pm; hours vary by gallery, many closed Sun-Mon",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg"
   },
   {
    "id": "lafayette-cemetery-1",
@@ -399,7 +417,8 @@ window.DATA = {
    "secret": "Because New Orleans sits below sea level, the dead are buried above ground in 'oven' vaults that act as natural crematories in the summer heat, letting a single family tomb hold dozens of generations. Note: after years of restoration the cemetery remains closed to casual walk-in visitors as of 2026, so check status before you go and view it through the iron fences if the gates are locked.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Lafayette_Cemetery",
-   "hours_note": "Closed to the public for restoration as of 2026; call 504-658-3781 to confirm access"
+   "hours_note": "Closed to the public for restoration as of 2026; call 504-658-3781 to confirm access",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg"
   },
   {
    "id": "st-charles-streetcar",
@@ -412,7 +431,8 @@ window.DATA = {
    "secret": "Sit by an open window on the lake (right) side heading uptown for the best mansion views, and bring exact change since the cars still don't make it. The wooden seat backs flip so riders can always face forward when the car reverses at the end of the line, a charming detail unchanged for a century.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/St._Charles_Streetcar_Line",
-   "hours_note": "Runs 24 hours daily; $1.25 exact change per ride, or $3 all-day Jazzy Pass"
+   "hours_note": "Runs 24 hours daily; $1.25 exact change per ride, or $3 all-day Jazzy Pass",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg"
   },
   {
    "id": "magazine-street",
@@ -425,7 +445,8 @@ window.DATA = {
    "secret": "The street was named for the Spanish 'magazin' (warehouse) that once stored goods here, not a gunpowder magazine as legend claims. Locals shop the Garden District stretch between Jackson and Louisiana Avenues, where you can hop off the St. Charles streetcar a few blocks over and walk down for the densest run of boutiques.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Magazine_Street",
-   "hours_note": "Public street, always open; most shops daily ~10am-6pm"
+   "hours_note": "Public street, always open; most shops daily ~10am-6pm",
+   "photoUrl": null
   },
   {
    "id": "audubon-park",
@@ -438,7 +459,8 @@ window.DATA = {
    "secret": "Cross Magazine Street to the river side of the park and climb 'The Fly' (Riverview) — a grassy levee batture where locals bring coolers and grills to watch cargo ships slide past at sunset, one of the best free sunset spots in the city.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Audubon_Park_(New_Orleans)",
-   "hours_note": "Daily 5am-10pm"
+   "hours_note": "Daily 5am-10pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/AudubonPark1.JPG"
   },
   {
    "id": "garden-district-mansions",
@@ -451,7 +473,8 @@ window.DATA = {
    "secret": "Walk the 1400 block of First Street and Prytania to spot the homes of Anne Rice and (a private residence once owned by) actors and authors; the buckling brick sidewalks are heaved up by live oak roots, so wear flat shoes and look for the cast-iron 'cornstalk' motifs that mark the oldest fences.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Garden_District,_New_Orleans",
-   "hours_note": "Streets accessible daily; daylight best"
+   "hours_note": "Streets accessible daily; daylight best",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "tipitinas",
@@ -464,7 +487,8 @@ window.DATA = {
    "secret": "Look for the bronze bust of Professor Longhair by the door — regulars rub it for luck before shows. Sunday afternoon Cajun fais do-do dances are a beloved, family-friendly tradition.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Tipitina's",
-   "hours_note": "Doors typically 8pm on show nights"
+   "hours_note": "Doors typically 8pm on show nights",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/Tip%27s_Building_2019.jpg"
   },
   {
    "id": "studio-be",
@@ -477,7 +501,8 @@ window.DATA = {
    "secret": "Odums cut his teeth painting guerrilla murals in the abandoned, flood-gutted Florida housing projects after Katrina before turning this Bywater warehouse into a permanent home for the work.",
    "free": false,
    "wiki": null,
-   "hours_note": "Wed-Sat 11-6, Sun 2-6 (booking advised)"
+   "hours_note": "Wed-Sat 11-6, Sun 2-6 (booking advised)",
+   "photoUrl": null
   },
   {
    "id": "crescent-park",
@@ -490,7 +515,8 @@ window.DATA = {
    "secret": "Enter over the 'Rusty Rainbow,' the arching weathered-steel pedestrian bridge at Piety Street, built to lift walkers over the active railroad tracks that separate Bywater from the levee.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily 6am-7:30pm"
+   "hours_note": "Daily 6am-7:30pm",
+   "photoUrl": null
   },
   {
    "id": "noma",
@@ -503,7 +529,8 @@ window.DATA = {
    "secret": "Louisiana residents get in free every Wednesday, and admission is always free to the adjacent Besthoff Sculpture Garden — many visitors skip the ticket line entirely and do the free garden first, then decide whether to go inside.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Museum_of_Art",
-   "hours_note": "Tue-Sun 10am-5pm (Wed to 7pm); closed Mon"
+   "hours_note": "Tue-Sun 10am-5pm (Wed to 7pm); closed Mon",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "besthoff-sculpture-garden",
@@ -516,7 +543,8 @@ window.DATA = {
    "secret": "Enter through the newer 2019 expansion side to find the outdoor amphitheater and the reflecting-pool works; NOMA offers free docent-led tours on weekends with no registration, and the low winter light through the moss-draped oaks makes it a photographer's favorite.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Sydney_and_Walda_Besthoff_Sculpture_Garden",
-   "hours_note": "Daily 10am-6pm (Apr-Sep), 10am-5pm (Oct-Mar)"
+   "hours_note": "Daily 10am-6pm (Apr-Sep), 10am-5pm (Oct-Mar)",
+   "photoUrl": null
   },
   {
    "id": "city-park",
@@ -529,7 +557,8 @@ window.DATA = {
    "secret": "Head to the far northern edge for the Singing Oak, a live oak hung with dozens of wind chimes tuned to a pentatonic scale so the whole tree hums in harmony when the breeze blows — most visitors never find it.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/City_Park_(New_Orleans)",
-   "hours_note": "Daily, 30 min before sunrise to 30 min after sunset (park grounds free; individual attractions charge)"
+   "hours_note": "Daily, 30 min before sunrise to 30 min after sunset (park grounds free; individual attractions charge)",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/City_Park_Bayou_Bridge.JPG"
   },
   {
    "id": "bayou-st-john",
@@ -542,7 +571,8 @@ window.DATA = {
    "secret": "Voodoo Queen Marie Laveau is said to have led St. John's Eve rituals on these banks every June 23rd — a tradition modern practitioners still revive here each summer. Nearby stands the 1799 Pitot House, the last surviving Creole colonial plantation home on the bayou.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Bayou_St._John",
-   "hours_note": "Open public waterway and banks, accessible year-round"
+   "hours_note": "Open public waterway and banks, accessible year-round",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg"
   },
   {
    "id": "faulkner-house-books",
@@ -555,7 +585,8 @@ window.DATA = {
    "secret": "Faulkner rented rooms here in 1925 and wrote 'Soldiers' Pay' on the ground floor; the shop hosts the annual Words & Music literary festival and remains a working home for the owners upstairs.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily 10-5"
+   "hours_note": "Daily 10-5",
+   "photoUrl": null
   },
   {
    "id": "the-spotted-cat-music-club",
@@ -568,7 +599,8 @@ window.DATA = {
    "secret": "Cash only with a one-drink minimum and no reservations; arrive before the early set (around 2-4pm) to actually get inside, as the room is tiny and fills fast by evening.",
    "free": false,
    "wiki": null,
-   "hours_note": "Daily from 2pm (from noon Sat-Sun), late"
+   "hours_note": "Daily from 2pm (from noon Sat-Sun), late",
+   "photoUrl": null
   },
   {
    "id": "old-ursuline-convent-museum",
@@ -581,7 +613,8 @@ window.DATA = {
    "secret": "The cypress staircase inside predates the current 1750s building — it was salvaged from the original 1734 convent, making it one of the oldest architectural elements in Louisiana. Look for the dormer windows, said to be the oldest surviving example of French colonial architecture in the U.S.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
-   "hours_note": "Tue–Sat 10–3, closed Sun–Mon"
+   "hours_note": "Tue–Sat 10–3, closed Sun–Mon",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "arthur-roger-gallery",
@@ -594,7 +627,8 @@ window.DATA = {
    "secret": "Time a visit for the first Saturday of the month, when the Arts District hosts its gallery Art Walk and Julia Street fills with openings, free wine, and artists you can actually chat with.",
    "free": true,
    "wiki": null,
-   "hours_note": "Tue–Sat 10–5"
+   "hours_note": "Tue–Sat 10–5",
+   "photoUrl": null
   },
   {
    "id": "maple-leaf-bar",
@@ -607,7 +641,8 @@ window.DATA = {
    "secret": "Rebirth Brass Band's Tuesday-night residency has run for over three decades — arrive early because the room is tiny and packs to the walls. There's a hidden brick courtyard out back to cool off.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Maple_Leaf_Bar",
-   "hours_note": "Doors 7pm, shows 8pm"
+   "hours_note": "Doors 7pm, shows 8pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/OakStreetParty16June2007B.jpg"
   },
   {
    "id": "garden-district-book-shop",
@@ -620,7 +655,8 @@ window.DATA = {
    "secret": "This is Anne Rice's home shop — it hosted her legendary signings for decades, and you can still often find signed local editions. The Rink building sits across from Lafayette Cemetery No. 1, making it a perfect walking-tour pit stop.",
    "free": true,
    "wiki": null,
-   "hours_note": "Mon–Sat 10–6, Sun 12–4"
+   "hours_note": "Mon–Sat 10–6, Sun 12–4",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "the-fly-riverview-park",
@@ -633,7 +669,8 @@ window.DATA = {
    "secret": "The name is a leftover from a butterfly-shaped 'fly' river-viewing shelter built in the 1960s and torn down in the 1980s; the moniker stuck even though the structure is long gone.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily 5am-10pm"
+   "hours_note": "Daily 5am-10pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/AudubonPark1.JPG"
   },
   {
    "id": "milton-h-latter-memorial-library",
@@ -646,7 +683,8 @@ window.DATA = {
    "secret": "Silent-film star Marguerite Clark once lived here; the house was later donated by Harry and Anna Latter in memory of their son Milton, a 22-year-old Army lieutenant killed at Okinawa in 1945.",
    "free": true,
    "wiki": null,
-   "hours_note": "Mon-Tue & Thu 10-7, Wed 12-7, Fri 10-5"
+   "hours_note": "Mon-Tue & Thu 10-7, Wed 12-7, Fri 10-5",
+   "photoUrl": null
   },
   {
    "id": "euclid-records",
@@ -659,7 +697,8 @@ window.DATA = {
    "secret": "Head upstairs — the second floor holds the used vinyl and cheaper crates that many first-timers miss, and it's where the real bargains hide.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily 11am-6pm"
+   "hours_note": "Daily 11am-6pm",
+   "photoUrl": null
   },
   {
    "id": "music-box-village",
@@ -672,7 +711,8 @@ window.DATA = {
    "secret": "During open hours locals can pay what they wish and no one is turned away; go on a weekday afternoon to actually play every structure without a crowd.",
    "free": false,
    "wiki": null,
-   "hours_note": "Open hours vary month to month; check calendar"
+   "hours_note": "Open hours vary month to month; check calendar",
+   "photoUrl": null
   },
   {
    "id": "new-orleans-botanical-garden",
@@ -685,7 +725,8 @@ window.DATA = {
    "secret": "Louisiana residents get in free every Wednesday courtesy of the Helis Foundation — bring ID. The garden dates to the 1930s and is one of the few remaining public gardens from the WPA era.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Botanical_Garden",
-   "hours_note": "Tue-Sun 10am-4:30pm"
+   "hours_note": "Tue-Sun 10am-4:30pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/New_Orleans_Botanical_Garden_2011.jpg"
   },
   {
    "id": "sydney-and-walda-besthoff-sculpture-garden",
@@ -698,7 +739,8 @@ window.DATA = {
    "secret": "Admission is free to everyone — scan the QR code at the entrance for NOMA's free audio tour, and cross the new footbridge to the expansion section that most day-trippers skip.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Sydney_and_Walda_Besthoff_Sculpture_Garden",
-   "hours_note": "Daily; Apr-Sep 10am-6pm, Oct-Mar 10am-5pm"
+   "hours_note": "Daily; Apr-Sep 10am-6pm, Oct-Mar 10am-5pm",
+   "photoUrl": null
   },
   {
    "id": "pitot-house",
@@ -711,7 +753,8 @@ window.DATA = {
    "secret": "Its most famous resident, James Pitot, became the first mayor of the incorporated city of New Orleans; the house was actually moved about 200 feet from its original site in the 1960s to save it from demolition.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Pitot_House",
-   "hours_note": "Wed–Fri 10–3, last tour 2pm; $5"
+   "hours_note": "Wed–Fri 10–3, last tour 2pm; $5",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/PitotHouseBayouStJohn.jpg"
   },
   {
    "id": "chickie-wah-wah",
@@ -724,7 +767,8 @@ window.DATA = {
    "secret": "Take the Canal streetcar right to the door, and catch legendary local pianist Tom McDermott or Cajun accordion nights; the room seats only around 100, so arrive early for a good spot near the stage.",
    "free": false,
    "wiki": null,
-   "hours_note": "Open daily, shows from ~5pm"
+   "hours_note": "Open daily, shows from ~5pm",
+   "photoUrl": null
   },
   {
    "id": "fifi-mahonys",
@@ -737,7 +781,8 @@ window.DATA = {
    "secret": "Ask about a custom wig fitting in the back salon — their stylists have crafted pieces for burlesque stars and celebrities, and no two are alike. Even if you buy nothing, the glitter bar up front is a photo op in itself.",
    "free": true,
    "wiki": null,
-   "hours_note": "Wed-Sun 11am-6pm; closed Mon-Tue (call to confirm)"
+   "hours_note": "Wed-Sun 11am-6pm; closed Mon-Tue (call to confirm)",
+   "photoUrl": null
   },
   {
    "id": "beauregard-keyes-house",
@@ -750,7 +795,8 @@ window.DATA = {
    "secret": "Keyes set her mystery novel 'Dinner at Antoine's' partly in this very house, and her writing studio out back is preserved as she left it. The garden is one of the few French Quarter parterre gardens open to the public.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Beauregard-Keyes_House",
-   "hours_note": "Tours Mon-Sat on the hour, 10am-3pm; adults $10"
+   "hours_note": "Tours Mon-Sat on the hour, 10am-3pm; adults $10",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg"
   },
   {
    "id": "blaine-kerns-mardi-gras-world",
@@ -763,7 +809,8 @@ window.DATA = {
    "secret": "Founder Blaine Kern was nicknamed 'Mr. Mardi Gras' and apprenticed in Europe; the working artists are often on-site sculpting, and the tour includes a free slice of king cake and a chance to try on a costume.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Mardi_Gras_World",
-   "hours_note": "Daily 9am-5:30pm; last tour 4:30pm"
+   "hours_note": "Daily 9am-5:30pm; last tour 4:30pm",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg"
   },
   {
    "id": "le-bon-temps-roule",
@@ -776,7 +823,8 @@ window.DATA = {
    "secret": "The Soul Rebels brass band has held down a legendary free Thursday-night residency here for decades; get there early because the tiny back room fills fast and the party spills onto Magazine Street.",
    "free": true,
    "wiki": null,
-   "hours_note": "Open daily, late afternoon until ~2am"
+   "hours_note": "Open daily, late afternoon until ~2am",
+   "photoUrl": null
   },
   {
    "id": "prytania-theatre",
@@ -789,7 +837,8 @@ window.DATA = {
    "secret": "The theater survived the multiplex era by pivoting to midnight and classic screenings; look for its beloved Sunday Classic Movies series and the vintage single-screen auditorium that film buffs travel across the state to experience.",
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Prytania_Theatre",
-   "hours_note": "Open daily per showtimes; box office opens ~30 min before first film"
+   "hours_note": "Open daily per showtimes; box office opens ~30 min before first film",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg"
   },
   {
    "id": "angelo-brocatos",
@@ -802,7 +851,8 @@ window.DATA = {
    "secret": "Order the torroncino gelato, cinnamon-almond, it is the shop's original 1905 recipe and rarely found anywhere else in America. The family rebuilt the whole parlor from the studs after Katrina's floodwaters gutted it in 2005.",
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Angelo_Brocato's",
-   "hours_note": "Tue–Sun 10am–10pm (Sun to 9pm), closed Mon"
+   "hours_note": "Tue–Sun 10am–10pm (Sun to 9pm), closed Mon",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/MidCityBrocatosOpen.jpg"
   },
   {
    "id": "couturie-forest",
@@ -815,7 +865,8 @@ window.DATA = {
    "secret": "Climb Laborde Mountain, the highest natural-ish point in New Orleans at about 43 feet, built from rubble left over from the I-610 construction; a stone map at the summit charts the land around Lake Pontchartrain. Go at dawn for the best birding before the heat sets in.",
    "free": true,
    "wiki": null,
-   "hours_note": "Daily sunrise–sunset"
+   "hours_note": "Daily sunrise–sunset",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/City_Park_Bayou_Bridge.JPG"
   }
  ],
  "restaurants": [
@@ -898,7 +949,8 @@ window.DATA = {
    "price_band": "$",
    "reserveUrl": null,
    "reserve_priority": false,
-   "website": "https://www.cafedumonde.com"
+   "website": "https://www.cafedumonde.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
   },
   {
    "id": "galatoires",
@@ -1042,7 +1094,8 @@ window.DATA = {
    "price_band": "$$$$",
    "reserveUrl": "https://www.galatoires.com/reservations",
    "reserve_priority": true,
-   "website": "https://www.galatoires.com"
+   "website": "https://www.galatoires.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/2009-0228-NOLA-004-Galatoires.jpg"
   },
   {
    "id": "gw-fins",
@@ -1134,7 +1187,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/gw-fins",
    "website": "https://www.gwfins.com",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   },
   {
    "id": "napoleon-house",
@@ -1205,7 +1259,8 @@ window.DATA = {
    "price_band": "$$",
    "reserveUrl": null,
    "reserve_priority": false,
-   "website": "https://www.napoleonhouse.com"
+   "website": "https://www.napoleonhouse.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg"
   },
   {
    "id": "sylvain",
@@ -1294,7 +1349,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://www.sylvainnola.com",
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "st-roch-market",
@@ -1402,7 +1458,8 @@ window.DATA = {
    ],
    "website": "https://www.strochmarket.com",
    "reserveUrl": null,
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/MarignyAcrossFromSpigaJuly08.jpg"
   },
   {
    "id": "peche-seafood-grill",
@@ -1510,7 +1567,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "website": "https://www.pecherestaurant.com",
-   "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/peche-seafood-grill"
+   "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/peche-seafood-grill",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg"
   },
   {
    "id": "compere-lapin",
@@ -1588,7 +1646,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/r/compere-lapin",
    "website": "http://comperelapin.com/",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
   },
   {
    "id": "seaworthy",
@@ -1695,7 +1754,8 @@ window.DATA = {
    ],
    "website": "https://seaworthynola.com",
    "reserveUrl": "https://www.opentable.com/r/seaworthy-new-orleans-2",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg"
   },
   {
    "id": "commanders-palace",
@@ -1787,7 +1847,8 @@ window.DATA = {
    ],
    "website": "https://www.commanderspalace.com",
    "reserveUrl": "https://www.opentable.com/r/commanders-palace-new-orleans",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/2009-0301-NOLA-001-CommandersPalace.jpg"
   },
   {
    "id": "la-petite-grocery",
@@ -1893,7 +1954,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/r/la-petite-grocery-new-orleans",
    "website": "https://www.lapetitegrocery.com",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   },
   {
    "id": "shaya",
@@ -1980,7 +2042,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/r/shaya-new-orleans",
    "website": "https://www.shayarestaurant.com/",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   },
   {
    "id": "saba",
@@ -2112,7 +2175,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://eatwithsaba.com/reservations",
    "website": "https://eatwithsaba.com/",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   },
   {
    "id": "bearcat-cafe",
@@ -2338,7 +2402,8 @@ window.DATA = {
    ],
    "website": "https://bearcatcafe.com",
    "reserveUrl": null,
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "coquette",
@@ -2366,7 +2431,8 @@ window.DATA = {
    ],
    "website": "https://www.coquettenola.com",
    "reserveUrl": null,
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "mais-arepas",
@@ -2425,7 +2491,8 @@ window.DATA = {
    ],
    "website": "https://mas-arepas.placejoys.com",
    "reserveUrl": "https://www.opentable.com/r/mais-arepas-new-orleans",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg"
   },
   {
    "id": "bacchanal-wine",
@@ -2526,7 +2593,8 @@ window.DATA = {
    ],
    "reserve_priority": false,
    "reserveUrl": "https://www.opentable.com/r/bacchanal-wine-new-orleans",
-   "website": "https://www.bacchanalwine.com"
+   "website": "https://www.bacchanalwine.com",
+   "photoUrl": null
   },
   {
    "id": "satsuma-cafe",
@@ -2688,7 +2756,8 @@ window.DATA = {
     "Casual"
    ],
    "reserveUrl": null,
-   "website": "https://satsumacafe.com"
+   "website": "https://satsumacafe.com",
+   "photoUrl": null
   },
   {
    "id": "pizza-delicious",
@@ -2792,7 +2861,8 @@ window.DATA = {
     "Casual"
    ],
    "reserveUrl": null,
-   "website": "https://pizzadelicious.com"
+   "website": "https://pizzadelicious.com",
+   "photoUrl": null
   },
   {
    "id": "morning-call",
@@ -2846,7 +2916,8 @@ window.DATA = {
     "Late night"
    ],
    "reserveUrl": null,
-   "website": "https://morningcallnola.com"
+   "website": "https://morningcallnola.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Morning_Call_NOLA_Interior_WPA.jpg"
   },
   {
    "id": "ralphs-on-the-park",
@@ -2953,7 +3024,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/ralphs-on-the-park",
    "website": "https://www.ralphsonthepark.com",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "monas-cafe",
@@ -3163,7 +3235,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://monascafeanddeli.com",
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "bennachin",
@@ -3302,7 +3375,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://bennachinrestaurant.com",
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "green-goddess",
@@ -3424,7 +3498,8 @@ window.DATA = {
    ],
    "reserve_priority": false,
    "website": null,
-   "reserveUrl": null
+   "reserveUrl": null,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/en/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG"
   },
   {
    "id": "carmo",
@@ -3564,7 +3639,8 @@ window.DATA = {
    ],
    "reserve_priority": false,
    "website": "https://www.carmonola.com",
-   "reserveUrl": null
+   "reserveUrl": null,
+   "photoUrl": null
   },
   {
    "id": "1000-figs",
@@ -3674,7 +3750,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://www.1000figs.com",
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "cafe-degas",
@@ -3776,7 +3853,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/cafe-degas",
    "website": "https://cafedegas.com",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "n7",
@@ -3858,7 +3936,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/r/n7-new-orleans",
-   "website": "https://www.n7nola.com"
+   "website": "https://www.n7nola.com",
+   "photoUrl": null
   },
   {
    "id": "marjies-grill",
@@ -3924,7 +4003,8 @@ window.DATA = {
    ],
    "reserve_priority": false,
    "reserveUrl": null,
-   "website": "https://marjiesgrill.com"
+   "website": "https://marjiesgrill.com",
+   "photoUrl": null
   },
   {
    "id": "sneaky-pickle",
@@ -4026,7 +4106,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://www.yousneakypickle.com",
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "bayona",
@@ -4168,7 +4249,8 @@ window.DATA = {
    ],
    "reserveUrl": "https://www.opentable.com/r/bayona",
    "website": "https://www.bayona.com",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png"
   },
   {
    "id": "brennans",
@@ -4276,7 +4358,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/brennans",
-   "website": "https://www.brennansneworleans.com"
+   "website": "https://www.brennansneworleans.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
   },
   {
    "id": "herbsaint",
@@ -4383,7 +4466,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/herbsaint",
-   "website": "https://herbsaint.com"
+   "website": "https://herbsaint.com",
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/Old_Absinthe_House_%2855151882008%29.jpg"
   },
   {
    "id": "meril",
@@ -4560,7 +4644,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/r/meril-new-orleans",
-   "website": "https://bemeril.com"
+   "website": "https://bemeril.com",
+   "photoUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg"
   },
   {
    "id": "gautreaus",
@@ -4616,7 +4701,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "website": "https://gautreausrestaurant.com",
-   "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/gautreaus-restaurant"
+   "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/gautreaus-restaurant",
+   "photoUrl": null
   },
   {
    "id": "brigtsens",
@@ -4698,7 +4784,8 @@ window.DATA = {
    ],
    "reserve_priority": true,
    "website": "https://brigtsens.com",
-   "reserveUrl": null
+   "reserveUrl": null,
+   "photoUrl": null
   },
   {
    "id": "bywater-american-bistro",
@@ -4850,7 +4937,8 @@ window.DATA = {
    ],
    "reserve_priority": false,
    "website": "http://bywateramericanbistro.com",
-   "reserveUrl": null
+   "reserveUrl": null,
+   "photoUrl": null
   },
   {
    "id": "paladar-511",
@@ -4986,7 +5074,8 @@ window.DATA = {
    ],
    "website": "https://www.paladar511.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/paladar-511",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   },
   {
    "id": "namese",
@@ -5071,7 +5160,8 @@ window.DATA = {
    ],
    "website": null,
    "reserveUrl": null,
-   "reserve_priority": false
+   "reserve_priority": false,
+   "photoUrl": null
   },
   {
    "id": "lolas",
@@ -5190,7 +5280,8 @@ window.DATA = {
    ],
    "website": "https://lolasneworleans.com",
    "reserveUrl": "https://tables.toasttab.com/restaurants/d688ca43-a6b8-4715-a7b3-42439f49d602/findTime",
-   "reserve_priority": true
+   "reserve_priority": true,
+   "photoUrl": null
   }
  ],
  "schedule": [
