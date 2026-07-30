@@ -7313,23 +7313,45 @@ window.DATA = {
   },
   {
    "day": "Fri",
-   "when": "2026-07-31T18:15",
-   "time": "18:15",
+   "when": "2026-07-31T18:00",
+   "time": "18:00",
    "title": "Dinner — Galatoire's",
    "where": "Bourbon St · 1 min from the hotel",
    "kind": "food",
    "nav": "#/r/galatoires",
-   "reserve": true
+   "reserve": true,
+   "note": "Mention the 8pm tour when you sit down — you have about 1h40, which is enough here but not leisurely."
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T19:45",
+   "time": "19:45",
+   "kind": "travel",
+   "title": "Walk to the Voodoo Lounge",
+   "where": "718 N Rampart St, corner of Orleans · ~7 min from Galatoire's",
+   "note": "Check in at the box office inside. Have the QR ticket open before you get there.",
+   "cost": "Free"
   },
   {
    "day": "Fri",
    "when": "2026-07-31T20:00",
    "time": "20:00",
-   "title": "Ghost tour",
-   "where": "French Quarter Phantoms · meets in the Quarter",
    "kind": "tour",
+   "title": "Ghost & Vampire Combo tour",
+   "where": "French Quarter Phantoms · departs the Voodoo Lounge",
+   "note": "Runs 1 hour 45 min, so you are back out around 9:45pm. Booked for 2 adults under Avi Bar.",
    "booked": true,
-   "cost": "Paid"
+   "cost": "Paid · 2× adult",
+   "star": true
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T21:45",
+   "time": "21:45",
+   "kind": "rest",
+   "title": "Tour ends — nightcap or straight back",
+   "where": "You are 6 min from the hotel, or walk down to Frenchmen St",
+   "cost": "Free"
   },
   {
    "day": "Sat",
@@ -7732,8 +7754,8 @@ window.DATA = {
   },
   {
    "id": "ghost",
-   "title": "Ghost tour",
-   "note": "Fri 8pm · French Quarter Phantoms · PAID",
+   "title": "Ghost & Vampire Combo — French Quarter Phantoms",
+   "note": "Fri 31 Jul 8:00pm · 2× adult · 1h45 · PAID · QR ticket in Wallet · check in at Voodoo Lounge, 718 N Rampart",
    "done": true
   },
   {
@@ -7764,7 +7786,7 @@ window.DATA = {
  "fixed": [
   "<b>Flights:</b> land MSY Fri 9:25am · depart Mon 6:59pm",
   "<b>Hotel:</b> check in Fri 3pm · check out Mon 11am",
-  "Ghost tour — Fri ~8pm <b>(paid)</b>",
+  "Ghost &amp; Vampire Combo — Fri 8:00pm, check in at Voodoo Lounge, 718 N Rampart <b>(paid, 2× adult)</b>",
   "White Linen Night — Sat 6–9pm",
   "<b style='color:#8a2231'>⭐ Kermit Ruffins — Sun 6:40pm</b>",
   "<b>Reserve:</b> Galatoire's (Fri) · Commander's brunch (Sun) · Steamboat cruise (optional) Mon 11:30am"
@@ -8717,7 +8739,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 7,
+ "data_version": 8,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",

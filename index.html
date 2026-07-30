@@ -101,6 +101,7 @@
   .s-body{flex:1;min-width:0}
   .s-title{font-size:14px;font-weight:600;line-height:1.35}
   .s-where{font-size:12px;color:var(--muted);margin-top:1px}
+  .s-note{font-size:12px;color:#3f382d;margin-top:3px;line-height:1.45}
   .s-cost{font-size:11.5px;color:#7a5300;font-weight:600;margin-top:2px}
   .s-warn{font-size:11.5px;color:var(--purple);font-weight:600;margin-top:3px;line-height:1.4}
   .s-act{flex:0 0 auto;display:flex;gap:3px}
@@ -644,6 +645,7 @@
           (s.reserve?' <span class="chip sm">reserve</span>':'')+
           (s.ac?' <span class="chip sm">AC</span>':'')+'</div>'+
         (s.where?'<div class="s-where">'+esc(s.where)+'</div>':'')+
+        (s.note?'<div class="s-note">'+esc(s.note)+'</div>':'')+
         (s.cost?'<div class="s-cost">'+esc(s.cost)+'</div>':'')+
         (s.warn?'<div class="s-warn">⚠ '+esc(s.warn)+'</div>':'')+
       '</div>'+
