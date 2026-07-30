@@ -1,4 +1,4 @@
-/* NOLA Guide data. Curated hour-by-hour schedule (editable in-app, per device). Menus re-extracted from each restaurant's own current menu where machine-readable and flagged verified/approximate. Weather is a live NWS fetch with a baked snapshot as offline fallback. Prices & 2026 event dates approximate — verify on the day. */
+/* NOLA Guide data. Menus list only dishes that stand on their own for a finned-fish + vegetarian diner — a dish defined by its meat is not listed as "order it without the meat". Curated hour-by-hour schedule, editable in-app. Weather is a live NWS fetch with a baked snapshot fallback. Prices approximate — verify on the day. */
 window.DATA = {
  "districts": [
   {
@@ -1108,40 +1108,16 @@ window.DATA = {
      "note": "poached eggs, English muffin, hollandaise - ask without the smoked ham"
     },
     {
-     "item": "Asparagus",
+     "item": "Asparagus Omelette",
      "price": "$19",
      "course": "main",
-     "note": "Omelettes section - three egg omelette with asparagus"
-    },
-    {
-     "item": "Ham and Cheese",
-     "price": "$19",
-     "course": "main",
-     "note": "Omelettes section - three egg omelette; ask without the ham (cheese only)"
-    },
-    {
-     "item": "Bacon and Mushroom",
-     "price": "$19",
-     "course": "main",
-     "note": "Omelettes section - three egg omelette; ask without the bacon (mushroom only)"
+     "note": "Three-egg omelette with asparagus — vegetarian"
     },
     {
      "item": "Fish",
      "price": "Market Price",
      "course": "main",
-     "note": "Fish section: \"see your server for today's offerings... seasonal selections of the freshest available fish.\" Preparations sautéed, broiled, fried or poached. Skip the crab/shrimp garnishes."
-    },
-    {
-     "item": "Meunière Amandine",
-     "price": "$3",
-     "course": "side",
-     "note": "Optional garnish for the fish - eligible"
-    },
-    {
-     "item": "Lemon Caper Beurre Blanc",
-     "price": "$3",
-     "course": "side",
-     "note": "Optional garnish for the fish - eligible"
+     "note": "Ask your server for the day's catch — seasonal Gulf fish, sautéed, broiled, fried or poached. Choose the meunière amandine or lemon-caper beurre blanc sauce (+$3); decline the crab and shrimp garnishes."
     },
     {
      "item": "Asparagus Hollandaise",
@@ -1259,7 +1235,7 @@ window.DATA = {
      "course": "dessert"
     }
    ],
-   "avoid_note": "Skip the house classics that are all shellfish or off-limits meat: Shrimp Remoulade, Crab Maison, Oysters Rockefeller, Oysters en Brochette, Escargot, Turtle Soup au Sherry, Seafood Okra Gumbo, Duck and Andouille Gumbo, Godchaux Salad, the whole Shellfish section (Crab Yvonne, Crabmeat Sardou, Stuffed Eggplant, Bouillabaisse, all the shrimp dishes) and the Meat section. Also decline the crab/shrimp garnishes offered on the fish.",
+   "avoid_note": "Skip the house classics that are all shellfish or off-limits meat: Shrimp Remoulade, Crab Maison, Oysters Rockefeller, Oysters en Brochette, Escargot, Turtle Soup au Sherry, Seafood Okra Gumbo, Duck and Andouille Gumbo, Godchaux Salad, the whole Shellfish section (Crab Yvonne, Crabmeat Sardou, Stuffed Eggplant, Bouillabaisse, all the shrimp dishes) and the Meat section. Also decline the crab/shrimp garnishes offered on the fish. The ham-and-cheese and bacon-and-mushroom omelettes are named for their meat — order the asparagus one instead.",
    "kosher_style_fit": "Workable with care: a solid vegetarian appetizer/salad/side selection plus market-price finned Gulf fish (redfish, trout, drum) that can be broiled or sautéed. Avoid the many shellfish and pork-based dishes; confirm fish is cooked separately from shellfish. Not kosher-certified.",
    "tags": [
     "fish",
@@ -2416,10 +2392,10 @@ window.DATA = {
    "dinner_estimate": "$60-80 per person (a First plus the Market Fish or Ital Stew, before drinks)",
    "menu": [
     {
-     "item": "Buttermilk Biscuits/Honey Butter/Bacon Butter",
+     "item": "Buttermilk Biscuits with Honey Butter",
      "price": "8",
      "course": "starter",
-     "note": "Small Bites, 2 per order; ask for the honey butter only, without the bacon butter"
+     "note": "Small Bites, 2 per order — ask for the honey butter (the bacon butter is the other option)"
     },
     {
      "item": "Jalapeño & Scallion Hushpuppies/Cilantro Crema",
@@ -4228,22 +4204,10 @@ window.DATA = {
      "note": "3 to an order; hand-rolled, add your own powdered sugar"
     },
     {
-     "item": "Sausage, Egg & Cheese on a English Muffin",
+     "item": "Egg & Cheese Sandwich",
      "price": "$8.00",
      "course": "main",
-     "note": "ask without the sausage"
-    },
-    {
-     "item": "Ham, Egg & Cheese on a Croissant",
-     "price": "$8.00",
-     "course": "main",
-     "note": "ask without the ham"
-    },
-    {
-     "item": "Sausage, Egg & Cheese on a Biscuit",
-     "price": "$8.00",
-     "course": "main",
-     "note": "ask without the sausage"
+     "note": "On a croissant, biscuit or English muffin. The menu lists these with sausage or ham — ask for egg & cheese only."
     },
     {
      "item": "Cafe Au Lait - Small",
@@ -4363,18 +4327,6 @@ window.DATA = {
      "note": "NOWFE Gold Medal award-winning sweet corn soup, black truffle foam"
     },
     {
-     "item": "Golden Gazpacho & LA Crab",
-     "price": "16",
-     "course": "starter",
-     "note": "Summer melon, basil-jalapeno gel, shaved radish - ask without the crab"
-    },
-    {
-     "item": "Blue Crab & Summer Truffle Pasta",
-     "price": "18",
-     "course": "starter",
-     "note": "Radiatori pasta, Summer truffle sauce, aged Parmesan, herbed breadcrumbs - ask without the blue crab; listed under appetizers"
-    },
-    {
      "item": "Caramelized Banana Creme Brulee",
      "price": "14",
      "course": "dessert",
@@ -4439,7 +4391,7 @@ window.DATA = {
      "course": "drink"
     }
    ],
-   "avoid_note": "Skip the Turtle Soup, Coffee-Rubbed Pork Belly, White Cornmeal Fried Oysters, Shrimp Skully, Steak Tartare, Foie Gras Toast, Pecan Crusted Soft-Shell Crab, Pan-Roasted Jerk Shrimp, Roasted Blue Crab Claws, Cast-Iron Seared Filet Mignon, Louisiana Shrimp & Unicorn Grits and Braised Lamb Shank. Also skip the Beet-Cured Swordfish and Swordfish Saltimbocca (swordfish is not a scaled fish), and the 'add seafood' oyster/shrimp/crabmeat toppers.",
+   "avoid_note": "Skip the Turtle Soup, Coffee-Rubbed Pork Belly, White Cornmeal Fried Oysters, Shrimp Skully, Steak Tartare, Foie Gras Toast, Pecan Crusted Soft-Shell Crab, Pan-Roasted Jerk Shrimp, Roasted Blue Crab Claws, Cast-Iron Seared Filet Mignon, Louisiana Shrimp & Unicorn Grits and Braised Lamb Shank. Also skip the Beet-Cured Swordfish and Swordfish Saltimbocca (swordfish is not a scaled fish), and the 'add seafood' oyster/shrimp/crabmeat toppers. Also skip the Golden Gazpacho & LA Crab and the Blue Crab & Summer Truffle Pasta — the crab is the dish.",
    "kosher_style_fit": "Not kosher and shares a kitchen with shellfish and pork, but the blackened Gulf fish, trout and mahi (finned, scaled) plus salads and desserts can be tailored to a fish-and-vegetarian style with the noted omissions.",
    "tags": [
     "fish",
@@ -8739,7 +8691,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 8,
+ "data_version": 9,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
