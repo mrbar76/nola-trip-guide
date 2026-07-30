@@ -1,4 +1,4 @@
-/* NOLA Guide data. Menus re-extracted from each restaurant's own current menu where machine-readable (incl. PDFs) and flagged verified/approximate; prices as printed. Other prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: photoUrl=120px card thumb, coverUrl=500px detail hero. Day plan built around August heat and afternoon storms. */
+/* NOLA Guide data. Curated hour-by-hour schedule (editable in-app, per device). Menus re-extracted from each restaurant's own current menu where machine-readable and flagged verified/approximate. Weather is a live NWS fetch with a baked snapshot as offline fallback. Prices & 2026 event dates approximate — verify on the day. */
 window.DATA = {
  "districts": [
   {
@@ -7230,49 +7230,356 @@ window.DATA = {
  ],
  "schedule": [
   {
+   "day": "Fri",
    "when": "2026-07-31T09:25",
-   "title": "Land at MSY → French Quarter",
-   "where": "Beignets, Jackson Square, pool",
-   "nav": "#/d/fq",
-   "cta": "Friday plan"
+   "time": "09:25",
+   "title": "Land at MSY",
+   "where": "Louis Armstrong International",
+   "kind": "travel",
+   "booked": true
   },
   {
+   "day": "Fri",
+   "when": "2026-07-31T10:00",
+   "time": "10:00",
+   "title": "Taxi to the hotel",
+   "where": "Flat rate, ~25 min",
+   "kind": "travel",
+   "cost": "$36 for the two of you"
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T10:30",
+   "time": "10:30",
+   "title": "Drop the bags",
+   "where": "Hampton Inn — check-in is not until 3pm",
+   "kind": "admin"
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T10:45",
+   "time": "10:45",
+   "title": "Beignets at Café du Monde",
+   "where": "French Market · 8 min walk",
+   "kind": "food",
+   "nav": "#/r/cafe-du-monde"
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T11:30",
+   "time": "11:30",
+   "title": "Historic New Orleans Collection",
+   "where": "Royal St · free, air-conditioned",
+   "kind": "sight",
+   "nav": "#/s/historic-new-orleans-collection",
+   "ac": true
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T13:00",
+   "time": "13:00",
+   "title": "Lunch — Napoleon House courtyard",
+   "where": "Chartres St · shaded courtyard",
+   "kind": "food",
+   "nav": "#/r/napoleon-house"
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T14:15",
+   "time": "14:15",
+   "title": "Pharmacy Museum",
+   "where": "Chartres St · small and cool",
+   "kind": "sight",
+   "nav": "#/s/pharmacy-museum",
+   "ac": true
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T15:00",
+   "time": "15:00",
+   "title": "Check in · pool and a lie-down",
+   "where": "Peak heat and the likeliest storm window",
+   "kind": "rest",
+   "ac": true
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T17:30",
+   "time": "17:30",
+   "title": "Jackson Square & Royal St",
+   "where": "Golden hour, once the sun drops",
+   "kind": "sight",
+   "nav": "#/s/jackson-square"
+  },
+  {
+   "day": "Fri",
+   "when": "2026-07-31T18:15",
+   "time": "18:15",
+   "title": "Dinner — Galatoire's",
+   "where": "Bourbon St · 1 min from the hotel",
+   "kind": "food",
+   "nav": "#/r/galatoires",
+   "reserve": true
+  },
+  {
+   "day": "Fri",
    "when": "2026-07-31T20:00",
+   "time": "20:00",
    "title": "Ghost tour",
-   "where": "French Quarter Phantoms · ~8pm",
-   "nav": "#/d/fq"
+   "where": "French Quarter Phantoms · meets in the Quarter",
+   "kind": "tour",
+   "booked": true,
+   "cost": "Paid"
   },
   {
+   "day": "Sat",
+   "when": "2026-08-01T08:30",
+   "time": "08:30",
+   "title": "Coffee and something quick",
+   "where": "Near the hotel",
+   "kind": "food"
+  },
+  {
+   "day": "Sat",
+   "when": "2026-08-01T09:15",
+   "time": "09:15",
+   "title": "Head to the Warehouse District",
+   "where": "20-min walk, or streetcar / short Uber",
+   "kind": "travel",
+   "cost": "Walk free · streetcar $1.25 · Uber $8–10"
+  },
+  {
+   "day": "Sat",
    "when": "2026-08-01T09:30",
-   "title": "National WWII Museum",
-   "where": "Warehouse District · AM, fully AC",
-   "nav": "#/s/national-wwii-museum"
+   "time": "09:30",
+   "title": "The National WWII Museum",
+   "where": "Magazine St · give it 3 hours, fully AC",
+   "kind": "sight",
+   "nav": "#/s/national-wwii-museum",
+   "ac": true,
+   "cost": "$36pp — free Aug 1 on a BofA card"
   },
   {
+   "day": "Sat",
+   "when": "2026-08-01T13:00",
+   "time": "13:00",
+   "title": "Lunch — Pêche",
+   "where": "1 min from the museum door",
+   "kind": "food",
+   "nav": "#/r/peche-seafood-grill"
+  },
+  {
+   "day": "Sat",
+   "when": "2026-08-01T14:30",
+   "time": "14:30",
+   "title": "Ogden Museum of Southern Art",
+   "where": "Literally across the street",
+   "kind": "sight",
+   "nav": "#/s/ogden-museum",
+   "ac": true
+  },
+  {
+   "day": "Sat",
+   "when": "2026-08-01T16:00",
+   "time": "16:00",
+   "title": "Contemporary Arts Center",
+   "where": "Camp St · or the Southern Jewish Experience next door",
+   "kind": "sight",
+   "nav": "#/s/contemporary-arts-center",
+   "ac": true
+  },
+  {
+   "day": "Sat",
+   "when": "2026-08-01T17:30",
+   "time": "17:30",
+   "title": "Sit down, cold drink",
+   "where": "You are already where the evening happens",
+   "kind": "rest"
+  },
+  {
+   "day": "Sat",
    "when": "2026-08-01T18:00",
+   "time": "18:00",
    "title": "White Linen Night",
-   "where": "Julia St gallery block party · 6–9pm",
-   "nav": "#/d/wh"
+   "where": "Julia St · free · 4-min walk from the museums",
+   "kind": "event",
+   "star": true,
+   "warn": "61% chance of storms this evening — it runs anyway, locals just carry on"
   },
   {
+   "day": "Sat",
+   "when": "2026-08-01T21:00",
+   "time": "21:00",
+   "title": "Uber back to the hotel",
+   "where": "Or walk it in 20 min",
+   "kind": "travel",
+   "cost": "$8–10"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T09:30",
+   "time": "09:30",
+   "title": "Slow start",
+   "where": "Rain is likely before 1pm — no reason to rush out",
+   "kind": "rest",
+   "warn": "76% chance of rain, mostly before 1pm"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T10:45",
+   "time": "10:45",
+   "title": "St Charles streetcar out",
+   "where": "Canal St → Washington Ave · 25 min, shaded",
+   "kind": "travel",
+   "nav": "#/s/st-charles-streetcar",
+   "cost": "$1.25 · or a $3 all-day pass"
+  },
+  {
+   "day": "Sun",
    "when": "2026-08-02T11:30",
-   "title": "Commander's Palace brunch",
-   "where": "Garden District · jazz brunch",
-   "nav": "#/d/gd"
-  },
-  {
-   "when": "2026-08-02T18:40",
-   "title": "Kermit Ruffins — Armstrong tribute",
-   "where": "Satchmo Fest closer · Old U.S. Mint",
-   "nav": "#/satchmo",
-   "cta": "See set times",
+   "time": "11:30",
+   "title": "Commander's Palace jazz brunch",
+   "where": "Washington Ave · indoors whatever the weather",
+   "kind": "food",
+   "nav": "#/r/commanders-palace",
+   "reserve": true,
    "star": true
   },
   {
+   "day": "Sun",
+   "when": "2026-08-02T13:15",
+   "time": "13:15",
+   "title": "Garden District mansions",
+   "where": "Deep oak shade — rain should be easing by now",
+   "kind": "sight",
+   "nav": "#/s/garden-district-mansions"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T14:30",
+   "time": "14:30",
+   "title": "Magazine Street",
+   "where": "4 min away · AC shops, your storm bolt-hole",
+   "kind": "sight",
+   "nav": "#/s/magazine-street",
+   "ac": true
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T15:45",
+   "time": "15:45",
+   "title": "Back to the Quarter",
+   "where": "Streetcar, or Uber if you are flagging",
+   "kind": "travel",
+   "cost": "Streetcar $1.25 · Uber $13–15"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T16:15",
+   "time": "16:15",
+   "title": "Rest and change",
+   "where": "Long evening ahead",
+   "kind": "rest"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T17:45",
+   "time": "17:45",
+   "title": "Satchmo SummerFest — Day 2",
+   "where": "Old U.S. Mint · free · 16-min walk",
+   "kind": "event",
+   "nav": "#/satchmo"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T18:40",
+   "time": "18:40",
+   "title": "Kermit Ruffins — Armstrong tribute",
+   "where": "Festival closer. This is the one.",
+   "kind": "music",
+   "nav": "#/satchmo",
+   "star": true
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T20:00",
+   "time": "20:00",
+   "title": "Frenchmen Street",
+   "where": "3-min walk from the Mint · clubs mostly no cover",
+   "kind": "music",
+   "nav": "#/s/frenchmen-street"
+  },
+  {
+   "day": "Sun",
+   "when": "2026-08-02T22:30",
+   "time": "22:30",
+   "title": "Walk or Uber home",
+   "where": "0.9 mi",
+   "kind": "travel",
+   "cost": "Free · or $8–10"
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T09:30",
+   "time": "09:30",
+   "title": "Last breakfast",
+   "where": "Café du Monde or Bearcat",
+   "kind": "food",
+   "nav": "#/r/cafe-du-monde"
+  },
+  {
+   "day": "Mon",
    "when": "2026-08-03T11:00",
-   "title": "Checkout → Sazerac House & gifts",
-   "where": "Then MSY for 6:59pm flight",
-   "nav": "#/d/fq"
+   "time": "11:00",
+   "title": "Check out · bags to the front desk",
+   "where": "They will hold them all day",
+   "kind": "admin"
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T11:30",
+   "time": "11:30",
+   "title": "Steamboat Natchez harbour cruise",
+   "where": "2 hrs · covered decks and AC · optional",
+   "kind": "sight",
+   "nav": "#/s/steamboat-natchez",
+   "cost": "$30.52 on Groupon"
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T13:45",
+   "time": "13:45",
+   "title": "Lunch in the Quarter",
+   "where": "Whatever you have not tried yet",
+   "kind": "food"
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T15:00",
+   "time": "15:00",
+   "title": "Royal St gifts · Sazerac House",
+   "where": "Free, air-conditioned, 11 min away",
+   "kind": "sight",
+   "nav": "#/s/sazerac-house",
+   "ac": true
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T16:30",
+   "time": "16:30",
+   "title": "Collect bags, taxi to MSY",
+   "where": "Leave 2h15 before the flight",
+   "kind": "travel",
+   "cost": "$36 flat"
+  },
+  {
+   "day": "Mon",
+   "when": "2026-08-03T18:59",
+   "time": "18:59",
+   "title": "Flight home",
+   "where": "Delta · MSY → home",
+   "kind": "travel",
+   "booked": true
   }
  ],
  "days": [
@@ -7426,8 +7733,8 @@ window.DATA = {
   {
    "id": "ghost",
    "title": "Ghost tour",
-   "note": "Fri ~8pm · French Quarter Phantoms $21/pp",
-   "done": false
+   "note": "Fri 8pm · French Quarter Phantoms · PAID",
+   "done": true
   },
   {
    "id": "wwii",
@@ -7457,13 +7764,12 @@ window.DATA = {
  "fixed": [
   "<b>Flights:</b> land MSY Fri 9:25am · depart Mon 6:59pm",
   "<b>Hotel:</b> check in Fri 3pm · check out Mon 11am",
-  "Ghost tour — Fri ~8pm",
+  "Ghost tour — Fri ~8pm <b>(paid)</b>",
   "White Linen Night — Sat 6–9pm",
   "<b style='color:#8a2231'>⭐ Kermit Ruffins — Sun 6:40pm</b>",
   "<b>Reserve:</b> Galatoire's (Fri) · Commander's brunch (Sun) · Steamboat cruise (optional) Mon 11:30am"
  ],
  "tobook": [
-  "Ghost tour — French Quarter Phantoms $21/pp · Groupon",
   "WWII Museum $36/pp · nationalww2museum.org",
   "Boat — Steamboat Natchez $30.52 · Groupon &nbsp;or&nbsp; Creole Queen $45 · Groupon",
   "Galatoire's (Fri) · Shaya · Commander's brunch (Sun) — Resy",
@@ -8411,7 +8717,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 6,
+ "data_version": 7,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",

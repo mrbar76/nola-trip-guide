@@ -89,6 +89,22 @@
   .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
   .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .slot{display:flex;align-items:flex-start;gap:8px;padding:9px 0;border-bottom:1px dashed var(--line)}
+  .slot:last-of-type{border-bottom:0}
+  .slot.done .s-title,.slot.done .s-where{text-decoration:line-through;color:var(--muted)}
+  .slot.star{background:linear-gradient(90deg,rgba(201,150,47,.10),transparent);border-radius:8px}
+  .s-tick{flex:0 0 22px;width:22px;height:22px;margin-top:1px;border-radius:6px;cursor:pointer;
+    border:1.5px solid var(--line);background:var(--card);color:var(--green);font-weight:800;font-size:13px;
+    display:flex;align-items:center;justify-content:center;padding:0}
+  .slot.done .s-tick{background:rgba(10,125,76,.12);border-color:rgba(10,125,76,.5)}
+  .s-time{flex:0 0 52px;font-size:12px;font-weight:800;color:var(--gold2);padding-top:3px;letter-spacing:.01em}
+  .s-body{flex:1;min-width:0}
+  .s-title{font-size:14px;font-weight:600;line-height:1.35}
+  .s-where{font-size:12px;color:var(--muted);margin-top:1px}
+  .s-cost{font-size:11.5px;color:#7a5300;font-weight:600;margin-top:2px}
+  .s-warn{font-size:11.5px;color:var(--purple);font-weight:600;margin-top:3px;line-height:1.4}
+  .s-act{flex:0 0 auto;display:flex;gap:3px}
+  .btn.block{display:flex;width:100%}
   .pitem{display:flex;align-items:center;gap:9px;padding:9px 0;border-bottom:1px dashed var(--line)}
   .pitem:last-child{border-bottom:0}
   .pitem.pick{cursor:pointer}
@@ -452,9 +468,10 @@
       '<div class="count">'+esc(count)+'</div></div>'+
     '<div class="eatline">🐟 <b>You eat:</b> finned &amp; scaled fish + vegetarian. '+
       '<span class="no">Skip shellfish, catfish, pork, turtle, gator.</span></div>'+
-    whatsOn()+
+    scheduleTeaser()+
     '<div class="sec-title">Jump in</div>'+
     '<div class="grid2">'+
+      qcard('#/schedule','🕐','Schedule','Hour by hour · change it')+
       qcard('#/itinerary','📋','My plan','Slot things in &amp; out')+
       qcard('#/eat','🍽️','Where to eat','Full menus you can order from')+
       qcard('#/do','🎭','Things to do','Sights, museums, music, shops')+
@@ -571,6 +588,151 @@
       '</div>';
     }).join('');
   }
+  // ---------- the schedule: curated, but yours to change ----------
+  // Curated slots live in DATA.schedule. The moment you edit a day, that day is copied
+  // into localStorage and all further edits apply to your copy; "Reset" drops back to
+  // the curated version. Ticking things off is stored separately so it survives edits.
+  var KIND_ICON={travel:'🚕',food:'🍽️',sight:'📸',music:'🎷',event:'🎉',rest:'😌',tour:'🎟️',admin:'🧾'};
+  function curatedFor(day){return (DATA.schedule||[]).filter(function(s){return s.day===day;});}
+  function schedEdits(){return ls('nola_sched',{});}
+  function saveSchedEdits(o){localStorage.setItem('nola_sched',JSON.stringify(o));}
+  function schedFor(day){
+    var e=schedEdits();
+    return (e[day]?e[day]:curatedFor(day)).slice();
+  }
+  function schedIsEdited(day){return !!schedEdits()[day];}
+  function schedMutate(day,fn){
+    var e=schedEdits();
+    if(!e[day])e[day]=curatedFor(day).map(function(s){return Object.assign({},s);});
+    fn(e[day]);saveSchedEdits(e);
+  }
+  function schedReset(day){var e=schedEdits();delete e[day];saveSchedEdits(e);}
+  function doneKey(day,s){return 'd_'+day+'_'+(s.time||'')+'_'+(s.title||'').slice(0,24);}
+  function isDone(day,s){return !!checks()[doneKey(day,s)];}
+  function toggleDone(day,s){var k=doneKey(day,s);setCheck(k,!checks()[k]);}
+  function fmtTime(t){
+    if(!t)return '';
+    var p=t.split(':'),h=+p[0],m=p[1]||'00';
+    var ap=h>=12?'pm':'am',hh=(h%12)||12;
+    return hh+(m==='00'?'':':'+m)+ap;
+  }
+  function tripDayLabels(){
+    var seen=[],out=[];
+    (DATA.schedule||[]).forEach(function(s){if(seen.indexOf(s.day)<0){seen.push(s.day);out.push(s.day);}});
+    return out.length?out:DAYKEYS;
+  }
+  // Which day to lead with: today if we're mid-trip, otherwise the first day
+  function currentTripDay(){
+    var days=tripDayLabels();var today=new Date();
+    var iso=today.getFullYear()+'-'+String(today.getMonth()+1).padStart(2,'0')+'-'+String(today.getDate()).padStart(2,'0');
+    for(var i=0;i<days.length;i++){
+      var first=curatedFor(days[i])[0];
+      if(first&&String(first.when).slice(0,10)===iso)return days[i];
+    }
+    return days[0];
+  }
+  function slotRow(day,s,i,n,editable){
+    var done=isDone(day,s);
+    return '<div class="slot'+(done?' done':'')+(s.star?' star':'')+'">'+
+      '<button class="s-tick" data-sdone="'+day+'|'+esc(s.time||'')+'|'+esc((s.title||'').slice(0,24))+'" aria-label="Tick off">'+
+        (done?'✓':'')+'</button>'+
+      '<div class="s-time">'+esc(fmtTime(s.time))+'</div>'+
+      '<div class="s-body"'+(s.nav?' data-nav="'+s.nav+'"':'')+'>'+
+        '<div class="s-title">'+(KIND_ICON[s.kind]||'•')+' '+esc(s.title)+
+          (s.star?' <span class="tag t-star">★</span>':'')+
+          (s.booked?' <span class="chip sm">booked</span>':'')+
+          (s.reserve?' <span class="chip sm">reserve</span>':'')+
+          (s.ac?' <span class="chip sm">AC</span>':'')+'</div>'+
+        (s.where?'<div class="s-where">'+esc(s.where)+'</div>':'')+
+        (s.cost?'<div class="s-cost">'+esc(s.cost)+'</div>':'')+
+        (s.warn?'<div class="s-warn">⚠ '+esc(s.warn)+'</div>':'')+
+      '</div>'+
+      (editable?'<div class="s-act">'+
+        '<button class="pbtn" data-smove="'+day+':'+i+':-1" aria-label="Earlier"'+(i===0?' disabled':'')+'>↑</button>'+
+        '<button class="pbtn" data-smove="'+day+':'+i+':1" aria-label="Later"'+(i===n-1?' disabled':'')+'>↓</button>'+
+        '<button class="pbtn del" data-sdrop="'+day+':'+i+'" aria-label="Remove">✕</button>'+
+      '</div>':'')+
+    '</div>';
+  }
+  function scheduleView(state){
+    state=state||{};
+    var only=state.day||'', open=state.add||'', q=(state.q||'').toLowerCase();
+    var days=tripDayLabels().filter(function(d){return !only||d===only;});
+    var html='<div class="muted" style="font-size:13px;margin:6px 2px 10px">'+
+      'A curated running order for each day. Tick things off as you go, drag anything you '+
+      'change your mind about out with ✕, reorder with the arrows, or add something new. '+
+      'Your changes are saved on this device.</div>';
+    days.forEach(function(day){
+      var d=(DATA.days||[]).filter(function(x){return x.day===day;})[0]||{};
+      var slots=schedFor(day);
+      html+='<div class="sec-title">'+esc(day)+(d.date?' · '+esc(d.date):'')+
+        (schedIsEdited(day)?' <span class="chip sm">edited</span>':'')+'</div>';
+      if(d.forecast_date)html+=wxLine(d.forecast_date);
+      html+='<div class="card pad">';
+      if(!slots.length)html+='<div class="muted" style="font-size:13px">Nothing scheduled.</div>';
+      else slots.forEach(function(s,i){html+=slotRow(day,s,i,slots.length,true);});
+      html+='<div class="btn-row" style="margin-top:10px">'+
+        (open===day
+          ? '<span class="btn" data-nav="#/schedule'+(only?'?day='+only:'')+'">Done adding</span>'
+          : '<span class="btn gold" data-nav="#/schedule?'+(only?'day='+only+'&':'')+'add='+day+'">＋ Add to '+esc(day)+'</span>')+
+        (schedIsEdited(day)?'<span class="btn" data-sreset="'+day+'">↺ Reset '+esc(day)+'</span>':'')+
+      '</div>';
+      if(open===day){
+        html+='<div class="searchbar" style="margin-top:10px">'+
+          '<input id="sq" type="search" placeholder="Search places, tours, events to add…" value="'+esc(state.q||'')+'" autocomplete="off"></div>'+
+          '<div id="sres">'+schedPicker(day,q)+'</div>';
+      }
+      html+='</div>';
+    });
+    return html;
+  }
+  function schedPicker(day,q){
+    var pool=[]
+      .concat(restaurants().map(function(x){return {t:'r',o:x};}))
+      .concat(sights().map(function(x){return {t:'s',o:x};}))
+      .concat((DATA.tours||[]).map(function(x){return {t:'t',o:x};}))
+      .concat((DATA.events||[]).map(function(x){return {t:'e',o:x};}));
+    if(q)pool=pool.filter(function(p){var o=p.o;
+      return ((o.name||o.title||'')+' '+(o.cuisine||'')+' '+(o.category||'')+' '+
+        (o.area_label||'')+' '+(o.where||'')).toLowerCase().indexOf(q)>=0;});
+    else pool=pool.slice(0,12);
+    if(!pool.length)return '<div class="empty" style="padding:18px">Nothing matches.</div>';
+    return pool.slice(0,30).map(function(p){var o=p.o;
+      return '<div class="pitem pick" data-sadd="'+day+':'+p.t+':'+esc(o.id)+'">'+
+        '<span class="pi-ic">'+(TICON[p.t]||'📍')+'</span>'+
+        '<div class="pi-b"><div class="pi-t">'+esc(o.name||o.title||'')+'</div>'+
+        '<div class="pi-s">'+esc(itemSub(p.t,o))+'</div></div>'+
+        '<div class="pi-a"><span class="pbtn add">＋</span></div></div>';
+    }).join('');
+  }
+  // Home: today's (or the first day's) running order, up front
+  function scheduleTeaser(){
+    var day=currentTripDay();
+    var slots=schedFor(day);
+    if(!slots.length)return '';
+    var now=new Date();
+    // show from the next thing onward when we're actually on that day
+    var iso=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+    var onDay=(curatedFor(day)[0]||{}).when&&String(curatedFor(day)[0].when).slice(0,10)===iso;
+    var start=0;
+    if(onDay){
+      var hhmm=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+      for(var i=0;i<slots.length;i++){if((slots[i].time||'')>=hhmm){start=Math.max(0,i-1);break;}}
+    }
+    var show=slots.slice(start,start+5);
+    var d=(DATA.days||[]).filter(function(x){return x.day===day;})[0]||{};
+    return '<div class="sec-title" style="display:flex;justify-content:space-between;align-items:center">'+
+        '<span>'+(onDay?'Today':'First up')+' · '+esc(day)+(d.date?' '+esc(d.date):'')+'</span>'+
+        '<span class="chip sm" data-nav="#/schedule">Full schedule ›</span></div>'+
+      (d.forecast_date?wxLine(d.forecast_date):'')+
+      '<div class="card pad">'+
+        show.map(function(s,i){return slotRow(day,s,start+i,slots.length,false);}).join('')+
+        '<div class="btn-row" style="margin-top:10px">'+
+          '<span class="btn gold block" data-nav="#/schedule?day='+esc(day)+'">Open '+esc(day)+' · change it ›</span>'+
+        '</div>'+
+      '</div>';
+  }
+
   // ---------- editable itinerary ----------
   // Stored in localStorage as { Fri:[{t:'r'|'s'|'t'|'e', id}], ... }. Empty until you
   // add something, so the curated plan above stays the default view.
@@ -1034,6 +1196,7 @@
   function moreView(){
     return '<div class="sec-title" style="margin-top:6px">More</div>'+
       '<div class="grid2">'+
+        qcard('#/schedule','🕐','Schedule','Hour by hour · change it')+
         qcard('#/itinerary','📋','My plan','Your own running order')+
         qcard('#/do','🎭','Things to do','Sights, museums, music')+
         qcard('#/whatson','🎉','What’s on','Events on your dates')+
@@ -1134,6 +1297,7 @@
     else if(route==='whatson'){html=whatsOnView();titleHTML='What’s on';back=false;}
     else if(route==='getting-around'){html=logisticsView();titleHTML='Getting around';back=true;}
     else if(route==='itinerary'){html=itineraryView(q);titleHTML='My plan';back=true;}
+    else if(route==='schedule'){html=scheduleView(q);titleHTML='Schedule';back=true;}
     else if(route==='plan'){html=planView();titleHTML='Plan';back=false;}
     else if(route==='more'){html=moreView();titleHTML='More';back=false;}
     else if(route==='r'){var rr=findR(arg);html=restaurantView(arg);titleHTML=esc(rr?rr.name:'Not found');}
@@ -1161,6 +1325,10 @@
     if(route==='search'){var qi2=el('q');if(qi2){qi2.addEventListener('input',function(){runSearch(qi2.value);});
       runSearch('');qi2.focus();}}
     // itinerary picker: filter in place, without re-navigating on every keystroke
+    if(route==='schedule'&&q.add){var sq=el('sq');
+      if(sq){sq.addEventListener('input',function(){
+        var box=el('sres');if(box)box.innerHTML=schedPicker(q.add,sq.value.trim().toLowerCase());});
+        sq.focus();}}
     if(route==='itinerary'&&q.add){var pq=el('pq');
       if(pq){pq.addEventListener('input',function(){
         var box=el('pres');if(box)box.innerHTML=pickerResults(q.add,pq.value.trim().toLowerCase());});
@@ -1180,6 +1348,43 @@
       var id=fav.getAttribute('data-fav');var on=isFav(id);
       [].forEach.call(document.querySelectorAll('[data-fav="'+id.replace(/"/g,'')+'"]'),function(b){
         b.classList.toggle('on',on);b.textContent=on?'★':'☆';});return;}
+    // --- schedule edits ---
+    var sd=e.target.closest&&e.target.closest('[data-sdone]');
+    if(sd){e.preventDefault();e.stopPropagation();
+      var k=sd.getAttribute('data-sdone').split('|');
+      toggleDone(k[0],{time:k[1],title:k[2]});router();return;}
+    var sm=e.target.closest&&e.target.closest('[data-smove]');
+    if(sm){e.preventDefault();e.stopPropagation();
+      var a=sm.getAttribute('data-smove').split(':');var day=a[0],i=+a[1],dir=+a[2];
+      schedMutate(day,function(arr){var j=i+dir;if(j<0||j>=arr.length)return;
+        var t=arr[i];arr[i]=arr[j];arr[j]=t;});
+      router();return;}
+    var sdr=e.target.closest&&e.target.closest('[data-sdrop]');
+    if(sdr){e.preventDefault();e.stopPropagation();
+      var b=sdr.getAttribute('data-sdrop').split(':');
+      schedMutate(b[0],function(arr){arr.splice(+b[1],1);});router();return;}
+    var srs=e.target.closest&&e.target.closest('[data-sreset]');
+    if(srs){e.preventDefault();e.stopPropagation();
+      schedReset(srs.getAttribute('data-sreset'));router();return;}
+    var sad=e.target.closest&&e.target.closest('[data-sadd]');
+    if(sad){e.preventDefault();e.stopPropagation();
+      var c=sad.getAttribute('data-sadd').split(':');var day2=c[0],t2=c[1],id2=c.slice(2).join(':');
+      var o=lookup(t2,id2);if(!o)return;
+      var when=window.prompt('What time on '+day2+'? (24h, e.g. 14:30)','');
+      if(when===null)return;
+      when=(when||'').trim();
+      if(!/^\d{1,2}:\d{2}$/.test(when))when='12:00';
+      if(when.length===4)when='0'+when;
+      var base=(curatedFor(day2)[0]||{}).when||'';
+      schedMutate(day2,function(arr){
+        arr.push({day:day2,when:base.slice(0,10)+'T'+when,time:when,
+          title:(o.name||o.title||'Something'),where:itemSub(t2,o),
+          kind:t2==='r'?'food':(t2==='e'?'event':(t2==='t'?'tour':'sight')),
+          nav:itemNav(t2,o)||undefined});
+        arr.sort(function(x,y){return String(x.time||'').localeCompare(String(y.time||''));});
+      });
+      navigate('#/schedule?day='+day2);return;}
+
     // --- itinerary edits (before data-nav, since picker rows sit inside nav-able cards) ---
     var padd=e.target.closest&&e.target.closest('[data-padd]');
     if(padd){e.preventDefault();e.stopPropagation();
