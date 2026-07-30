@@ -130,6 +130,17 @@
   .pbtn[disabled]{opacity:.3}
   .pbtn.del{color:var(--skip)}
   .pbtn.add{background:var(--gold);border-color:var(--gold2);font-weight:700}
+  .pbtn.swap{color:var(--purple);font-weight:700}
+  .swapcard{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    padding:11px 13px;margin-bottom:9px;cursor:pointer}
+  .sw-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .sw-name{font-weight:700;font-size:15.5px;line-height:1.25}
+  .sw-d{flex:0 0 auto;font-size:11.5px;font-weight:700;white-space:nowrap}
+  .sw-d.good{color:var(--green)} .sw-d.even{color:var(--muted)}
+  .sw-d.meh{color:var(--gold2)}  .sw-d.bad{color:var(--skip)}
+  .sw-meta{font-size:12.5px;color:var(--muted);margin-top:3px}
+  .sw-warn{font-size:11.5px;color:var(--skip);font-weight:600;margin-top:4px}
+  .sw-note{font-size:11px;color:var(--gold2);margin-top:3px}
   .dots{display:inline-flex;gap:2.5px;align-items:center;flex:0 0 auto}
   .dot{width:6px;height:6px;border-radius:50%;background:rgba(36,27,18,.18)}
   .dot.on{background:var(--green)}
@@ -770,12 +781,121 @@
         (s.warn?'<div class="s-warn">⚠ '+esc(s.warn)+'</div>':'')+
       '</div>'+
       (editable?'<div class="s-act">'+
+        (slotKindOf(s)?'<button class="pbtn swap" data-nav="#/swap?day='+day+'&i='+i+'" aria-label="Swap for something else">⇄</button>':'')+
         '<button class="pbtn" data-smove="'+day+':'+i+':-1" aria-label="Earlier"'+(i===0?' disabled':'')+'>↑</button>'+
         '<button class="pbtn" data-smove="'+day+':'+i+':1" aria-label="Later"'+(i===n-1?' disabled':'')+'>↓</button>'+
         '<button class="pbtn del" data-sdrop="'+day+':'+i+'" aria-label="Remove">✕</button>'+
       '</div>':'')+
     '</div>';
   }
+  // ---- swapping a slot: rank alternatives by what it costs you ----
+  // The point is to show the consequence before you commit: how much extra walking
+  // the swap adds, whether the place suits that hour, and what you gain on choice.
+  function mealFit(r,time){
+    var h=parseInt(String(time||'12:00').split(':')[0],10);
+    var f=r.filters||[];
+    var has=function(x){return f.indexOf(x)>=0;};
+    var eveningish=has('Fine dining')||has('Seafood')||has('Cajun/Creole')||has('Southern')||
+      has('Italian')||has('Middle Eastern')||has('Latin')||has('Wine bar')||has('Pizza');
+    if(h<11)  return (has('Cafe')||has('Bakery')||has('Brunch'))?1:(has('Fine dining')?0:0.35);
+    if(h<15)  return (has('Casual')||has('Cafe')||has('Food hall')||has('Brunch')||has('Pizza'))?1:0.6;
+    if(h>=22) return has('Late night')?1:0.3;
+    if(h>=17) return eveningish?1:((has('Bakery')||has('Cafe'))?0.2:0.6);
+    return 0.6;
+  }
+  function mealName(time){
+    var h=parseInt(String(time||'12:00').split(':')[0],10);
+    return h<11?'breakfast':(h<15?'lunch':(h>=22?'late night':(h>=17?'dinner':'afternoon')));
+  }
+  // what the slot currently is, and what kind of thing may replace it
+  function slotKindOf(s){
+    if(!s)return null;
+    if(s.nav&&/^#\/r\//.test(s.nav))return 'r';
+    if(s.nav&&/^#\/s\//.test(s.nav))return 's';
+    if(s.kind==='food')return 'r';
+    if(s.kind==='sight'||s.kind==='music')return 's';
+    return null;
+  }
+  function swapCandidates(day,idx,q){
+    var slots=schedFor(day);
+    var cur=slots[idx];
+    if(!cur)return null;
+    var type=slotKindOf(cur);
+    if(!type)return null;
+    var L=resolveLocs(slots);
+    var prevLoc=idx>0?L[idx-1]:null, nextLoc=idx<slots.length-1?L[idx+1]:null;
+    var curCost=(prevLoc?walkMiles(prevLoc,L[idx]):0)+(nextLoc?walkMiles(L[idx],nextLoc):0);
+    var already={};
+    slots.forEach(function(s){var k=slotKindOf(s);if(k&&s.nav)already[s.nav]=1;});
+    var pool=(type==='r'?restaurants():sights());
+    var out=[];
+    pool.forEach(function(o){
+      if(typeof o.lat!=='number')return;
+      var nav='#/'+type+'/'+o.id;
+      if(nav===cur.nav)return;
+      if(already[nav])return;                       // already somewhere in the day
+      if(q){
+        var hay=((o.name||'')+' '+(o.cuisine||'')+' '+(o.category||'')+' '+
+          (o.area_label||'')+' '+(o.filters||[]).join(' ')).toLowerCase();
+        if(hay.indexOf(q)<0)return;
+      }
+      var loc={lat:o.lat,lng:o.lng};
+      var cost=(prevLoc?walkMiles(prevLoc,loc):0)+(nextLoc?walkMiles(loc,nextLoc):0);
+      var delta=cost-curCost;
+      var fit=(type==='r')?mealFit(o,cur.time):1;
+      var opts=(type==='r')?optionsScore(o)/5:0.6;
+      var rate=((Number(o.rating)||4)-4);
+      var samePrice=(type==='r'&&cur.priceBandHint&&o.price===cur.priceBandHint)?0.4:0;
+      var score=(-delta*3)+(fit*1.5)+(opts*1.0)+(rate*1.0)+samePrice;
+      out.push({o:o,type:type,nav:nav,delta:delta,fit:fit,score:score});
+    });
+    out.sort(function(a,b){return b.score-a.score;});
+    return {cur:cur,type:type,list:out,curCost:curCost,mealName:mealName(cur.time)};
+  }
+  function swapView(state){
+    state=state||{};
+    var day=state.day, idx=parseInt(state.i,10), q=(state.q||'').toLowerCase();
+    var res=(day&&!isNaN(idx))?swapCandidates(day,idx,q):null;
+    if(!res)return '<div class="empty">Nothing to swap here. <span class="btn" data-nav="#/schedule">Back to the schedule</span></div>';
+    var cur=res.cur;
+    var head='<div class="card pad">'+
+      '<div class="muted" style="font-size:12px">Replacing at '+esc(fmtTime(cur.time))+' on '+esc(day)+'</div>'+
+      '<div style="font-weight:800;font-size:17px;margin-top:2px">'+esc(cur.title)+'</div>'+
+      '<div class="muted" style="font-size:12.5px;margin-top:4px">'+
+        (res.type==='r'?'Ranked for a '+esc(res.mealName)+' slot, and for how little extra walking it adds.'
+                       :'Ranked for how little extra walking it adds.')+'</div>'+
+      '</div>';
+    var search='<div class="searchbar" style="margin-top:10px">'+
+      '<input id="wq" type="search" placeholder="Filter by name, cuisine, area…" value="'+esc(state.q||'')+'" autocomplete="off"></div>';
+    return '<div class="muted" style="font-size:13px;margin:6px 2px 10px">'+
+        'Swap keeps the time slot — only the place changes, and the walking is recalculated.</div>'+
+      head+search+'<div id="wres">'+swapResults(day,idx,res)+'</div>';
+  }
+  function swapResults(day,idx,res){
+    if(!res.list.length)return '<div class="empty" style="padding:20px">Nothing matches.</div>';
+    return res.list.slice(0,20).map(function(c){
+      var o=c.o;
+      var d=c.delta;
+      var deltaTxt=Math.abs(d)<0.05?'about the same walk'
+        :(d<0?'~'+Math.abs(d).toFixed(2)+' mi less walking':'~'+d.toFixed(2)+' mi more walking');
+      var cls=Math.abs(d)<0.05?'even':(d<0?'good':(d>0.5?'bad':'meh'));
+      return '<div class="swapcard" data-wswap="'+day+':'+idx+':'+c.type+':'+esc(o.id)+'">'+
+        '<div class="sw-top">'+
+          '<div class="sw-name">'+esc(o.name)+'</div>'+
+          '<div class="sw-d '+cls+'">'+esc(deltaTxt)+'</div>'+
+        '</div>'+
+        '<div class="sw-meta">'+
+          (o.rating?'★ '+esc(String(o.rating))+' · ':'')+
+          (o.price?esc(o.price)+' · ':'')+
+          esc(o.area_label||dName(o.district)||'')+
+          (c.type==='r'&&o.menu?' · '+esc(optionsLabel(o)):'')+
+        '</div>'+
+        (c.type==='r'&&c.fit<0.5?'<div class="sw-warn">Not really a '+esc(res.mealName)+' place</div>':'')+
+        (c.type==='r'&&o.menu_confidence!=='verified'?'<div class="sw-note">menu approximate</div>':'')+
+      '</div>';
+    }).join('');
+  }
+
   function scheduleView(state){
     state=state||{};
     var only=state.day||'', open=state.add||'', q=(state.q||'').toLowerCase();
@@ -1430,6 +1550,7 @@
     else if(route==='getting-around'){html=logisticsView();titleHTML='Getting around';back=true;}
     else if(route==='itinerary'){html=itineraryView(q);titleHTML='My plan';back=true;}
     else if(route==='schedule'){html=scheduleView(q);titleHTML='Schedule';back=true;}
+    else if(route==='swap'){html=swapView(q);titleHTML='Swap';back=true;}
     else if(route==='plan'){html=planView();titleHTML='Plan';back=false;}
     else if(route==='more'){html=moreView();titleHTML='More';back=false;}
     else if(route==='r'){var rr=findR(arg);html=restaurantView(arg);titleHTML=esc(rr?rr.name:'Not found');}
@@ -1457,6 +1578,11 @@
     if(route==='search'){var qi2=el('q');if(qi2){qi2.addEventListener('input',function(){runSearch(qi2.value);});
       runSearch('');qi2.focus();}}
     // itinerary picker: filter in place, without re-navigating on every keystroke
+    if(route==='swap'&&q.day){var wq=el('wq');
+      if(wq){wq.addEventListener('input',function(){
+        var r=swapCandidates(q.day,parseInt(q.i,10),wq.value.trim().toLowerCase());
+        var box=el('wres');if(box&&r)box.innerHTML=swapResults(q.day,parseInt(q.i,10),r);});
+        wq.focus();}}
     if(route==='schedule'&&q.add){var sq=el('sq');
       if(sq){sq.addEventListener('input',function(){
         var box=el('sres');if(box)box.innerHTML=schedPicker(q.add,sq.value.trim().toLowerCase());});
@@ -1485,6 +1611,24 @@
     if(sd){e.preventDefault();e.stopPropagation();
       var k=sd.getAttribute('data-sdone').split('|');
       toggleDone(k[0],{time:k[1],title:k[2]});router();return;}
+    var wsw=e.target.closest&&e.target.closest('[data-wswap]');
+    if(wsw){e.preventDefault();e.stopPropagation();
+      var w=wsw.getAttribute('data-wswap').split(':');
+      var wday=w[0],wi=+w[1],wt=w[2],wid=w.slice(3).join(':');
+      var o=lookup(wt,wid);
+      if(o){schedMutate(wday,function(arr){
+        var old=arr[wi]||{};
+        arr[wi]=Object.assign({},old,{
+          title:(o.name||o.title||old.title),
+          where:itemSub(wt,o),
+          nav:itemNav(wt,o)||undefined,
+          kind:wt==='r'?'food':'sight',
+          lat:(typeof o.lat==='number'?o.lat:undefined),
+          lng:(typeof o.lng==='number'?o.lng:undefined),
+          note:undefined,cost:undefined,booked:undefined,reserve:undefined,star:undefined,warn:undefined
+        });
+      });}
+      navigate('#/schedule?day='+wday);return;}
     var sm=e.target.closest&&e.target.closest('[data-smove]');
     if(sm){e.preventDefault();e.stopPropagation();
       var a=sm.getAttribute('data-smove').split(':');var day=a[0],i=+a[1],dir=+a[2];
