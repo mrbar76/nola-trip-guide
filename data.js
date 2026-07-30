@@ -1,4 +1,4 @@
-/* NOLA Guide data. Menus re-extracted from each restaurant's own current menu where machine-readable and flagged verified/approximate. Weather is a live NWS fetch with this baked snapshot as offline fallback. Prices, ratings, discounts & 2026 event dates approximate — verify on the day. photoUrl=120px card thumb, coverUrl=500px detail hero. */
+/* NOLA Guide data. Menus re-extracted from each restaurant's own current menu where machine-readable (incl. PDFs) and flagged verified/approximate; prices as printed. Other prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: photoUrl=120px card thumb, coverUrl=500px detail hero. Day plan built around August heat and afternoon storms. */
 window.DATA = {
  "districts": [
   {
@@ -918,60 +918,108 @@ window.DATA = {
    "rating_note": "Google 4.5 stars (~45,000+ reviews); Tripadvisor 4.2. Beloved as an essential NOLA ritual, though lines run long at peak.",
    "lat": 29.9575,
    "lng": -90.0614,
-   "dinner_estimate": "$8-15 per person",
+   "dinner_estimate": "About $9-12 per person (one order of beignets plus a café au lait); cash only",
    "menu": [
     {
-     "item": "Beignets (order of 3)",
-     "price": "$3.65",
-     "note": "Vegetarian — fried dough dusted with powdered sugar; the signature item"
+     "item": "BEIGNETS",
+     "price": "$4.53",
+     "course": "dessert",
+     "note": "3 pieces to an order with powdered sugar; vegetarian (mix contains milk)"
     },
     {
-     "item": "Café au Lait",
-     "price": "$3.65",
-     "note": "Coffee and chicory with hot milk"
+     "item": "Café au Lait (Coffee and Chicory served with Hot Milk)",
+     "price": "REG $3.60 / MD $4.53 / LG $5.43",
+     "course": "drink",
+     "note": "HOT beverages section; the signature order"
     },
     {
-     "item": "Coffee (black, with chicory)",
-     "price": "$3.65"
+     "item": "Black Coffee & Chicory",
+     "price": "REG $3.60 / MD $4.53 / LG $5.43",
+     "course": "drink",
+     "note": "HOT beverages section"
     },
     {
-     "item": "Frozen Café au Lait",
-     "price": "$5.29"
+     "item": "Decaf Café au Lait",
+     "price": "REG $3.60 / MD $4.53 / LG $5.43",
+     "course": "drink",
+     "note": "HOT beverages section"
     },
     {
-     "item": "Iced Coffee",
-     "price": "$3.65"
+     "item": "Decaf Black Coffee",
+     "price": "REG $3.60 / MD $4.53 / LG $5.43",
+     "course": "drink",
+     "note": "HOT beverages section"
     },
     {
-     "item": "Hot Chocolate",
-     "price": "$3.65"
+     "item": "Café au Lait (Coffee and Chicory served with Milk) - ICED",
+     "price": "REG $5.43 / LG $6.56",
+     "course": "drink",
+     "note": "ICED beverages section"
     },
     {
-     "item": "White Milk",
-     "price": "$2.86"
+     "item": "Black Coffee & Chicory - ICED",
+     "price": "REG $5.43 / LG $6.56",
+     "course": "drink",
+     "note": "ICED beverages section"
     },
     {
-     "item": "Chocolate Milk",
-     "price": "$2.86"
+     "item": "Decaf Café au Lait - ICED",
+     "price": "REG $5.43 / LG $6.56",
+     "course": "drink",
+     "note": "ICED beverages section"
     },
     {
-     "item": "Orange Juice",
-     "price": "$3.60"
+     "item": "Decaf Black Coffee - ICED",
+     "price": "REG $5.43 / LG $6.56",
+     "course": "drink",
+     "note": "ICED beverages section"
     },
     {
-     "item": "Soft Drink",
-     "price": "$3.10"
+     "item": "Café au Lait (Coffee and Chicory served with Milk) - FROZEN",
+     "price": "REG $6.56 / LG $7.70",
+     "course": "drink",
+     "note": "FROZEN section - the frozen café au lait"
     },
     {
-     "item": "Iced Tea",
-     "price": "$3.10"
+     "item": "HOT CHOCOLATE",
+     "price": "REG $3.60 / LG $5.43",
+     "course": "drink"
     },
     {
-     "item": "Hot Tea",
-     "price": "$3.10"
+     "item": "ORANGE JUICE",
+     "price": "REG $3.60 / LG $5.43",
+     "course": "drink",
+     "note": "fresh squeezed"
+    },
+    {
+     "item": "COKE, DIET COKE, SPRITE",
+     "price": "REG $3.60 / LG $5.43",
+     "course": "drink"
+    },
+    {
+     "item": "COLD MILK (WHITE OR CHOCOLATE)",
+     "price": "REG $3.60 / LG $4.53",
+     "course": "drink"
+    },
+    {
+     "item": "BOTTLED WATER",
+     "price": "$3.60",
+     "course": "drink"
+    },
+    {
+     "item": "ARCHWAY MUG",
+     "price": "$10.86",
+     "course": "drink",
+     "note": "Keepsake mug - price includes a fresh cup of coffee"
+    },
+    {
+     "item": "SOUVENIR LOGO MUG",
+     "price": "$9.95",
+     "course": "drink",
+     "note": "Keepsake mug - price includes a fresh cup of coffee"
     }
    ],
-   "avoid_note": "Nothing to avoid — the entire menu is meat-free and shellfish-free. Every item is safe for this couple.",
+   "avoid_note": "Nothing to avoid here - the entire menu is beignets and drinks, with no shellfish, pork or other meat on it at all. Just note the stand is CASH ONLY and prices exclude sales tax.",
    "kosher_style_fit": "Excellent style fit: fully vegetarian/dairy menu with no meat, pork, or shellfish anywhere. Beignets are fried in vegetable oil. Not certified kosher, but nothing on the menu conflicts with the couple's rules.",
    "tags": [
     "veg"
@@ -987,7 +1035,9 @@ window.DATA = {
    "reserve_priority": false,
    "website": "https://www.cafedumonde.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/120px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/500px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/500px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg",
+   "menu_source": "https://shop.cafedumonde.com/cafe/",
+   "menu_confidence": "verified"
   },
   {
    "id": "galatoires",
@@ -1001,121 +1051,215 @@ window.DATA = {
    "rating_note": "Google/Birdeye ~4.3 stars (3,000+ reviews); Tripadvisor 4.1. Praised for impeccable service and classic Creole fish dishes; some find it pricey and traditional.",
    "lat": 29.9557,
    "lng": -90.0678,
-   "dinner_estimate": "$70-110 per person",
+   "dinner_estimate": "About $60-80 per person: appetizer or salad $10-12 + the market-price fish (roughly $38-45) + a side $6-9. Menu prices are cash prices; a 3.5% fee is added to non-cash payments.",
    "menu": [
     {
      "item": "Soufflé Potatoes",
      "price": "$10",
-     "note": "Vegetarian — crisp potato puffs served with béarnaise"
+     "course": "starter",
+     "note": "crispy potato puffs, béarnaise sauce - vegetarian"
     },
     {
      "item": "Fried Eggplant",
      "price": "$10",
-     "note": "Vegetarian"
+     "course": "starter",
+     "note": "eggplant sticks, Italian breadcrumbs, béarnaise sauce, powdered sugar - vegetarian"
     },
     {
      "item": "Salad Maison",
      "price": "$10",
-     "note": "House green salad"
+     "course": "starter",
+     "note": "iceberg lettuce, spring lettuces, tomato, asparagus, egg, anchovy filet; ask without the anchovy if you prefer it meat-free"
     },
     {
      "item": "Green Salad with Garlic",
-     "price": "$10"
+     "price": "$10",
+     "course": "starter",
+     "note": "spring lettuces, garlic puree, creole mustard vinaigrette"
     },
     {
      "item": "Bistro Romaine Salad",
      "price": "$12",
-     "note": "With cheese; ask whether the dressing contains anchovy"
+     "course": "starter",
+     "note": "romaine lettuce, tomatoes, blue cheese, spiced pecans"
     },
     {
      "item": "Iceberg Wedge",
      "price": "$12",
-     "note": "Ask without bacon"
+     "course": "starter",
+     "note": "iceberg, grape tomatoes, blue cheese dressing - ask without the apple smoked bacon"
     },
     {
      "item": "Asparagus and Hearts of Palm",
      "price": "$12",
-     "note": "Vegetarian"
+     "course": "starter",
+     "note": "asparagus, hearts of palm, avocado, tomatoes, bibb lettuce"
     },
     {
      "item": "Eggs Sardou",
      "price": "$24",
-     "note": "Vegetarian — poached eggs, artichoke bottoms, creamed spinach, hollandaise"
+     "course": "main",
+     "note": "poached eggs, artichoke hearts, creamed spinach, hollandaise - vegetarian as served"
     },
     {
-     "item": "Asparagus Omelette",
+     "item": "Eggs Benedict",
+     "price": "$22",
+     "course": "main",
+     "note": "poached eggs, English muffin, hollandaise - ask without the smoked ham"
+    },
+    {
+     "item": "Asparagus",
      "price": "$19",
-     "note": "Vegetarian three-egg omelette"
+     "course": "main",
+     "note": "Omelettes section - three egg omelette with asparagus"
     },
     {
-     "item": "Fish of the Day (redfish, trout, drum, etc.)",
+     "item": "Ham and Cheese",
+     "price": "$19",
+     "course": "main",
+     "note": "Omelettes section - three egg omelette; ask without the ham (cheese only)"
+    },
+    {
+     "item": "Bacon and Mushroom",
+     "price": "$19",
+     "course": "main",
+     "note": "Omelettes section - three egg omelette; ask without the bacon (mushroom only)"
+    },
+    {
+     "item": "Fish",
      "price": "Market Price",
-     "note": "Finned Gulf fish prepared sautéed, broiled, or poached — ask for meunière/lemon-butter rather than any shellfish garnish"
+     "course": "main",
+     "note": "Fish section: \"see your server for today's offerings... seasonal selections of the freshest available fish.\" Preparations sautéed, broiled, fried or poached. Skip the crab/shrimp garnishes."
     },
     {
-     "item": "Asparagus Hollandaise (side)",
+     "item": "Meunière Amandine",
+     "price": "$3",
+     "course": "side",
+     "note": "Optional garnish for the fish - eligible"
+    },
+    {
+     "item": "Lemon Caper Beurre Blanc",
+     "price": "$3",
+     "course": "side",
+     "note": "Optional garnish for the fish - eligible"
+    },
+    {
+     "item": "Asparagus Hollandaise",
      "price": "$9",
-     "note": "Vegetarian"
+     "course": "side"
     },
     {
-     "item": "Broccoli Hollandaise (side)",
-     "price": "$9",
-     "note": "Vegetarian"
-    },
-    {
-     "item": "Creamed Spinach (side)",
-     "price": "$8"
-    },
-    {
-     "item": "Sautéed Spinach (side)",
-     "price": "$8"
-    },
-    {
-     "item": "Cauliflower au Gratin (side)",
-     "price": "$9"
-    },
-    {
-     "item": "Brabant Potatoes (side)",
-     "price": "$8"
-    },
-    {
-     "item": "Lyonnaise Potatoes (side)",
-     "price": "$8"
-    },
-    {
-     "item": "Hashed Browns (side)",
-     "price": "$8"
-    },
-    {
-     "item": "Potatoes au Gratin (side)",
-     "price": "$9"
-    },
-    {
-     "item": "Boiled Potato (side)",
-     "price": "$6"
-    },
-    {
-     "item": "Fried Onion Rings (side)",
+     "item": "Broccoli Hollandaise",
      "price": "$8",
-     "note": "Vegetarian"
+     "course": "side"
     },
     {
-     "item": "Portobello Mushrooms (side)",
-     "price": "$9",
-     "note": "Vegetarian"
+     "item": "Brabant Potatoes",
+     "price": "$7",
+     "course": "side"
     },
     {
-     "item": "Broiled Tomato (side)",
+     "item": "Creamed Spinach",
      "price": "$6",
-     "note": "Vegetarian"
+     "course": "side"
     },
     {
-     "item": "Cauliflower (side)",
+     "item": "Cauliflower",
      "price": "$8",
-     "note": "Vegetarian"
+     "course": "side"
+    },
+    {
+     "item": "Hashed Browns",
+     "price": "$7",
+     "course": "side"
+    },
+    {
+     "item": "Sautéed Spinach",
+     "price": "$8",
+     "course": "side"
+    },
+    {
+     "item": "Cauliflower au Gratin",
+     "price": "$9",
+     "course": "side"
+    },
+    {
+     "item": "Lyonnaise Potatoes",
+     "price": "$7",
+     "course": "side"
+    },
+    {
+     "item": "Spinach Rockefeller",
+     "price": "$7",
+     "course": "side",
+     "note": "herbsaint-scented spinach side (no oysters); confirm no bacon"
+    },
+    {
+     "item": "Fried Onion Rings",
+     "price": "$7",
+     "course": "side"
+    },
+    {
+     "item": "Potatoes au Gratin",
+     "price": "$8",
+     "course": "side"
+    },
+    {
+     "item": "Portobello Mushrooms",
+     "price": "$8",
+     "course": "side"
+    },
+    {
+     "item": "Broiled Tomato",
+     "price": "$7",
+     "course": "side"
+    },
+    {
+     "item": "Boiled Potato",
+     "price": "$6",
+     "course": "side"
+    },
+    {
+     "item": "Caramel Cup Custard",
+     "price": "$6",
+     "course": "dessert"
+    },
+    {
+     "item": "Bread Pudding",
+     "price": "$9",
+     "course": "dessert",
+     "note": "banana praline sauce"
+    },
+    {
+     "item": "French Silk Pie",
+     "price": "$10",
+     "course": "dessert",
+     "note": "chocolate mousse, chocolate ganache, candied pecans, salted caramel, coco pearls"
+    },
+    {
+     "item": "Seasonal Cheesecake",
+     "price": "$10",
+     "course": "dessert",
+     "note": "printed on the menu as \"$1o\" (typo) - i.e. $10"
+    },
+    {
+     "item": "Peach-Almond Trifle",
+     "price": "$10",
+     "course": "dessert",
+     "note": "sponge cake, honey-roasted peaches, chantilly cream, toasted almonds"
+    },
+    {
+     "item": "Raspberry Sorbet",
+     "price": "$6",
+     "course": "dessert"
+    },
+    {
+     "item": "Vanilla or Coffee Ice Cream",
+     "price": "$6",
+     "course": "dessert"
     }
    ],
-   "avoid_note": "Skip the shellfish-heavy signatures (Crabmeat, Shrimp Remoulade, Oysters Rockefeller, Godchaux/Avocado-Crab salads, Bouillabaisse), the andouille/duck gumbo, and all the meat and poultry entrées. The Iceberg Wedge and any Eggs Benedict come with bacon/ham — request omission.",
+   "avoid_note": "Skip the house classics that are all shellfish or off-limits meat: Shrimp Remoulade, Crab Maison, Oysters Rockefeller, Oysters en Brochette, Escargot, Turtle Soup au Sherry, Seafood Okra Gumbo, Duck and Andouille Gumbo, Godchaux Salad, the whole Shellfish section (Crab Yvonne, Crabmeat Sardou, Stuffed Eggplant, Bouillabaisse, all the shrimp dishes) and the Meat section. Also decline the crab/shrimp garnishes offered on the fish.",
    "kosher_style_fit": "Workable with care: a solid vegetarian appetizer/salad/side selection plus market-price finned Gulf fish (redfish, trout, drum) that can be broiled or sautéed. Avoid the many shellfish and pork-based dishes; confirm fish is cooked separately from shellfish. Not kosher-certified.",
    "tags": [
     "fish",
@@ -1133,7 +1277,9 @@ window.DATA = {
    "reserve_priority": true,
    "website": "https://www.galatoires.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/120px-2009-0228-NOLA-004-Galatoires.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/500px-2009-0228-NOLA-004-Galatoires.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/500px-2009-0228-NOLA-004-Galatoires.jpg",
+   "menu_source": "https://www.galatoires.com/menus/dining-room (desserts from https://www.galatoires.com/menus/dessert)",
+   "menu_confidence": "verified"
   },
   {
    "id": "gw-fins",
@@ -1142,77 +1288,171 @@ window.DATA = {
    "area_label": "French Quarter",
    "cuisine": "Upscale seafood",
    "vibe": "A polished, white-tablecloth seafood room in the heart of the Quarter where the menu is reprinted daily around whatever comes in fresh. Nationally ranked (Yelp Top 100 2026), it is the couple's best-fit fine-dining fish house in the city.",
-   "price": "$$$$",
+   "price": "$$$",
    "rating": 4.5,
    "rating_note": "Yelp 4.5 (Tripadvisor 4.7)",
    "lat": 29.9547,
    "lng": -90.0683,
-   "dinner_estimate": "$65/person",
+   "dinner_estimate": "About $55-70 per person: a chilled or hot starter $14-16 + a fish entrée $36-39 + dessert $11-13. The menu is printed daily, so exact fish change nightly.",
    "menu": [
     {
-     "item": "Tempura Fin Wings",
-     "price": "$14"
+     "item": "Tempura Snapper Breast",
+     "price": "$15",
+     "course": "starter",
+     "note": "Hot section - crispy noodle salad, Korean glaze"
     },
     {
-     "item": "Fish & Chips",
-     "price": "$16"
+     "item": "Sicilian Tuna Meatballs",
+     "price": "$15",
+     "course": "starter",
+     "note": "Hot section - soft polenta, tomato ragu, Parmesan (tuna, not meat)"
     },
     {
-     "item": "Local Arugula & Strawberry Salad (feta, balsamic)",
-     "price": "$8"
+     "item": "Smoked Tuna Dip",
+     "price": "$14",
+     "course": "starter",
+     "note": "Chilled section - pickled peppers, fresh dill, house sesame crackers"
     },
     {
-     "item": "Wood-Grilled Fish (daily fresh selection)",
-     "price": "$38 approx",
-     "note": "ask for a plain wood-grilled preparation, no shellfish garnish"
+     "item": "Sashimi Grade Firecracker Tuna Tacos",
+     "price": "$16",
+     "course": "starter",
+     "note": "Chilled section - ginger slaw, wasabi tobiko, avocado aioli"
     },
     {
-     "item": "Gulf Red Grouper (sweet potato hash, chipotle butter, crispy plantains)",
-     "price": "$39"
+     "item": "#1 Bluefin Tuna Tartare",
+     "price": "$15",
+     "course": "starter",
+     "note": "Chilled section - mango, avocado mousse, radish, macadamia"
     },
     {
-     "item": "Yellowfin Tuna (fennel-peppercorn crust, mascarpone polenta)",
-     "price": "$38"
+     "item": "Snapper Ceviche",
+     "price": "$16",
+     "course": "starter",
+     "note": "Chilled section - aji chili, plantain chips, pico, habanero sorbet"
     },
     {
-     "item": "Wild Redfish, cast-iron blackened",
+     "item": "Heirloom Tomato",
+     "price": "$14",
+     "course": "starter",
+     "note": "Salads - wild arugula, sweet onions, fresh burrata, basil oil, balsamic reduction"
+    },
+    {
+     "item": "Golden Beet",
+     "price": "$13",
+     "course": "starter",
+     "note": "Salads - baby spinach, pecans, goat cheese, pickled red onions, sherry vinaigrette"
+    },
+    {
+     "item": "Triple Iceberg Wedge",
+     "price": "$15",
+     "course": "starter",
+     "note": "Salads - three wedges; ask without the bacon and without the shrimp topping"
+    },
+    {
+     "item": "Parmesan Crusted Drum",
+     "price": "$38",
+     "course": "main",
+     "note": "asparagus, truffled potatoes, crispy capers, Meyer lemon beurre blanc - ask without the jumbo lump crab"
+    },
+    {
+     "item": "Yellowedge Grouper",
+     "price": "$39",
+     "course": "main",
+     "note": "wood grilled, local melon salsa, crispy yucca, guava glaze - ask without the popcorn shrimp"
+    },
+    {
+     "item": "Gulf Swordfish",
      "price": "$37",
-     "note": "ask without the fried shrimp topping"
+     "course": "main",
+     "note": "cast iron blackened, mashed potatoes, sautéed spinach, roasted corn butter, chili hollandaise - ask without the fried shrimp"
     },
     {
-     "item": "Crispy Snapper Belly (noodle cake, pickled vegetables, Vietnamese glaze)",
-     "price": "$34"
+     "item": "Pecan Crusted Pomfret",
+     "price": "$37",
+     "course": "main",
+     "note": "pan sauteed, gnocchi, summer squash, baby spinach, parsnip puree, sage brown butter - eligible as-is"
     },
     {
-     "item": "Jalapeno-Glazed Salmon",
-     "price": "$37 approx"
+     "item": "#1 Yellowfin Tuna",
+     "price": "$38",
+     "course": "main",
+     "note": "seared rare, fennel peppercorn crust, polenta, cremini mushrooms, wilted arugula, tomato ragu - eligible as-is"
     },
     {
-     "item": "Blackened Swordfish, chili hollandaise",
-     "price": "$37 approx"
+     "item": "American Red Snapper",
+     "price": "$38",
+     "course": "main",
+     "note": "pan sauteed, local long grain rice, crispy okra - ask without the Louisiana shrimp creole"
     },
     {
-     "item": "Wood-Grilled Asparagus, lemon olive butter",
-     "price": "$10 approx"
+     "item": "Louisiana Tripletail",
+     "price": "$36",
+     "course": "main",
+     "note": "wood grilled, sweet potato hash, chipotle butter, crispy plantains, pineapple basil glaze - eligible as-is"
+    },
+    {
+     "item": "Sweet Corn Spoonbread",
+     "price": "$9",
+     "course": "side",
+     "note": "black eyed pea succotash; confirm no pork in the succotash"
+    },
+    {
+     "item": "Mushroom Risotto",
+     "price": "$9",
+     "course": "side",
+     "note": "wild mushrooms, porcini butter"
+    },
+    {
+     "item": "Compressed Watermelon & Feta",
+     "price": "$7",
+     "course": "side",
+     "note": "balsamic pearls, mint"
+    },
+    {
+     "item": "Cornmeal Fried Okra",
+     "price": "$10",
+     "course": "side",
+     "note": "pepper jelly, chow chow"
     },
     {
      "item": "Salty Malty Ice Cream Pie",
-     "price": "$7"
+     "price": "$12",
+     "course": "dessert",
+     "note": "pretzel crust, caramel whipped cream"
     },
     {
-     "item": "Banana Pudding",
-     "price": "$7"
+     "item": "Banana Foster Funnel Cake",
+     "price": "$12",
+     "course": "dessert",
+     "note": "brûléed banana, dark rum caramel, vanilla ice cream"
     },
     {
-     "item": "Creme Brulee",
-     "price": "$9 approx"
+     "item": "Coconut on the Half Shell",
+     "price": "$12",
+     "course": "dessert",
+     "note": "coconut sorbet, chocolate shell, Forbidden coco crispies"
     },
     {
-     "item": "Bread Pudding",
-     "price": "$9 approx"
+     "item": "Crème Brûlée",
+     "price": "$13",
+     "course": "dessert",
+     "note": "fresh fruit"
+    },
+    {
+     "item": "Chocolate Mousse Bombe",
+     "price": "$12",
+     "course": "dessert",
+     "note": "raspberry coulis"
+    },
+    {
+     "item": "House Made Sorbet",
+     "price": "$11",
+     "course": "dessert",
+     "note": "ask your server for daily selections"
     }
    ],
-   "avoid_note": "Skip the signature Scalibut (scallops + Royal Red shrimp risotto), Lobster Dumplings, Jumbo Lump Crab Cakes, Fried Oysters, BBQ Shrimp, Panko Calamari, Seafood Gumbo and the Crispy Pork Belly.",
+   "avoid_note": "Skip Lobster Dumplings, Lobster Bisque, Barbeque Shrimp, Fried Oysters, Panko Crusted Calamari, Calamari \"Fettuccine\", Crispy Pork Belly, Gulf Shrimp Aguachile, the Scalibut (scallops + Royal Red shrimp risotto), the Sea Scallop Carbonara, and the chicken/pork chop/filet entrées. The Bluefin Tuna vs. Prime Ribeye ($75) is half beef, so it doesn't work either.",
    "kosher_style_fit": "Excellent fit — a dedicated fin-fish house, so nearly every entree is a scaled Gulf or wild fish; just steer around the shellfish and pork starters.",
    "tags": [
     "fish",
@@ -1226,7 +1466,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/gw-fins",
    "website": "https://www.gwfins.com",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.opentable.com/gw-fins",
+   "menu_confidence": "verified"
   },
   {
    "id": "napoleon-house",
@@ -1240,50 +1482,73 @@ window.DATA = {
    "rating_note": "Google/Sirved 4.5 stars; Yelp 2,100+ reviews. Loved for its historic ambiance and classic New Orleans fare more than any single dish.",
    "lat": 29.9573,
    "lng": -90.0637,
-   "dinner_estimate": "$20-35 per person",
+   "dinner_estimate": "$25-35 per person (starters + dessert + a spirit-free drink; there is no eligible entree)",
    "menu": [
     {
      "item": "Bruschetta",
-     "price": "$12",
-     "note": "Vegetarian — mozzarella, pecan pesto, Parmesan, tomatoes on toasted bread"
+     "price": "$12.00",
+     "course": "starter",
+     "note": "Melted mozzarella, pecan pesto drizzle, Parmesan and tomatoes on half of a toasted Italian loaf"
     },
     {
      "item": "Warm Spinach & Artichoke Dip",
-     "price": "$13",
-     "note": "Vegetarian — served in a sourdough bread bowl"
+     "price": "$13.00",
+     "course": "starter",
+     "note": "Served in a housemade sourdough bread bowl with pita bread for dipping"
     },
     {
-     "item": "Potato Salad (side)",
-     "price": "$5",
-     "note": "Vegetarian"
+     "item": "Wedge Salad",
+     "price": "$12.00",
+     "course": "starter",
+     "note": "Iceberg, blue cheese, grape tomatoes, buttermilk dressing - ask without the bacon"
+    },
+    {
+     "item": "Potato Salad",
+     "price": "$5.00",
+     "course": "side"
     },
     {
      "item": "Zapp's Potato Chips",
      "price": "$2.50",
-     "note": "Vegetarian"
+     "course": "side"
     },
     {
      "item": "Classic Bread Pudding",
-     "price": "$8",
-     "note": "Vegetarian — raisins with whiskey sauce"
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "Studded with raisins, topped with warm whiskey sauce"
     },
     {
      "item": "Crème Brûlée",
-     "price": "$8",
-     "note": "Vegetarian — French vanilla custard"
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "French vanilla custard, caramelized sugar, Luxardo cherry"
     },
     {
      "item": "Chocolate Doberge Cake",
-     "price": "$8",
-     "note": "Vegetarian"
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "New Orleans multi-layer cake from the Ralph Brennan bakery"
     },
     {
      "item": "Fresh Fruit Plate",
-     "price": "$6",
-     "note": "Vegetarian"
+     "price": "$6.00",
+     "course": "dessert"
+    },
+    {
+     "item": "Vir-Gin Pimm's",
+     "price": "$9.00",
+     "course": "drink",
+     "note": "Spirit-free version of the house signature: Ritual Zero Proof gin, housemade lemonade, lemon-lime soda, cucumber (cocktails menu)"
+    },
+    {
+     "item": "N/A-Perol Spritz",
+     "price": "$11.00",
+     "course": "drink",
+     "note": "Ritual Zero Proof aperitif, soda, lemon juice + a twist (cocktails menu)"
     }
    ],
-   "avoid_note": "Very limited for this couple. The muffuletta, po-boys, gumbo, jambalaya, red beans and rice, and all sandwiches contain pork, beef, chicken, alligator, or shellfish. The Fried Catfish po-boy is excluded (catfish has no scales). Realistically a spot for vegetarian starters and dessert, not a full fish dinner.",
+   "avoid_note": "Skip the house specialties: the Italian Muffuletta (ham, salami, pastrami), Chicken & Andouille Gumbo, Creole Jambalaya, Red Beans & Rice (served with smoked sausage), the Alligator Sausage / Hot Roast Beef / Hot Pastrami / Fried Gulf Shrimp / Fried Catfish po-boys, Boudin Sausage, Charcuterie Board, Muffuletta Salad, and the Shrimp Remoulade Stuffed Avocado.",
    "kosher_style_fit": "Weak fit for the fish-eater — the kitchen offers no eligible finned fish (the only fish item is catfish, which is out). Works only as vegetarian small plates and desserts. Heavy pork and shellfish presence throughout the menu; not kosher-certified.",
    "tags": [
     "veg",
@@ -1299,7 +1564,9 @@ window.DATA = {
    "reserve_priority": false,
    "website": "https://www.napoleonhouse.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/120px-The_Napoleon_House_-_New_Orleans_February_2026.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/500px-The_Napoleon_House_-_New_Orleans_February_2026.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/500px-The_Napoleon_House_-_New_Orleans_February_2026.jpg",
+   "menu_source": "https://www.napoleonhouse.com/menus/main-menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "sylvain",
@@ -1313,67 +1580,148 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9573,
    "lng": -90.0637,
-   "dinner_estimate": "$45/person",
+   "dinner_estimate": "$50-75 per person (starter $10-19 + Harrisa White Beans $24 or market-price Gulf Fish + dessert $11-13)",
    "menu": [
     {
-     "item": "Cast Iron Cornbread",
-     "price": "$10"
+     "item": "CAST IRON CORNBREAD",
+     "price": "$10",
+     "course": "starter",
+     "note": "Spicy Steen's cane syrup butter"
     },
     {
-     "item": "Crispy Zucchini",
-     "price": "$14"
+     "item": "CRISPY ZUCCHINI",
+     "price": "$14",
+     "course": "starter",
+     "note": "Fried zucchini fingers, tabasco mash aioli"
     },
     {
-     "item": "Tomato Carpaccio",
+     "item": "TOMATO CARPACCIO",
      "price": "$19",
-     "note": "confirm no anchovy/cured-fish garnish, or that any fish is finned"
+     "course": "starter",
+     "note": "Caper berries, torn basil, redfish tonnato"
     },
     {
-     "item": "Sylvain Market Salad",
-     "price": "$14"
+     "item": "SYLVAIN MARKET SALAD",
+     "price": "$14",
+     "course": "starter",
+     "note": "Strawberry, celery, dried cranberries, pickled onions, sunflower seeds, strawberry vinaigrette"
     },
     {
-     "item": "Green Cabbage Salad",
-     "price": "$15"
+     "item": "GREEN CABBAGE SALAD",
+     "price": "$15",
+     "course": "starter",
+     "note": "Lime, peanut, cilantro, jalapeno"
     },
     {
-     "item": "Gulf Fish",
-     "price": "Market Price"
+     "item": "GULF FISH",
+     "price": "MKT",
+     "course": "main",
+     "note": "Maque choux, white remoulade, trout roe - market price; ask whether the maque choux is made with bacon"
     },
     {
-     "item": "Harissa White Beans",
-     "price": "$24"
+     "item": "HARRISA WHITE BEANS",
+     "price": "$24",
+     "course": "main",
+     "note": "Mushroom conserva, okra, eggplant, heirloom tomato, cauliflower, pepitas"
     },
     {
-     "item": "Shakshuka (brunch)",
-     "price": "$21"
+     "item": "SHAKSHUKA",
+     "price": "$21",
+     "course": "main",
+     "note": "Brunch (Fri-Sun 10:30am-3pm): roasted red peppers, tomato, poached eggs, salsa verde, baguette"
     },
     {
-     "item": "French Fries or Grits (side)",
-     "price": "$8"
+     "item": "FRIED GREEN TOMATO BLT",
+     "price": "$18",
+     "course": "main",
+     "note": "Brunch: brioche bun, remoulade, iceberg, fried green tomatoes - ask without the bacon"
     },
     {
-     "item": "Eggs, two (side)",
-     "price": "$2"
+     "item": "BLUEBERRY BUTTERMILK PANCAKES",
+     "price": "$19",
+     "course": "main",
+     "note": "Brunch: Steen's cane syrup, whipped maple walnut butter - ask without the bacon"
     },
     {
-     "item": "House Buttermilk Biscuit (side)",
-     "price": "$5"
+     "item": "EGGS BENEDICT",
+     "price": "$18",
+     "course": "main",
+     "note": "Brunch: house-made biscuit, poached eggs, creamed kale, hollandaise - ask without the chisesi ham"
     },
     {
-     "item": "Strawberry Shortcake",
-     "price": "$13"
+     "item": "FRENCH FRIES OR GRITS",
+     "price": "8",
+     "course": "side",
+     "note": "Brunch sides list"
     },
     {
-     "item": "Nutella Chocolate Tart",
-     "price": "$11"
+     "item": "HOUSE BUTTERMILK BISCUIT",
+     "price": "5",
+     "course": "side",
+     "note": "Brunch sides list"
     },
     {
-     "item": "Coconut Milk Creme Brulee (brunch)",
-     "price": "$13"
+     "item": "EGGs (2)",
+     "price": "2",
+     "course": "side",
+     "note": "Brunch sides list"
+    },
+    {
+     "item": "STRAWBERRY SHORTCAKE",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Compote, mint-lime whip"
+    },
+    {
+     "item": "NUTELLA CHOCOLATE TART",
+     "price": "$11",
+     "course": "dessert",
+     "note": "Dark chocolate, orange, hazelnut, graham cracker, Nutella whip cream"
+    },
+    {
+     "item": "COCONUT MILK CREME BRULEE",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Honey oat crisp (dessert menu)"
+    },
+    {
+     "item": "NUTELLA CHOCOLATE PIE",
+     "price": "$11",
+     "course": "dessert",
+     "note": "Nutella whip cream, toasted milk and hazelnut crumb (dessert menu)"
+    },
+    {
+     "item": "VIRGIN MULE",
+     "price": "$8",
+     "course": "drink",
+     "note": "Zero proof cocktails: lemon, lime, ginger"
+    },
+    {
+     "item": "SEASONAL SHRUB & SODA",
+     "price": "$8",
+     "course": "drink",
+     "note": "Zero proof: shrub made with seasonal fruit, lime, soda"
+    },
+    {
+     "item": "ALL DAY SPRITZ",
+     "price": "$9",
+     "course": "drink",
+     "note": "Zero proof: Lyre n/a aperitif, orange, sparkling water"
+    },
+    {
+     "item": "SYLVAIN COLA",
+     "price": "$6",
+     "course": "drink",
+     "note": "House cola, zero proof"
+    },
+    {
+     "item": "FANCY SHIRLEY",
+     "price": "$6",
+     "course": "drink",
+     "note": "Zero proof"
     }
    ],
-   "avoid_note": "Skip the Sylvain Burger, Slow-Cooked Short Rib, Pappardelle Bolognese, Chicken Sandwich and Chicken Liver Pate; and at brunch the Bacon, Eggs Benedict, Fried Green Tomato BLT and the Shrimp Remoulade / Spicy Crawfish Dumplings.",
+   "avoid_note": "Skip the Shrimp Remoulade, Spicy Crawfish and Dumplings, Chicken Liver Paté, Pappardelle Bolognese, Slow Cooked Short Rib, Chicken Sandwich and Sylvain Burger. At brunch, skip the Eggs Benedict's chisesi ham and the bacon garnishes.",
    "kosher_style_fit": "Good fit — the market Gulf fish covers the finned-fish side and several vegetable starters, salads and the shakshuka/harissa beans cover the vegetarian side; just avoid the meat and shellfish plates.",
    "tags": [
     "fish",
@@ -1389,7 +1737,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://www.sylvainnola.com",
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.sylvainnola.com/menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "st-roch-market",
@@ -1403,85 +1753,454 @@ window.DATA = {
    "rating_note": "Yelp ~4.0 across 699 reviews; Google ~4.4. Reviewers love the variety and historic space; some note it can be uneven vendor-to-vendor.",
    "lat": 29.9648,
    "lng": -90.053,
-   "dinner_estimate": "$18–30 per person",
+   "dinner_estimate": "$20-35 per person (one vendor plate $10-19 plus a juice, tea or dessert); a raw-fish poke bowl or sushirito runs $12-15",
    "menu": [
     {
-     "item": "Lin's Poke — Chef's Tuna Poke Bowl",
-     "price": "$13.99",
-     "note": "yellowfin tuna, vegetables, house sauces over rice"
-    },
-    {
-     "item": "Lin's Poke — Build-Your-Own Poke Bowl",
+     "item": "Chef Bowl",
      "price": "$14.99",
-     "note": "choose tuna, salmon, yellowtail, tofu or veggies; skip shrimp, crab stick, eel and octopus"
+     "course": "main",
+     "note": "Lin's Poke & Sushi - build-a-poke bowl; choose Tuna, Cooked Tuna or Salmon at $14.99 (Yellow Tail $19.99). Skip the shrimp, crab, octopus and eel options"
     },
     {
-     "item": "Lin's Poke — Vegan/Veggie Poke Bowl",
+     "item": "Tofu Bowl",
+     "price": "$11.99",
+     "course": "main",
+     "note": "Lin's Poke & Sushi - poke bowl with tofu"
+    },
+    {
+     "item": "Veggie Bowl",
+     "price": "$10.99",
+     "course": "main",
+     "note": "Lin's Poke & Sushi - all the vegetables on hand"
+    },
+    {
+     "item": "Vegan Tuna Bowl",
      "price": "$12.99",
-     "note": "tofu or vegan tuna, avocado, vegetables"
+     "course": "main",
+     "note": "Lin's Poke & Sushi - seasoned tomato 'vegan tuna'"
     },
     {
-     "item": "Lin's Poke — Salmon or Tuna Sushi Roll",
-     "price": "$9.99",
-     "note": "order finned-fish or avocado/cucumber rolls; avoid crab/shrimp/eel rolls"
+     "item": "Sushirrito",
+     "price": "$14.99",
+     "course": "main",
+     "note": "Lin's Poke & Sushi - sushi burrito; Salmon or Tuna $14.99, Tofu $11.99, Veggies $9.99"
     },
     {
-     "item": "Lin's Poke — Tuna Spring Rolls",
+     "item": "Tuna Roll",
+     "price": "$11.99",
+     "course": "main",
+     "note": "Lin's Poke & Sushi, 8-piece sushi roll (Salmon Roll, Spicy Tuna Roll and Spicy Salmon Roll are $9.99)"
+    },
+    {
+     "item": "Hand Rolls",
+     "price": "$13.99",
+     "course": "starter",
+     "note": "Lin's Poke & Sushi - 2 Tuna, 2 Salmon, or 1 of each at $13.99"
+    },
+    {
+     "item": "Spring Roll",
+     "price": "$14.99",
+     "course": "starter",
+     "note": "Lin's Poke & Sushi - rice paper, avocado, cucumber, lettuce; Tuna or Salmon $14.99, Tofu $10.99, Veggies $9.99"
+    },
+    {
+     "item": "Spicy Tuna Nachos",
+     "price": "$16",
+     "course": "starter",
+     "note": "Lin's Poke & Sushi, Tostitos dishes"
+    },
+    {
+     "item": "Miso",
+     "price": "$4.99",
+     "course": "starter",
+     "note": "Lin's Poke & Sushi - miso, seaweed, tofu, green onion"
+    },
+    {
+     "item": "Seaweed Salad",
+     "price": "$5",
+     "course": "side",
+     "note": "Lin's Poke & Sushi"
+    },
+    {
+     "item": "6 Veggie Dumplings",
+     "price": "$8.99",
+     "course": "starter",
+     "note": "Lin's Poke & Sushi"
+    },
+    {
+     "item": "Green Tea Ice Cream",
+     "price": "$5.99",
+     "course": "dessert",
+     "note": "Lin's Poke & Sushi"
+    },
+    {
+     "item": "Herbs Salmon",
+     "price": "$17.99",
+     "course": "starter",
+     "note": "Laksa appetizer - pan-fried salmon with avocado, cucumber, fresh herbs, soy sauce, green onion"
+    },
+    {
+     "item": "Mohinga",
+     "price": "$16.99",
+     "course": "main",
+     "note": "Laksa - rice noodles in salmon fish soup with lemongrass, ginger, rice-flour wonton chips"
+    },
+    {
+     "item": "Tea Leaf Salad",
+     "price": "$14.99",
+     "course": "starter",
+     "note": "Laksa (Lahpet Thoke) - fermented tea leaves, cabbage, peanuts, lime; ask for the vegan version so the dried tiny shrimp are left off"
+    },
+    {
+     "item": "Burmese salad bowl",
+     "price": "$13.99",
+     "course": "starter",
+     "note": "Laksa - romaine, cabbage, cucumber, chickpea, carrots, tomato, lime and sweet nutty house sauce"
+    },
+    {
+     "item": "Rainbow Salad",
+     "price": "$13.99",
+     "course": "starter",
+     "note": "Laksa - two noodles, green papaya, cabbage, carrot, bean sprouts, tamarind dressing; order with No Protein or Tofu"
+    },
+    {
+     "item": "Shan Tofu",
+     "price": "$11",
+     "course": "starter",
+     "note": "Laksa - Burmese chickpea tofu with tamarind dip"
+    },
+    {
+     "item": "Veggie Tempura",
+     "price": "$10.99",
+     "course": "starter",
+     "note": "Laksa - 4 pieces"
+    },
+    {
+     "item": "Htamin Pound",
+     "price": "$18.99",
+     "course": "main",
+     "note": "Laksa - herb veggie gravy with white rice and pickled cabbage, chili and onions"
+    },
+    {
+     "item": "Burmese Coconut Soup",
+     "price": "$14.99",
+     "course": "main",
+     "note": "Laksa (Tofu Nway) - coconut broth with rice or egg noodles; order the Vegan variation, No Protein or Tofu"
+    },
+    {
+     "item": "Roti",
+     "price": "$5.99",
+     "course": "side",
+     "note": "Laksa - flaky round flatbread"
+    },
+    {
+     "item": "Rice Pudding",
+     "price": "$6.99",
+     "course": "dessert",
+     "note": "Laksa - black sweet rice, peanuts, coconut milk, sesame"
+    },
+    {
+     "item": "Sweet Burmese Tea",
+     "price": "$6.99",
+     "course": "drink",
+     "note": "Laksa - black tea with star anise, tamarind seed, cardamom; half & half or almond milk"
+    },
+    {
+     "item": "Hummus",
      "price": "$9",
-     "note": "finned tuna starter"
+     "course": "starter",
+     "note": "Dolma - served with pita bread"
     },
     {
-     "item": "Dolma — Falafel Wrap",
+     "item": "Labna/Tzatziki",
+     "price": "$9",
+     "course": "starter",
+     "note": "Dolma - strained yogurt, mint, olive oil, thyme"
+    },
+    {
+     "item": "Loaded Dip",
+     "price": "$13",
+     "course": "starter",
+     "note": "Dolma - hummus, baba ghanouche or tzatziki with tomato, cucumber, kalamata olives, feta"
+    },
+    {
+     "item": "Falafel (4 Pieces)",
+     "price": "$9",
+     "course": "starter",
+     "note": "Dolma"
+    },
+    {
+     "item": "Grape Leaves 8 Pieces (Vegan)",
+     "price": "$9",
+     "course": "starter",
+     "note": "Dolma - hand rolled with rice and fresh herbs"
+    },
+    {
+     "item": "Red Lentil Soup (Vegan)",
+     "price": "$9",
+     "course": "starter",
+     "note": "Dolma"
+    },
+    {
+     "item": "Fancy Greek Salad",
      "price": "$12",
-     "note": "parsley, tomato, cucumber, tahini (vegetarian)"
+     "course": "starter",
+     "note": "Dolma - tomato, cucumber, romaine, peppers, red onion, feta, kalamata, lemon vinaigrette"
     },
     {
-     "item": "Dolma — Vegetarian Mezze Platter",
-     "price": "$16",
-     "note": "hummus, baba ganoush, labna, stuffed grape leaves"
+     "item": "Fattoush Salad",
+     "price": "$11",
+     "course": "starter",
+     "note": "Dolma - with crispy pita croutons"
     },
     {
-     "item": "Dolma — Hummus",
-     "price": "$9",
-     "note": "vegetarian"
+     "item": "Roasted Cauliflower Salad",
+     "price": "$13",
+     "course": "starter",
+     "note": "Dolma"
     },
     {
-     "item": "Dolma — Baba Ganoush",
-     "price": "$9",
-     "note": "vegetarian"
+     "item": "Tabbouleh",
+     "price": "$11",
+     "course": "starter",
+     "note": "Dolma - bulgur, tomato, parsley, onion, olive oil, lemon"
     },
     {
-     "item": "Dolma — Stuffed Grape Leaves",
-     "price": "$9",
-     "note": "confirm rice/vegetarian filling"
+     "item": "Falafel Platter (Vegan)",
+     "price": "$16.99",
+     "course": "main",
+     "note": "Dolma - pita bread and two sides of your choice"
     },
     {
-     "item": "Padrona — Pasta Pomodoro",
-     "price": "$16",
-     "note": "ask for a meatless pasta (tomato or cheese); skip ossobuco/meat pastas"
+     "item": "Roasted Cauliflower Platter (Vegan)",
+     "price": "$16.99",
+     "course": "main",
+     "note": "Dolma - pita bread and two sides"
     },
     {
-     "item": "Padrona — Gelato",
+     "item": "Roasted Eggplant Platter (Vegan)",
+     "price": "$17.99",
+     "course": "main",
+     "note": "Dolma - pita bread and two sides"
+    },
+    {
+     "item": "Grape Leaves Platter (Vegan)",
+     "price": "$16.99",
+     "course": "main",
+     "note": "Dolma - pita bread and two sides"
+    },
+    {
+     "item": "Falafel Wrap (Vegan)",
+     "price": "$10",
+     "course": "main",
+     "note": "Dolma - hummus, lettuce, tomato, cucumber, tahini"
+    },
+    {
+     "item": "Roasted Eggplant Wrap (Vegan)",
+     "price": "$11",
+     "course": "main",
+     "note": "Dolma"
+    },
+    {
+     "item": "Fries",
      "price": "$6",
-     "note": "vegetarian"
+     "course": "side",
+     "note": "Dolma"
     },
     {
-     "item": "Olive & Co — Fancy Grilled Cheese",
-     "price": "$12",
-     "note": "vegetarian"
+     "item": "Rice",
+     "price": "$6",
+     "course": "side",
+     "note": "Dolma - yellow basmati"
     },
     {
-     "item": "Salted Pearl — Grilled/Blackened Gulf Fish",
-     "price": "$24",
-     "note": "order the finned gulf fish entree; avoid all oysters and shellfish at this stall"
-    },
-    {
-     "item": "Frsh Juice — Cold-Pressed Juice / Acai Bowl",
+     "item": "Baklava",
      "price": "$9",
-     "note": "vegetarian; signature non-alcoholic option"
+     "course": "dessert",
+     "note": "Dolma"
+    },
+    {
+     "item": "Dubai Chocolate",
+     "price": "$9",
+     "course": "dessert",
+     "note": "Dolma"
+    },
+    {
+     "item": "Pomodoro",
+     "price": "$16",
+     "course": "main",
+     "note": "Padrona - spaghetti, classic tomato sauce, garlic, olive oil, fresh basil (order without meatballs or shrimp)"
+    },
+    {
+     "item": "Kale Salad",
+     "price": "$16",
+     "course": "starter",
+     "note": "Padrona - chopped kale, sliced apples, Parmesan, almonds, balsamic vinaigrette; ask without the pesto chicken"
+    },
+    {
+     "item": "Veggie Grilled Cheese",
+     "price": "$17",
+     "course": "main",
+     "note": "Olive & Co - colby jack with sauteed spinach, mushrooms and artichokes on brioche; served with chips or a side salad"
+    },
+    {
+     "item": "Americana Grilled Cheese",
+     "price": "$14",
+     "course": "main",
+     "note": "Olive & Co - classic American cheese on Texas toast; do not add the bacon or prosciutto"
+    },
+    {
+     "item": "Caesar Salad",
+     "price": "$14",
+     "course": "starter",
+     "note": "Olive & Co - traditional Caesar (the Roman, St Roch and St Claude salads all come with bacon)"
+    },
+    {
+     "item": "Pasta Italiano Salad",
+     "price": "$16",
+     "course": "starter",
+     "note": "Olive & Co - ditalini with chopped veggies, olive salad, feta and parmigiano reggiano"
+    },
+    {
+     "item": "Tomato Basil Soup",
+     "price": "$10",
+     "course": "starter",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Broccoli Cheddar Soup",
+     "price": "$10",
+     "course": "starter",
+     "note": "Olive & Co - creamy with sharp cheddar"
+    },
+    {
+     "item": "Stuffed Mini Peppers",
+     "price": "$13",
+     "course": "starter",
+     "note": "Olive & Co - sweet pepper halves with cream cheese and everything bagel seasoning"
+    },
+    {
+     "item": "Caprese Skewers",
+     "price": "$11",
+     "course": "starter",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Side Pasta Salad",
+     "price": "$9",
+     "course": "side",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Side Caesar Salad",
+     "price": "$7",
+     "course": "side",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Dubai Brownie",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Nutella Stuffed Snickerdoodle",
+     "price": "$11",
+     "course": "dessert",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Mini Cookie Trio",
+     "price": "$6",
+     "course": "dessert",
+     "note": "Olive & Co"
+    },
+    {
+     "item": "Chickpea Salad Wrap",
+     "price": "$18",
+     "course": "main",
+     "note": "Frsh Juice - house chickpea salad, spring mix, heirloom tomatoes, pickles, vegan mayo; with chilli-cheese nachos or salad"
+    },
+    {
+     "item": "Crunch Wrap",
+     "price": "$18",
+     "course": "main",
+     "note": "Frsh Juice - spinach tortilla, 3-vegan-cheese blend, lettuce, tomato, ranch, crunchy tortilla layer"
+    },
+    {
+     "item": "Stuffed Avocado Salad",
+     "price": "$18",
+     "course": "main",
+     "note": "Frsh Juice - spring mix, avocado halves stuffed with plant-based eggplant 'sausage' crumble or BBQ jackfruit"
+    },
+    {
+     "item": "Plant Based Entrées - Red Beans, Sausage & Quinoa",
+     "price": "$19",
+     "course": "main",
+     "note": "Frsh Juice - creamy red beans with veggie sausage over white quinoa and a garden salad (fully plant-based)"
+    },
+    {
+     "item": "Build Your Own Parfait",
+     "price": "$10",
+     "course": "dessert",
+     "note": "Frsh Juice - up to 5 toppings"
+    },
+    {
+     "item": "The Classic Oatmeal",
+     "price": "$6",
+     "course": "starter",
+     "note": "Frsh Juice - up to 5 toppings"
+    },
+    {
+     "item": "Parade Acai Bowl",
+     "price": "$16",
+     "course": "dessert",
+     "note": "Frsh Juice"
+    },
+    {
+     "item": "Yellow Juice",
+     "price": "$13",
+     "course": "drink",
+     "note": "Frsh Juice - 12 oz cold pressed: orange, pineapple, ginger, honey, lemon"
+    },
+    {
+     "item": "Red Juice",
+     "price": "$12",
+     "course": "drink",
+     "note": "Frsh Juice - 12 oz cold pressed: beets, celery, carrots, orange"
+    },
+    {
+     "item": "Purple Juice",
+     "price": "$12",
+     "course": "drink",
+     "note": "Frsh Juice - beets, carrots, kale, spinach, ginger, red apples, orange"
+    },
+    {
+     "item": "Pink Juice",
+     "price": "$11.49",
+     "course": "drink",
+     "note": "Frsh Juice - watermelon, cucumber, ginger, lime, mint"
+    },
+    {
+     "item": "Meca Smoothie",
+     "price": "$11.49",
+     "course": "drink",
+     "note": "Frsh Juice - 16 oz spinach, pineapple, banana, almond milk"
+    },
+    {
+     "item": "Mango Madness Smoothie",
+     "price": "$12",
+     "course": "drink",
+     "note": "Frsh Juice - mango, pineapple, banana, coconut water"
+    },
+    {
+     "item": "OG Shot",
+     "price": "$5",
+     "course": "drink",
+     "note": "Frsh Juice - 2 oz ginger"
     }
    ],
-   "avoid_note": "This is a food hall, so vendors and prices rotate; several stalls (Salted Pearl Oyster Bar, Not Ya Maw's fried catfish, Chef Charles' andouille) center on shellfish, catfish and pork. Stick to Lin's finned-fish poke, Dolma's vegetarian mezze, Padrona meatless pasta and juices.",
+   "avoid_note": "Skip Salted Pearl Oyster Bar entirely (raw/charbroiled/Rockefeller oysters, BBQ shrimp, crab mac and cheese, seafood pasta) and Not Ya Maw Kitchen and Chef Charles Bistreaux (fried catfish, pork chops, andouille gravy, shrimp and crawfish). At Padrona skip the Crawfish Tortellini, Crawfish Panini, Squid Ink Pasta with Shrimp and the Muffuletta; at Olive & Co skip the charcuterie boards, BLT, Frenchy and Breezy grilled cheeses (bacon/prosciutto) and the bacon-topped St. Roch/St. Claude/Roman salads; at Lin's skip anything with crab stick, crab meat, eel, octopus, tempura shrimp or the pork-broth ramen.",
    "kosher_style_fit": "Strong for a kosher-style finned-fish-plus-vegetarian couple: Lin's has clearly labeled tuna/salmon/tofu/veggie poke and Dolma is essentially all-vegetarian Middle Eastern. Not a kosher-certified kitchen and shared food-hall equipment, so avoid the shellfish, catfish and pork stalls.",
    "tags": [
     "fish",
@@ -1499,7 +2218,9 @@ window.DATA = {
    "reserveUrl": null,
    "reserve_priority": false,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/120px-MarignyAcrossFromSpigaJuly08.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/250px-MarignyAcrossFromSpigaJuly08.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/250px-MarignyAcrossFromSpigaJuly08.jpg",
+   "menu_source": "https://www.strochmarket.com/vendors.html",
+   "menu_confidence": "verified"
   },
   {
    "id": "peche-seafood-grill",
@@ -1513,87 +2234,154 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9438,
    "lng": -90.0703,
-   "dinner_estimate": "$55/person",
+   "dinner_estimate": "$55-75 per person (a snack or raw-bar plate plus a fish entrée and a side, before drinks)",
    "menu": [
     {
-     "item": "Smoked Tuna Dip",
-     "price": "$7"
+     "item": "smoked drum w/ olives",
+     "price": "$13",
+     "course": "starter",
+     "note": "raw bar section; smoked Gulf drum"
     },
     {
-     "item": "Fried Bread with Sea Salt",
-     "price": "$5"
+     "item": "smoked tuna dip",
+     "price": "$11",
+     "course": "starter",
+     "note": "snacks section; served with saltines"
     },
     {
-     "item": "Hushpuppies",
-     "price": "$6"
+     "item": "fried bread w/ sea salt",
+     "price": "$8",
+     "course": "starter",
+     "note": "snacks section; vegetarian"
     },
     {
-     "item": "Fish Sticks (Nola Brewing beer batter)",
-     "price": "$12"
+     "item": "hushpuppies",
+     "price": "$9",
+     "course": "starter",
+     "note": "snacks section; vegetarian"
     },
     {
-     "item": "Grilled Tuna with Butternut Squash and Almonds",
-     "price": "$28"
+     "item": "crispy okra w/cilantro",
+     "price": "$12",
+     "course": "starter",
+     "note": "snacks section; vegetarian"
     },
     {
-     "item": "Baked Drum with Coconut and Greens",
-     "price": "$24"
+     "item": "fish sticks w/ urban south beer batter",
+     "price": "$15",
+     "course": "starter",
+     "note": "small plates section; confirm the day's fish is not catfish"
     },
     {
-     "item": "Whole Grilled Gulf Fish",
-     "price": "$38 approx",
-     "note": "market price; the signature wood-fired dish"
+     "item": "cabbage salad w/ carrots, peanuts + soy",
+     "price": "$10",
+     "course": "starter",
+     "note": "soup & salad section; vegetarian"
     },
     {
-     "item": "Fried Brussels Sprouts with Chili Vinegar",
-     "price": "$7"
+     "item": "baked drum w/ saffron, peas + artichoke",
+     "price": "$34",
+     "course": "main",
+     "note": "entrées section"
     },
     {
-     "item": "Eggplant with Garlic, Chili and Almonds",
-     "price": "$7"
+     "item": "grilled tuna w/ okra, tomato + chili garlic",
+     "price": "$36",
+     "course": "main",
+     "note": "entrées section"
     },
     {
-     "item": "Creamed Kale",
-     "price": "$8"
+     "item": "whole grilled fish",
+     "price": "mp",
+     "course": "main",
+     "note": "for the table section; changes daily (redfish, snapper, etc.) - priced at market"
     },
     {
-     "item": "Brabant Potatoes",
-     "price": "$5"
+     "item": "brussels sprouts w/ chili vinegar",
+     "price": "$8",
+     "course": "side",
+     "note": "vegetarian"
     },
     {
-     "item": "Key Lime Pie",
-     "price": "$8"
+     "item": "brabant potatoes",
+     "price": "$8",
+     "course": "side",
+     "note": "vegetarian"
     },
     {
-     "item": "Salted Peanut Pie",
-     "price": "$9"
+     "item": "eggplant w/ almonds + basil",
+     "price": "$9",
+     "course": "side",
+     "note": "vegetarian"
     },
     {
-     "item": "Corn Pudding Cake",
-     "price": "$9"
+     "item": "creamed corn w/ miso + parsley",
+     "price": "$9",
+     "course": "side",
+     "note": "vegetarian"
     },
     {
-     "item": "Salted Caramel Cake",
-     "price": "$9"
+     "item": "grilled zucchini w/ caper, dill + sourdough",
+     "price": "$9",
+     "course": "side",
+     "note": "vegetarian"
     },
     {
-     "item": "Blueberry Tart",
-     "price": "$9"
+     "item": "heirloom tomatoes w/ cucumber + cured egg",
+     "price": "$10",
+     "course": "side",
+     "note": "vegetarian; contains egg"
     },
     {
-     "item": "Chocolate Pudding",
-     "price": "$9"
+     "item": "carrot sticky toffee pudding",
+     "price": "$13",
+     "course": "dessert",
+     "note": "cream cheese ice cream + candied pecan"
     },
     {
-     "item": "Ice Cream",
-     "price": "$6"
+     "item": "salted peanut pie",
+     "price": "$15",
+     "course": "dessert",
+     "note": "salted peanut ice cream + chocolate sauce"
     },
     {
-     "item": "Sorbet",
-     "price": "$6"
+     "item": "key lime pie",
+     "price": "$13",
+     "course": "dessert",
+     "note": "buttermilk chantilly + creme anglaise"
+    },
+    {
+     "item": "salted caramel cake",
+     "price": "$12",
+     "course": "dessert",
+     "note": "caramel buttercream, milk chocolate ganache"
+    },
+    {
+     "item": "crepe cake",
+     "price": "$14",
+     "course": "dessert",
+     "note": "peaches + vanilla pudding"
+    },
+    {
+     "item": "ice cream or sorbet",
+     "price": "$9",
+     "course": "dessert",
+     "note": "daily selection"
+    },
+    {
+     "item": "mockingbird",
+     "price": "$12",
+     "course": "drink",
+     "note": "zero proof cocktail; alcohol-free jungle bird + ginger"
+    },
+    {
+     "item": "phony negroni",
+     "price": "$12",
+     "course": "drink",
+     "note": "zero proof cocktail; alcohol-free negroni from st. agrestis"
     }
    ],
-   "avoid_note": "Avoid the raw bar (oysters, shrimp, crab, seafood platter), shrimp/crab dishes, both catfish dishes (no scales), steak tartare, hanger steak, ribeye, chicken, lamb skewers, and the White Beans with Bacon side.",
+   "avoid_note": "Skip the signature crawfish/crab capellini, shrimp toast, spicy ground shrimp + noodles, fried oysters, charbroiled-style raw bar shellfish, seafood gumbo, seafood platter, seafood salad, jumbo shrimp entrée, catfish small plate, steak tartare, hanger steak, ribeye and both grilled chicken dishes.",
    "kosher_style_fit": "Strong for finned fish: grilled tuna, baked drum and whole wood-fired Gulf fish are all eligible, plus solid veg sides and desserts, though shellfish and catfish dominate much of the menu.",
    "tags": [
     "fish",
@@ -1609,7 +2397,9 @@ window.DATA = {
    "website": "https://www.pecherestaurant.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/peche-seafood-grill",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/120px-New_Orleans_CBD_1_Oct_2016_24.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/500px-New_Orleans_CBD_1_Oct_2016_24.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/500px-New_Orleans_CBD_1_Oct_2016_24.jpg",
+   "menu_source": "https://www.pecherestaurant.com/",
+   "menu_confidence": "verified"
   },
   {
    "id": "compere-lapin",
@@ -1623,56 +2413,91 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9438,
    "lng": -90.068,
-   "dinner_estimate": "$65/person",
+   "dinner_estimate": "$60-80 per person (a First plus the Market Fish or Ital Stew, before drinks)",
    "menu": [
     {
-     "item": "Scallion & Jalapeño Hushpuppies with cilantro crema",
-     "price": "$6"
+     "item": "Buttermilk Biscuits/Honey Butter/Bacon Butter",
+     "price": "8",
+     "course": "starter",
+     "note": "Small Bites, 2 per order; ask for the honey butter only, without the bacon butter"
     },
     {
-     "item": "Buttermilk Biscuits with honey butter",
-     "price": "$7",
-     "note": "ask for honey butter, not bacon butter"
+     "item": "Jalapeño & Scallion Hushpuppies/Cilantro Crema",
+     "price": "6",
+     "course": "starter",
+     "note": "Small Bites; vegetarian"
     },
     {
-     "item": "Tuna Ceviche with leche de tigre and yucca",
-     "price": "$17"
+     "item": "Salmon Crudo/Mango/Dasheen Chips",
+     "price": "17",
+     "course": "starter",
+     "note": "First course; raw salmon"
     },
     {
-     "item": "Hamachi Tartare with jerk pineapple and fried okra",
-     "price": "$17"
+     "item": "Local Green Salad/Crispy Yams/Soft Herbs",
+     "price": "13",
+     "course": "starter",
+     "note": "First course; gluten free and vegan on request"
     },
     {
-     "item": "Apple & Pear Salad with mango-herb vinaigrette",
-     "price": "$14"
+     "item": "Smoked Fish Dip/Tostones/Pickles",
+     "price": "15",
+     "course": "starter",
+     "note": "First course; confirm the smoked fish of the day"
     },
     {
-     "item": "Crispy Brussels Sprouts with coconut dressing",
-     "price": "$14"
+     "item": "Ital Stew/Corn/Okra/Chive Roti",
+     "price": "25",
+     "course": "main",
+     "note": "Second course; Rastafarian-style vegetable stew, vegan on request"
     },
     {
-     "item": "Market Fish with Jamaican brown stew and cilantro rice",
-     "price": "$35",
-     "note": "confirm the day's fish is finned/scaled, not catfish or shellfish"
+     "item": "Market Fish/Cou-Cou/Okra & Tomato Choka",
+     "price": "37",
+     "course": "main",
+     "note": "Second course; ask which fish is running that night"
     },
     {
-     "item": "Squash Risotto with jerk carrots and pepita gremolata",
-     "price": "$23"
+     "item": "Pineapple Rum Cake/Lemongrass Turmeric Ice Cream",
+     "price": "12",
+     "course": "dessert"
     },
     {
-     "item": "Mango Crème Brûlée with coconut and berries",
-     "price": "$10"
+     "item": "Mango Crème Brulee/Coconut Snow",
+     "price": "12",
+     "course": "dessert"
     },
     {
-     "item": "Bolivian Chocolate Cake with passionfruit and curry croquant",
-     "price": "$14"
+     "item": "Bread Pudding/Cashew Croquant/Banana Ice Cream",
+     "price": "14",
+     "course": "dessert",
+     "note": "contains nuts"
     },
     {
-     "item": "Daily Ice Cream & Sorbet",
-     "price": "$5"
+     "item": "Daily selection of Ice Cream or Sorbet",
+     "price": "6",
+     "course": "dessert"
+    },
+    {
+     "item": "Sorrel Tea",
+     "price": "8",
+     "course": "drink",
+     "note": "Non-Alc and Mocktails; house sorrel (spiced hibiscus tea)/ginger/lavender/lime"
+    },
+    {
+     "item": "Tell Tale Heart",
+     "price": "8",
+     "course": "drink",
+     "note": "Non-Alc and Mocktails; strawberry balsamic shrub/tonic water"
+    },
+    {
+     "item": "Unified Ferments Kombucha Style Jasmine Green Tea",
+     "price": "10/40",
+     "course": "drink",
+     "note": "Non-Alc list; by the glass / bottle"
     }
    ],
-   "avoid_note": "Skip the signature Curried Goat with gnocchi, Half Jerk Chicken, Pork Belly, Blackened Pig Ears, and Broiled Shrimp.",
+   "avoid_note": "Skip the blackened pig ears, jerk pork belly, octopus, semolina dumplings with shrimp, curried goat and fried chicken - and the $85 'Just Feed Me' tasting, which requires full-table participation and is built around those dishes.",
    "kosher_style_fit": "Good fit: two raw finned-fish starters (tuna, hamachi), a finned market fish main, plus a full vegetarian risotto and vegetable plates.",
    "tags": [
     "fish",
@@ -1689,7 +2514,9 @@ window.DATA = {
    "website": "http://comperelapin.com/",
    "reserve_priority": true,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/120px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/500px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/500px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg",
+   "menu_source": "http://comperelapin.com/menus.html",
+   "menu_confidence": "verified"
   },
   {
    "id": "seaworthy",
@@ -1703,85 +2530,100 @@ window.DATA = {
    "rating_note": "Yelp ~4.2–4.4 across 620+ reviews; Google ~4.5. Praised for oysters, cocktails, gulf fish and attentive service.",
    "lat": 29.9487,
    "lng": -90.0714,
-   "dinner_estimate": "$55–75 per person",
+   "dinner_estimate": "$50-70 per person (a small plate plus the poached halibut or fish & chips, before drinks)",
    "menu": [
     {
-     "item": "Whole Wheat Rolls",
-     "price": "$4",
-     "note": "with seaweed butter (vegetarian)"
-    },
-    {
-     "item": "Shishito Peppers",
-     "price": "$10",
-     "note": "pecan, romesco, furikake (vegetarian)"
-    },
-    {
-     "item": "Anchovy Toast",
-     "price": "$9",
-     "note": "burrata, white anchovy (finned fish), fennel, sourdough"
-    },
-    {
-     "item": "French Fries",
-     "price": "$8",
-     "note": "dill-pickle seasoning, sage aioli, sriracha ketchup (vegetarian)"
-    },
-    {
-     "item": "Covey Rise Farm Greens",
-     "price": "$9",
-     "note": "oyster cracker, panna gratta, Parmesan vinaigrette (vegetarian; ask to confirm no anchovy)"
-    },
-    {
-     "item": "Heirloom Tomato Salad",
-     "price": "$13",
-     "note": "watermelon, peanut, togarashi, herbs (vegetarian)"
-    },
-    {
-     "item": "Ceviche",
-     "price": "$13",
-     "note": "mahi mahi (finned fish), jalapeño, lime, cilantro"
-    },
-    {
-     "item": "Cobia Crudo",
+     "item": "SERRANO HUSHPUPPIES",
      "price": "$14",
-     "note": "cobia (finned fish), tomato, English pea, smoked paprika, yuzu"
+     "course": "starter",
+     "note": "Small Plates; creamy maque choux, dill, green tomato chow chow - confirm the maque choux is made without pork"
     },
     {
-     "item": "Trout",
-     "price": "$27",
-     "note": "heirloom tomato, crowder bean, fennel, olive oil (finned fish)"
+     "item": "TUNA TARTARE",
+     "price": "$17",
+     "course": "starter",
+     "note": "Small Plates; squid ink cracker, aioli, smoked beets"
     },
     {
-     "item": "Redfish",
+     "item": "STEWED LOUISIANA OKRA",
+     "price": "$14",
+     "course": "starter",
+     "note": "Small Plates; tomato alla norma, urfa pepper, heirloom sesame - vegetarian"
+    },
+    {
+     "item": "CAPRESE SALAD",
+     "price": "$17",
+     "course": "starter",
+     "note": "Small Plates; heirloom tomato, red onion, basil, buffalo mozzarella"
+    },
+    {
+     "item": "PARKER HOUSE ROLLS",
+     "price": "$12",
+     "course": "starter",
+     "note": "Small Plates; burnt leek and bonito butter"
+    },
+    {
+     "item": "FRENCH FRIES",
+     "price": "$12",
+     "course": "starter",
+     "note": "listed under Small Plates; parmesan, truffle aioli"
+    },
+    {
+     "item": "BOWFIN",
+     "price": "$30",
+     "course": "starter",
+     "note": "Caviar Service; wild-caught American roe served with beignets, crème fraîche & chives"
+    },
+    {
+     "item": "PADDLEFISH",
+     "price": "$45",
+     "course": "starter",
+     "note": "Caviar Service; served with beignets, crème fraîche & chives"
+    },
+    {
+     "item": "HACKLEBACK",
+     "price": "$60",
+     "course": "starter",
+     "note": "Caviar Service; served with beignets, crème fraîche & chives"
+    },
+    {
+     "item": "POACHED HALIBUT",
+     "price": "$32",
+     "course": "main",
+     "note": "Large Plates; tomato broth, sunflower, spring pea, basil, chive"
+    },
+    {
+     "item": "FISH & CHIPS",
      "price": "$29",
-     "note": "edamame, bok choy, buckwheat, horseradish (finned fish)"
+     "course": "main",
+     "note": "Large Plates; beer battered, sauce gribiche, seasoned fries - confirm the fish is not catfish"
     },
     {
-     "item": "Swordfish",
-     "price": "$28",
-     "note": "crispy sunchokes, rapini, mint, crème fraîche (finned fish)"
+     "item": "FROZEN KEY LIME PIE",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Sweets; graham butter, coconut mousse"
     },
     {
-     "item": "Trout Roe (caviar service)",
-     "price": "$25",
-     "note": "with sieved egg, red onion, pickles, crème fraîche, cornbread blini (finned-fish roe)"
+     "item": "CHOCOLATE HAZELNUT TART",
+     "price": "$14",
+     "course": "dessert",
+     "note": "Sweets; chocolate cremeux, hazelnuts, strawberry gel"
     },
     {
-     "item": "Almond Semifreddo",
+     "item": "BUCK",
      "price": "$8",
-     "note": "Louisiana peaches (vegetarian)"
+     "course": "drink",
+     "note": "Zero-Proof Cocktails; coconut water, almond, ginger, mint"
     },
     {
-     "item": "Dark Chocolate Sorbetto",
+     "item": "VELVET HEAT",
      "price": "$8",
-     "note": "puffed amaranth, smoked sea salt (vegetarian)"
-    },
-    {
-     "item": "House-Made Cucumber Soda",
-     "price": "$5",
-     "note": "signature non-alcoholic drink"
+     "course": "drink",
+     "note": "Zero-Proof Cocktails; strawberry-jalapeño syrup, lime, soda"
     }
    ],
-   "avoid_note": "The menu is oyster- and shellfish-heavy (seafood tower, BBQ shrimp, crab claws, scallops, octopus, Seaworthy shrimp/crawfish roll) and several plates use pork/andouille and the wagyu burger. Steer to the finned-fish crudos and mains, salads and vegetable snacks; note the raw bar shares shucking stations.",
+   "avoid_note": "This is an oyster house - skip the raw and charbroiled oysters, oyster purloo, shrimp cocktail, shrimp boulettes, crab salad, shrimp & grits, the crawfish Seaworthy Roll, boudin and gravy, and the wagyu burger.",
    "kosher_style_fit": "Moderate: there is a clear set of finned-fish dishes (mahi, cobia, trout, redfish, swordfish, anchovy, trout roe) plus vegetarian salads, fries and desserts, but it is fundamentally an oyster bar with heavy shellfish and some pork, and it is not kosher-certified. Easy to eat well here if you order deliberately.",
    "tags": [
     "fish",
@@ -1798,7 +2640,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/seaworthy-new-orleans-2",
    "reserve_priority": true,
    "photoUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg",
-   "coverUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg"
+   "coverUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg",
+   "menu_source": "https://seaworthynola.com/assets/2024/11/Seaworthy-Menu-6.2.2026-1.pdf",
+   "menu_confidence": "verified"
   },
   {
    "id": "commanders-palace",
@@ -1812,70 +2656,106 @@ window.DATA = {
    "rating_note": "Yelp ~4.5 across 6,300+ reviews and Tripadvisor 4.5 (#79 of ~1,479); Google ~4.7. Consistently praised for service, ambiance and the bread pudding soufflé.",
    "lat": 29.9285,
    "lng": -90.0842,
-   "dinner_estimate": "$90–130 per person",
+   "dinner_estimate": "$75-95 per person for a starter, gulf fish entree and dessert, before drinks, tax and tip",
    "menu": [
     {
      "item": "Hickory Smoked Cauliflower",
      "price": "$14",
-     "note": "vegetarian starter"
+     "course": "starter",
+     "note": "Cold smoked cauliflower florets, green tomato chow chow, crispy oyster mushrooms and Louisiana field pea hummus - vegetarian; on both lunch and dinner menus"
+    },
+    {
+     "item": "Tomatoes & Watermelon",
+     "price": "$14.50",
+     "course": "starter",
+     "note": "Lunch appetizer: olive oil marinated summer tomatoes, compressed watermelon, torched Robiola Bosina, kale chips, preserved lemon vinaigrette, pepita-chevre pistou"
     },
     {
      "item": "Commander's Crisp Romaine Salad",
      "price": "$12",
-     "note": "confirm dressing and ask to hold any bacon/anchovy"
+     "course": "starter",
+     "note": "Romaine, Parmesan, pressed egg, croutons, shaved Gruyere, black pepper dressing - ask without the crumbled bacon"
     },
     {
      "item": "Sweet & Spicy Summer Salad",
      "price": "$13",
-     "note": "confirm no meat garnish (vegetarian)"
+     "course": "starter",
+     "note": "Shaved green apple and fennel, arugula, blackberry vinaigrette, almond-oat granola over lemon buttermilk chevre - vegetarian"
     },
     {
      "item": "Black Sesame & Sunflower Gulf Fish",
      "price": "$39",
-     "note": "finned gulf fish entree"
+     "course": "main",
+     "note": "Dinner: cast iron seared Gulf fish over Creole tomato rouille with Louisiana red beans, spinach, sweet peas - ask without the andouille sausage in the red beans"
     },
     {
      "item": "Pecan Crusted Gulf Fish",
      "price": "$43",
-     "note": "finned gulf fish, signature preparation"
+     "course": "main",
+     "note": "Dinner: pecan crusted fish with roasted corn, asparagus, grilled kale, melted leeks, whiskey crushed corn cream - ask without the prosecco poached jumbo lump crab on top"
     },
     {
-     "item": "Collard Green Spanakopita",
-     "price": "$39",
-     "note": "vegetarian three-course option; ask that collards be cooked without pork/ham hock"
+     "item": "Creole Spiced Gulf Fish",
+     "price": "$35",
+     "course": "main",
+     "note": "Lunch entree: cast iron seared Gulf fish with cremini mushrooms, grilled artichoke hearts, Brabant potatoes, sweet peas, absinthe frappe"
+    },
+    {
+     "item": "Collard Green Spanokopita",
+     "price": "$28",
+     "course": "main",
+     "note": "Vegetarian: phyllo stuffed with French feta creamed collard greens, spring onion aioli, red beans, chestnut mushrooms. Lunch price $28; $39 as a dinner three-course offering"
     },
     {
      "item": "Garlic Wilted Spinach",
      "price": "$9",
-     "note": "vegetarian side"
+     "course": "side",
+     "note": "Dinner side ($7 at lunch)"
     },
     {
-     "item": "Apple Cider Braised Cabbage",
-     "price": "$9",
-     "note": "ask without bacon (otherwise vegetarian)"
-    },
-    {
-     "item": "Sauté of Sweet Corn, Grilled Kale, Asparagus & Leeks",
+     "item": "Saute of Sweet Corn, Grilled Kale, Asparagus & Leeks",
      "price": "$10",
-     "note": "vegetarian side"
+     "course": "side",
+     "note": "Dinner side"
     },
     {
-     "item": "Creole Bread Pudding Soufflé",
+     "item": "Creole Bread Pudding Souffle",
      "price": "$11",
-     "note": "signature dessert; order ~20 min ahead (vegetarian)"
+     "course": "dessert",
+     "note": "Finished tableside with warm whiskey cream - must be ordered 20 minutes in advance"
     },
     {
      "item": "Creole Cream Cheese Cheesecake",
      "price": "$10",
-     "note": "vegetarian"
+     "course": "dessert",
+     "note": "Dinner price ($12 on the lunch menu); honey graham crust, chocolate lattice, caramel"
     },
     {
      "item": "Peach & Blueberry Buckle",
      "price": "$10",
-     "note": "vegetarian"
+     "course": "dessert",
+     "note": "Dinner price; listed as Blueberry & Peach Buckle at $12 on the lunch menu"
+    },
+    {
+     "item": "Pecan Pie a la Mode",
+     "price": "$10",
+     "course": "dessert",
+     "note": "Lunch menu: southern style pecan pie, vanilla bean ice cream, chocolate, candied pecans, fleur de sel caramel"
+    },
+    {
+     "item": "Piety & Desire Bushwacker Chocolate Tart",
+     "price": "$12",
+     "course": "dessert",
+     "note": "Lunch menu: coconut rum and Kahlua spiked dark chocolate, toasted coconut crust, Chantilly cream"
+    },
+    {
+     "item": "Ice Cream or Sorbet Du Jour",
+     "price": "$10",
+     "course": "dessert",
+     "note": "Daily handspun ice cream or seasonal fruit sorbet"
     }
    ],
-   "avoid_note": "Most of the menu leans to pork (tasso, boudin, pork cheeks/chop, bacon sides), turtle soup, Creole gumbo, shrimp/crab and beef/lamb/quail. Focus on the two gulf-fish entrees, the vegetarian cauliflower, spanakopita and salads, and the meatless sides and desserts; ask them to omit bacon/pork in a few dishes.",
+   "avoid_note": "Skip the house signatures: Turtle Soup au Sherry, Commander's Creole Gumbo, Shrimp & Tasso Henican, Wild White Shrimp Remoulade, Corn Fried Oysters, Crispy Pork Jowl, Cochon de Lait, Tournedos of Black Angus Beef and the Texas Quail. The prosecco poached jumbo lump crab side is also out.",
    "kosher_style_fit": "Workable for a special night if you order carefully: two finned gulf-fish mains plus a genuine vegetarian entree (collard-green spanakopita), vegetarian starters, sides and celebrated desserts. Not kosher-certified and the kitchen uses pork and shellfish throughout, but staff are gracious about substitutions.",
    "tags": [
     "fish",
@@ -1892,7 +2772,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/commanders-palace-new-orleans",
    "reserve_priority": true,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/120px-2009-0301-NOLA-001-CommandersPalace.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/500px-2009-0301-NOLA-001-CommandersPalace.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/500px-2009-0301-NOLA-001-CommandersPalace.jpg",
+   "menu_source": "https://www.commanderspalace.com/menus",
+   "menu_confidence": "verified"
   },
   {
    "id": "la-petite-grocery",
@@ -1906,84 +2788,153 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9218,
    "lng": -90.0975,
-   "dinner_estimate": "$65/person",
+   "dinner_estimate": "$70-90 per person for an appetizer, the redfish and dessert, before drinks, tax and tip",
    "menu": [
     {
-     "item": "Pan Roasted Redfish",
-     "price": "$43"
-    },
-    {
-     "item": "Heirloom Tomato Salad",
-     "price": "$23"
+     "item": "Ricotta Dumplings",
+     "price": "$15",
+     "course": "starter",
+     "note": "Hen of the woods & grana padano - vegetarian"
     },
     {
      "item": "Local Green Salad",
-     "price": "$16"
+     "price": "$16",
+     "course": "starter",
+     "note": "Chilled roasted beets, creme fraiche dressing & breadcrumbs - vegetarian"
     },
     {
      "item": "White Bean Salad",
      "price": "$18",
-     "note": "confirm no pancetta/pork"
+     "course": "starter",
+     "note": "Tomato conserva & preserved lemon - ask without the poached gulf shrimp"
     },
     {
-     "item": "Ricotta Dumplings",
-     "price": "$15",
-     "note": "ask without the paneed rabbit"
+     "item": "Heirloom Tomato Salad",
+     "price": "$23",
+     "course": "starter",
+     "note": "Cucumbers & artichoke yogurt - ask without the blue crab"
     },
     {
-     "item": "Fried Green Tomatoes",
-     "price": "$13"
+     "item": "Pan Roasted Redfish",
+     "price": "$43",
+     "course": "main",
+     "note": "Louisiana courtbouillon, haricots verts & popcorn rice"
+    },
+    {
+     "item": "Hot Iron Buttermilk Waffle",
+     "price": "$14",
+     "course": "main",
+     "note": "Brunch entree: chef's selection of accompaniments - confirm the accompaniments are meat-free"
+    },
+    {
+     "item": "Brioche Pain Perdu",
+     "price": "$18",
+     "course": "main",
+     "note": "Brunch entree: lemon mousse, brown butter streusel & Steen's cane syrup"
     },
     {
      "item": "Roasted Broccoli",
-     "price": "$11"
+     "price": "$11",
+     "course": "side",
+     "note": "Chili flakes & bagna cauda (anchovy-garlic sauce)"
     },
     {
      "item": "Baked Macaroni",
-     "price": "$13"
+     "price": "$13",
+     "course": "side",
+     "note": "Pecorino pepato & cornbread crumbs - vegetarian"
     },
     {
-     "item": "Marinated Cucumbers",
-     "price": "$14"
-    },
-    {
-     "item": "Stone Ground Grits",
-     "price": "$7"
+     "item": "Fried Green Tomatoes",
+     "price": "$13",
+     "course": "side",
+     "note": "Burrata & oregano - ask without the country ham"
     },
     {
      "item": "Pickle Jar",
-     "price": "$10"
+     "price": "$10",
+     "course": "side",
+     "note": "Daily assortment"
+    },
+    {
+     "item": "Stone Ground Grits",
+     "price": "$7",
+     "course": "side",
+     "note": "Butter, sea salt & chives"
+    },
+    {
+     "item": "Marinated Cucumbers",
+     "price": "$14",
+     "course": "side",
+     "note": "Whipped creme fraiche, arugula & bottarga (cured fish roe)"
     },
     {
      "item": "Hand Cut Fries",
-     "price": "$7"
+     "price": "$7",
+     "course": "side",
+     "note": "Sea salt, chives & dijonnaise"
     },
     {
-     "item": "Gateau Basque",
-     "price": "$11"
+     "item": "Buttermilk Biscuit",
+     "price": "$5",
+     "course": "side",
+     "note": "Brunch: honey & thyme butter"
+    },
+    {
+     "item": "Potato Hash Brown",
+     "price": "$14",
+     "course": "side",
+     "note": "Brunch: smoked redfish & dill"
     },
     {
      "item": "Carrot Cake",
-     "price": "$12"
+     "price": "$12",
+     "course": "dessert",
+     "note": "Cream cheese ice cream, carrot caramel & pecan streusel"
     },
     {
      "item": "Chocolate Delice",
-     "price": "$12"
+     "price": "$12",
+     "course": "dessert",
+     "note": "Coconut caramel & toasted peaches"
+    },
+    {
+     "item": "Gateau Basque",
+     "price": "$11",
+     "course": "dessert",
+     "note": "Lemon mousse & candied almonds"
     },
     {
      "item": "Butterscotch Pudding",
-     "price": "$10"
-    },
-    {
-     "item": "Housemade Ice Cream",
-     "price": "$10"
+     "price": "$10",
+     "course": "dessert",
+     "note": "Vanilla bean cream & cookies"
     },
     {
      "item": "Abita Root Beer Float",
-     "price": "$10"
+     "price": "$10",
+     "course": "dessert",
+     "note": "Housemade cardamom ice cream"
+    },
+    {
+     "item": "Housemade Ice Cream",
+     "price": "$10",
+     "course": "dessert"
+    },
+    {
+     "item": "Fentimans Rose Lemonade",
+     "price": "$5",
+     "course": "drink",
+     "note": "9.3oz bottle, non-alcoholic beverage list"
+    },
+    {
+     "item": "Abita Root Beer",
+     "price": "$5",
+     "course": "drink",
+     "note": "12oz bottle"
     }
    ],
-   "avoid_note": "Skip the blue crab beignets, shrimp & okra gumbo, gulf shrimp & grits, shellfish stew, turtle bolognese, paneed rabbit, roasted duck, and the meat entrees.",
+   "avoid_note": "The famous Blue Crab Beignets, Turtle Bolognese, Shrimp & Okra Gumbo, Shellfish Stew, Gulf Shrimp & Grits, Steak Tartare, Paneed Rabbit and the LPG Cheeseburger are all out. Pan Roasted Redfish is the only eligible dinner entree, so plan on filling in with appetizers and sides.",
    "kosher_style_fit": "One clean finned-fish entree (redfish) plus a deep bench of vegetarian salads, sides and desserts make it an easy fit for this diet.",
    "tags": [
     "fish",
@@ -1999,7 +2950,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/la-petite-grocery-new-orleans",
    "website": "https://www.lapetitegrocery.com",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.lapetitegrocery.com/menus",
+   "menu_confidence": "verified"
   },
   {
    "id": "shaya",
@@ -2013,66 +2966,165 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9236,
    "lng": -90.093,
-   "dinner_estimate": "$50/person",
+   "dinner_estimate": "$60-80 per person for a few mezze or a hummus, the salmon and a dessert, before drinks, tax and tip (a 3% administrative fee is added to all checks)",
    "menu": [
     {
-     "item": "Wood-fired Pita (house-baked)",
-     "price": "$6 approx"
+     "item": "baba ganoush",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze, priced 1 for $7 / 3 for $18 / 5 for $29; creamy eggplant, charred green onion, olive oil"
     },
     {
-     "item": "Tahini Hummus with olive oil and aleppo",
-     "price": "$14"
+     "item": "heirloom tomatoes",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze (1 for $7 / 3 for $18 / 5 for $29); toum, shishito pepper, sumac, dill"
     },
     {
-     "item": "Cauliflower Hummus",
-     "price": "$17"
+     "item": "smoked labneh",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze (1 for $7 / 3 for $18 / 5 for $29); lima beans, charred chili vinaigrette"
     },
     {
-     "item": "Wild Mushroom Hummus",
-     "price": "$17"
+     "item": "pickles",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze (1 for $7 / 3 for $18 / 5 for $29); market vegetables, vegan"
     },
     {
-     "item": "Crispy Halloumi",
-     "price": "$15"
+     "item": "ikra",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze (1 for $7 / 3 for $18 / 5 for $29); whipped cream cheese, anchovies, shallots, dill - contains anchovy (finned fish); add smoked trout roe +5"
     },
     {
-     "item": "Falafel",
-     "price": "$13"
+     "item": "muhammara",
+     "price": "$7",
+     "course": "starter",
+     "note": "Mezze (1 for $7 / 3 for $18 / 5 for $29); roasted red pepper, walnut, pomegranate molasses, vegan"
     },
     {
-     "item": "Brussels Sprouts",
-     "price": "$14"
+     "item": "cauliflower",
+     "price": "$17",
+     "course": "starter",
+     "note": "Hummus: caramelized onions, cilantro - vegan"
     },
     {
-     "item": "Mediterranean Salad",
-     "price": "$15"
+     "item": "tahini",
+     "price": "$14",
+     "course": "starter",
+     "note": "Hummus: extra virgin olive oil, harissa - vegan"
     },
     {
-     "item": "Fattoush Salad",
-     "price": "$15"
+     "item": "wild mushroom",
+     "price": "$17",
+     "course": "starter",
+     "note": "Hummus: sage-brown butter, za'atar-hazelnuts"
     },
     {
-     "item": "Bakkafrost Salmon",
-     "price": "$32"
+     "item": "crispy halloumi",
+     "price": "$15",
+     "course": "starter",
+     "note": "Small plate: creole tomato jam, kalamata tapenade, pickled sweet pepper, arugula"
     },
     {
-     "item": "White Chocolate Malabi",
-     "price": "$12"
+     "item": "falafel",
+     "price": "$13",
+     "course": "starter",
+     "note": "Small plate: green tahini, pickled cabbage - vegan"
     },
     {
-     "item": "Chocolate Tahini Mousse",
-     "price": "$13"
+     "item": "brussels sprouts",
+     "price": "$14",
+     "course": "starter",
+     "note": "Small plate: tahini, shallots, fresh herbs - vegan"
     },
     {
-     "item": "Knafeh Cheesecake",
-     "price": "$13"
+     "item": "mediterranean salad",
+     "price": "$15",
+     "course": "starter",
+     "note": "Cherry tomatoes, cucumber, red onions, za'atar, preserved lemon vinaigrette, Bulgarian feta; salmon can be added +15"
     },
     {
-     "item": "Piccola Gelateria Seasonal Gelato or Sorbet",
-     "price": "$8"
+     "item": "fattoush salad",
+     "price": "$15",
+     "course": "starter",
+     "note": "Little gem, tomato, sweet peppers, shallots, sumac pomegranate vinaigrette, za'atar pita chips - vegan; salmon +15"
+    },
+    {
+     "item": "bakkafrost salmon",
+     "price": "$32",
+     "course": "main",
+     "note": "On both the lunch and dinner large plates: caramelized harissa, couscous \"risotto\", saffron lemon butter"
+    },
+    {
+     "item": "wood-fired whole branzino*",
+     "price": "$45",
+     "course": "main",
+     "note": "Lunch large plates, available on Fridays only; capers, parsley, spinach"
+    },
+    {
+     "item": "falafel sandwich",
+     "price": "$16",
+     "course": "main",
+     "note": "Lunch large plate: hummus, tomato, red onion, zhoug tahini"
+    },
+    {
+     "item": "white chocolate malabi",
+     "price": "$12",
+     "course": "dessert",
+     "note": "Passion fruit, pistachio crumble"
+    },
+    {
+     "item": "chocolate tahini mousse",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Sesame brittle"
+    },
+    {
+     "item": "knafeh cheesecake",
+     "price": "$13",
+     "course": "dessert",
+     "note": "Pomegranate caramel, bastilla nuts, orange blossom gelato"
+    },
+    {
+     "item": "piccola gelateria seasonal gelato or sorbet",
+     "price": "$8",
+     "course": "dessert"
+    },
+    {
+     "item": "pomegranate lemon soda",
+     "price": "$7",
+     "course": "drink",
+     "note": "Pomegranate, house-made lemon syrup, soda"
+    },
+    {
+     "item": "matcha lemonade",
+     "price": "$8",
+     "course": "drink",
+     "note": "Matcha tea, lemon juice, soda, orange flower"
+    },
+    {
+     "item": "lebanese iced tea",
+     "price": "$8",
+     "course": "drink",
+     "note": "Date, rose, iced tea, lemon, soda"
+    },
+    {
+     "item": "mediterranean mint tea (hot or iced) (serves 2)",
+     "price": "$12",
+     "course": "drink",
+     "note": "Green tea, peppermint, lemon"
+    },
+    {
+     "item": "hibiscus mango tea (hot or iced) (serves 2)",
+     "price": "$12",
+     "course": "drink",
+     "note": "Hibiscus flower, mango, sugar, fresh orange"
     }
    ],
-   "avoid_note": "Skip the famous Fried Chicken hummus, Lamb Ragu hummus, Lamb Kofta Kebab, Sujuk Pide (sausage), Lamb Shank, Hanger Steak, Chicken, and Gulf Shrimp Kebab.",
+   "avoid_note": "Skip the lamb kofta kebab, sujuk pide, arayes, lamb shank, hanger steak, chicken leg & thigh, fried chicken hummus, lamb ragu hummus, chicken schnitzel sandwich, lamb burger and the gulf shrimp kebab.",
    "kosher_style_fit": "Strong fit: the whole hummus and vegetable/salad lineup is vegetarian, and the Faroe Islands (Bakkafrost) salmon covers the finned-fish eater.",
    "tags": [
     "fish",
@@ -2087,7 +3139,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/shaya-new-orleans",
    "website": "https://www.shayarestaurant.com/",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.shayarestaurant.com/menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "saba",
@@ -2101,110 +3155,175 @@ window.DATA = {
    "rating_note": "Google 4.6",
    "lat": 29.9179,
    "lng": -90.1123,
-   "dinner_estimate": "$55/person",
+   "dinner_estimate": "$60-75 per person (a salatim or hummus + a large plate + a side, before drinks/tax/5% benefits charge)",
    "menu": [
     {
-     "item": "Lutenitsa (roasted pepper, eggplant & tomato spread)",
-     "price": "$10"
+     "item": "lutenitsa",
+     "price": "10",
+     "course": "starter",
+     "note": "Salatim - Bulgarian spread of roasted peppers, eggplant and tomato"
     },
     {
-     "item": "Labneh with preserved peppers and radish",
-     "price": "$10"
+     "item": "labneh",
+     "price": "10",
+     "course": "starter",
+     "note": "Salatim - preserved peppers and radish"
     },
     {
-     "item": "Babaganoush with sour cream and charred scallions",
-     "price": "$11"
+     "item": "babaganoush",
+     "price": "11",
+     "course": "starter",
+     "note": "Salatim - eggplant, sour cream and charred scallions"
     },
     {
-     "item": "Confit Tomatoes with serrano and cumin",
-     "price": "$10"
+     "item": "confit tomatoes",
+     "price": "10",
+     "course": "starter",
+     "note": "Salatim - serrano and cumin"
     },
     {
-     "item": "Ikra (smoked trout roe) with baby herbs",
-     "price": "$15"
+     "item": "ikra",
+     "price": "15",
+     "course": "starter",
+     "note": "Salatim - smoked trout roe and baby herbs (finned-fish roe)"
     },
     {
-     "item": "Pickles (turmeric cauliflower, cabbage, snap peas, cucumbers)",
-     "price": "$10"
+     "item": "pickles",
+     "price": "10",
+     "course": "starter",
+     "note": "Salatim - turmeric cauliflower, cabbage, snap peas and Israeli cucumbers"
     },
     {
-     "item": "Crudité of local seasonal vegetables",
-     "price": "$11"
+     "item": "crudite",
+     "price": "11",
+     "course": "starter",
+     "note": "Salatim - local and seasonal selection of vegetables"
     },
     {
-     "item": "Classic Tahini Hummus with aleppo and olive oil",
-     "price": "$15"
+     "item": "classic tahini",
+     "price": "15",
+     "course": "starter",
+     "note": "Hummus - aleppo pepper, parsley and olive oil"
     },
     {
-     "item": "Brussels Sprouts Hummus with black garlic and pickled jalapeño",
-     "price": "$19"
+     "item": "Brussels sprouts",
+     "price": "19",
+     "course": "starter",
+     "note": "Hummus - shabazi onions, black garlic and pickled jalapenos"
     },
     {
-     "item": "Green Salad with feta, avocado and sunflower duqqa",
-     "price": "$17"
+     "item": "green salad",
+     "price": "17",
+     "course": "starter",
+     "note": "Small plate - fresh local lettuce, feta, avocado and sunflower seed duqqa"
     },
     {
-     "item": "Watermelon Salad with feta, harissa and walnuts",
-     "price": "$18"
+     "item": "watermelon salad",
+     "price": "18",
+     "course": "starter",
+     "note": "Small plate - feta, harissa and toasted walnuts"
     },
     {
-     "item": "Moroccan Carrots with labneh and red chermoula",
-     "price": "$13"
+     "item": "Moroccan carrots",
+     "price": "13",
+     "course": "starter",
+     "note": "Small plate - labneh, red chermoula and coriander"
     },
     {
-     "item": "Bright Green Falafel with tahini and zhoug",
-     "price": "$16"
+     "item": "bright green falafel",
+     "price": "16",
+     "course": "main",
+     "note": "Large plate - tahini and zhoug"
     },
     {
-     "item": "Grilled Salmon with tzatziki, confit tomatoes and dill",
-     "price": "$40"
+     "item": "grilled salmon",
+     "price": "40",
+     "course": "main",
+     "note": "Large plate - tzatziki, confit tomatoes, dill and pink peppercorn"
     },
     {
-     "item": "Israeli Couscous with summer vegetables",
-     "price": "$12"
+     "item": "Israeli couscous",
+     "price": "12",
+     "course": "side",
+     "note": "summer vegetables"
     },
     {
-     "item": "Smashed Golden Potatoes with olive oil and sea salt",
-     "price": "$11"
+     "item": "smashed golden potatoes",
+     "price": "11",
+     "course": "side",
+     "note": "extra virgin olive oil and sea salt"
     },
     {
-     "item": "Jeweled Rice with pomegranate, pistachio and herbs",
-     "price": "$11"
+     "item": "jeweled rice",
+     "price": "11",
+     "course": "side",
+     "note": "pomegranate, pistachio and herbs"
     },
     {
-     "item": "Seasoned Fries with harissa mayonnaise",
-     "price": "$8"
+     "item": "seasoned fries",
+     "price": "8",
+     "course": "side",
+     "note": "harissa mayonnaise"
     },
     {
-     "item": "English Peas with feta and mint",
-     "price": "$11"
+     "item": "English peas",
+     "price": "11",
+     "course": "side",
+     "note": "feta and mint"
     },
     {
-     "item": "Malabi (orchid-root milk custard) with rose and strawberries",
-     "price": "$11"
+     "item": "seasonal ice cream or sorbet",
+     "price": "11",
+     "course": "dessert",
+     "note": "from Sweet Handkraft"
     },
     {
-     "item": "Hazelnut Chocolate Pudding with urfa shortbread",
-     "price": "$12"
+     "item": "malabi",
+     "price": "12",
+     "course": "dessert",
+     "note": "orchid root custard, rose, ginger and Louisiana strawberries"
     },
     {
-     "item": "Cookie Tin (five seasonal cookies)",
-     "price": "$15"
+     "item": "hazelnut chocolate pudding",
+     "price": "13",
+     "course": "dessert",
+     "note": "Piety & Desire chocolate, urfa shortbread and toasted meringue"
     },
     {
-     "item": "Seasonal Sorbet / Ice Cream",
-     "price": "$8"
+     "item": "cookie tin",
+     "price": "16",
+     "course": "dessert",
+     "note": "chef's selection of five seasonal cookies"
     },
     {
-     "item": "Iced Halva Latte",
-     "price": "$8"
+     "item": "coffee (serves 2)",
+     "price": "8",
+     "course": "drink",
+     "note": "Coffee & Tea"
     },
     {
-     "item": "Moroccan Mint Tea",
-     "price": "$10"
+     "item": "cold brew",
+     "price": "6",
+     "course": "drink"
+    },
+    {
+     "item": "iced halva latte",
+     "price": "8",
+     "course": "drink",
+     "note": "house signature"
+    },
+    {
+     "item": "Moroccan mint tea",
+     "price": "10",
+     "course": "drink"
+    },
+    {
+     "item": "seasonal herbal tea",
+     "price": "10",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Skip the Blue Crab hummus, Spicy Lamb Ragu hummus, Lamb Kofta, Roasted Gulf Oysters, Harissa Chicken, Chicken Schnitzel, and New York Strip.",
+   "avoid_note": "Skip the signature blue crab hummus (28), roasted Gulf oysters (30), lamb kofta (26), harissa roasted chicken (38), chicken schnitzel and the spicy lamb ragu hummus - Saba's most-ordered plates are lamb, chicken and shellfish.",
    "kosher_style_fit": "Excellent fit: a huge vegetarian spread of salatim, hummus, salads and sides, plus grilled salmon and smoked-trout-roe for the fish eater.",
    "tags": [
     "fish",
@@ -2220,7 +3339,9 @@ window.DATA = {
    "reserveUrl": "https://eatwithsaba.com/reservations",
    "website": "https://eatwithsaba.com/",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://eatwithsaba.com/menus",
+   "menu_confidence": "verified"
   },
   {
    "id": "bearcat-cafe",
@@ -2234,205 +3355,246 @@ window.DATA = {
    "rating_note": "4.6 on Google (~3,800 reviews); ~4.5 on Yelp (1,500 reviews at the 2521 Jena St location).",
    "lat": 29.9356,
    "lng": -90.104,
-   "dinner_estimate": "$20-35 per person (brunch/lunch only — no dinner service)",
+   "dinner_estimate": "$25-40 per person (one Good Cat plate or sandwich plus a coffee; two courses lands nearer $45)",
    "menu": [
     {
      "item": "Biscuits",
-     "price": "$6",
-     "note": "Two biscuits, pepper jelly, cultured butter"
+     "price": "$6.00",
+     "course": "starter",
+     "note": "Breakfast Start - 2 biscuits | pepper jelly | cultured butter"
     },
     {
-     "item": "Breakfast Potatoes",
-     "price": "$11",
-     "note": "Crisp potatoes, gluten-free mornay, egg"
+     "item": "Breakfast Potatoes (G.F)(V.A.)",
+     "price": "$11.00",
+     "course": "starter",
+     "note": "Breakfast Start - crisp potatoes | G.F. mornay | egg"
     },
     {
-     "item": "Ricotta + Lavash",
-     "price": "$8",
-     "note": "House-made ricotta, honey"
+     "item": "Ricotta + Lavash (V.A)",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Breakfast Start - house made ricotta | honey"
     },
     {
-     "item": "House-Made Yogurt or Chia Seed Pudding",
-     "price": "$12",
-     "note": "House granola, seasonal fruit, coconut nectar"
+     "item": "House Made Yogurt or Chia Seed Pudding",
+     "price": "$12.00",
+     "course": "starter",
+     "note": "Breakfast Start - house granola | seasonal fruit | coconut nectar"
     },
     {
      "item": "Smoked Salmon Toast",
-     "price": "$16",
-     "note": "Finned fish — salmon, egg-in-a-hole, avocado, everything spice, creme fraiche"
+     "price": "$16.00",
+     "course": "starter",
+     "note": "Breakfast Start - egg in a hole | avocado | everything spice | creme fraiche"
     },
     {
      "item": "Berries and Cream Pancakes",
-     "price": "$18",
-     "note": "Blueberry pancakes, vanilla whip, strawberry-blueberry compote"
+     "price": "$18.00",
+     "course": "main",
+     "note": "Short Stack - blueberry pancakes | vanilla whip | strawberry & blueberry compote syrup"
     },
     {
-     "item": "Vegan Bearcat",
-     "price": "$16",
-     "note": "Tofu scramble, crispy potatoes, black bean (vegan) sausage"
+     "item": "Vegan Bearcat (V/GF)",
+     "price": "$16.00",
+     "course": "main",
+     "note": "Good Cat - tofu scramble | crispy potatoes | black bean (vegan) sausage"
     },
     {
-     "item": "Mushroom Soft Scramble",
-     "price": "$20",
-     "note": "Mushroom medley, Boursin, soft eggs"
+     "item": "Mushroom Soft Scramble (G.F)",
+     "price": "$20.00",
+     "course": "main",
+     "note": "Good Cat - mushroom medley | boursin"
     },
     {
      "item": "Vegan Ranchero",
-     "price": "$14",
-     "note": "Black beans, house salsa, ranchero sauce, avocado, cashew crema"
+     "price": "$14.00",
+     "course": "main",
+     "note": "Good Cat - black beans | house salsa | ranchero sauce | avocado | cashew crema | corn tortilla"
     },
     {
      "item": "Vegan Quesadilla",
-     "price": "$14",
-     "note": "Tofu scramble, mushrooms, caramelized onion, cashew queso"
+     "price": "$14.00",
+     "course": "main",
+     "note": "Good Cat - tofu scramble | mushrooms | caramelized onion | cashew queso | avocado"
     },
     {
      "item": "Bearcat Breakfast",
-     "price": "$16",
-     "note": "Ask without the bacon/bison sausage — comes with 2 eggs and crisp potatoes"
+     "price": "$16.00",
+     "course": "main",
+     "note": "Bad Cat - 2 eggs | crisp potatoes; ask without the bacon or bison sausage"
     },
     {
      "item": "Breakfast Club",
-     "price": "$15",
-     "note": "Ask without bacon — sourdough, roasted tomato, 2 eggs, avocado, potatoes"
+     "price": "$15.00",
+     "course": "main",
+     "note": "Bad Cat - sourdough | roasted tomato | 2 eggs | avocado | potatoes; ask without the bacon"
     },
     {
      "item": "Biscuit Sandwich",
-     "price": "$7",
-     "note": "Ask without meat for an egg & cheese biscuit"
+     "price": "$7.00",
+     "course": "main",
+     "note": "Biscuits - egg | cheese; ask without the bison sausage or bacon"
     },
     {
      "item": "Vegan Biscuit Sandwich",
-     "price": "$10",
-     "note": "Just Egg, vegan cheese, vegan sausage, caramelized onions"
+     "price": "$10.00",
+     "course": "main",
+     "note": "Biscuits - Just Egg | vegan cheese | vegan sausage | caramelized onions"
     },
     {
      "item": "Mushroom Toast",
-     "price": "$16",
-     "note": "Whipped tofu, mushroom medley, roasted tomatoes, artichokes"
+     "price": "$16.00",
+     "course": "main",
+     "note": "Biscuits section - whipped tofu | mushroom medley | roasted tomatoes | artichokes | sunflower seeds | caramelized onion | arugula | sourdough"
     },
     {
-     "item": "Grits",
-     "price": "$7",
-     "note": "Side"
+     "item": "Grits (G.F)",
+     "price": "$7.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
-     "item": "Crisp Potatoes",
-     "price": "$7",
-     "note": "Side"
+     "item": "Crisp Potatoes (V/G.F)",
+     "price": "$7.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
-     "item": "Egg in a Hole",
-     "price": "$5",
-     "note": "Side"
+     "item": "Egg In a Hole",
+     "price": "$5.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
      "item": "Cauliflower Grits",
-     "price": "$7",
-     "note": "Side"
+     "price": "$7.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
      "item": "Black Beans",
-     "price": "$7",
-     "note": "Side"
+     "price": "$7.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
-     "item": "Fruit (with Cream)",
-     "price": "$7",
-     "note": "Side"
+     "item": "Fruit (w/Cream)(G.F)",
+     "price": "$7.00",
+     "course": "side",
+     "note": "Breakfast Sides"
     },
     {
-     "item": "Buffalo Cauliflower",
-     "price": "$12",
-     "note": "Vegan buffalo sauce, vegan ranch"
+     "item": "Buffalo Cauliflower (V/G.F)",
+     "price": "$12.00",
+     "course": "starter",
+     "note": "Lunch Starters - vegan buffalo sauce | vegan ranch"
     },
     {
-     "item": "Vegan Queso",
-     "price": "$10",
-     "note": "Cashew queso, pico de gallo, corn chips"
+     "item": "Vegan Queso (G.F)",
+     "price": "$10.00",
+     "course": "starter",
+     "note": "Lunch Starters - cashew | pico de gallo | corn chips"
     },
     {
-     "item": "Broccolini",
-     "price": "$13",
-     "note": "Black sesame hummus, tofu, sambal sweet chili"
+     "item": "Broccolini (V/G.F)",
+     "price": "$13.00",
+     "course": "starter",
+     "note": "Vegetables - black sesame hummus | tofu | sambal sweet chili"
     },
     {
-     "item": "Vegetable Hash",
-     "price": "$14",
-     "note": "Cauliflower grits, lemon-pesto vinaigrette, cashew crema"
+     "item": "Vegetable Hash (V/GF)",
+     "price": "$14.00",
+     "course": "starter",
+     "note": "Vegetables - cauliflower grits | lemon vin pesto | cashew crema | salbitxada"
     },
     {
-     "item": "Farro Bowl",
-     "price": "$15",
-     "note": "Almonds, oyster mushroom, nori, fennel, carrot, black beans"
+     "item": "Farro Bowl (V)",
+     "price": "$15.00",
+     "course": "main",
+     "note": "Good Cat - almonds | oyster mushroom | nori | fennel | carrot | black beans (oyster mushroom, not shellfish)"
     },
     {
-     "item": "Trumpet Scallops",
-     "price": "$18",
-     "note": "Vegetarian — the 'scallops' are trumpet mushrooms; with hummus, cauliflower, asparagus"
+     "item": "Trumpet Scallops (V/G.F)",
+     "price": "$18.00",
+     "course": "main",
+     "note": "Good Cat - trumpet mushrooms | hummus | cauliflower | asparagus (vegan 'scallops', no shellfish)"
     },
     {
-     "item": "Xiong Mao Noodle",
-     "price": "$16",
-     "note": "Purple sweet potato noodle, tomato, mushrooms, artichoke"
+     "item": "Xiong Mao Noodle (V/G.F)",
+     "price": "$16.00",
+     "course": "main",
+     "note": "Good Cat - purple sweet potato noodle | tomato | mushrooms | artichoke | preserved lemon pesto"
     },
     {
      "item": "Vegan Burger",
-     "price": "$16",
-     "note": "Beyond patty, lettuce, tomato, vegan smoked provolone"
+     "price": "$16.00",
+     "course": "main",
+     "note": "Vegan Sandwiches - Beyond patty | lettuce | tomato | vegan smoked provolone | caramelized onions | seeded bun | potatoes"
     },
     {
-     "item": "Buffalo Jerry's Tacos",
-     "price": "$13",
-     "note": "Buffalo cauliflower, pico, cashew crema, jalapenos, avocado"
+     "item": "Buffalo Jerry's Tacos (V/G.F.)",
+     "price": "$13.00",
+     "course": "main",
+     "note": "Vegan Sandwiches - buffalo cauliflower | pico | cashew crema | jalapenos | avocado"
     },
     {
-     "item": "Shrimp Pasta",
-     "price": "$26",
-     "note": "Ask without shrimp — base is almonds, basil, tomatoes, parmesan pasta"
+     "item": "Shrimp Pasta (G.F.A./V.A.)",
+     "price": "$26.00",
+     "course": "main",
+     "note": "Bad Cat - almonds | basil | tomatoes | parmesan; ask for the vegan/veg version without the shrimp (menu marks it V.A.)"
     },
     {
      "item": "Creamed Spinach",
-     "price": "$8",
-     "note": "Cream, onion, garlic"
+     "price": "$8.00",
+     "course": "side",
+     "note": "Smalls - cream | onion | garlic"
     },
     {
-     "item": "Corn Maque Choux",
-     "price": "$8",
-     "note": "Confirm it is made without bacon/tasso"
+     "item": "Corn Maque Choux (V/GF)",
+     "price": "$8.00",
+     "course": "side",
+     "note": "Smalls"
     },
     {
-     "item": "Asparagus",
-     "price": "$12",
-     "note": "Garlic, salt"
+     "item": "Asparagus (V/G.F)",
+     "price": "$12.00",
+     "course": "side",
+     "note": "Smalls - garlic | salt"
     },
     {
-     "item": "Grilled Cheese",
-     "price": "$7",
-     "note": "Kids menu"
+     "item": "Golden Latte",
+     "price": "$6.50",
+     "course": "drink",
+     "note": "turmeric | ginger | honey | espresso"
     },
     {
-     "item": "Fried Potatoes",
-     "price": "$5",
-     "note": "Kids menu"
+     "item": "Lavender Honey Latte",
+     "price": "$6.50",
+     "course": "drink"
     },
     {
-     "item": "Short Stack with Fruit",
-     "price": "$8",
-     "note": "Kids menu"
+     "item": "Rose Water Latte",
+     "price": "$6.50",
+     "course": "drink"
     },
     {
-     "item": "Xiao Bao Bao Breakfast",
-     "price": "$8",
-     "note": "Cheese scrambled eggs, pancake, fruit (kids menu)"
+     "item": "Almond Joy Cortado",
+     "price": "$5.50",
+     "course": "drink",
+     "note": "coconut milk | chocolate"
     },
     {
-     "item": "Buttered Noodles",
-     "price": "$6",
-     "note": "Kids menu"
+     "item": "Iced Strawberry Matcha",
+     "price": "$7.00",
+     "course": "drink"
+    },
+    {
+     "item": "Iced Coconut Mango Matcha",
+     "price": "$8.50",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Kitchen cooks pork (bacon, bison sausage, boudin) and shellfish (crab, shrimp, crawfish). Off-limits: Crab Scramble, Shrimp & Grits, Crab Cake, Creole Crab Dip, Boudin Egg Rolls, the bacon-wrapped Devils on Horseback, all chicken biscuits (Cat Daddy, Hot Rob, Couyon Daddy, Chicken Sumas), Seared Scallops, Pork Tenderloin, House Burger, Cave Breakfast (pork chop) and Hot Chicken Sandwich.",
+   "avoid_note": "The famous ones are all off-limits: Cat Daddy Biscuit (chicken + crawfish cream, $26), Couyon Daddy ($30), Crab Scramble ($28), Shrimp and Grits ($26), Crab Cake ($24), Creole Crab Dip, Boudin Egg Rolls, Devils on Horseback, Hot Chicken Sandwich and the Cave Breakfast pork chop. Note the 'Bad Cat' side of the menu is essentially all pork, chicken or shellfish.",
    "kosher_style_fit": "Not kosher and not supervised. Vegetarian and vegan plates are clearly marked and abundant, plus a smoked-salmon dish, so a fish-and-veg diner eats very well here — but fish/dairy plates share a kitchen with pork and shellfish.",
    "tags": [
     "fish",
@@ -2447,7 +3609,9 @@ window.DATA = {
    "website": "https://bearcatcafe.com",
    "reserveUrl": null,
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://bearcatcafe.com/new-orleans-uptown-new-orleans-bearcat-cafe-food-menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "coquette",
@@ -2461,9 +3625,88 @@ window.DATA = {
    "rating_note": "Historical only: ~4.4 on Google and 4+ on Yelp (926 reviews). Restaurant is now permanently closed.",
    "lat": 29.9309,
    "lng": -90.086,
-   "dinner_estimate": "Closed (formerly ~$70-100 per person)",
-   "menu": [],
-   "avoid_note": "PERMANENTLY CLOSED as of June 27, 2026 after nearly 18 years — do not attempt to book. Chef Michael Stoltzfus has moved on to Here Today Rotisserie (1245 Constance St), a casual chicken-and-wine concept with little for a fish-and-veg diner. Remove from active planning or keep only as a note.",
+   "dinner_estimate": "$60-80 per person (a table snack or First course at 12-18 plus the pompano at 38 or carrot bolognese at 32, before drinks)",
+   "menu": [
+    {
+     "item": "COQUETTE BREAD",
+     "price": "12",
+     "course": "starter",
+     "note": "For the Table - salted butter; ask without the smoked beef marmalade"
+    },
+    {
+     "item": "WHIPPED FETA",
+     "price": "12",
+     "course": "starter",
+     "note": "For the Table - sesame | smoked eggplant | focaccia"
+    },
+    {
+     "item": "SMOKED FISH DIP",
+     "price": "14",
+     "course": "starter",
+     "note": "For the Table - pepper relish | basil | focaccia"
+    },
+    {
+     "item": "BABY ICEBERG LETTUCES",
+     "price": "15",
+     "course": "starter",
+     "note": "First - radish | herbes de provence | dill buttermilk"
+    },
+    {
+     "item": "GAILA MELON GAZPACHO",
+     "price": "16",
+     "course": "starter",
+     "note": "First - chili | avocado | almond; ask without the Higgin's crab"
+    },
+    {
+     "item": "TUNA CRUDO",
+     "price": "18",
+     "course": "starter",
+     "note": "First - smoked peas | green garlic | nasturtium | lemon"
+    },
+    {
+     "item": "MARINATED CUCUMBERS",
+     "price": "15",
+     "course": "starter",
+     "note": "First - fresno chili | spring onion | sunflower seed | yogurt"
+    },
+    {
+     "item": "CARROT BOLOGNESE",
+     "price": "32",
+     "course": "main",
+     "note": "Main - cavatelli | ricotta | basil | parmesan (vegetarian bolognese)"
+    },
+    {
+     "item": "GRILLED POMPANO",
+     "price": "38",
+     "course": "main",
+     "note": "Main - tomato | garlic | lemon (whole finned Gulf fish)"
+    },
+    {
+     "item": "STRAWBERRY & FENNEL SODA",
+     "price": "9",
+     "course": "drink",
+     "note": "No Proof - house non-alcoholic soda"
+    },
+    {
+     "item": "NA MARGARITA",
+     "price": "15",
+     "course": "drink",
+     "note": "No Proof - na tequila | agave | lime | orange shrub"
+    },
+    {
+     "item": "NA BEE'S KNEES",
+     "price": "15",
+     "course": "drink",
+     "note": "No Proof - na gin | blackberry | ginger | honey"
+    },
+    {
+     "item": "PHONY NEGRONI",
+     "price": "12",
+     "course": "drink",
+     "note": "No Proof"
+    }
+   ],
+   "avoid_note": "Skip Higgin's Crab Dip (16), the melon gazpacho as served (built on Higgin's crab), Beef Tartare 'Muffuletta' (20), HTR Chicken Schnitzel (38), Smoked Beef Short Rib (45) and the Gulf Seafood Stew (41) - the shellfish content isn't separable.",
    "kosher_style_fit": "N/A — permanently closed.",
    "tags": [
     "fish",
@@ -2476,7 +3719,9 @@ window.DATA = {
    "website": "https://www.coquettenola.com",
    "reserveUrl": null,
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://media-cdn.getbento.com/accounts/e22adcd6a4f49535829068929214f8e0/media/V40G7A7rQISI7cERhEgh_6.25.26%20Thursday.pdf",
+   "menu_confidence": "verified"
   },
   {
    "id": "mais-arepas",
@@ -2490,40 +3735,46 @@ window.DATA = {
    "rating_note": "4.6 on Google (~1,400 reviews); 4.5 on Yelp (~770 reviews); 4.7 on Tripadvisor.",
    "lat": 29.9377,
    "lng": -90.0793,
-   "dinner_estimate": "$30-45 per person",
+   "dinner_estimate": "$30-45 per person (one entrada plus the Veggie arepa; add ~$11 for dessert)",
    "menu": [
     {
-     "item": "Veggie Arepa",
-     "price": "$16",
-     "note": "Grilled seasonal vegetables, mozzarella; served with plantain chips"
+     "item": "Ceviche De Pescado",
+     "price": "$19.00",
+     "course": "starter",
+     "note": "Gulf fish, passion fruit leche de tigre, onions, cilantro, cherry tomatoes, avocado, choclo, plantain chips - eligible finned fish, raw"
     },
     {
-     "item": "Maíz de la Rueda",
-     "price": "$11",
-     "note": "Corn, cotija, butter, lime, salsa rosada"
+     "item": "Maiz De La Rueda",
+     "price": "$11.00",
+     "course": "starter",
+     "note": "Corn, cotija, butter, lime, salsa rosada - vegetarian"
     },
     {
      "item": "Pataconcitos",
-     "price": "$12",
-     "note": "Smashed green plantains, local mushrooms, avocado, cilantro, scallions, lime"
-    },
-    {
-     "item": "Ceviche de Pescado",
-     "price": "$19",
-     "note": "Finned fish — gulf fish, passion-fruit leche de tigre, onion, cilantro, cherry tomato, avocado, choclo, plantain chips"
+     "price": "$12.00",
+     "course": "starter",
+     "note": "Smashed green plantains, local mushrooms, avocado, cilantro, scallions, lime - vegetarian"
     },
     {
      "item": "Ensalada",
-     "price": "$13",
-     "note": "Local greens, cherry tomatoes, roasted corn, avocado, pickled red onion, cilantro-lime vinaigrette; skip the meat/shrimp add-ons"
+     "price": "$13.00",
+     "course": "starter",
+     "note": "Local greens, cherry tomatoes, roasted corn, avocado, pickled red onions, cilantro lime vinaigrette - order plain, skip the chicken/steak/shrimp add-ons"
+    },
+    {
+     "item": "Veggie",
+     "price": "$16.00",
+     "course": "main",
+     "note": "Vegetarian arepa: grilled seasonal vegetables, mozzarella; comes with plantain chips and a housemade sauce"
     },
     {
      "item": "Tres Leches",
-     "price": "$11",
-     "note": "Classic three-milk cake"
+     "price": "$11.00",
+     "course": "dessert",
+     "note": "Only dessert listed on the current menu"
     }
    ],
-   "avoid_note": "Menu is heavy on pork (chicharron, chorizo, ham, pork belly), beef/wagyu, chicken and shrimp — most arepas and every Secos main are off-limits. Only one finned-fish dish (Ceviche de Pescado). Avoid Bandeja Paisa, both camarón ceviches/encocado, Buenaventura/Marinera arepas, Brochetas, and all meat arepas.",
+   "avoid_note": "Almost everything else here is pork, wagyu skirt steak, chicken or shrimp - skip Bandeja Paisa, Costillas de Cerdo, Chuzos de Panza (pork belly), Empanadas Caleñas, the Sampler, Ajiaco (chicken), Ceviche de Camaron, Encocado de Camaron and every meat arepa (Cerda, Cubana, Mechada, Carnicera, Reina, Pollo Griliao, Choriarepa, Buenaventura, Marinera).",
    "kosher_style_fit": "Not kosher. The kitchen mixes meat and dairy and cooks pork and shellfish throughout. Vegetarian and fish options are limited but clearly identifiable — the veggie arepa, corn, plantains, salad, fish ceviche and tres leches are the safe picks.",
    "tags": [
     "fish",
@@ -2537,7 +3788,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/mais-arepas-new-orleans",
    "reserve_priority": true,
    "photoUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg",
-   "coverUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg"
+   "coverUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg",
+   "menu_source": "https://mas-arepas.placejoys.com/menu",
+   "menu_confidence": "approximate"
   },
   {
    "id": "bacchanal-wine",
@@ -2551,78 +3804,112 @@ window.DATA = {
    "rating_note": "Google 4.5 / Yelp 4.5",
    "lat": 29.96124,
    "lng": -90.04408,
-   "dinner_estimate": "$45/person",
+   "dinner_estimate": "Roughly $40-55 per person for two or three plates plus a glass of wine - Bacchanal does not publish prices",
    "menu": [
     {
-     "item": "House-Made Bread & Butter",
-     "price": "$8 approx"
+     "item": "Whole Grilled Fish",
+     "price": "Not listed",
+     "course": "main",
+     "note": "Seafood section. Whole finned fish, herbs and lemon (recent versions served with sultana-caper chutney, fennel, hazelnuts). Bacchanal does not publish prices - their site says the menu changes too often to post"
     },
     {
-     "item": "Marinated Olives (Castelvetrano, cerignola, picholine, kalamata)",
-     "price": "$8 approx"
+     "item": "Escabeche of Sardine",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Seafood section. Sardine with salsa verde and grilled bread - eligible finned fish"
+    },
+    {
+     "item": "Build Your Own Cheese Plate",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "From bacchanalwine.com: pick your cheese from the cooler, plated with olives, pickles, toasted bread, chutney, mostarda and seeds - order it without the cured meats"
+    },
+    {
+     "item": "Bread and Butter",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Munchies. House-made bread, butter, radish, sea salt"
+    },
+    {
+     "item": "Patatas Bravas",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Munchies. Fried potatoes, tomato, espelette, chimichurri aioli - vegetarian"
+    },
+    {
+     "item": "Marinated Olives",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Munchies. Castelvetrano, cerignola and coquillo olives in mustard seed vinaigrette"
     },
     {
      "item": "Pickled Locally Grown Veggies",
-     "price": "$9 approx"
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Munchies. Daily variety of house-made pickles"
     },
     {
-     "item": "Build-Your-Own Cheese Plate (olives, pickles, toast, chutney, mostarda, seeds)",
-     "price": "$18 approx"
+     "item": "Country Greek Salad",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Vegetable section - vegetarian"
     },
     {
-     "item": "Chilled Watercress Soup",
-     "price": "$12 approx"
+     "item": "Watermelon Gazpacho",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Vegetable section, chilled summer soup - vegetarian"
     },
     {
-     "item": "Roasted Carrot Soup (pepitas, sumac, labna)",
-     "price": "$12 approx"
+     "item": "Vegan Greek Goddess Salad",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Vegetable section - vegan"
     },
     {
-     "item": "Roasted Asparagus",
-     "price": "$14 approx"
+     "item": "Crudites",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Vegetable section - raw vegetables with dip"
     },
     {
-     "item": "Roasted Beets (squash, satsumas, greens, pepitas, burnt-orange vin)",
-     "price": "$14 approx"
+     "item": "Chanterelle Mushroom",
+     "price": "Not listed",
+     "course": "starter",
+     "note": "Vegetable section - confirm no cured pork in the preparation"
     },
     {
-     "item": "Spaghetti Squash",
-     "price": "$14 approx"
+     "item": "Handcut Pasta",
+     "price": "Not listed",
+     "course": "main",
+     "note": "Listed under the Vegetable section; confirm the sauce has no guanciale or sausage"
     },
     {
-     "item": "Patatas Bravas (tomato, espelette, chimichurri aioli)",
-     "price": "$12 approx"
+     "item": "Grilled Tagine-Spiced Eggplant",
+     "price": "Not listed",
+     "course": "main",
+     "note": "Lunch special sandwich (11am-4pm): eggplant, tomato and tzatziki in pita - vegetarian"
     },
     {
-     "item": "Butternut Squash Risotto",
-     "price": "$16 approx"
-    },
-    {
-     "item": "Lentil Hummus (herb salad, lavash)",
-     "price": "$12 approx"
-    },
-    {
-     "item": "Sardine Escabeche",
-     "price": "$14 approx"
-    },
-    {
-     "item": "Whole Grilled Fish (herbs, lemon)",
-     "price": "$26 approx"
-    },
-    {
-     "item": "Peaches & Burrata (saba, basil)",
-     "price": "$12 approx"
-    },
-    {
-     "item": "Pecan Panna Cotta",
-     "price": "$10 approx"
+     "item": "Buttermilk Panna Cotta",
+     "price": "Not listed",
+     "course": "dessert",
+     "note": "Sweet section"
     },
     {
      "item": "Chocolate Bark",
-     "price": "$8 approx"
+     "price": "Not listed",
+     "course": "dessert",
+     "note": "Sweet section - extra virgin olive oil, marcona almonds, sel gris"
+    },
+    {
+     "item": "Bread Pudding",
+     "price": "Not listed",
+     "course": "dessert",
+     "note": "Sweet section"
     }
    ],
-   "avoid_note": "Skip the Gulf shrimp, insalata di mare, bacon-wrapped dates, braised pork shoulder, grilled bavette steak, confit chicken leg, and the meat charcuterie.",
+   "avoid_note": "Skip the Meat section entirely (Bacon Wrapped Dates, Confit Chicken Leg, Braised Pork Shoulder, Grilled Bavette Steak) and the shellfish plates (Gulf Shrimp, Smoked Gulf Shrimp Dip, Insalata di Mare). The unspecified Ceviche is often shrimp - ask before ordering.",
    "kosher_style_fit": "Excellent fit: a long list of vegetable small plates plus sardine escabeche and whole grilled fish cover the finned-fish + vegetarian diet with plenty of choice.",
    "tags": [
     "fish",
@@ -2639,7 +3926,9 @@ window.DATA = {
    "reserve_priority": false,
    "reserveUrl": "https://www.opentable.com/r/bacchanal-wine-new-orleans",
    "website": "https://www.bacchanalwine.com",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.opentable.com/r/bacchanal-wine-new-orleans",
+   "menu_confidence": "approximate"
   },
   {
    "id": "satsuma-cafe",
@@ -2653,142 +3942,94 @@ window.DATA = {
    "rating_note": "4.4 on Google (~1,180 reviews); ~4.0 on Yelp — praised for fresh ingredients, juices, avocado toast and friendly service.",
    "lat": 29.9641,
    "lng": -90.0554,
-   "dinner_estimate": "$14-20 per person (no dinner service; open 7am-5pm for breakfast/lunch)",
+   "dinner_estimate": "$12-18 per person - breakfast and lunch only, kitchen closes at 3pm; prices shown are the delivery menu and run a little above in-store",
    "menu": [
     {
-     "item": "Mexican Breakfast Plate",
-     "price": "$9.50",
-     "note": "Vegetarian as-is: creamy black beans, 2 eggs, roasted tomato salsa, avocado, Cotija, corn tortillas — skip the roasted-pork add-on"
-    },
-    {
-     "item": "Satsuma Breakfast Plate",
-     "price": "$9.50",
-     "note": "Ask without bacon; comes with 2 eggs, black beans, fresh fruit and toast or biscuit"
-    },
-    {
-     "item": "Bacon, Egg & Cheese Sandwich",
-     "price": "$5.50 biscuit / $6.50 bagel-croissant-toast",
-     "note": "Ask without bacon for an egg & cheese"
-    },
-    {
-     "item": "Bagel Plate",
-     "price": "$7",
-     "note": "Vegetarian: cucumbers, tomatoes, capers, red onion, sprouts and cream cheese or hummus"
-    },
-    {
-     "item": "Bagel Plate with Lox",
-     "price": "$10",
-     "note": "Adds salmon lox (finned & scaled fish) — fits the fish rule"
-    },
-    {
-     "item": "Avocado Toast",
-     "price": "$7",
-     "note": "One egg, sliced avocado, basil, shaved radish, lemon zest on toast"
-    },
-    {
-     "item": "Green Sandwich",
-     "price": "$7.50",
-     "note": "One egg, arugula, tomato, avocado mash and swiss"
-    },
-    {
-     "item": "Green Eggs & Ham Sandwich",
-     "price": "$7.50",
-     "note": "Ask without the shaved ham — scrambled egg, basil pesto, swiss and red onion on croissant"
-    },
-    {
-     "item": "Granola, Fruit & Yogurt",
-     "price": "$7",
-     "note": "Housemade granola, fresh fruit, organic yogurt, honey"
-    },
-    {
-     "item": "Vegan Curry Scramble",
-     "price": "$9.50",
-     "note": "Quinoa or tofu with broccoli, onions, green coconut curry and toast"
-    },
-    {
-     "item": "Raw Vegetable Salad",
-     "price": "$9",
-     "note": "Raw market veg, arugula, avocado, sprouts, sunflower seeds, cider vinaigrette"
-    },
-    {
-     "item": "Mediterranean Quinoa Salad",
-     "price": "$10",
-     "note": "Chickpeas, spinach, cherry tomatoes, feta, olives, hummus crouton"
+     "item": "Quinoa Salad",
+     "price": "$13.20",
+     "course": "starter",
+     "note": "Quinoa, spinach, olives, chickpeas, cherry tomatoes, red onion, feta, lemon vinaigrette - vegetarian"
     },
     {
      "item": "The Kale Salad",
-     "price": "$10.50",
-     "note": "Ask without bacon; lacinato kale, hardboiled egg, tomato, avocado, parmesan croutons"
+     "price": "$13.70",
+     "course": "starter",
+     "note": "Lacinato kale, spinach, hard boiled egg, cherry tomatoes, avocado, parmesan croutons, creamy garlic dressing - ask without the bacon"
     },
     {
-     "item": "Special BLT",
-     "price": "$9",
-     "note": "Ask without bacon — leaves tomato, arugula, goat cheese and avocado; served with side salad"
+     "item": "Avocado Toast",
+     "price": "$12.05",
+     "course": "main",
+     "note": "One egg, avocado mash, arugula, cherry tomato, feta, lemon vinaigrette on toast"
     },
     {
-     "item": "Grilled Cheese",
-     "price": "$6",
-     "note": "Cheddar or swiss with tomato; served with side salad"
+     "item": "Green Sandwich",
+     "price": "$12.05",
+     "course": "main",
+     "note": "One egg, baby arugula, tomato, avocado mash and swiss on croissant, toast or bagel"
     },
     {
-     "item": "Black Bean Burger",
-     "price": "$9.50",
-     "note": "Brown rice & black bean patty, romesco, spinach, avocado; served with side salad"
+     "item": "Breakfast Burrito",
+     "price": "$16.35",
+     "course": "main",
+     "note": "Breakfast potatoes, roasted poblanos, creamy black beans, cheddar scrambled eggs, avocado mash, side of salsa - vegetarian as listed"
     },
     {
-     "item": "Roasted Veggie Wrap",
-     "price": "$9",
-     "note": "Roasted carrots, beets, cauliflower, broccoli, baba ganoush, spinach; served with side salad"
+     "item": "Vegan Tofu Scramble",
+     "price": "$14.30",
+     "course": "main",
+     "note": "Veggie co-op tofu, chipotle roasted sweet potatoes, poblanos, black beans, pickled red onions, spiced chickpeas, cilantro, sourdough toast"
     },
     {
-     "item": "ABC Juice",
-     "price": "$6.50",
-     "note": "Apple, carrot, beet, lemon"
+     "item": "Bagel Plate",
+     "price": "$11.00",
+     "course": "main",
+     "note": "Cucumbers, tomatoes, capers, red onion, sprouts and cream cheese - vegetarian"
     },
     {
-     "item": "Popeye Juice",
-     "price": "$7",
-     "note": "Spinach, lemon, kale, apple"
+     "item": "Bagel w/ Cream Cheese",
+     "price": "$5.50",
+     "course": "main",
+     "note": "Toasted bagel with cream cheese"
     },
     {
-     "item": "Green Drink",
-     "price": "$7",
-     "note": "Apple, fennel, kale, cucumber, celery"
+     "item": "Grilled Cheese Sandwiches",
+     "price": "$9.90",
+     "course": "main",
+     "note": "Cheddar or swiss on wheat or sourdough with chips or a side salad"
     },
     {
-     "item": "Sweet Tart Juice",
-     "price": "$6.50",
-     "note": "Apple, lemon, cucumber, orange, fennel"
+     "item": "Granola, Fruit, Yogurt",
+     "price": "$9.90",
+     "course": "main",
+     "note": "Housemade granola, fresh fruit and organic yogurt topped with honey"
     },
     {
-     "item": "The Cleanser Juice",
-     "price": "$7",
-     "note": "Beet, fennel, cucumber, lemon, celery"
+     "item": "Plain Pancake",
+     "price": "$9.35",
+     "course": "main",
+     "note": "Pancake with maple syrup"
     },
     {
-     "item": "Immune Booster Juice",
-     "price": "$7",
-     "note": "Orange, grapefruit, fennel, apple, grapefruit seed extract"
+     "item": "Blueberry Pancake",
+     "price": "$10.45",
+     "course": "main",
+     "note": "Blueberry pancake with maple syrup"
     },
     {
-     "item": "Calcium Injection Juice",
-     "price": "$7.50",
-     "note": "Cucumber, kale, celery, lemon, ginger, parsley"
+     "item": "Iced Latte",
+     "price": "$5.80",
+     "course": "drink",
+     "note": "16 oz"
     },
     {
-     "item": "Fresh Squeezed Orange Juice",
-     "price": "$5"
-    },
-    {
-     "item": "House Chai (12oz)",
-     "price": "$3"
-    },
-    {
-     "item": "Mocha",
-     "price": "$4"
+     "item": "Iced Chai",
+     "price": "$5.50",
+     "course": "drink",
+     "note": "16 oz"
     }
    ],
-   "avoid_note": "Pork is used widely — Nueske's bacon and ham plus house-roasted pork shoulder (Cuban). No shellfish issues on the veg/fish items, but always ask for bacon/ham to be left off egg dishes and the BLT/kale salad.",
+   "avoid_note": "Everything else is pork or poultry: Bacon, Egg & Cheese, Special BLT (bacon), Cuban (house-roasted pork and ham), Turkey-Kale Spinach Wrap (turkey and bacon), Green Eggs & Ham (shaved ham), Turkey Sandwich.",
    "kosher_style_fit": "Not kosher and not certified; the kitchen handles bacon, ham and roasted pork and mixes meat with dairy. That said, there's a deep bench of vegetarian (dairy/egg) plates plus a salmon-lox bagel that fit a fish-and-veg diet cleanly.",
    "tags": [
     "fish",
@@ -2802,7 +4043,9 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://satsumacafe.com",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://postmates.com/store/satsuma-cafe/RxIeibJeSgaTQyjPZnqZYA",
+   "menu_confidence": "approximate"
   },
   {
    "id": "pizza-delicious",
@@ -2811,90 +4054,143 @@ window.DATA = {
    "area_label": "Bywater",
    "cuisine": "NY-style pizza, housemade pasta & salads",
    "vibe": "Beloved Bywater counter-serve pizzeria turning out thin NY-style pies, fresh pasta and craft beer. Order at the window, grab a picnic table on the covered patio — casual, friendly and family-good.",
-   "price": "$$",
+   "price": "$",
    "rating": 4.5,
    "rating_note": "4.5 on Google/Yelp (800+ Yelp reviews) — locals rave about the thin crust, fresh ingredients and garlic knots.",
    "lat": 29.9626,
    "lng": -90.0516,
-   "dinner_estimate": "$18-28 per person",
+   "dinner_estimate": "$20-30 per person (a few slices or a shared pie plus a salad)",
    "menu": [
     {
-     "item": "Cheese Pizza (18\")",
+     "item": "Cheese",
      "price": "$21",
-     "note": "Whole pie; slice $3.25"
+     "course": "main",
+     "note": "18\" NY-style pie; slice $3.25"
     },
     {
-     "item": "Margherita Pizza (18\")",
+     "item": "Margherita",
      "price": "$24",
-     "note": "Fresh mozzarella, marinara, olive oil, parmigiano, fresh basil"
+     "course": "main",
+     "note": "fresh mozzarella, marinara, olive oil, parmigiano, fresh basil; pie only, no slice"
     },
     {
      "item": "Grandma Pie",
      "price": "$25",
-     "note": "Square pan pizza, sliced mozzarella, tomato sauce, garlic, oregano, pecorino; slice $4.25"
+     "course": "main",
+     "note": "square pan pizza with sliced mozzerella, tomato sauce, garlic, Sicilian oregano, pecorino romano; slice $4.25. Do not add pepperoni."
     },
     {
-     "item": "Roasted Cauliflower & Balsamic Red Onion Pizza",
+     "item": "Roasted Cauliflower & Balsamic Red Onion",
      "price": "$27",
-     "note": "Vegetarian; slice $4.25"
+     "course": "main",
+     "note": "marinara, shredded mozzarella, roasted cauliflower, balsamic red onions; slice $4.25"
     },
     {
-     "item": "Vegan Roasted Cauliflower Pizza",
+     "item": "Vegan Roasted Cauliflower",
      "price": "$19",
-     "note": "No cheese; slice $2.90"
+     "course": "main",
+     "note": "marinara, roasted cauliflower, balsamic red onion (no cheese); slice $2.9. Vegan; add Violife cheese +4"
     },
     {
      "item": "Vegan Supreme Pie",
      "price": "$27",
-     "note": "Plant-based proteins with vegetables"
+     "course": "main",
+     "note": "Before the Butcher plant-based pepperoni & sausage, mushroom, roasted red pepper, red onion; pie only. All plant-based, no real pork."
     },
     {
-     "item": "Linguine al Limone",
-     "price": "$14",
-     "note": "Vegetarian lemon-butter pasta"
+     "item": "Sweet Corn & Ricotta Agnolotti",
+     "price": "18",
+     "course": "main",
+     "note": "brown butter, sweet corn, cherry tomato, basil; do not add the crispy prosciutto"
     },
     {
-     "item": "Orecchiette with Basil & Arugula Pesto",
-     "price": "$14",
-     "note": "Vegan option"
+     "item": "Orecchiette w/ Basil & Arugula Pesto",
+     "price": "14",
+     "course": "main",
+     "note": "haricot vert, oil-cured grape tomatoes, toasted almond, tomato mint vinaigrette; vegan, contains nuts"
+    },
+    {
+     "item": "Spaghetti Carbonara",
+     "price": "16.5",
+     "course": "main",
+     "note": "farm egg, house-cured pancetta, parmigiano, pecorino - ask without the pancetta"
     },
     {
      "item": "Kid's Pasta",
-     "price": "$7",
-     "note": "Ask for plain butter or marinara"
+     "price": "7",
+     "course": "main",
+     "note": "house made fettuccine with marinara or butter"
     },
     {
      "item": "Caesar Salad",
-     "price": "$11.50",
-     "note": "Dressing typically contains anchovy (finned fish); ask to confirm/omit if desired"
+     "price": "11.5",
+     "course": "starter",
+     "note": "romaine, red onion, housemade dressing, parmigiano, croutons; do not add grilled chicken or prosciutto"
     },
     {
      "item": "House Salad",
-     "price": "$10"
+     "price": "10",
+     "course": "starter",
+     "note": "mixed greens, cherry tomato, roasted pepper, red onion, kalamata olive, shaved grana padano cheese, balsamic vinaigrette"
     },
     {
      "item": "Greek Salad",
-     "price": "$13",
-     "note": "Feta, olives, tomato, cucumber, red onion"
+     "price": "13",
+     "course": "starter",
+     "note": "tomatoes, cucumber, red onion, oil cured olives, marinated feta, red wine vinaigrette, pickled shishito pepper"
     },
     {
      "item": "Garlic Knots",
-     "price": "$5"
+     "price": "5",
+     "course": "side",
+     "note": "listed under Sides & Salads"
     },
     {
-     "item": "Side of Marinara",
-     "price": "$1.50"
+     "item": "Side of Marinara (3oz)",
+     "price": "1.50",
+     "course": "side"
     },
     {
-     "item": "Side of Ranch",
-     "price": "$2"
+     "item": "Side of Ranch (3oz)",
+     "price": "2",
+     "course": "side"
     },
     {
      "item": "Sea Salted Chocolate Chip Cookie",
-     "price": "$3.25"
+     "price": "3.25",
+     "course": "dessert",
+     "note": "PD Star; rotating special also available"
+    },
+    {
+     "item": "Fountain Soda",
+     "price": "2.75",
+     "course": "drink",
+     "note": "free refills"
+    },
+    {
+     "item": "Iced Tea (unsweet)",
+     "price": "2.75",
+     "course": "drink",
+     "note": "free refills"
+    },
+    {
+     "item": "San Pellegrino (12 oz cans)",
+     "price": "2.5",
+     "course": "drink",
+     "note": "Blood Orange or Limonata"
+    },
+    {
+     "item": "Organic Apple Juice (6 oz juice box)",
+     "price": "2",
+     "course": "drink"
+    },
+    {
+     "item": "Bottled Water",
+     "price": "2",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Many pies and pastas center on pork or meat — pepperoni, pancetta, Italian sausage, meatballs, paneed pork and carbonara. Stick to the cheese/veggie pizzas and the two vegetarian pastas. No finned-fish mains on the menu.",
+   "avoid_note": "Skip the Pepperoni pie, Pizza D Supreme, Meat Combo, Greg & Mike's Homemade Meatballs pie, the Crispy Paneed Pork w/ Linguine, and the pork-topping add-ons (pancetta, prosciutto, hot coppa, Italian sausage).",
    "kosher_style_fit": "Not kosher; pork toppings (pepperoni, pancetta, sausage) and meat are prepared in the same kitchen. Strong vegetarian pizza and pasta selection makes it easy for a fish-and-veg diner, though there are no actual fish dishes here.",
    "tags": [
     "veg"
@@ -2907,7 +4203,9 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://pizzadelicious.com",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://pizzadelicious.com/menu/",
+   "menu_confidence": "verified"
   },
   {
    "id": "morning-call",
@@ -2921,35 +4219,82 @@ window.DATA = {
    "rating_note": "4.4 on Google (1,300+ reviews); ~4.0 on Yelp — beloved for beignets, café au lait and old-time New Orleans service.",
    "lat": 29.9825,
    "lng": -90.1103,
-   "dinner_estimate": "$8-15 per person",
+   "dinner_estimate": "$10-15 per person (beignets and a cafe au lait, or a breakfast sandwich)",
    "menu": [
     {
-     "item": "Beignets (order of 3)",
-     "price": "$4.25",
-     "note": "Vegetarian; hand-fried dough with powdered sugar — the signature order"
+     "item": "Beignets",
+     "price": "$3.50",
+     "course": "dessert",
+     "note": "3 to an order; hand-rolled, add your own powdered sugar"
     },
     {
-     "item": "Café au Lait",
-     "price": "$4.25",
-     "note": "Chicory coffee with steamed milk; the classic pairing"
+     "item": "Sausage, Egg & Cheese on a English Muffin",
+     "price": "$8.00",
+     "course": "main",
+     "note": "ask without the sausage"
     },
     {
-     "item": "Egg & Cheese Croissant",
-     "price": "$7.50",
-     "note": "Ask without the ham for a vegetarian egg & cheese"
+     "item": "Ham, Egg & Cheese on a Croissant",
+     "price": "$8.00",
+     "course": "main",
+     "note": "ask without the ham"
     },
     {
-     "item": "Egg & Cheese Biscuit",
-     "price": "$7.50",
-     "note": "Ask without the sausage for a vegetarian egg & cheese"
+     "item": "Sausage, Egg & Cheese on a Biscuit",
+     "price": "$8.00",
+     "course": "main",
+     "note": "ask without the sausage"
     },
     {
-     "item": "Red Beans & Rice",
-     "price": "$11.15",
-     "note": "Confirm it's prepared meatless — red beans are traditionally cooked with sausage/pork; ask before ordering"
+     "item": "Cafe Au Lait - Small",
+     "price": "$3.50",
+     "course": "drink",
+     "note": "reg or decaf; the house French-drip cafe au lait"
+    },
+    {
+     "item": "Cafe Au Lait - Large",
+     "price": "$6.25",
+     "course": "drink",
+     "note": "reg or decaf"
+    },
+    {
+     "item": "Cafe Au Lait - Frozen",
+     "price": "$6.50",
+     "course": "drink"
+    },
+    {
+     "item": "Cafe Au Lait - Iced",
+     "price": "$6.50",
+     "course": "drink"
+    },
+    {
+     "item": "Hot Chocolate",
+     "price": "$3.50/Small",
+     "course": "drink",
+     "note": "$6.25/Large"
+    },
+    {
+     "item": "Mango Freeze",
+     "price": "$5.50",
+     "course": "drink"
+    },
+    {
+     "item": "Soft Drinks",
+     "price": "$3.50",
+     "course": "drink"
+    },
+    {
+     "item": "Juice",
+     "price": "$3.50",
+     "course": "drink"
+    },
+    {
+     "item": "Milk",
+     "price": "$3.50",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Cash only (ATM on site). The savory side leans heavily on pork and shellfish — gumbo, crawfish étouffée, muffuletta and sausage — none of which fit. Stick to beignets, coffee drinks and the egg-and-cheese items.",
+   "avoid_note": "Skip the Crawfish Etouffee, Gumbo, Jambalaya, Muffulettas and Red Beans (pork/shellfish based). Order the breakfast sandwiches without the sausage or ham.",
    "kosher_style_fit": "Not kosher; beignets fry in shared oil and the kitchen handles pork and shellfish. Beignets and café au lait are themselves vegetarian (dairy/egg) and a safe, iconic treat for a fish-and-veg diner.",
    "tags": [
     "veg"
@@ -2963,7 +4308,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://morningcallnola.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/120px-Morning_Call_NOLA_Interior_WPA.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/500px-Morning_Call_NOLA_Interior_WPA.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/500px-Morning_Call_NOLA_Interior_WPA.jpg",
+   "menu_source": "https://morningcallcoffeestandnola.com/new-orleans-morning-call-in-the-oaks-llc-food-menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "ralphs-on-the-park",
@@ -2977,85 +4324,122 @@ window.DATA = {
    "rating_note": "Google ~4.5; Yelp ~4.0 across 450+ reviews; long-standing NOLA.com Top 10 pick.",
    "lat": 29.9834,
    "lng": -90.0981,
-   "dinner_estimate": "$55-75 per person",
+   "dinner_estimate": "$60-80 per person (one appetizer, one entree, dessert, before drinks)",
    "menu": [
     {
-     "item": "Leeville Yellowfin Tuna Tournado",
-     "price": "$12.75",
-     "note": "Finned tuna; sesame-crusted, seared, seaweed salad, orange-ginger vinaigrette. Eligible as-is."
+     "item": "Blackened Gulf Tuna",
+     "price": "32",
+     "course": "main",
+     "note": "corn and okra succotash, edamame, smoked Creole tomato and basil marble sauce"
+    },
+    {
+     "item": "Pan-Roasted Redfish",
+     "price": "33",
+     "course": "main",
+     "note": "charred eggplant puree, Summer squash, blistered tomatoes, lobster nage - ask without the lobster nage"
+    },
+    {
+     "item": "Watermelon & Heirloom Cherry Tomato Salad",
+     "price": "14",
+     "course": "starter",
+     "note": "Whipped feta, basil, mint, crispy quinoa, tarragon oil"
     },
     {
      "item": "City Park Salad",
-     "price": "$7.25",
-     "note": "Romaine, Roquefort, green apple, creamy vinaigrette - ask without the applewood bacon."
+     "price": "13",
+     "course": "starter",
+     "note": "Baby red oak, romaine, Louisiana blueberries, Stilton blue, applewood smoked bacon - ask without the bacon"
     },
     {
-     "item": "Blackened Gulf Fish",
-     "price": "$28.00",
-     "note": "Green onion rice, sauteed green beans, beurre blanc. Cleanest eligible fish plate; eligible as-is."
+     "item": "Housemade Rosemary Focaccia",
+     "price": "10",
+     "course": "starter",
+     "note": "Sun-dried tomato and olive tapenade"
     },
     {
-     "item": "Ralph's Cast Iron Blackened Redfish",
-     "price": "$27.50",
-     "note": "Scaled redfish; comes with a crab cake and blue crab butter - ask to omit the crab cake and swap the sauce (e.g. plain butter/beurre blanc)."
+     "item": "Sweet Corn & Black Truffle Cappuccino",
+     "price": "12",
+     "course": "starter",
+     "note": "NOWFE Gold Medal award-winning sweet corn soup, black truffle foam"
     },
     {
-     "item": "Roasted Speckled Trout",
-     "price": "$26.75",
-     "note": "Finned trout, spring vegetables; served in tarragon crab broth and topped with shrimp - ask for it without the shrimp and a shellfish-free sauce."
+     "item": "Golden Gazpacho & LA Crab",
+     "price": "16",
+     "course": "starter",
+     "note": "Summer melon, basil-jalapeno gel, shaved radish - ask without the crab"
     },
     {
-     "item": "Grilled Mahi Mahi",
-     "price": "$26.50",
-     "note": "Finned mahi over new potatoes - ask without the andouille sausage and crawfish tails."
+     "item": "Blue Crab & Summer Truffle Pasta",
+     "price": "18",
+     "course": "starter",
+     "note": "Radiatori pasta, Summer truffle sauce, aged Parmesan, herbed breadcrumbs - ask without the blue crab; listed under appetizers"
     },
     {
-     "item": "Cheesecake Lollypops",
+     "item": "Caramelized Banana Creme Brulee",
+     "price": "14",
+     "course": "dessert",
+     "note": "Silky custard with caramel crust, topped with slow-caramelized bananas, crisp tuile"
+    },
+    {
+     "item": "Almond Ricotta Cake",
+     "price": "14",
+     "course": "dessert",
+     "note": "almond-scented ricotta cake with a consomme of fresh Louisiana strawberries and Sumo citrus-aji amarillo gel"
+    },
+    {
+     "item": "German Chocolate Bread Pudding",
+     "price": "13",
+     "course": "dessert",
+     "note": "white chocolate foam, pecan caramel, toasted coconut"
+    },
+    {
+     "item": "Ice Cream & Sorbets",
+     "price": "10",
+     "course": "dessert",
+     "note": "Made by Ralph Brennan Bakery; ask about today's selections"
+    },
+    {
+     "item": "Karma",
+     "price": "12",
+     "course": "drink",
+     "note": "'un-sculpted' non-alcoholic: fresh cantaloupe puree, house ancho-serrano syrup, lemon"
+    },
+    {
+     "item": "History of the Conquest",
+     "price": "11",
+     "course": "drink",
+     "note": "'un-sculpted' non-alcoholic: blackberry shrub, lemon, soda water"
+    },
+    {
+     "item": "The Sun",
+     "price": "13",
+     "course": "drink",
+     "note": "'un-sculpted' non-alcoholic: Ritual Agave Alternative, peach puree, agave, lime, tajin rim"
+    },
+    {
+     "item": "High Walk Blend",
+     "price": "$5.50",
+     "course": "drink",
+     "note": "Congregation Coffee; walnut, pear, baker's chocolate - decaf available"
+    },
+    {
+     "item": "Gallup Espresso",
+     "price": "Single: $5.00 / Double: $7.00",
+     "course": "drink",
+     "note": "Congregation Coffee; red apple, s'mores, black cherry"
+    },
+    {
+     "item": "Cappuccino",
      "price": "$7.00",
-     "note": "Vegetarian dessert."
+     "course": "drink"
     },
     {
-     "item": "Ralph's S'mores",
-     "price": "$6.50",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Bananas Foster Shortcake",
-     "price": "$6.50",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Panna Cotta",
-     "price": "$6.50",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Chocolate Cake",
-     "price": "$8.00",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Bread Pudding",
-     "price": "$5.50",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "White Chocolate Creme Brulee",
-     "price": "$6.00",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Ice Cream and Sorbets",
-     "price": "$5.50",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "Ralph's Coffee",
-     "price": "$6.00",
-     "note": "Signature non-alcoholic coffee service."
+     "item": "Latte",
+     "price": "$7.00",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Menu is shellfish- and pork-heavy. Avoid gumbo, oysters, crab cakes, remoulade, turtle soup and anything with andouille/bacon/prosciutto. Most fish entrees arrive dressed with crab, crawfish or shrimp - ask for those omitted.",
+   "avoid_note": "Skip the Turtle Soup, Coffee-Rubbed Pork Belly, White Cornmeal Fried Oysters, Shrimp Skully, Steak Tartare, Foie Gras Toast, Pecan Crusted Soft-Shell Crab, Pan-Roasted Jerk Shrimp, Roasted Blue Crab Claws, Cast-Iron Seared Filet Mignon, Louisiana Shrimp & Unicorn Grits and Braised Lamb Shank. Also skip the Beet-Cured Swordfish and Swordfish Saltimbocca (swordfish is not a scaled fish), and the 'add seafood' oyster/shrimp/crabmeat toppers.",
    "kosher_style_fit": "Not kosher and shares a kitchen with shellfish and pork, but the blackened Gulf fish, trout and mahi (finned, scaled) plus salads and desserts can be tailored to a fish-and-vegetarian style with the noted omissions.",
    "tags": [
     "fish",
@@ -3072,7 +4456,9 @@ window.DATA = {
    "website": "https://www.ralphsonthepark.com",
    "reserve_priority": true,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/120px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
+   "menu_source": "https://www.ralphsonthepark.com/food-drink",
+   "menu_confidence": "verified"
   },
   {
    "id": "monas-cafe",
@@ -3086,190 +4472,200 @@ window.DATA = {
    "rating_note": "Google ~4.5; Restaurant Guru 4.8 (2,000+ reviews); Tripadvisor 4.2.",
    "lat": 29.9583,
    "lng": -90.0928,
-   "dinner_estimate": "$18-28 per person",
+   "dinner_estimate": "$25-32 per person (a veggie platter at $17-19 plus a dip or salad; BYOB, no corkage)",
    "menu": [
     {
-     "item": "Hummus Dip with Peppers",
-     "price": "$7.00",
-     "note": "Vegetarian."
-    },
-    {
-     "item": "Baba Gaunj Dip",
-     "price": "$7.00",
-     "note": "Vegetarian eggplant dip."
-    },
-    {
-     "item": "Vegetable Eggplant Dip",
-     "price": "$7.00",
-     "note": "Eggplant, sweet red pepper, garlic, spices. Vegetarian."
-    },
-    {
-     "item": "Lebna",
-     "price": "$6.00",
-     "note": "Thick yogurt with sumac and olive oil. Vegetarian."
-    },
-    {
      "item": "Falafel (6)",
-     "price": "$6.00",
-     "note": "Fried chickpea patties. Vegetarian."
+     "price": "$7.00",
+     "course": "starter",
+     "note": "Hot Appetizers - fried ground chick pea patties with spices, onions and parsley"
     },
     {
      "item": "Spinach Pie",
-     "price": "$4.00",
-     "note": "Spinach, onion, sumac. Vegetarian."
+     "price": "$4.50",
+     "course": "starter",
+     "note": "Stuffed triangle pie with fresh spinach, onions, oregano and sumac spice"
     },
     {
      "item": "Zater Bread",
-     "price": "$3.00",
-     "note": "Za'atar and olive oil baked on pita. Vegetarian."
+     "price": "$3.50",
+     "course": "starter",
+     "note": "Ground thyme, oregano, sesame seed and sumac with olive oil baked on a pita"
     },
     {
      "item": "Fried Cheese",
-     "price": "$7.49",
-     "note": "Haloumi in olive oil, mint, garlic. Vegetarian."
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Fried Halloumi cheese in olive oil, mint and garlic"
     },
     {
      "item": "Four Cheese Pizza",
-     "price": "$4.00",
-     "note": "Kessarie, string, feta and Arabic cheeses. Vegetarian."
-    },
-    {
-     "item": "Feta Cheese Olives",
-     "price": "$4.49",
-     "note": "Vegetarian."
-    },
-    {
-     "item": "Pickles and Olives",
-     "price": "$3.49",
-     "note": "Vegetarian."
+     "price": "$4.50",
+     "course": "starter",
+     "note": "Kessarie, string, Feta and Arabic cheeses baked on a pita"
     },
     {
      "item": "Stuffed Grape Leaves (6 rolls)",
-     "price": "$6.49",
-     "note": "Ask for the vegetable (not meat) filling."
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Your choice of meat or veggies - ask for the veggie version"
     },
     {
      "item": "Basmati Rice with Saffron",
-     "price": "$4.49",
-     "note": "Vegetarian."
+     "price": "$5.00",
+     "course": "starter",
+     "note": "Listed under Hot Appetizers"
     },
     {
      "item": "French Fries",
-     "price": "$3.50",
-     "note": "Vegetarian."
+     "price": "$4.00",
+     "course": "starter",
+     "note": "Listed under Hot Appetizers"
     },
     {
-     "item": "Garnish",
-     "price": "$6.49",
-     "note": "Feta, tomatoes, pickles, olives, cucumbers. Vegetarian."
+     "item": "Hummus Dip with Peppers",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Cold Appetizers"
     },
     {
-     "item": "Mona's Special (for two)",
-     "price": "$22.99",
-     "note": "Hummus, baba ganuj, grape leaves, tabouli, falafel, lebna - ask for it without the kibby (contains meat)."
+     "item": "Baba Ganuj Dip",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Cold Appetizers"
+    },
+    {
+     "item": "Vegetable Eggplant Dip",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Eggplant, sweet red pepper, garlic and spices"
+    },
+    {
+     "item": "Muhammara",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Cold Appetizers"
+    },
+    {
+     "item": "Lebna",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Thick yogurt with sumac and olive oil"
+    },
+    {
+     "item": "Tasliya",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Feta, tomatoes, pickles, olive and cucumbers"
+    },
+    {
+     "item": "Mona's Special (enough for two)",
+     "price": "$24.00",
+     "course": "starter",
+     "note": "Hummus, baba ganuj, grape leaves, tabouli, falafel, kibby and lebna - ask without the kibby and for veggie grape leaves"
     },
     {
      "item": "Red Lentil Soup",
-     "price": "$5.00",
-     "note": "Vegetarian."
+     "price": "$5.50",
+     "course": "starter",
+     "note": "Soups & Salads"
     },
     {
      "item": "Greek Salad",
-     "price": "$8.50",
-     "note": "Feta and black olives. Vegetarian."
+     "price": "$10.00",
+     "course": "starter",
+     "note": "Green salad with feta cheese and black olives"
     },
     {
      "item": "Arabic Salad",
-     "price": "$8.00",
-     "note": "Tomato, cucumber, green onion, parsley. Vegetarian."
+     "price": "$10.00",
+     "course": "starter",
+     "note": "Fresh chopped tomatoes, lemons, cucumbers, green onions and parsley"
     },
     {
-     "item": "Green Salad",
-     "price": "$7.00",
-     "note": "Vegetarian."
+     "item": "Garden Salad",
+     "price": "$8.50",
+     "course": "starter",
+     "note": "Romaine lettuce, tomatoes and cucumbers"
     },
     {
-     "item": "Fatouche",
-     "price": "$7.00",
-     "note": "Greens, olives, cucumber, pita chips. Vegetarian."
+     "item": "Fatoush",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Green salad with cucumbers, parsley and pita chips"
     },
     {
      "item": "Tabouli",
-     "price": "$8.50",
-     "note": "Parsley, cracked wheat, tomato, lemon. Vegetarian."
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Fresh chopped parsley, cracked wheat, tomatoes & lemons"
     },
     {
-     "item": "Yogurt Salad with Cucumber",
-     "price": "$6.50",
-     "note": "Confirm no meat (traditionally just yogurt, cucumber and mint)."
+     "item": "Cucumber Yogurt Salad",
+     "price": "$9.50",
+     "course": "starter",
+     "note": "Fresh yogurt, chopped cucumbers and crushed mint"
     },
     {
      "item": "Falafel Plate",
-     "price": "$14.74",
-     "note": "Vegetarian entree plate."
+     "price": "$17.00",
+     "course": "main",
+     "note": "Veggie Platters - fried ground chick pea patties with spices, onions and parsley"
     },
     {
      "item": "Vegetarian Plate",
-     "price": "$14.74",
-     "note": "Hummus, baba ganuj, tabouli and falafel. Vegetarian."
+     "price": "$17.00",
+     "course": "main",
+     "note": "Hummus, baba ganuj, tabouli and falafel"
     },
     {
      "item": "Grape Leaves Plate",
-     "price": "$15.25",
-     "note": "Carrot, parsley, dill, onion and rice - vegetarian version."
+     "price": "$17.50",
+     "course": "main",
+     "note": "Stuffed with carrots, parsley, dill, onions and rice"
     },
     {
      "item": "Sauteed Vegetables Plate",
-     "price": "$13.99",
-     "note": "Sauteed vegetables over basmati rice with feta. Vegetarian (do not add meat)."
+     "price": "$19.00",
+     "course": "main",
+     "note": "Sauteed vegetables over basmati rice topped with feta"
     },
     {
-     "item": "Falafel Sandwich",
-     "price": "$7.00",
-     "note": "Vegetarian."
+     "item": "Kallaya",
+     "price": "$17.00",
+     "course": "main",
+     "note": "Entrees - sauteed fresh tomatoes with garlic, mint and spices; order it plain, do not add the meat or chicken"
     },
     {
-     "item": "Eggplant Sandwich",
-     "price": "$10.99",
-     "note": "Sesame bun, tomato, lettuce, onion, feta. Vegetarian."
-    },
-    {
-     "item": "Sauteed Veggie Sandwich",
-     "price": "$9.00",
-     "note": "Vegetarian."
+     "item": "Side of Veggies",
+     "price": "$5.50",
+     "course": "side",
+     "note": "Listed under Extras"
     },
     {
      "item": "Baklava",
-     "price": "$2.50",
-     "note": "Phyllo, walnut, honey. Vegetarian."
+     "price": "$3.50",
+     "course": "dessert",
+     "note": "Layers of phyllo dough with walnuts and honey"
     },
     {
-     "item": "Nammura",
-     "price": "$2.50",
-     "note": "Semolina, almond, rosewater, honey. Vegetarian."
+     "item": "Namoura",
+     "price": "$3.50",
+     "course": "dessert",
+     "note": "Semolina, almond, rosewater and honey - shown out of stock on the ordering page"
     },
     {
-     "item": "Lebanese Tea",
-     "price": "$3.00",
-     "note": "Non-alcoholic."
+     "item": "Pistachio Cheesecake",
+     "price": "$12.00",
+     "course": "dessert"
     },
     {
-     "item": "Turkish Coffee",
-     "price": "$2.75",
-     "note": "Non-alcoholic."
-    },
-    {
-     "item": "Iced Tea (sweet or mint)",
-     "price": "$2.75",
-     "note": "Non-alcoholic."
-    },
-    {
-     "item": "Fresh Juices (mango, guava, orangina)",
-     "price": "$2.75",
-     "note": "Non-alcoholic."
+     "item": "Lotus Cheesecake",
+     "price": "$12.00",
+     "course": "dessert"
     }
    ],
-   "avoid_note": "Skip the Catfish Plate (no scales) and the Shrimp Plate, plus all shawarma, gyro, kebab and chicken dishes. Kibby, meat pie and safeiha contain beef/lamb. No pork is used on the menu. Always request the vegetable (not meat) grape leaves.",
+   "avoid_note": "Skip the Catfish Plate and the Shrimp Plate, plus everything in the meat Entrees list - gyro, shawarma, kebabs, lamb chops, lamb shank, Fried Kibby, Hummus with Lamb, Meat Pie, Safeiha and Meat Grape Leaves Plate.",
    "kosher_style_fit": "Strong fit for a fish-and-vegetarian style: the menu is largely vegetarian mezze, salads and dips, uses no pork, and dairy/egg items are plentiful, though it is not certified kosher and grills meat on the same equipment.",
    "tags": [
     "veg"
@@ -3283,7 +4679,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://monascafeanddeli.com",
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.toasttab.com/local/order/monas-cafe-banks-3901-banks-st",
+   "menu_confidence": "verified"
   },
   {
    "id": "bennachin",
@@ -3297,120 +4695,213 @@ window.DATA = {
    "rating_note": "Google 4.4",
    "lat": 29.9635,
    "lng": -90.0606,
-   "dinner_estimate": "$25/person",
+   "dinner_estimate": "$28-35 per person (a $17.95-18.95 entree plus an $8 appetizer or side)",
    "menu": [
     {
-     "item": "Doh Doh (fried ripe plantains)",
-     "price": "$6"
+     "item": "Nyeo",
+     "price": "$18.95",
+     "course": "main",
+     "note": "Nouka Malape seafood - steamed tilapia fillet in ginger and garlic sauce with fried ripe plantains, sauteed spinach and coconut rice"
     },
     {
-     "item": "Akara (black-eyed pea fritters)",
-     "price": "$6"
+     "item": "Chobi ni Malang(Fish Stew)",
+     "price": "$18.95",
+     "course": "main",
+     "note": "Tilapia fillet, celery, onion in savory red sauce served with rice"
     },
     {
-     "item": "Nyeaturing (fish pie)",
-     "price": "$7",
-     "note": "confirm the fish is finned tilapia/whitefish"
+     "item": "Thiebujin",
+     "price": "$18.95",
+     "course": "main",
+     "note": "African jambalaya cooked with tilapia fillet"
     },
     {
-     "item": "Oleh-Leh (black-eyed peas, eggplant, smoked fish)",
-     "price": "$7",
-     "note": "confirm smoked fish is finned, not shellfish"
+     "item": "Steamed Tilapia",
+     "price": "$18.95",
+     "course": "main",
+     "note": "Tilapia served with vermeseh, zucchini, carrots and squash"
     },
     {
-     "item": "Sorso Jambakero (vegetable soup)",
-     "price": "$7"
+     "item": "Bikai ni Curry",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Ngi-Nouka vegetables - eggplant, mushrooms, bean sprouts in curry sauce with cous cous or rice"
     },
     {
-     "item": "Cone Soup (kidney bean)",
-     "price": "$7"
+     "item": "Jama Jama ni Makondo",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Sauteed spinach, fried ripe plantains and coconut rice"
     },
     {
-     "item": "Sorso Nessing (lentil soup)",
-     "price": "$7"
+     "item": "Kone ni Makondo",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Black-eyed peas in onion and tomato stew with coconut rice and fried ripe plantains"
     },
     {
-     "item": "Nyeo (tilapia, plantains, spinach)",
-     "price": "$17.95"
+     "item": "Nsouki Jakatu",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Stir fried eggplant and vegetables served with cous cous or rice"
     },
     {
-     "item": "Chobi ni Malang (tilapia, celery, onion)",
-     "price": "$17.95"
+     "item": "Baham",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Broccoli, cauliflower, carrots in light ginger sauce with cous cous or rice"
     },
     {
-     "item": "Thiebujin (tilapia, African jambalaya)",
-     "price": "$17.95"
+     "item": "Jambo",
+     "price": "$17.95",
+     "course": "main",
+     "note": "Sauteed zucchini, squash in ginger sauce served with vermesh"
     },
     {
-     "item": "Steamed Tilapia (zucchini, carrots)",
-     "price": "$17.95"
+     "item": "MBURU AKARA",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - black-eyed pea fritters and tomato stew on french bread"
     },
     {
-     "item": "Bikai ni Curry (eggplant, mushrooms, curry)",
-     "price": "$16.95"
+     "item": "YASA",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - cabbage, carrots in onion and garlic sauce served with rice or cous cous (meatless as listed at lunch)"
     },
     {
-     "item": "Jama Jama ni Makondo (spinach, plantains)",
-     "price": "$15.95"
+     "item": "JAMA JAMA NI MAKONDO",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - sauteed spinach, fried plantains and coconut rice"
     },
     {
-     "item": "Kone ni Makondo (black-eyed peas, plantains)",
-     "price": "$15.95"
+     "item": "KONE NI MAKONDO",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - black-eyed peas in tomato and onion stew with fried plantains and coconut rice"
     },
     {
-     "item": "Nsouki Jakatu (eggplant, vegetables)",
-     "price": "$15.95"
+     "item": "BAHAM",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - sauteed vegetables in ginger, onion, garlic sauce with rice or cous cous"
     },
     {
-     "item": "Baham (broccoli, cauliflower, carrots)",
-     "price": "$15.95"
+     "item": "BENNACHIN",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - African jambalaya (jollof rice) with sauteed spinach; menu marks it ** so ask for it served without meat"
     },
     {
-     "item": "Jambo (zucchini, squash, ginger)",
-     "price": "$15.95"
+     "item": "DOMODA",
+     "price": "$13.95",
+     "course": "main",
+     "note": "Daily lunch special - peanut stew served with rice; menu marks it ** so ask for it without the beef"
     },
     {
-     "item": "Jama-Jama (sauteed spinach, side)",
-     "price": "$6"
+     "item": "Sorso Jambakero / Vegetables",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Nsouki soups - vegetable soup"
     },
     {
-     "item": "Mandowa (steamed broccoli, side)",
-     "price": "$6"
+     "item": "Cone / Kidney Bean",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Nsouki soups"
     },
     {
-     "item": "Fu-Fu (pounded cassava, side)",
-     "price": "$6"
+     "item": "Sorso Nessing / Lentil",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Nsouki soups"
     },
     {
-     "item": "Monde Cone (coconut rice, side)",
-     "price": "$6"
+     "item": "Doh Doh / Fried ripe plantains",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Ndek Bijek appetizers"
     },
     {
-     "item": "Makube (banana with yogurt sauce)",
-     "price": "$7"
+     "item": "Akara / Black-eyed pea fritters",
+     "price": "$8.00",
+     "course": "starter",
+     "note": "Ndek Bijek appetizers"
     },
     {
-     "item": "Shakari (couscous, yogurt, pineapple, coconut)",
-     "price": "$7"
+     "item": "Nyeaturing / Fish pie",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Appetizer; kitchen uses tilapia - confirm it is finfish, not shellfish"
     },
     {
-     "item": "Makondo Yogurt (fried plantains with yogurt)",
-     "price": "$7"
+     "item": "Oleh-leh / Black-eyed peas, eggplant, and smoked fish",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Appetizer with smoked finfish - confirm no shrimp is added"
     },
     {
-     "item": "Gingero (ginger beverage)",
-     "price": "$2.50"
+     "item": "Jama-Jama / Sauteed spinach",
+     "price": "$8.00",
+     "course": "side",
+     "note": "Domoro Ndigho side orders"
     },
     {
-     "item": "Wanjo (red zinger / hibiscus)",
-     "price": "$2.50"
+     "item": "Mandowa / Steamed broccoli",
+     "price": "$8.00",
+     "course": "side",
+     "note": "Domoro Ndigho side orders"
     },
     {
-     "item": "Barajambo Tea (African herbal tea)",
-     "price": "$2.50"
+     "item": "Fu-fu / Pounded Cassava",
+     "price": "$8.00",
+     "course": "side",
+     "note": "Domoro Ndigho side orders"
+    },
+    {
+     "item": "Monde Cone / Coconut rice",
+     "price": "$8.00",
+     "course": "side",
+     "note": "Domoro Ndigho side orders"
+    },
+    {
+     "item": "Makube(Banana Tropicana)",
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "Sliced bananas with yogurt sauce"
+    },
+    {
+     "item": "Shakari",
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "Cous cous in yogurt sauce with pineapples, shredded coconut and raisins"
+    },
+    {
+     "item": "Makondo Yogurt",
+     "price": "$8.00",
+     "course": "dessert",
+     "note": "Fried plantains with yogurt sauce"
+    },
+    {
+     "item": "Gingero/ Ginger",
+     "price": "$3.50",
+     "course": "drink",
+     "note": "House ginger drink"
+    },
+    {
+     "item": "Wonjo/ Red Zinger",
+     "price": "$3.50",
+     "course": "drink",
+     "note": "Hibiscus (sorrel) drink"
+    },
+    {
+     "item": "Barajambo/ African Herbal Tea",
+     "price": "$3.50",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Skip the shrimp plates (Janga, Shipa-Shipa, Sauci Majanga, Nsouki Alyse), all the chicken/poultry dishes (Yasa, Sisay, Jamaican Chicken), the beef and lamb stews (Ndole, Domoda, Kembel-Lappa) and the beef-sausage/turkey soups (Nsouki Lappa).",
+   "avoid_note": "Skip every shrimp dish (Janga, Shipa-Shipa, Cope ni Cone, Sauci Majanga, Nsouki Alyse), all the chicken plates (Sisay Singho, Cope Mustard, Cope ni Makondo, Jamaican Chicken, Yasa with chicken), the beef and lamb section (Ndole, Sauci Marine, Soup-ah-Kanja, Kembel-Lappa, Apricot Lamb, Sorso Wolengho ni Mano) and the beef-sausage gumbo soup.",
    "kosher_style_fit": "Very good fit — a deep bench of vegetable and plantain mains plus four tilapia dishes, so both the finned-fish and vegetarian diner eat well; just avoid the shrimp, poultry and beef/lamb sections.",
    "tags": [
     "fish",
@@ -3423,7 +4914,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://bennachinrestaurant.com",
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://bennachinrestaurant.com/menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "green-goddess",
@@ -3547,7 +5040,9 @@ window.DATA = {
    "website": null,
    "reserveUrl": null,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG/120px-Pirates_Alley%2C_New_Orleans_-2009.JPG",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG/500px-Pirates_Alley%2C_New_Orleans_-2009.JPG"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG/500px-Pirates_Alley%2C_New_Orleans_-2009.JPG",
+   "menu_confidence": "approximate",
+   "menu_source": null
   },
   {
    "id": "carmo",
@@ -3688,7 +5183,9 @@ window.DATA = {
    "reserve_priority": false,
    "website": "https://www.carmonola.com",
    "reserveUrl": null,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_confidence": "approximate",
+   "menu_source": null
   },
   {
    "id": "1000-figs",
@@ -3702,91 +5199,171 @@ window.DATA = {
    "rating_note": "Google 4.7",
    "lat": 29.977,
    "lng": -90.0782,
-   "dinner_estimate": "$30/person",
+   "dinner_estimate": "$25-35 per person (e.g. falafel platter plus a dip and a salad); order at the counter, no table service",
    "menu": [
     {
      "item": "Hummus",
-     "price": "$8.75"
+     "price": "$8.75",
+     "course": "starter",
+     "note": "Chickpea spread with lemon, tahini, and garlic, served with our fresh bread"
     },
     {
      "item": "Baba Ghanouj",
-     "price": "$10.50"
-    },
-    {
-     "item": "Whipped Feta",
-     "price": "$11.50"
+     "price": "$10.50",
+     "course": "starter",
+     "note": "Roasted eggplant dip with tahini and urfa pepper, served with our fresh bread"
     },
     {
      "item": "Tzatziki",
-     "price": "$10.50"
+     "price": "$10.50",
+     "course": "starter",
+     "note": "Yogurt with cucumber and fresh herbs, served with our fresh bread"
     },
     {
-     "item": "All The Dips",
-     "price": "$36.50"
+     "item": "Whipped Feta",
+     "price": "$11.50",
+     "course": "starter",
+     "note": "Whipped feta with charred scallions and black lime"
+    },
+    {
+     "item": "ALL THE DIPS",
+     "price": "$36.50",
+     "course": "starter",
+     "note": "Hummus, baba ghanouj, tzatziki and whipped feta, served with our fresh bread and crudites - fully vegetarian, good for a table"
     },
     {
      "item": "Crudites",
-     "price": "$4.25"
+     "price": "$4.25",
+     "course": "side",
+     "note": "Fresh veggies for dipping"
     },
     {
      "item": "Panbread",
-     "price": "$3.00"
+     "price": "$2.00",
+     "course": "side",
+     "note": "House fresh-baked bread"
     },
     {
      "item": "Pita Chips",
-     "price": "$3.75"
+     "price": "$3.75",
+     "course": "side",
+     "note": "Pita chips tossed in za'atar"
     },
     {
      "item": "Falafel and Sauces",
-     "price": "$6.10"
-    },
-    {
-     "item": "Falafel Platter",
-     "price": "$17.10"
-    },
-    {
-     "item": "Falafel Feast",
-     "price": "$63.00",
-     "note": "shareable for the table"
-    },
-    {
-     "item": "Falafel Sandwich",
-     "price": "$14.00"
-    },
-    {
-     "item": "House Salad",
-     "price": "$6.00"
-    },
-    {
-     "item": "Seasonal Vegetable",
-     "price": "$10.50"
+     "price": "$6.10",
+     "course": "starter",
+     "note": "Four falafel with tahini, zhoug and toum (Meze)"
     },
     {
      "item": "Brussels Sprouts",
-     "price": "$11.35"
-    },
-    {
-     "item": "Watermelon Gazpacho",
-     "price": "$9.50"
-    },
-    {
-     "item": "Pickled Cauliflower",
-     "price": "$9.75"
-    },
-    {
-     "item": "Pickled Veggies",
-     "price": "$6.60"
+     "price": "$9.35",
+     "course": "starter",
+     "note": "Flash-fried and tossed in lemon vinaigrette (Meze) - no pork in this preparation"
     },
     {
      "item": "Olives",
-     "price": "$9.10"
+     "price": "$9.10",
+     "course": "starter",
+     "note": "Mixed olives, marinated with citrus zest and coriander (Meze)"
+    },
+    {
+     "item": "Pickled Veggies",
+     "price": "$6.60",
+     "course": "starter",
+     "note": "House-pickled cabbage, carrot, and beet (Meze)"
+    },
+    {
+     "item": "Harissa Soup",
+     "price": "$9.00",
+     "course": "starter",
+     "note": "Coconut, spices and crostini (Meze) - vegetable based"
+    },
+    {
+     "item": "Seasonal Vegetable",
+     "price": "$10.00",
+     "course": "starter",
+     "note": "Roasted carrots with honey and preserved lemon glaze, herbed labneh, sunflower seeds (Meze)"
     },
     {
      "item": "French Fries",
-     "price": "$7.10"
+     "price": "$7.10",
+     "course": "starter",
+     "note": "House-made french fries served with garlicky toum (listed under Meze)"
+    },
+    {
+     "item": "Kale and Cabbage Salad",
+     "price": "$7.60",
+     "course": "starter",
+     "note": "Kale, cabbage and celery with fig & ginger vinaigrette, pickled blueberries and toasted seeds"
+    },
+    {
+     "item": "Market Salad",
+     "price": "$14.00",
+     "course": "starter",
+     "note": "Louisiana-grown leafy greens, three radishes, pickled turnips, feta, dukka, fig vinaigrette (Specials)"
+    },
+    {
+     "item": "Falafel Platter",
+     "price": "$17.10",
+     "course": "main",
+     "note": "Four falafel, hummus, kale and cabbage salad, toum, tahini, zhoug, and our fresh bread"
+    },
+    {
+     "item": "Vegan Falafel Feast",
+     "price": "$58.50",
+     "course": "main",
+     "note": "Eight falafel, pint of hummus, baba ghanouj, pickled veggies, kale and cabbage salad, seasonal vegetable, tahini, zhoug, toum, fresh bread - serves 2-3"
+    },
+    {
+     "item": "Falafel Feast",
+     "price": "$60.00",
+     "course": "main",
+     "note": "Eight falafel, hummus, baba ghanouj, tzatziki, pickled veggies, kale and cabbage salad, seasonal vegetable, tahini, zhoug, toum, fresh bread - serves 2-3"
+    },
+    {
+     "item": "Falafel Sandwich",
+     "price": "$10.60",
+     "course": "main",
+     "note": "Four falafel, cucumber, pickled vegetables, tahini, zhoug and toum, in a pita"
+    },
+    {
+     "item": "Pistachio Cake",
+     "price": "$6.00",
+     "course": "dessert",
+     "note": "Pistachio cake with rose water, sumac, and lemon glaze (GF)"
+    },
+    {
+     "item": "Tahini Chocolate Cookie",
+     "price": "$3.00",
+     "course": "dessert",
+     "note": "Salted tahini chocolate chip cookie"
+    },
+    {
+     "item": "Hibiscus Tea",
+     "price": "$3.00",
+     "course": "drink",
+     "note": "House hibiscus iced tea"
+    },
+    {
+     "item": "Lemonade",
+     "price": "$4.60",
+     "course": "drink",
+     "note": "House lemonade"
+    },
+    {
+     "item": "Half n' Half",
+     "price": "$3.85",
+     "course": "drink",
+     "note": "Half lemonade / half hibiscus tea"
+    },
+    {
+     "item": "Bottled Sparkling Water",
+     "price": "$3.01",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Skip the chicken platter, side of chicken, chicken sandwich, and any lamb.",
+   "avoid_note": "Skip the three chicken items - Chicken Platter ($18.60), Chicken Sandwich ($13.60) and Side of Chicken ($9.00). Everything else on the menu is vegetarian; there is no fish or shellfish on the menu at all, so this is a vegetarian-only stop rather than a fish stop.",
    "kosher_style_fit": "Almost entirely vegetarian and free of shellfish and pork; the falafel, dips and vegetable mezze are a near-perfect match for this diet.",
    "tags": [
     "veg"
@@ -3799,7 +5376,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://www.1000figs.com",
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://sagemenu.com/new-orleans/1000-figs-new-orleans/",
+   "menu_confidence": "approximate"
   },
   {
    "id": "cafe-degas",
@@ -3813,81 +5392,76 @@ window.DATA = {
    "rating_note": "Google 4.5",
    "lat": 29.9786,
    "lng": -90.0793,
-   "dinner_estimate": "$45/person",
+   "dinner_estimate": "Roughly $45-60 per person a la carte. IMPORTANT: Cafe Degas does not print any prices on its published lunch, dinner or brunch menus, so no per-item price could be verified; aggregator prices for this restaurant are years out of date and were deliberately not used.",
    "menu": [
     {
-     "item": "La Salade Nicoise au Thon Poele (seared tuna)",
-     "price": "$21.00"
+     "item": "Le Plateau de Fromages",
+     "price": "Not listed on menu",
+     "course": "starter",
+     "note": "Plate or Board. Selection of domestic and imported, hard and soft cheeses with toasted baguette, green apple, grapes, fresh berries, sun-dried plums and dates - vegetarian as served"
     },
     {
-     "item": "Assiette de Legumes (vegetable plate)",
-     "price": "$14.00"
+     "item": "La Salade Maison",
+     "price": "Not listed on menu",
+     "course": "starter",
+     "note": "Bibb lettuce in Dijon vinaigrette, English cucumber, carrots, tomato, red onion, toasted almonds. Bacon is a paid add-on - just do not add it"
     },
     {
-     "item": "La Salade de Chevre Tiede (warm goat cheese)",
-     "price": "$11.00"
+     "item": "La Salade de Betteraves",
+     "price": "Not listed on menu",
+     "course": "starter",
+     "note": "Roasted red beets over baby greens, aged balsamic vinaigrette, green apples, toasted spiced pecans, garlic herb goat cheese"
     },
     {
-     "item": "La Salade Maison (house salad)",
-     "price": "$8.00"
+     "item": "La Salade Nicoise au Thon Poele",
+     "price": "Not listed on menu",
+     "course": "main",
+     "note": "Listed under Les Entrees. Fresh pepper-coated seared yellowfin tuna on Bibb lettuce, Dijon vinaigrette, tomatoes, Kalamata olives, white Boqueron anchovies, haricots verts, hard boiled egg, red potatoes - the one fish entree, and the strongest pick here"
     },
     {
-     "item": "La Salade de choux de Bruxelles (Brussels sprouts)",
-     "price": "$9.75",
-     "note": "ask without bacon/lardons"
-    },
-    {
-     "item": "Le Plateau de Fromage (cheese plate)",
-     "price": "$11.00"
-    },
-    {
-     "item": "L'assiette de Pates (pasta)",
-     "price": "$11.00",
-     "note": "ask for the vegetarian preparation"
-    },
-    {
-     "item": "La Gratinee d'Oignons (onion soup)",
-     "price": "$8.75",
-     "note": "traditionally beef stock; ask for vegetarian broth"
-    },
-    {
-     "item": "Ratatouille",
-     "price": "$6.00"
+     "item": "Assiette de Legumes",
+     "price": "Not listed on menu",
+     "course": "main",
+     "note": "Assorted seasonal vegetables, orzo pasta, beurre blanc - the vegetarian entree"
     },
     {
      "item": "Haricots Verts Amandine",
-     "price": "$6.00"
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "Green beans with almonds (A la Carte)"
     },
     {
-     "item": "Green Asparagus",
-     "price": "$6.00"
+     "item": "Seasonal Roasted Vegetables",
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "A la Carte"
     },
     {
-     "item": "Seasonal Mixed Vegetables",
-     "price": "$6.00"
+     "item": "Asparagus",
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "A la Carte"
     },
     {
-     "item": "Brussels Sprouts",
-     "price": "$6.00"
+     "item": "Sweet chile glazed Brussels sprouts",
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "A la Carte - glazed, no bacon in this preparation"
     },
     {
      "item": "Pommes Frites",
-     "price": "$6.00"
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "House-made french fries (A la Carte)"
     },
     {
-     "item": "Creme Brulee",
-     "price": "$9 approx"
-    },
-    {
-     "item": "Profiteroles",
-     "price": "$10 approx"
-    },
-    {
-     "item": "Crepes Suzette",
-     "price": "$11 approx"
+     "item": "Fingerling Potatoes",
+     "price": "Not listed on menu",
+     "course": "side",
+     "note": "A la Carte"
     }
    ],
-   "avoid_note": "Skip the moules (mussels), crab salad, escargots, hanger steak, veal, rack of lamb & merguez, and roasted quail.",
+   "avoid_note": "Skip L'Assiette de Pates (pate, duck liver mousse, cured meats and sausages), Ravioles d'Ecrevisse (crawfish), Escargots a la Bourguignonne, Les Moules au Fenouil (mussels), La Salade de Crabe (jumbo lump crab), L'onglet de Boeuf (hanger steak) and the Carre d'agneau (rack of lamb). Also skip La Gratinee d'Oignon - the classic French onion soup is built on a meat stock and cannot be modified. Note the COOLinary prix-fixe running Aug 1-31, 2026 ($27 lunch / $39 brunch / $45 dinner) has NO eligible second course - it is filet of beef or pork tenderloin only, with a crab-and-mirliton soup first course, so order a la carte instead.",
    "kosher_style_fit": "The seared-tuna nicoise gives a strong finned-fish option, backed by a vegetable plate, cheese and several vegetable-forward salads and sides.",
    "tags": [
     "fish",
@@ -3903,7 +5477,9 @@ window.DATA = {
    "website": "https://cafedegas.com",
    "reserve_priority": true,
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/120px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
+   "menu_source": "https://cafedegas.com/cafe-degas-dinner-menu/",
+   "menu_confidence": "verified"
   },
   {
    "id": "n7",
@@ -3917,59 +5493,116 @@ window.DATA = {
    "rating_note": "Google 4.5 / Restaurant Guru 4.8",
    "lat": 29.96317,
    "lng": -90.04923,
-   "dinner_estimate": "$50/person",
+   "dinner_estimate": "$55-75 per person before wine (one small plate + one large plate)",
    "menu": [
     {
-     "item": "Sake-Cured Salmon Tartine",
-     "price": "$14 approx"
+     "item": "Roasted Napa Cabbage",
+     "price": "$14",
+     "course": "starter",
+     "note": "black bean chili sauce (Small Plates)"
     },
     {
-     "item": "Smoked Sardines (tinned, with pickles & preserved lemon)",
-     "price": "$16 approx"
+     "item": "Roasted Kabocha Squash",
+     "price": "$14",
+     "course": "starter",
+     "note": "pepita chili crisp, cashew cream"
     },
     {
-     "item": "Boquerones / White Anchovies",
-     "price": "$12 approx"
+     "item": "Swiss Chard Gnocchi",
+     "price": "$22",
+     "course": "starter",
+     "note": "perigord truffle, maitake mushroom, smoked tomato coulis"
     },
     {
-     "item": "Deviled Eggs",
-     "price": "$8 approx"
+     "item": "Seared Bluefish Tuna",
+     "price": "$20",
+     "course": "starter",
+     "note": "satsuma, fennel, olive - eligible finned fish"
     },
     {
-     "item": "Gouda Beignets",
-     "price": "$9 approx"
+     "item": "Avocado Salad",
+     "price": "$12",
+     "course": "starter",
+     "note": "wasabi dressing (Salads and Sides)"
     },
     {
-     "item": "Burrata Crostini",
-     "price": "$12 approx"
+     "item": "Roasted Beets and Citrus",
+     "price": "$13",
+     "course": "starter",
+     "note": "pistachio, smoked yogurt"
     },
     {
-     "item": "Pommes Frites with Aioli",
-     "price": "$9 approx"
+     "item": "Frisee Lyonnaise",
+     "price": "$17",
+     "course": "starter",
+     "note": "poached egg, dijon vinaigrette - ask without the bacon lardons"
     },
     {
-     "item": "Soup of the Day",
-     "price": "$10 approx",
-     "note": "confirm it's the vegetable/meatless version"
+     "item": "Cheese Plate",
+     "price": "3 pieces - 21   4 pieces - 27   5 pieces - 33",
+     "course": "starter",
+     "note": "mixed nuts, fruit (House-Made Charcuterie section)"
     },
     {
-     "item": "Green Salad",
-     "price": "$10 approx"
+     "item": "Matcha Granola",
+     "price": "$13",
+     "course": "starter",
+     "note": "lunch/brunch menu only (Fri-Sun 11:30-2:30)"
     },
     {
-     "item": "Cheese Plate (the classic N7 'dessert')",
-     "price": "$14 approx"
+     "item": "Olives",
+     "price": "$6",
+     "course": "side",
+     "note": "Salads and Sides"
     },
     {
-     "item": "Soy Sauce Creme Brulee",
-     "price": "$10 approx"
+     "item": "Sourdough",
+     "price": "$8",
+     "course": "side",
+     "note": "roasted ume garlic butter"
     },
     {
-     "item": "Orange Olive Oil Cake",
-     "price": "$10 approx"
+     "item": "Roasted Shishito Peppers",
+     "price": "$12",
+     "course": "side"
+    },
+    {
+     "item": "Pommes Frites w/Aioli",
+     "price": "$8",
+     "course": "side"
+    },
+    {
+     "item": "Boiled Egg",
+     "price": "$1.75",
+     "course": "side",
+     "note": "dinner menu"
+    },
+    {
+     "item": "Vegetarian",
+     "price": "$21",
+     "course": "main",
+     "note": "Tartes Flambees section: smoked tomato, brie, fennel, olive"
+    },
+    {
+     "item": "Fish of the Day",
+     "price": "MKT",
+     "course": "main",
+     "note": "Large Plates - confirm the species is finned/scaled that night"
+    },
+    {
+     "item": "French Omelette",
+     "price": "$13.50",
+     "course": "main",
+     "note": "lunch menu (Les Oeufs & Tartes); add on cheese $1, add on mushrooms $1"
+    },
+    {
+     "item": "Tomato Confit Croque Monsieur",
+     "price": "$14",
+     "course": "main",
+     "note": "lunch menu; emmental, basil - the meatless croque"
     }
    ],
-   "avoid_note": "The $80/$95 family-style prix fixe leans heavily on meat and shellfish, coq au riesling, steak au poivre, pork katsu, escargot, mussels escabeche, spiced calamari, grilled octopus, bouillabaisse; order a la carte from the bar-snack side instead.",
+   "avoid_note": "Skip the house specialties that are off-limits: Steamed Mussels, Pan-Seared Scallops, Escargots, Chili Smoked Oysters, Bouillabaisse, Confit Pork Cheek, Steak Tartare, A5 Wagyu, Coq au Riesling, Beef Bourgignon, Steak au Poivre, Duck Liver Pate / Terrine de Foie Gras, Wild Boar Pate, and the pork Croque Monsieur / Croque Madame. Soup du Jour and French Onion Soup are unverified for stock, so ask.",
    "kosher_style_fit": "Workable but a la carte only: the tinned finned-fish (sardines, anchovies, salmon tartine) plus eggs, cheese, frites and salad fit the diet, so skip the meat-forward prix fixe and build from bar snacks.",
    "tags": [
     "fish",
@@ -3986,7 +5619,9 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/r/n7-new-orleans",
    "website": "https://www.n7nola.com",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://images.squarespace-cdn.com/content/v1/5a45e06c1f318d37b499e5c6/31c7bed3-706d-4caf-957f-fc83a99566df/N7+Dinner+Menu+January+2026.png (dinner) and .../ad9e8718-189d-409d-8bdf-c94dff9433eb/N7+Lunch+Menu+January+2026.png (lunch), both linked from https://www.n7nola.com",
+   "menu_confidence": "verified"
   },
   {
    "id": "marjies-grill",
@@ -4053,7 +5688,9 @@ window.DATA = {
    "reserve_priority": false,
    "reserveUrl": null,
    "website": "https://marjiesgrill.com",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_confidence": "approximate",
+   "menu_source": null
   },
   {
    "id": "sneaky-pickle",
@@ -4067,79 +5704,202 @@ window.DATA = {
    "rating_note": "Yelp 4.5",
    "lat": 29.9636,
    "lng": -90.048,
-   "dinner_estimate": "$45/person",
+   "dinner_estimate": "$35-50 per person at Bar Brine (one Start + one Main); ~$20-25 at lunch",
    "menu": [
     {
-     "item": "Buffalo Tofu Salad",
-     "price": "$9.25",
-     "note": "crispy tofu and cauliflower, pickled onion, tomato"
+     "item": "Pickle Plate",
+     "price": "$7.80",
+     "course": "starter",
+     "note": "house-pickled vegetables (v,wf) - Bar Brine dinner 'Start'"
     },
     {
-     "item": "Smoked Tempeh Flatbread",
-     "price": "$5.50",
-     "note": "onion, vegan aioli, slaw"
+     "item": "Knife-Cut Fries",
+     "price": "$8.80",
+     "course": "starter",
+     "note": "crispy garlic, vegan ranch (v,wf)"
     },
     {
-     "item": "Beet Flatbread",
-     "price": "$5.50"
+     "item": "Buffalo Tofu Wraps",
+     "price": "$13.80",
+     "course": "starter",
+     "note": "cauliflower, pickled onion, ranch (v,wf,s)"
     },
     {
-     "item": "Sushi Rice Bowl",
-     "price": "$7.50",
-     "note": "legume, sriracha aioli, vegetable"
+     "item": "Heirloom Tomato Salad",
+     "price": "$13.80",
+     "course": "starter",
+     "note": "Armenian cucumber, onion, sunflower seeds, basil, lemon vinaigrette (v,wf)"
     },
     {
-     "item": "Bowl of Food (grain, legume, vegetables)",
-     "price": "$7.50"
+     "item": "Smoked Corn Ribs",
+     "price": "$10.80",
+     "course": "starter",
+     "note": "puffed amaranth, sesame seeds, white barbecue sauce (v,wf)"
     },
     {
-     "item": "Multi-Grain Patty Sandwich",
-     "price": "$9.25",
-     "note": "beet and smoked onion jam, charred vegetable, vegan aioli, ciabatta"
+     "item": "Salad",
+     "price": "$14.80",
+     "course": "starter",
+     "note": "arugula, Southern Maid goat feta, corn, yellow cucumber, yellow pepper onion, pepitas (wf)"
     },
     {
-     "item": "Tempeh Reuben",
-     "price": "$9.25",
-     "note": "tempeh, sauerkraut, vegan Thousand Island, rye"
+     "item": "Smoked Gulf Fish Dip",
+     "price": "$11.80",
+     "course": "starter",
+     "note": "capers, shallot, dill, sesame lavash cracker - eligible gulf fish"
     },
     {
-     "item": "Vegan Mac & (Cashew) Cheese",
-     "price": "$7 approx"
+     "item": "Crudo",
+     "price": "$15.80",
+     "course": "starter",
+     "note": "cobia, pan dan oil, horseradish, valencia orange (wf) - raw finned fish"
     },
     {
-     "item": "Hand-Cut French Fries",
-     "price": "$2.50"
+     "item": "Sneaky Pickle Mac N Cheese",
+     "price": "$14.80",
+     "course": "main",
+     "note": "Pasta section: cashew sauce, broccoli, cashew chorizo (v,s) - the chorizo is cashew-based, not pork"
     },
     {
-     "item": "Vegan Chocolate Chip Cookie",
-     "price": "$2.25"
+     "item": "Gnocchi",
+     "price": "$15.80",
+     "course": "main",
+     "note": "Pasta section: goat cheese, beet balsamic shallot, pistachio-almond-pecan crumble"
     },
     {
-     "item": "Snapper Crudo (spear-caught)",
-     "price": "$17 approx"
+     "item": "Grilled Squash",
+     "price": "$22.80",
+     "course": "main",
+     "note": "salsa verde, cashew cream grits, roasted beech mushrooms, sunflower seeds (v,wf)"
     },
     {
-     "item": "Mackerel Crudo",
-     "price": "$16 approx"
+     "item": "Vegan Reuben",
+     "price": "$17.80",
+     "course": "main",
+     "note": "tempeh, caramelized onions, 1000 island, sauerkraut, fries (v,s)"
     },
     {
-     "item": "Vegan Bucatini with Mushrooms",
-     "price": "$18 approx"
+     "item": "Pan Seared Sheepshead",
+     "price": "$25.80",
+     "course": "main",
+     "note": "Carolina Gold rice, jimmy nardello peppers, arugula-fennel salad (wf) - eligible gulf finned fish"
     },
     {
-     "item": "Grilled Romanesco with Grits",
-     "price": "$16 approx"
+     "item": "Pickle Plate",
+     "price": "$6.80",
+     "course": "starter",
+     "note": "lunch menu (served until 3:30pm): house made pickled vegetables, herbs (v,wf)"
     },
     {
-     "item": "Buffalo Tofu Lettuce Wraps",
-     "price": "$14 approx"
+     "item": "Egg Rolls",
+     "price": "$10.80",
+     "course": "starter",
+     "note": "lunch: black rice, cabbage, mushrooms, seed spread, chili aioli, peanut (v,s)"
+    },
+    {
+     "item": "Hand-Cut Fries",
+     "price": "$7.80",
+     "course": "starter",
+     "note": "lunch: crispy garlic, chili flake (v,wf); add vegan ranch, vegan aioli or classic aioli +1.00"
     },
     {
      "item": "Bok Choy",
-     "price": "$8 approx"
+     "price": "$9.80",
+     "course": "starter",
+     "note": "lunch: ginger, garlic, cashews, soy sauce (v,wf,s)"
+    },
+    {
+     "item": "Tofu Taco",
+     "price": "$4.80",
+     "course": "starter",
+     "note": "lunch: chili, onion, cashew cheese, cilantro, corn tortilla (v,wf,s)"
+    },
+    {
+     "item": "Brussel's Toast",
+     "price": "$10.80",
+     "course": "starter",
+     "note": "lunch: cashew-tofu cheese, sunflower seeds, house made sourdough (v,s); add a fried egg +2.00"
+    },
+    {
+     "item": "Buffalo Cauliflower Salad",
+     "price": "$14.80",
+     "course": "main",
+     "note": "lunch 'Bigger': tofu, local greens, cherry tomatoes (v,wf,s)"
+    },
+    {
+     "item": "Mac n Cheese",
+     "price": "10.80 or 15.80",
+     "course": "main",
+     "note": "lunch: cashew chorizo, broccoli, butternut squash (v,s) - two sizes as printed"
+    },
+    {
+     "item": "Daily Bowl of Food",
+     "price": "$11.80",
+     "course": "main",
+     "note": "lunch: beans, rice, veggies - ask for the day's details (v,wf)"
+    },
+    {
+     "item": "Gnocchi in Purgatory",
+     "price": "$16.80",
+     "course": "main",
+     "note": "lunch: tomato-pepper sauce, potato gnocchi, one egg"
+    },
+    {
+     "item": "Egg Sandwich",
+     "price": "$10.80",
+     "course": "main",
+     "note": "lunch Sandwiches: sweet potato, kale, cheddar, aioli, Portuguese bun - skip the +4 bacon"
+    },
+    {
+     "item": "Reuben",
+     "price": "$13.80",
+     "course": "main",
+     "note": "lunch Sandwiches: smoked tempeh, caramelized onions, 1000 island, sauerkraut (v,s)"
+    },
+    {
+     "item": "Multigrain Patty (our veggie burger)",
+     "price": "$13.80",
+     "course": "main",
+     "note": "lunch Sandwiches: fried vegetable, pickles, smoked onion jam, aioli (v,s)"
+    },
+    {
+     "item": "Hey Coffee Co. Drip",
+     "price": "$4",
+     "course": "drink",
+     "note": "with refills (Hot Drinks)"
+    },
+    {
+     "item": "Tea",
+     "price": "$4",
+     "course": "drink",
+     "note": "chamomile, green, mint, breakfast"
+    },
+    {
+     "item": "Hey Coffee Co. Cold Brew",
+     "price": "$4.50",
+     "course": "drink",
+     "note": "Iced Drinks"
+    },
+    {
+     "item": "Lavender Matcha Latte",
+     "price": "$6.50",
+     "course": "drink",
+     "note": "Iced Drinks"
+    },
+    {
+     "item": "Cardamom Spiced Cold Brew Latte",
+     "price": "$6.50",
+     "course": "drink",
+     "note": "add white chocolate .50"
+    },
+    {
+     "item": "Shrub and Soda",
+     "price": "$6",
+     "course": "drink",
+     "note": "seasonal shrub, lime, soda - non-alcoholic"
     }
    ],
-   "avoid_note": "Skip the Raines wagyu beef burger, the bavette steak, and the 'Real Meat' flatbread; ask about the squid-ink pasta and egg rolls since they may contain seafood or meat.",
+   "avoid_note": "Skip Hand Ripped Squid Ink Noodles (shrimp, crab), Rice Cakes (lamb ragu), Wagyu Burger, Wagyu Bavette Steak, and at lunch the Wagyu Beef Burger and Wagyu Steak and Eggs. Do not take the 'Add Bacon +4' on sandwiches. Note the 'cashew chorizo' in the mac n cheese is vegan, so that dish is fine.",
    "kosher_style_fit": "Excellent fit: a largely vegan/vegetarian kitchen plus finned-fish crudos (snapper, mackerel) — just steer clear of the few meat plates and any shellfish.",
    "tags": [
     "veg",
@@ -4156,7 +5916,9 @@ window.DATA = {
    "reserveUrl": null,
    "website": "https://www.yousneakypickle.com",
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://spoton-prod-websites-user-assets.s3.amazonaws.com/static/tmp/IlkGJvdQvO4uwKwz9q0l_Online Menu(50).jpg (Bar Brine dinner) and https://spoton-prod-websites-user-assets.s3.amazonaws.com/static/tmp/zsImmfQkQRCfRZFO9cfe_LUNCH MENU-modified for online .png (Sneaky Pickle lunch), both linked from https://www.yousneakypickle.com/menus/",
+   "menu_confidence": "verified"
   },
   {
    "id": "bayona",
@@ -4165,125 +5927,69 @@ window.DATA = {
    "area_label": "French Quarter",
    "cuisine": "Contemporary Creole",
    "vibe": "Chef Susan Spicer's romantic 200-year-old French Quarter cottage with a lush courtyard and refined, globe-trotting Creole cooking. One of the city's enduring fine-dining icons.",
-   "price": "$$$$",
+   "price": "$$$",
    "rating": 4.5,
    "rating_note": "OpenTable 4.5 (3,500+ diners); Google ~4.5; Yelp 4.0 (940+ reviews); Tripadvisor 4.3.",
    "lat": 29.9573,
    "lng": -90.0678,
-   "dinner_estimate": "$70-100 per person",
+   "dinner_estimate": "$55-70 per person (starter + fish du jour, before drinks); the August COOLinary dinner is a flat $58.00",
    "menu": [
     {
-     "item": "Asparagus Flan",
-     "price": "$13.00",
-     "note": "Asparagus custard, mushrooms, sweet spring peas, grilled baguette. Vegetarian (seasonal; price approximate)."
-    },
-    {
      "item": "Goat Cheese Crouton",
-     "price": "$12.00",
-     "note": "Wild Flour multigrain, mushrooms, Madeira cream. Vegetarian."
+     "price": "18",
+     "course": "starter",
+     "note": "Oyster and Shiitake Mushrooms, Madeira Cream - the 'oyster' here is the mushroom variety, so it is vegetarian"
     },
     {
      "item": "Eggplant Caviar",
-     "price": "$9.00",
-     "note": "Tapenade, feta, herbed croutons. Vegetarian."
+     "price": "16",
+     "course": "starter",
+     "note": "Kalamata Tapenade, Feta, Crostini"
     },
     {
-     "item": "Stracciatella Bruschetta",
-     "price": "$14.00",
-     "note": "Creamy stracciatella, caponata, romesco, arugula - ask without the Louisiana crawfish tails."
+     "item": "Black Eyed Pea Beignets",
+     "price": "16",
+     "course": "starter",
+     "note": "Black Garlic Aioli; marked (v, gf)"
     },
     {
-     "item": "Bayona's Garlic Soup",
-     "price": "$7.00",
-     "note": "Confirm vegetable (not chicken) stock. Vegetarian if so."
+     "item": "Garlic Soup",
+     "price": "12",
+     "course": "starter",
+     "note": "Bayona's signature garlic soup; ask whether the day's batch is made on vegetable stock"
     },
     {
      "item": "Bayona Salad",
-     "price": "$7.00",
-     "note": "Balsamic vinaigrette, Parmigiano Reggiano. Vegetarian."
+     "price": "12",
+     "course": "starter",
+     "note": "Farm Greens, Balsamic Vinaigrette, Shaved Parmesan; marked (gf). Substitute Blue Cheese for $2"
     },
     {
-     "item": "Caesar-Style Salad",
-     "price": "$9.00",
-     "note": "Romaine, arugula, preserved lemon, fried capers. Vegetarian (dressing may contain anchovy, which is an eligible finned fish)."
+     "item": "Caesar Style Salad",
+     "price": "14",
+     "course": "starter",
+     "note": "Arugula, Romaine, Preserved Lemon, Fried Capers"
     },
     {
-     "item": "Celery and Date Salad",
-     "price": "$10.00",
-     "note": "Mixed lettuces, toasted almonds, parmigiano, Castelvetrano olives. Vegetarian."
+     "item": "Roasted Beet & Creole Tomato Salad",
+     "price": "18",
+     "course": "starter",
+     "note": "Raspberry Vinaigrette; marked (v, gf)"
     },
     {
-     "item": "Parmigiano Mashed Potatoes",
-     "price": "$11.00",
-     "note": "Whipped potatoes, butter, aged parmigiano. Vegetarian side (price approximate)."
+     "item": "Fish du Jour",
+     "price": "28",
+     "course": "main",
+     "note": "Chef's Daily Creation - confirm the day's fish is a finned variety"
     },
     {
-     "item": "Roasted Brussels Sprouts",
-     "price": "$11.00",
-     "note": "Roasted garlic hummus, lemon-garlic vinaigrette, fennel pollen. Vegan side (price approximate)."
-    },
-    {
-     "item": "Golden Cauliflower",
-     "price": "$11.00",
-     "note": "Golden raisin caper relish, broccolini pesto. Vegan side (price approximate)."
-    },
-    {
-     "item": "Gulf Fish of the Day",
-     "price": "$38.00",
-     "note": "Chef's preparation of the day's finned Gulf fish - confirm a shellfish/pork-free preparation (market price)."
-    },
-    {
-     "item": "Pacific Salmon",
-     "price": "$32.00",
-     "note": "Finned salmon, red bliss potatoes, Gewurztraminer sauce - ask for the choucroute without pork/sausage."
-    },
-    {
-     "item": "Sauteed Redfish",
-     "price": "$35.00",
-     "note": "Scaled redfish - order without the accompanying shrimp-and-pork dumpling; ask for a plain broth."
-    },
-    {
-     "item": "Roasted Kabocha Squash",
-     "price": "$29.00",
-     "note": "Mushroom confit, wild mushrooms, vegan aioli, kombucha vinaigrette, pepitas. Vegan main (price approximate)."
-    },
-    {
-     "item": "Rhum Baba",
-     "price": "$9.00",
-     "note": "Pistachio ice cream, vanilla rhum syrup, tart cherries. Vegetarian dessert."
-    },
-    {
-     "item": "Ginger Spiced Flan",
-     "price": "$9.00",
-     "note": "Alabama peaches and blueberries. Vegetarian dessert."
-    },
-    {
-     "item": "Peanut Butter Tart",
-     "price": "$9.00",
-     "note": "Banana mousse, salted caramel, candied peanuts. Vegetarian dessert."
-    },
-    {
-     "item": "Chocolate Nocello Creme Brulee",
-     "price": "$9.00",
-     "note": "Chocolate waffle cookie, cocoa nibs, toasted walnuts. Vegetarian dessert."
-    },
-    {
-     "item": "House-made Ice Cream",
-     "price": "$8.00",
-     "note": "Vegetarian dessert."
-    },
-    {
-     "item": "House-made Sorbet",
-     "price": "$8.00",
-     "note": "Vegetarian/vegan dessert."
-    },
-    {
-     "item": "Artisan Cheese Plate",
-     "price": "$12.00",
-     "note": "Chef's selection. Vegetarian."
+     "item": "Chef's Creation of the Fish of the Day",
+     "price": "$58.00",
+     "course": "main",
+     "note": "Second course of the COOLinary three-course dinner menu (Aug 1-31, 2026), $58.00 per person; pair with Frito Misto first course and Pavlova or Banana Cream Pie"
     }
    ],
-   "avoid_note": "Avoid all shellfish (scallops, mussels, crab, Gulf shrimp, crawfish), plus duck, rabbit, lamb, Berkshire pork chop, beef strip/tenderloin and veal sweetbreads. The sauteed redfish is plated with a shrimp-and-pork dumpling - choose the Gulf Fish of the Day or ask for the redfish without the dumpling.",
+   "avoid_note": "Skip the house signatures built on shellfish and game: Assiette de Fruits de Mer, Steamed Bangs Island Mussels, Grilled Gulf Shrimp, New Orleans Style BBQ Shrimp, Stracciatella Bruschetta (crawfish tails), Crispy Smoked Quail Salad, Duck Pate, Veal Sweetbreads, Smoked Duck PB&J and the Beef Tenderloin Bolognese Cannelloni.",
    "kosher_style_fit": "Not kosher; the kitchen works extensively with pork, shellfish and game. That said, the daily Gulf fish, salmon, redfish (finned/scaled) and a robust set of vegetarian and vegan dishes make it workable for a fish-and-vegetarian style with the noted requests.",
    "tags": [
     "fish",
@@ -4300,7 +6006,9 @@ window.DATA = {
    "website": "https://www.bayona.com",
    "reserve_priority": true,
    "photoUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png",
-   "coverUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png"
+   "coverUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png",
+   "menu_source": "https://www.bayona.com/wp-content/uploads/2026/07/lunch-menu-sample.png",
+   "menu_confidence": "verified"
   },
   {
    "id": "brennans",
@@ -4314,85 +6022,93 @@ window.DATA = {
    "rating_note": "4.5 on Tripadvisor (ranked ~#110 of 1,477 NOLA restaurants) and Google, across 2,500+ reviews",
    "lat": 29.9558,
    "lng": -90.0656,
-   "dinner_estimate": "$80-115/person",
+   "dinner_estimate": "$70-95 per person (appetizer + fish entree + dessert, before drinks)",
    "menu": [
     {
-     "item": "Creole Caesar Salad",
-     "price": "$15",
-     "note": "dressing is smoked-oyster based; ask to swap for a shellfish-free Caesar or vinaigrette"
-    },
-    {
      "item": "Creole Tomato Tostada",
-     "price": "$18",
-     "note": "vegetarian as-is: heirloom & Creole tomatoes, burrata, okra tostada, smoked tomato water"
+     "price": "$18.00",
+     "course": "starter",
+     "note": "Louisiana Heirloom & Creole Tomatoes, Creamy Burrata, Housemade Okra Tostada, Smoked Tomato Water"
     },
     {
      "item": "Redfish Veronique",
-     "price": "$36",
-     "note": "eligible as-is: redfish, hibiscus-pickled grapes, braised leeks, fingerling potatoes, preserved-lemon beurre blanc"
+     "price": "$36.00",
+     "course": "main",
+     "note": "Hibiscus-pickled Grapes, Braised Leeks, Fingerling Potatoes, Preserved Lemon Beurre Blanc"
     },
     {
      "item": "Gulf Fish en Papillote",
-     "price": "$38",
-     "note": "ask without the Louisiana crab; banana-leaf gulf fish with sorghum, almonds, olives, tomato"
+     "price": "$38.00",
+     "course": "main",
+     "note": "Banana Leaf-wrapped Gulf Fish, Sorghum, Marcona Almonds, Castelvetrano Olives, Tomato - ask without the Louisiana crab"
     },
     {
      "item": "Blackened Tofu",
-     "price": "$25",
-     "note": "vegetarian as-is: local tofu, rice grits, preserved shiitake mushrooms"
+     "price": "$25.00",
+     "course": "main",
+     "note": "New Orleans Tien Dat Tofu, Two Brooks Farm Rice Grits, Preserved Shiitake Mushrooms"
     },
     {
      "item": "Smoked Cauliflower",
-     "price": "$12",
-     "note": "vegetarian side: preserved lemon & harissa"
+     "price": "$12.00",
+     "course": "side",
+     "note": "Preserved Lemon & Harissa"
     },
     {
      "item": "Shells & Cheese",
-     "price": "$12",
-     "note": "vegetarian: mimolette fondue, Grana Padano, Abita Amber"
+     "price": "$12.00",
+     "course": "side",
+     "note": "Mimolette Fondue, Grana Padano, Abita Amber"
     },
     {
      "item": "Maggie's Mushrooms",
-     "price": "$12",
-     "note": "vegetarian mushroom side"
+     "price": "$12.00",
+     "course": "side"
     },
     {
      "item": "Succotash",
-     "price": "$12",
-     "note": "ask without the Nueske's bacon"
+     "price": "$12.00",
+     "course": "side",
+     "note": "Glazed Summer Vegetables - ask without the Nueske's bacon"
     },
     {
      "item": "World Famous Bananas Foster",
-     "price": "$14",
-     "note": "invented here in 1951; flambeed tableside, min 2 per order"
+     "price": "$14.00",
+     "course": "dessert",
+     "note": "Invented in 1951 at Brennan's; flambeed tableside, minimum 2 people per order"
     },
     {
      "item": "Cherries Jubilee",
-     "price": "$14",
-     "note": "tart black cherries, vanilla ice cream, Luxardo, flambeed tableside"
+     "price": "$14.00",
+     "course": "dessert",
+     "note": "Flambeed tableside. Fresh tart black cherries, vanilla ice cream, Luxardo sauce"
     },
     {
      "item": "New Orleans Bread Pudding",
-     "price": "$14",
-     "note": "whiskey caramel, buttermilk ice cream, pralines"
+     "price": "$14.00",
+     "course": "dessert",
+     "note": "Whiskey Caramel, Buttermilk Ice Cream, Pralines"
     },
     {
      "item": "The Snickers",
-     "price": "$15",
-     "note": "milk-chocolate bavarian, caramel custard, nougat ice cream, peanuts"
+     "price": "$15.00",
+     "course": "dessert",
+     "note": "Bavarian Milk Chocolate, Caramel Custard, Nougat Ice Cream, Roasted Peanuts"
     },
     {
      "item": "Lemon Tart",
-     "price": "$14",
-     "note": "yuzu mousse, lemon jelly, toasted meringue"
+     "price": "$14.00",
+     "course": "dessert",
+     "note": "Yuzu Mousse, Lemon Jelly, Sweet Pastry Crumb, Toasted Meringue"
     },
     {
      "item": "Pineapple Tarte Tatin",
-     "price": "$14",
-     "note": "charred pineapple, puff pastry, whipped vanilla mousse"
+     "price": "$14.00",
+     "course": "dessert",
+     "note": "Charred Pineapple, Sweetened Condensed Anglaise, Puff Pastry, Whipped Vanilla Mousse"
     }
    ],
-   "avoid_note": "Skip the turtle soup, seafood gumbo, all oyster/crab/soft-shell-crab plates, foie gras torchon, steak tartare, chateaubriand, poussin, pork Milanese, hanger steak, and the meat-based rice dressing.",
+   "avoid_note": "Nearly the whole marquee list is off-limits: Turtle Soup, Seafood Gumbo, Louisiana Crab Claws, Grand Isle Jewel Oysters, Louisiana Oysters, Steak Tartare Cannoli, Torchon of Foie Gras, Crispy Louisiana Soft-Shell Crab, Creole Hanger Steak, Roasted Chateaubriand, Poussin a la Moutarde and Pork Milanese. Also skip the Creole Caesar - its dressing is smoked oyster.",
    "kosher_style_fit": "Not kosher and shellfish/pork are all over the menu, but there is a genuine finned-fish + vegetarian path: redfish, gulf fish (no crab), blackened tofu, tomato-burrata tostada, several veg sides, and every dessert works. Good for a kosher-style diner who orders carefully.",
    "tags": [
     "fish",
@@ -4410,7 +6126,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/brennans",
    "website": "https://www.brennansneworleans.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/120px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/500px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/500px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg",
+   "menu_source": "https://www.brennansneworleans.com/menus/dinner/",
+   "menu_confidence": "verified"
   },
   {
    "id": "herbsaint",
@@ -4424,85 +6142,120 @@ window.DATA = {
    "rating_note": "4.6 on Google across ~1,420 reviews; James Beard Award-winning chef, 1,100+ Yelp reviews",
    "lat": 29.9455,
    "lng": -90.0703,
-   "dinner_estimate": "$55-85/person",
+   "dinner_estimate": "$60-85 per person (one small plate + main + dessert, before drinks); Fish of the Day is Market Price",
    "menu": [
     {
-     "item": "Gem Lettuce Salad",
-     "price": "$15",
-     "note": "vegetarian: green goddess, radish, dill, breadcrumbs"
+     "item": "KANPACHI CRUDO",
+     "price": "19",
+     "course": "starter",
+     "note": "Chili Ponzu, Fennel Relish, Oranges and Shiso"
     },
     {
-     "item": "Arugula Salad",
-     "price": "$15",
-     "note": "vegetarian: apple, Valbresco feta, spiced nuts, sage vinaigrette"
+     "item": "BLUEFIN TUNA TARTARE",
+     "price": "22",
+     "course": "starter",
+     "note": "Yuzu Aioli, Tare, Togarashi and Toasted Pain Blanc"
     },
     {
-     "item": "Baked Asiago",
-     "price": "$14",
-     "note": "vegetarian small plate: oregano and lemon"
+     "item": "HOUSEMADE SPAGHETTI",
+     "price": "20",
+     "course": "starter",
+     "note": "Small plate with fried-poached farm egg - ask without the guanciale"
     },
     {
-     "item": "Housemade Spaghetti",
-     "price": "$17",
-     "note": "ask without the guanciale (pork); comes with a fried-poached farm egg"
+     "item": "FRIED GREEN TOMATOES",
+     "price": "19",
+     "course": "starter",
+     "note": "Sauce Gribiche and Fines Herbes - ask without the chilled shrimp"
     },
     {
-     "item": "Fish of the Day",
+     "item": "WATERMELON GAZPACHO",
+     "price": "26",
+     "course": "starter",
+     "note": "Jalapeno-Lime Mayo and Fried Bread - ask without the jumbo lump crab"
+    },
+    {
+     "item": "FARM LETTUCES",
+     "price": "16",
+     "course": "starter",
+     "note": "Radish, Toasted Bread Crumbs, Dill and Herb-Buttermilk Dressing"
+    },
+    {
+     "item": "CHERMOULA MARINATED ZUCCHINI",
+     "price": "15",
+     "course": "starter",
+     "note": "Artichoke Aioli, Valbreso Feta and Confit Tomato"
+    },
+    {
+     "item": "FISH OF THE DAY",
      "price": "Market Price",
-     "note": "daily finned fish; confirm the species is a scaled fish"
+     "course": "main",
+     "note": "Daily preparation; confirm the day's fish"
     },
     {
-     "item": "Grilled Tuna Sandwich",
-     "price": "$21",
-     "note": "eligible as-is: tuna on olive bread, lemon-pickle aioli"
-    },
-    {
-     "item": "Vegetable of the Day",
-     "price": "$8",
-     "note": "vegetarian side; confirm no pork seasoning"
+     "item": "GRILLED TUNA SANDWICH",
+     "price": "28",
+     "course": "main",
+     "note": "Olive Bread with Lemon Pickle Aioli"
     },
     {
      "item": "French Fries with Pimenton Aioli",
-     "price": "$7",
-     "note": "vegetarian side"
+     "price": "9",
+     "course": "side"
     },
     {
-     "item": "Banana Brown Butter Tart",
-     "price": "$13",
-     "note": "fleur de sel caramel"
+     "item": "Charred Squash with Romesco and Hazelnuts",
+     "price": "10",
+     "course": "side"
     },
     {
-     "item": "Vanilla Pot de Creme",
-     "price": "$15",
-     "note": "vanilla-roasted pineapple, ginger cookies"
+     "item": "BANANA BROWN BUTTER TART",
+     "price": "15",
+     "course": "dessert",
+     "note": "Fleur de Sel Caramel"
     },
     {
-     "item": "Black Forest Cake",
-     "price": "$16",
-     "note": "dark chocolate mousse, Amarena cherries"
+     "item": "VANILLA POT DE CREME",
+     "price": "16",
+     "course": "dessert",
+     "note": "Red Wine Poached Pears, Molasses Spice Cookies"
     },
     {
-     "item": "Fried Apple Hand Pies",
-     "price": "$16",
-     "note": "caramel ice cream, brown butter streusel"
+     "item": "FRIED APPLE HAND PIES",
+     "price": "17",
+     "course": "dessert",
+     "note": "Cookie Butter Ice Cream, Feuilletine Crumbs"
     },
     {
-     "item": "Vanilla or Chocolate Ice Cream",
-     "price": "$7",
-     "note": "vegetarian"
+     "item": "FLOURLESS CHOCOLATE CAKE",
+     "price": "12",
+     "course": "dessert",
+     "note": "Dulce de Leche Sauce, Whipped Cream, Spanish Peanut Brittle"
     },
     {
-     "item": "Sorbet or Ice Cream du Jour",
-     "price": "$7",
-     "note": "vegetarian"
+     "item": "SEASONAL ICE CREAM/SORBET",
+     "price": "12",
+     "course": "dessert"
     },
     {
-     "item": "Artisanal Cheeses",
-     "price": "$14",
-     "note": "vegetarian cheese plate"
+     "item": "ARTISANAL CHEESES",
+     "price": "18",
+     "course": "dessert"
+    },
+    {
+     "item": "Zero Proof Unified Ferments 'Jasmine Green'",
+     "price": "12",
+     "course": "drink",
+     "note": "Non-alcoholic sparkling fermented tea, listed under Sparkling by the glass"
+    },
+    {
+     "item": "Hugo Spritz",
+     "price": "$12",
+     "course": "drink",
+     "note": "Zero-proof version available at $12 (elderflower, prosecco-style, mint); the alcoholic version is 16"
     }
    ],
-   "avoid_note": "Skip the chicken/tasso/andouille gumbo, cornmeal-fried oysters, shrimp-and-fish ceviche (has shrimp), beef short rib, jumbo shrimp, duck confit, grilled chicken, wagyu bavette, and the meat-based dirty rice.",
+   "avoid_note": "Skip the Cornmeal Fried Oysters, Louisiana Jumbo Shrimp, Muscovy Duck Leg Confit, Credo Farms Chicken, Rabbit Leg Schnitzel (crawfish americaine), Grilled Wagyu Bavette, Beef Short Rib, Grilled Lamb Kofta, the gumbo (chicken, tasso, andouille) and the Dirty Rice side.",
    "kosher_style_fit": "Not kosher; pork (guanciale, tasso, andouille) and shellfish feature heavily, but the tuna sandwich, daily fish, several veg salads/sides and all desserts give a solid finned-fish + vegetarian route for a kosher-style diner.",
    "tags": [
     "fish",
@@ -4519,7 +6272,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/herbsaint",
    "website": "https://herbsaint.com",
    "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/120px-Old_Absinthe_House_%2855151882008%29.jpg",
-   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/500px-Old_Absinthe_House_%2855151882008%29.jpg"
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/500px-Old_Absinthe_House_%2855151882008%29.jpg",
+   "menu_source": "https://herbsaint.com/wp-content/uploads/2026/06/2026-06-12-ALL-DAY-Menu-1.pdf",
+   "menu_confidence": "verified"
   },
   {
    "id": "meril",
@@ -4533,155 +6288,165 @@ window.DATA = {
    "rating_note": "4.6 on Restaurant Guru (16k reviews) and strong OpenTable (7k+ reviews); Google/Yelp cluster around 4.3-4.4",
    "lat": 29.944,
    "lng": -90.0679,
-   "dinner_estimate": "$45-75/person",
+   "dinner_estimate": "$45-70/person (e.g. Gulf Yellowfin Tuna Bundles $16 + Market Fish $36; ~$45 if you take the Spicy Rigatoni instead), before drinks, 3% card fee",
    "menu": [
     {
      "item": "Pocket Bread",
      "price": "$6",
-     "note": "vegetarian: garlic oil, sea salt"
-    },
-    {
-     "item": "Handcut Fries",
-     "price": "$10",
-     "note": "vegetarian: lemon aioli"
+     "course": "starter",
+     "note": "listed under SNACKS with no description; plain bread service"
     },
     {
      "item": "Pineapple Upside-Down Cornbread",
-     "price": "$9",
-     "note": "ask without the bacon marmalade"
+     "price": "$8",
+     "course": "starter",
+     "note": "comes with bacon marmalade - ask without the bacon marmalade"
     },
     {
-     "item": "Smoked Gulf Fish Dip",
-     "price": "$15",
-     "note": "eligible as-is: smoked gulf finfish, fried saltines"
+     "item": "French Fries",
+     "price": "$10",
+     "course": "starter",
+     "note": "cane vinegar aioli"
     },
     {
      "item": "Deviled Eggs",
      "price": "$12",
-     "note": "eligible: egg with smoked trout roe (finned fish) and Zapp's"
+     "course": "starter",
+     "note": "smoked trout roe, Zapp's - trout roe is finned fish, eligible"
     },
     {
      "item": "Gulf Yellowfin Tuna Bundles",
-     "price": "$19",
-     "note": "eligible: tuna, jalapeno, truffle ponzu, wontons, yuzu tobiko (flying-fish roe)"
-    },
-    {
-     "item": "Burrata",
-     "price": "$20",
-     "note": "vegetarian: artichoke antipasto, ciabatta"
-    },
-    {
-     "item": "Roasted Heirloom Carrots",
-     "price": "$12",
-     "note": "vegetarian: tahini, sesame, spiced honey"
-    },
-    {
-     "item": "Grilled Asparagus",
-     "price": "$13",
-     "note": "vegetarian: pecorino romano, lemon vinaigrette"
-    },
-    {
-     "item": "Grilled Corn",
-     "price": "$10",
-     "note": "vegetarian: chili-lime mayo, cotija"
-    },
-    {
-     "item": "Pad Thai Cauliflower",
-     "price": "$18",
-     "note": "ask to confirm vegetarian (that the sauce has no fish sauce); peanut sauce, herbs, tamarind"
-    },
-    {
-     "item": "Blistered Shishito Peppers",
      "price": "$16",
-     "note": "vegetarian: chili crunch, nuts, sesame, miso-honey aioli"
+     "course": "starter",
+     "note": "jalapeno, truffle ponzu, wontons, tobiko"
     },
     {
-     "item": "Fettuccine with Truffle Butter",
-     "price": "$30",
-     "note": "vegetarian"
+     "item": "Crispy Brussels Sprouts",
+     "price": "$18",
+     "course": "starter",
+     "note": "beer braised onions, bacon - ask without the bacon"
+    },
+    {
+     "item": "Margherita",
+     "price": "$15",
+     "course": "starter",
+     "note": "flatbread with basil; shareable"
+    },
+    {
+     "item": "Vegetable",
+     "price": "$19",
+     "course": "starter",
+     "note": "flatbread: zucchini, roasted garlic, red onion, sweet peppers, mushrooms"
+    },
+    {
+     "item": "The Big Caesar",
+     "price": "$16",
+     "course": "starter",
+     "note": "parmesan, toasted breadcrumbs"
     },
     {
      "item": "Spicy Rigatoni",
      "price": "$19",
-     "note": "vegetarian: caramelized onions, pecorino romano"
+     "course": "main",
+     "note": "caramelized onions, parmesan; vegetarian"
     },
     {
-     "item": "Our Greek Salad",
-     "price": "$16",
-     "note": "vegetarian: tomato, cucumber, red onion, kalamata, feta, oregano vinaigrette"
-    },
-    {
-     "item": "Cheese Flatbread",
-     "price": "$15",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Vegetable Flatbread",
-     "price": "$17",
-     "note": "vegetarian: eggplant, roasted garlic, red onion, peppers, mushrooms"
-    },
-    {
-     "item": "Pan-Seared Drum",
-     "price": "$34",
-     "note": "eligible as-is: drum (finned fish), fingerling potatoes, artichoke, tomatoes, meuniere"
+     "item": "Market Fish",
+     "price": "$36",
+     "course": "main",
+     "note": "corn maque choux, herb salad, creole butter sauce - confirm the maque choux is made without bacon/tasso"
     },
     {
      "item": "Banana Cream Pie",
      "price": "$14",
-     "note": "signature; caramel sauce, chocolate shavings"
+     "course": "dessert",
+     "note": "caramel sauce, chocolate shavings"
     },
     {
-     "item": "Summer Berry Cake",
-     "price": "$12",
-     "note": "lemon butter cream"
-    },
-    {
-     "item": "Funfetti Birthday Cookie",
-     "price": "$12",
-     "note": "brownie swirl ice cream, white chocolate sauce"
-    },
-    {
-     "item": "Strawberry Shortcake Cone",
-     "price": "$12",
-     "note": "creme anglaise"
-    },
-    {
-     "item": "Cinnamon Toast Bread Pudding",
-     "price": "$10",
-     "note": "vanilla ice cream, Fireball whiskey sauce"
+     "item": "Rocky Road Bread Pudding",
+     "price": "$14",
+     "course": "dessert",
+     "note": "pecans, meringue"
     },
     {
      "item": "Grand Marnier Tiramisu",
      "price": "$14",
-     "note": "vegetarian"
+     "course": "dessert"
+    },
+    {
+     "item": "Daily Ice Cream Special",
+     "price": "MP",
+     "course": "dessert",
+     "note": "priced at market on the dessert menu"
     },
     {
      "item": "Daily Sorbet",
-     "price": "$9",
-     "note": "vegetarian"
+     "price": "$10",
+     "course": "dessert"
     },
     {
      "item": "Cotton Candy",
      "price": "$5",
-     "note": "the playful signature finish"
+     "course": "dessert"
     },
     {
-     "item": "Daily Ice Cream Special",
-     "price": "Market Price",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Sparkling Blood Orange",
+     "item": "Basin Street Blues",
      "price": "$14",
-     "note": "non-alcoholic sparkling"
+     "course": "drink",
+     "note": "zero-proof: Mockly Baron Van Blue, mint, soda"
     },
     {
-     "item": "Sparkling Passion Fruit",
+     "item": "Storyville Strut",
      "price": "$14",
-     "note": "non-alcoholic sparkling"
+     "course": "drink",
+     "note": "zero-proof: Mockly Eye Opener, ginger beer"
+    },
+    {
+     "item": "Phony Negroni",
+     "price": "$14",
+     "course": "drink",
+     "note": "listed under \"ZERO PROOF\""
+    },
+    {
+     "item": "Athletic Brewing Co. Run Wild",
+     "price": "$8",
+     "course": "drink",
+     "note": "non-alcoholic IPA"
+    },
+    {
+     "item": "Athletic Brewing Co. Atletica",
+     "price": "$8",
+     "course": "drink",
+     "note": "non-alcoholic Mexican-style copper"
+    },
+    {
+     "item": "Americana",
+     "price": "$5.50",
+     "course": "drink",
+     "note": "from the dessert menu coffee list"
+    },
+    {
+     "item": "Cappuccino",
+     "price": "$5.50",
+     "course": "drink"
+    },
+    {
+     "item": "Espresso",
+     "price": "$5.50",
+     "course": "drink"
+    },
+    {
+     "item": "Latte",
+     "price": "$5.50",
+     "course": "drink"
+    },
+    {
+     "item": "Macchiato",
+     "price": "$5.50",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Skip the barbecued/rock shrimp, pork & crawfish dumplings, fried turkey necks, boudin balls, Korean fried wings, candied pork ribs, beef meatballs, fettuccine nero (crab), pepperoni/sausage flatbreads, cheeseburger, half chicken, ribeye, and the daily gumbo.",
+   "avoid_note": "Skip the House Boudin Balls, Crispy Gulf Shrimp Tacos, Sweet & Sour Chicken Wings, Barbequed Shrimp, Fried Turkey Necks, Gulf Shrimp & Pork Dumplings, House Meatballs, Candied Pork Ribs, Pepperoni and Wise Guy (Italian sausage) flatbreads, Gumbo (chicken/andouille), Fried Parmesan Chicken Salad, Shrimp Linguine and the Double Cheeseburger. Note the Pineapple Upside-Down Cornbread and Crispy Brussels Sprouts both arrive with pork unless you ask.",
    "kosher_style_fit": "Not kosher and the kitchen runs heavy on shellfish and pork, but Meril is actually one of the easier spots here for a finned-fish + vegetarian pair: gulf fish dip, tuna bundles, trout-roe deviled eggs, pan-seared drum, plus a deep bench of vegetarian snacks, two veg flatbreads and nearly every dessert.",
    "tags": [
     "fish",
@@ -4698,7 +6463,9 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/meril-new-orleans",
    "website": "https://bemeril.com",
    "photoUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg",
-   "coverUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg"
+   "coverUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg",
+   "menu_source": "https://bemeril.com/menus/",
+   "menu_confidence": "verified"
   },
   {
    "id": "gautreaus",
@@ -4712,35 +6479,58 @@ window.DATA = {
    "rating_note": "Google ~4.6 and Yelp ~4.3 (235 reviews); consistently ranked among Uptown's top fine-dining rooms.",
    "lat": 29.9251,
    "lng": -90.1157,
-   "dinner_estimate": "$85-130/person",
+   "dinner_estimate": "$85-130/person; food prices are not published anywhere online, so confirm when booking",
    "menu": [
     {
-     "item": "Flash-Cured Tuna",
-     "price": "$24",
-     "note": "satsuma citronette, horseradish-peanut gremolata, smoked olive; price approx (menu changes nightly, no prices published online)"
-    },
-    {
-     "item": "Pompano en Papillote",
-     "price": "$54",
-     "note": "coconut soubise, green chutney, lentil-stuffed zucchini; finned fish; price approx"
-    },
-    {
      "item": "Redfish a la Maxime",
-     "price": "$56",
-     "note": "signature dish: potato-'scaled' redfish, vadouvan curry, cabbage blanquette, smoked trout roe; price approx"
-    },
-    {
-     "item": "Mille Feuille (vegetable)",
-     "price": "$18",
-     "note": "delice de bourgogne, roasted pineapple; ask to omit the jambon de Bayonne (ham) to make it vegetarian; price approx"
+     "price": "Price not published",
+     "course": "main",
+     "note": "signature dish - potato-scaled redfish, vadouvan curry, cabbage blanquette, smoked trout roe; dish confirmed via press coverage of chef Rob Mistry's menu, price not published online"
     },
     {
      "item": "Caramelized Banana Split",
-     "price": "$16",
-     "note": "banana ice cream, banana pain perdu, sour cherry gel; vegetarian; price approx"
+     "price": "Price not published",
+     "course": "dessert",
+     "note": "long-running house dessert (banana ice cream / warm banana bread, butterscotch and chocolate); price not published online"
+    },
+    {
+     "item": "Cosmopolitan",
+     "price": "$10",
+     "course": "drink",
+     "note": "from the \"Non-Alcoholic\" list in the restaurant's own May 2026 wine book PDF"
+    },
+    {
+     "item": "No Mojito",
+     "price": "$10",
+     "course": "drink",
+     "note": "non-alcoholic"
+    },
+    {
+     "item": "Spicy Margarita",
+     "price": "$10",
+     "course": "drink",
+     "note": "non-alcoholic version listed under Non-Alcoholic"
+    },
+    {
+     "item": "Virgin Mule",
+     "price": "$10",
+     "course": "drink",
+     "note": "non-alcoholic"
+    },
+    {
+     "item": "No Paloma",
+     "price": "$10",
+     "course": "drink",
+     "note": "non-alcoholic"
+    },
+    {
+     "item": "Athletic Lite N/A",
+     "price": "$8",
+     "course": "drink",
+     "note": "non-alcoholic beer"
     }
    ],
-   "avoid_note": "Gulf-focused fine dining: expect shellfish (oyster, crab, Gulf shrimp), pork/porchetta and poultry across the seasonal menu. Skip the crab cigars, shrimp gnudi, roasted chicken, duck confit and porchetta. Note: the live menu is Cloudflare-blocked online and changes nightly, so confirm current dishes and exact prices when booking.",
+   "avoid_note": "The kitchen leans on shellfish, pork and poultry: skip the crab cigars (they carry the tuna tartare, so it cannot be ordered around), shrimp/oyster courses, porchetta and pork dishes, roast chicken and duck. Because the card changes nightly and the restaurant's own menu page is behind a Sucuri/Cloudflare block, call ahead to confirm the night's fish and vegetable courses and their prices.",
    "kosher_style_fit": "Not kosher, but workable kosher-style: usually 2-3 finned-fish mains (pompano, redfish, tuna) plus a vegetable course and dessert. Call ahead so the kitchen can steer you around the shellfish- and pork-heavy plates.",
    "tags": [
     "fish",
@@ -4755,7 +6545,9 @@ window.DATA = {
    "reserve_priority": true,
    "website": "https://gautreausrestaurant.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/gautreaus-restaurant",
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://gautreausrestaurant.com/wp-content/uploads/2026/05/WINE-BOOK-5.26.26.pdf",
+   "menu_confidence": "approximate"
   },
   {
    "id": "brigtsens",
@@ -4769,60 +6561,63 @@ window.DATA = {
    "rating_note": "Yelp ~4.5 (494 reviews) and Google ~4.7; a perennial local favorite and James Beard 'Best Chef: Southeast' winner.",
    "lat": 29.9413,
    "lng": -90.1366,
-   "dinner_estimate": "$60-90/person",
+   "dinner_estimate": "$60-80/person (House Salad $14 + Blackened Yellowfin Tuna $45 + dessert $15), before drinks; 3.75% card fee",
    "menu": [
     {
      "item": "House Salad",
-     "price": "$14",
-     "note": "vegetarian"
+     "price": "$14.00",
+     "course": "starter",
+     "note": "Salad Days lettuces, tomatoes, feta, spiced pecans, pickled red onion, croutons, Steen's cane vinegar dressing; vegetarian"
     },
     {
      "item": "Caesar Salad",
-     "price": "$15",
-     "note": "dressing typically has anchovy (a finned fish, fine for this diner); otherwise vegetarian"
-    },
-    {
-     "item": "Broiled Gulf Fish",
-     "price": "$46",
-     "note": "finned Gulf fish; comes with a crab crust & lemon crab sauce - request it plainly broiled without the crab crust and crab sauce"
+     "price": "$15.00",
+     "course": "starter",
+     "note": "Salad Days lettuces, croutons & marinated white anchovies - anchovy is finned fish, eligible"
     },
     {
      "item": "Blackened Yellowfin Tuna",
-     "price": "$45",
-     "note": "finned fish; confirm the accompanying side is meat-free"
+     "price": "$45.00",
+     "course": "main",
+     "note": "smoked corn sauce, chipotle black bean salsa, roasted red pepper sour cream"
     },
     {
      "item": "Pan-Fried Fish",
-     "price": "$42",
-     "note": "confirm the day's fish is finned/scaled (e.g. drum/trout), not catfish"
+     "price": "$42.00",
+     "course": "main",
+     "note": "roasted pecans & Meuniere sauce; confirm the day's fish is a scaled Gulf fish (drum/trout), not catfish"
     },
     {
      "item": "Eggplant Parmesan",
-     "price": "$28",
-     "note": "vegetarian"
+     "price": "$28.00",
+     "course": "main",
+     "note": "marinara, mozzarella, spaghetti Bordelaise; vegetarian"
     },
     {
      "item": "Lemon Blueberry Brulee",
-     "price": "$17",
-     "note": "vegetarian"
+     "price": "$17.00",
+     "course": "dessert"
     },
     {
      "item": "Rum Raisin Bread Pudding",
-     "price": "$15",
-     "note": "vegetarian"
+     "price": "$15.00",
+     "course": "dessert",
+     "note": "butterscotch sauce & whipped cream"
     },
     {
      "item": "Pecan Pie",
-     "price": "$15",
-     "note": "vegetarian"
+     "price": "$15.00",
+     "course": "dessert",
+     "note": "caramel sauce & whipped cream"
     },
     {
      "item": "Ponchatoula Strawberry Shortcake",
-     "price": "$15",
-     "note": "vegetarian"
+     "price": "$15.00",
+     "course": "dessert",
+     "note": "strawberry sauce & whipped cream"
     }
    ],
-   "avoid_note": "Menu leans hard into shellfish, pork and game: skip the file gumbo, shrimp remoulade, BBQ shrimp, butternut shrimp bisque, veal sweetbreads, seafood platter, pork chop, roast duck, sauteed veal and NY strip. The gulf fish needs its crab crust/sauce omitted.",
+   "avoid_note": "Skip the File' Gumbo (chicken/andouille), Shrimp Remoulade with Guacamole & Deviled Eggs, New Orleans BBQ Shrimp, Butternut Shrimp Bisque, Veal Sweetbreads, Pan-Roasted Pork Chop, Roast Duck, Brigtsen's Seafood Platter, Sauteed Veal and New York Strip. Also skip the Broiled Gulf Fish - the crab crust and lemon crab sauce are the dish, not a garnish you can omit.",
    "kosher_style_fit": "Not kosher, but easy to eat kosher-style: two salads, three finned-fish mains, an eggplant parmesan and four vegetarian desserts all qualify. Flag no-shellfish/no-pork and the fish plates can be dressed simply.",
    "tags": [
     "fish",
@@ -4838,7 +6633,9 @@ window.DATA = {
    "reserve_priority": true,
    "website": "https://brigtsens.com",
    "reserveUrl": null,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://brigtsens.com/new-orleans-riverbend-brigtsen-s-food-menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "bywater-american-bistro",
@@ -4852,130 +6649,99 @@ window.DATA = {
    "rating_note": "Historically ~4.6-4.7 on Google/Yelp. IMPORTANT: multiple listings (Yelp) now flag this location as permanently CLOSED (reported mid-2025) - verify it is operating before planning around it.",
    "lat": 29.9639,
    "lng": -90.0537,
-   "dinner_estimate": "$45-75/person",
+   "dinner_estimate": "$50-70 per person for an appetizer plus an entree, before drinks",
    "menu": [
     {
-     "item": "Chilled Corn & Coconut Soup",
-     "price": "$14",
-     "note": "brioche croutons, buttermilk sorbet; vegetarian"
-    },
-    {
-     "item": "Cabbage Salad, Spicy Peanuts, Soft Herbs",
-     "price": "$10",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Ricotta & Tete de Moine Tart",
-     "price": "$16",
-     "note": "pickled beech mushrooms, arugula; vegetarian"
-    },
-    {
-     "item": "Little Gem, Whipped Avocado Butter, File Powder",
-     "price": "$10",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Avocado Toast, Deviled Egg, Chili Oil",
-     "price": "$11",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Smoked Tuna Toast",
-     "price": "$10",
-     "note": "Calabrian cream cheese, everything spice; finned tuna"
-    },
-    {
-     "item": "Tuna Ham, Avocado & Tomato Salad",
-     "price": "$13",
-     "note": "olives, fresnos; 'tuna ham' = cured tuna - confirm it is fish, not pork"
-    },
-    {
-     "item": "BAB's Antipasto Salad",
-     "price": "$13",
-     "note": "Italian dressing; ask for the vegetarian version (omit cured meats)"
-    },
-    {
-     "item": "Pan-Roasted Snapper",
-     "price": "$28",
-     "note": "cauliflower, pecan salsa verde; finned fish"
-    },
-    {
-     "item": "Spaghetti Tomato Basil",
-     "price": "$18",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Grits",
-     "price": "$5",
-     "note": "side; vegetarian"
-    },
-    {
-     "item": "Charred Okra, West African Peanut Sauce",
-     "price": "$7",
-     "note": "side; vegetarian"
-    },
-    {
-     "item": "Rosti Potatoes",
-     "price": "$5",
-     "note": "side; vegetarian"
-    },
-    {
-     "item": "Baked Beans",
-     "price": "$5",
-     "note": "side; confirm vegetarian (no pork)"
-    },
-    {
-     "item": "Coconut Rice & Peas",
-     "price": "$7",
-     "note": "side; vegetarian"
-    },
-    {
-     "item": "Nutella Flan",
-     "price": "$7",
-     "note": "dessert; vegetarian"
-    },
-    {
-     "item": "Haagen-Dazs Strawberry & Cream",
-     "price": "$8",
-     "note": "dessert; vegetarian"
-    },
-    {
-     "item": "Semifreddo, Bruleed Citrus, Mint",
-     "price": "$10",
-     "note": "dessert; vegetarian"
-    },
-    {
-     "item": "Chocolate Ganache, Hazelnuts, Coconut Sorbet",
-     "price": "$10",
-     "note": "dessert; vegetarian"
-    },
-    {
-     "item": "Daily Ice Cream or Sorbet",
-     "price": "$5",
-     "note": "dessert; vegetarian"
-    },
-    {
-     "item": "French Omelet, Soft Herb Salad",
-     "price": "$10",
-     "note": "brunch; vegetarian"
-    },
-    {
-     "item": "Kimchi Fried Rice, Roasted Peppers, Sunny Egg",
-     "price": "$13",
-     "note": "brunch; vegetarian - confirm the kimchi is made without fish sauce/shrimp"
-    },
-    {
-     "item": "French Toast, Rum Caramel, Banana, Pecan",
+     "item": "Chopped Salad",
      "price": "$15",
-     "note": "brunch; vegetarian"
+     "course": "starter",
+     "note": "Buttermilk dressing, parmesan crisp"
     },
     {
-     "item": "Bread & Butter",
-     "price": "$5",
-     "note": "vegetarian"
+     "item": "Warm Olives",
+     "price": "$6",
+     "course": "starter",
+     "note": "Chili flake, rosemary"
+    },
+    {
+     "item": "Fish Pate",
+     "price": "$12",
+     "course": "starter",
+     "note": "Served with rosemary fry bread; confirm the fish used is finned (it is a finned-fish pate)"
+    },
+    {
+     "item": "Burrata",
+     "price": "$19",
+     "course": "starter",
+     "note": "Marinated beets, collard greens pesto, garlic bread"
+    },
+    {
+     "item": "Ricotta Tart",
+     "price": "$19",
+     "course": "starter",
+     "note": "Hazelnut honey, arugula salad"
+    },
+    {
+     "item": "Spaghetti",
+     "price": "$21",
+     "course": "main",
+     "note": "Tomato, basil - vegetarian as served"
+    },
+    {
+     "item": "Semolina Gnocchi a la Nona",
+     "price": "$24",
+     "course": "main",
+     "note": "Vegetarian pasta entree"
+    },
+    {
+     "item": "Whole Branzino",
+     "price": "$36",
+     "course": "main",
+     "note": "Fennel, cauliflower puree, caper salmoriglio"
+    },
+    {
+     "item": "BABs Tiramisu",
+     "price": "$11",
+     "course": "dessert",
+     "note": "From the dessert menu (Dessert-Menu-3.30.25)"
+    },
+    {
+     "item": "Apple and Olive Oil Cake",
+     "price": "$10",
+     "course": "dessert",
+     "note": "Apple ice cream, brown butter apples"
+    },
+    {
+     "item": "Chocolate Cake",
+     "price": "$11",
+     "course": "dessert",
+     "note": "Spiced ganache, satsuma ice cream"
+    },
+    {
+     "item": "Daily Selection of Ice Cream and Sorbet",
+     "price": "$7",
+     "course": "dessert"
+    },
+    {
+     "item": "Piedmont Soda",
+     "price": "$9",
+     "course": "drink",
+     "note": "Spirit-free cocktail: Giffard aperitif, orange, lemon soda"
+    },
+    {
+     "item": "Tuscan Garden",
+     "price": "$9",
+     "course": "drink",
+     "note": "Spirit-free cocktail: mint, basil, grapefruit, lime, soda"
+    },
+    {
+     "item": "Phony Negroni",
+     "price": "$9",
+     "course": "drink",
+     "note": "Spirit-free (St. Agrestis Distillery); also $8 during Aperitivo Hour 5:30-7:00"
     }
    ],
-   "avoid_note": "First verify the restaurant is open (reported permanently closed 2025). Menu is otherwise shellfish/pork/poultry heavy: avoid the octopus & orzo, malfatti with gulf shrimp, roasted pork belly, jerk chicken, curried rabbit, half jerk chicken, ribeye, and the pork/bacon-laced brunch (carbonara, crispy rice with bacon, hot sausage sandwich, corndogs, cajun breakfast).",
+   "avoid_note": "Skip the Blackened Octopus, Seafood Fritto Misto, Spicy Pork Meatballs, Cavatelli with shrimp, and Wagyu Beef Lasagna - all house favorites but off-limits",
    "kosher_style_fit": "Not kosher, but very friendly to a finned-fish + vegetarian diner: snapper and two tuna dishes plus a deep bench of vegetable starters, sides and desserts. Watch for pork in the antipasto/baked beans and shrimp/fish sauce in a few dishes.",
    "tags": [
     "fish",
@@ -4991,7 +6757,9 @@ window.DATA = {
    "reserve_priority": false,
    "website": "http://bywateramericanbistro.com",
    "reserveUrl": null,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://babs-nola.com/wp-content/uploads/2025/05/BABs-New-Menu-5.3.25-WEB.pdf",
+   "menu_confidence": "verified"
   },
   {
    "id": "paladar-511",
@@ -5005,115 +6773,106 @@ window.DATA = {
    "rating_note": "Google ~4.5 (1,000+ reviews); a Marigny favorite for wood-fired pizza and handmade pasta. Uses Resy, so OpenTable shows no reviews.",
    "lat": 29.9646,
    "lng": -90.0554,
-   "dinner_estimate": "$45–65/person",
+   "dinner_estimate": "$45-60 per person for a small plate plus a pizza or large plate, before drinks",
    "menu": [
     {
      "item": "Hamachi Crudo",
      "price": "$18",
-     "note": "yellowtail; tomatillo aguachile, summer peppers, avocado, crispy yucca"
+     "course": "starter",
+     "note": "Tomatillo aguachile, summer peppers, avocado, crispy yucca - raw eligible fish"
     },
     {
      "item": "Ensalata Tre Colori",
      "price": "$14",
-     "note": "lemon, anchovy, parmesan, olio verde; ask without anchovy for strictly vegetarian"
+     "course": "starter",
+     "note": "Lemon, anchovy, parmesan, olio verde (add white anchovy +4)"
     },
     {
      "item": "Local Lettuces",
      "price": "$15",
-     "note": "fennel, cucumber, olives, feta, garlic-dill dressing, sunflower picada"
+     "course": "starter",
+     "note": "Fennel, cucumber, olives, feta, garlic-dill dressing, sunflower seed picada - marked vegetarian"
     },
     {
      "item": "Charred Okra",
      "price": "$15",
-     "note": "blistered cherry tomatoes, calabrian chili, breadcrumbs, mint yogurt"
+     "course": "starter",
+     "note": "Blistered cherry tomatoes, calabrian chili, breadcrumbs, mint yogurt"
     },
     {
      "item": "Compressed Melons",
      "price": "$16",
-     "note": "burrata, cherry tomatoes, red onion vinaigrette, pistachios, mint"
+     "course": "starter",
+     "note": "Burrata, cherry tomatoes, red onion vinaigrette, pistachios, mint - marked vegetarian"
     },
     {
-     "item": "Cacio e Pepe",
+     "item": "Cacio E Pepe",
      "price": "$17",
-     "note": "radiatore, pecorino, black pepper"
+     "course": "starter",
+     "note": "Radiatore, pecorino, black pepper - listed under Small Plates, marked vegetarian"
     },
     {
      "item": "Cornmeal Zucchini Bread",
      "price": "$8",
-     "note": "ricotta, salted butter"
+     "course": "starter",
+     "note": "Ricotta, salted butter - marked vegetarian"
     },
     {
-     "item": "Margherita Pizza",
+     "item": "Margherita",
      "price": "$16",
-     "note": "tomato sauce, mozzarella, basil"
+     "course": "main",
+     "note": "Pizza: tomato sauce, mozzarella, basil - order plain, skip the pepperoni/sausage add-ons"
     },
     {
-     "item": "Spicy San Marzano Pizza",
+     "item": "Spicy San Marzano Tomato Sauce",
      "price": "$18",
-     "note": "tomato sauce, mascarpone, wild arugula"
+     "course": "main",
+     "note": "Pizza: mascarpone, wild arugula"
     },
     {
-     "item": "Roasted Mushroom Pizza",
+     "item": "Roasted Mushroom",
      "price": "$21",
-     "note": "buttered leek, fontina, rosemary, lemon"
+     "course": "main",
+     "note": "Pizza: buttered leek, fontina, rosemary, lemon"
     },
     {
-     "item": "Quattro Formaggio Pizza",
+     "item": "Quattro Formaggio",
      "price": "$19",
-     "note": "parmesan, mozzarella, gorgonzola, mascarpone, chive oil"
-    },
-    {
-     "item": "Farm Egg Pizza",
-     "price": "$20",
-     "note": "ask without the applewood bacon; braised collard greens, gruyere, egg"
+     "course": "main",
+     "note": "Pizza: parmesan, mozzarella, gorgonzola, mascarpone, chive oil - marked vegetarian"
     },
     {
      "item": "Spinach Cannelloni",
      "price": "$26",
-     "note": "ricotta, walnut pesto, red pepper emulsion"
+     "course": "main",
+     "note": "Ricotta, walnut pesto, red pepper emulsion - marked vegetarian"
     },
     {
      "item": "Seared Snapper",
      "price": "$33",
-     "note": "iacopi beans, blistered cherry tomatoes, zucchini, basil hollandaise"
+     "course": "main",
+     "note": "Iacopi beans, blistered cherry tomatoes, zucchini, basil hollandaise, black garlic breadcrumbs"
     },
     {
      "item": "Mississippi Blueberry Pie",
      "price": "$13",
-     "note": "honey-lavender ice cream"
+     "course": "dessert",
+     "note": "Honey-lavender ice cream"
     },
     {
      "item": "Cocoa Loaf",
      "price": "$13",
-     "note": "chocolate granola, malt & blackberry swirl ice cream"
+     "course": "dessert",
+     "note": "Chocolate granola, malt & blackberry swirl ice cream"
     },
     {
      "item": "Buttermilk Panna Cotta",
      "price": "$13",
-     "note": "plum curd, graham cookie"
-    },
-    {
-     "item": "Aftersun (non-alcoholic)",
-     "price": "$11",
-     "note": "N/A aperitif, pineapple, lime"
-    },
-    {
-     "item": "Picket Fences (non-alcoholic)",
-     "price": "$11",
-     "note": "passionfruit-cinnamon sparkling limeade"
-    },
-    {
-     "item": "Chaos Garden (non-alcoholic)",
-     "price": "$11",
-     "note": "hibiscus, N/A aperitif, falernum, lime"
-    },
-    {
-     "item": "Free Wave Hazy IPA (N/A beer)",
-     "price": "$4",
-     "note": "Athletic Brewing non-alcoholic"
+     "course": "dessert",
+     "note": "Plum curd, graham cookie"
     }
    ],
-   "avoid_note": "Skip the wagyu tartare and flat-iron steak, smoked duck toast, chicken, pork saltimbocca, lamb-merguez pizza, pork-sausage pappardelle, short-rib arancini, and the gulf-shrimp squid-ink spaghetti.",
+   "avoid_note": "Skip the Squid Ink Spaghetti with gulf shrimp, Arancini with short rib ragu, Wagyu Beef Tartare, Smoked Duck Toast, the Farm Egg pizza (bacon), Pappardelle with pork sausage ragu, and Pork Saltimbocca",
    "kosher_style_fit": "Good fit—clear finned fish (hamachi, snapper) plus many cheese and vegetable plates and pizzas. Shellfish and pork are cooked in the same kitchen, so expect cross-contact; not certified kosher.",
    "tags": [
     "fish",
@@ -5128,7 +6887,9 @@ window.DATA = {
    "website": "https://www.paladar511.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/paladar-511",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.paladar511.com/dinner-menu",
+   "menu_confidence": "verified"
   },
   {
    "id": "namese",
@@ -5137,72 +6898,118 @@ window.DATA = {
    "area_label": "Mid-City (Tulane Ave)",
    "cuisine": "Vietnamese",
    "vibe": "Bright, casual Mid-City Vietnamese spot mixing a pho-and-rice-plate menu with a cafe of Vietnamese coffee and bubble tea. Quick, inexpensive, and easygoing.",
-   "price": "$",
+   "price": "$$",
    "rating": 4.3,
    "rating_note": "Google ~4.3 / Yelp ~4.0; well-liked neighborhood Vietnamese known for pho, tofu plates, and bubble tea.",
    "lat": 29.9603,
    "lng": -90.0972,
-   "dinner_estimate": "$15–25/person",
+   "dinner_estimate": "$20-30 per person for an appetizer plus an entree with a drink",
    "menu": [
     {
      "item": "Five Spice Fried Tofu",
-     "price": "$6.50",
-     "note": "vegetarian appetizer"
+     "price": "$8",
+     "course": "starter",
+     "note": "Crispy fried tofu cubes"
     },
     {
-     "item": "Spring Rolls (2)",
-     "price": "$6",
-     "note": "order the tofu/vegetable version, not shrimp or pork"
+     "item": "Crepe Lettuce Wrap/Banh Xeo",
+     "price": "$11",
+     "course": "starter",
+     "note": "Ask for the vegan crepe - the standard version has shrimp and pork"
     },
     {
-     "item": "Tofu & Mushrooms Vermicelli (Bun)",
-     "price": "$8.50",
-     "note": "confirm no fish-sauce dressing if strictly vegetarian"
-    },
-    {
-     "item": "Pho An Chay (Vegan Pho)",
-     "price": "$9",
-     "note": "vegetable broth—the only meat-free pho"
-    },
-    {
-     "item": "Veggie Sotca (Rice Plate)",
-     "price": "$9.50",
-     "note": "vegetarian"
-    },
-    {
-     "item": "Coconut Lemongrass Curry",
+     "item": "SPRING-ROLLS (2 ROLLS) - GRILLED SALMON",
      "price": "$10",
-     "note": "order the tofu version, not shrimp/chicken"
+     "course": "starter",
+     "note": "Rice paper, vermicelli, bean sprouts, herbs, peanut sauce"
     },
     {
-     "item": "Asian Slaw",
-     "price": "$9",
-     "note": "confirm no fish sauce for strict vegetarian"
+     "item": "SPRING-ROLLS (2 ROLLS) - TOFU",
+     "price": "$7",
+     "course": "starter",
+     "note": "Served with peanut sauce; ask to skip the fish sauce if you want it fully vegetarian"
+    },
+    {
+     "item": "SPRING-ROLLS (2 ROLLS) - VEGAN",
+     "price": "$6",
+     "course": "starter"
     },
     {
      "item": "Papaya Salad",
-     "price": "$9",
-     "note": "ask without dried shrimp; contains fish sauce (fine for the fish-eater, not strict veg)"
+     "price": "$10",
+     "course": "starter",
+     "note": "Ask without the pork belly and grilled shrimp - julienned papaya with house dressing"
+    },
+    {
+     "item": "Asian Slaw",
+     "price": "$10",
+     "course": "starter",
+     "note": "Ask without the pork belly and grilled shrimp - fresh herbs with house dressing"
+    },
+    {
+     "item": "Vegan Phở",
+     "price": "$10",
+     "course": "main",
+     "note": "Phở Ăn Chay - vegan broth with bok choy, cauliflower, broccoli, carrots, onions, mushroom (the other phos use beef or chicken bone broth)"
+    },
+    {
+     "item": "ROASTED HERB SALMON",
+     "price": "$16",
+     "course": "main",
+     "note": "Salmon rang thảo mộc - roasted with fresh Asian herbs, served with jasmine rice and pickled veggies; skip the house special soup"
+    },
+    {
+     "item": "VEGGIE SOTCA",
+     "price": "$11",
+     "course": "main",
+     "note": "Cà tím sotca - sauteed veggies in Vietnamese-style tomato sauce with fresh herbs"
+    },
+    {
+     "item": "TOFU & MUSHROOMS",
+     "price": "$11",
+     "course": "main",
+     "note": "Vermicelli noodle bowl with lettuce, herbs, bean sprouts, crushed peanuts"
+    },
+    {
+     "item": "Jasmine Rice",
+     "price": "$2",
+     "course": "side"
+    },
+    {
+     "item": "Fried Egg",
+     "price": "$2",
+     "course": "side"
+    },
+    {
+     "item": "‘Namese’ Strawberry Limeade",
+     "price": "$4",
+     "course": "drink",
+     "note": "Freshly squeezed limeade blended with house strawberry puree"
+    },
+    {
+     "item": "Limade",
+     "price": "$3.5",
+     "course": "drink",
+     "note": "Ðá Chanh"
     },
     {
      "item": "Vietnamese Iced Coffee",
-     "price": "$4.50"
+     "price": "$4.5/6",
+     "course": "drink",
+     "note": "Chicory coffee drip filtered over condensed milk and ice"
     },
     {
-     "item": "'Namese' Strawberry Limeade",
-     "price": "$4.50",
-     "note": "house signature"
+     "item": "Iced Jasmine Tea",
+     "price": "$3",
+     "course": "drink"
     },
     {
-     "item": "Bubble Tea",
-     "price": "$5.50"
-    },
-    {
-     "item": "Jasmine Tea (hot or iced)",
-     "price": "$3"
+     "item": "Hot Jasmine Tea",
+     "price": "$3/4.5",
+     "course": "drink"
     }
    ],
-   "avoid_note": "Avoid all beef/chicken-broth pho, the seafood pho and shaken pho, mussels, calamari, crab rangoon, garlic/grilled shrimp, chicken wings, pork dumplings and eggrolls, banh xeo, and every beef/pork/chicken rice or vermicelli bowl.",
+   "avoid_note": "Skip the signature Short Rib Pho, Seafood Pho, Fried Shrimp Banh Mi, Lamb Lollipops, Crab Rangoon, Mussels, and the Coconut Lemongrass Curry (shrimp-based broth even with tofu)",
    "kosher_style_fit": "Workable but tofu/vegetable-focused with no finned-fish entrée. Broths and woks are shared with pork and shellfish, so confirm the vegan pho and tofu prep; not certified kosher.",
    "tags": [
     "veg"
@@ -5214,7 +7021,9 @@ window.DATA = {
    "website": null,
    "reserveUrl": null,
    "reserve_priority": false,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://www.namese.net/menu/",
+   "menu_confidence": "verified"
   },
   {
    "id": "lolas",
@@ -5228,98 +7037,178 @@ window.DATA = {
    "rating_note": "OpenTable 4.6 (840+ reviews); Google ~4.4. Long-running Esplanade Spanish BYOB praised for its paella.",
    "lat": 29.9776,
    "lng": -90.0808,
-   "dinner_estimate": "$30–45/person",
+   "dinner_estimate": "$45-60 per person for a tapa or soup plus a fish or vegetarian main, before drinks, tax and tip",
    "menu": [
     {
-     "item": "Ceviche (mahi-mahi)",
-     "price": "$15",
-     "note": "ask for mahi-mahi only, no shrimp"
+     "item": "Ceviche",
+     "price": "$21.85",
+     "course": "starter",
+     "note": "Normally mahimahi and shrimp cured in citrus juice - the menu explicitly offers it mahi-mahi only, so order it that way"
     },
     {
      "item": "Garlic Mushrooms",
-     "price": "$11",
-     "note": "crimini sautéed in garlic, olive oil, basil"
+     "price": "$12.65",
+     "course": "starter",
+     "note": "Crimini mushrooms sauteed in garlic, olive oil and fresh basil - vegetarian"
     },
     {
      "item": "Veggie Tapa of the Day",
-     "price": "$10",
-     "note": "vegetarian; confirm the day's preparation"
+     "price": "MP",
+     "course": "starter",
+     "note": "Rotating vegetarian tapa; market price - ask what it is that night"
     },
     {
      "item": "Pistolette",
-     "price": "$0.50",
-     "note": "bread served with garlic alioli (per piece)"
+     "price": "$0.65",
+     "course": "starter",
+     "note": "House bread served with Lola's famous garlic alioli spread; priced per pistolette"
     },
     {
      "item": "Gazpacho",
-     "price": "$9",
-     "note": "chilled Andalusian vegetable soup"
+     "price": "$10.35",
+     "course": "starter",
+     "note": "Traditional Andalusian blended vegetable soup, served chilled - vegetarian"
     },
     {
      "item": "Ajoblanco",
-     "price": "$9",
-     "note": "chilled almond soup"
+     "price": "$11.50",
+     "course": "starter",
+     "note": "Traditional Andalusian chilled almond soup - vegetarian"
     },
     {
      "item": "Lentil Soup",
-     "price": "$8",
-     "note": "vegetarian, garlic & ginger"
+     "price": "$9.20",
+     "course": "starter",
+     "note": "Vegetarian soup seasoned with garlic and ginger"
     },
     {
      "item": "House Green Salad",
-     "price": "$10",
-     "note": "vegetarian as-is; skip the chicken add-on"
+     "price": "$13.80",
+     "course": "starter",
+     "note": "Red and green leaf lettuce, broccoli, peppers, cucumber, zucchini, green olives and feta with house vinaigrette - skip the add-chicken option; avocado add-on is fine"
     },
     {
      "item": "Caesar Salad",
-     "price": "$9",
-     "note": "dressing contains anchovy; skip the chicken/shrimp add-on"
+     "price": "$11.50",
+     "course": "starter",
+     "note": "Romaine with croutons and creamy Caesar dressing - order plain, without the chicken or shrimp add-on"
     },
     {
-     "item": "Tomato Basil Salad",
-     "price": "$10",
-     "note": "tomato, fresh mozzarella, basil, balsamic"
+     "item": "Tomato Basil",
+     "price": "$11.50",
+     "course": "starter",
+     "note": "Tomato slices with fresh mozzarella, basil, olive oil and balsamic - vegetarian"
+    },
+    {
+     "item": "Seasonal Salad",
+     "price": "MP",
+     "course": "starter",
+     "note": "Market price seasonal salad - confirm the night's garnish is meat-free"
     },
     {
      "item": "Ruby Red Rainbow Trout",
-     "price": "$25",
-     "note": "seared, lemon-pepper sauce"
+     "price": "$29.90",
+     "course": "main",
+     "note": "Seared trout with lemon pepper sauce, served with basmati rice and fresh vegetables"
     },
     {
      "item": "Yellow Fin Tuna",
-     "price": "$25",
-     "note": "seared, spicy mojo sauce"
+     "price": "$32.20",
+     "course": "main",
+     "note": "Seared tuna with spicy mojo sauce, served with mashed potatoes or rice and fresh vegetables"
     },
     {
      "item": "Atlantic Salmon",
-     "price": "$23",
-     "note": "seared, lemon-pepper sauce"
+     "price": "$27.60",
+     "course": "main",
+     "note": "Seared salmon with lemon pepper sauce, served with basmati rice and fresh vegetables"
     },
     {
      "item": "Pisto",
-     "price": "$20",
-     "note": "portabella stuffed with Castilian vegetables, black beans, rice, asparagus"
+     "price": "$23.00",
+     "course": "main",
+     "note": "Portabella mushroom stuffed with Castilian vegetables, served with black beans, rice and asparagus - vegetarian"
     },
     {
-     "item": "Spinach Linguini",
-     "price": "$22",
-     "note": "artichokes, olives, sun-dried tomatoes, pesto; skip the chicken/shrimp add-on"
+     "item": "Spinach linguini",
+     "price": "$25.30",
+     "course": "main",
+     "note": "Artichokes, kalamata olives, sun-dried tomatoes and house pesto - order plain, without the chicken or shrimp add-on"
     },
     {
-     "item": "Vegetarian Paella",
-     "price": "$18",
-     "note": "made to order, 30–45 min; small $18 / med $28 / lg $38 / xl $48"
+     "item": "Vegetarian",
+     "price": "$23.00",
+     "course": "main",
+     "note": "Vegetarian paella or fideua - seasonal vegetables with garlic, saffron and herbs; sizes S/M/L/XL price up per person and it takes up to 45 minutes to prepare"
+    },
+    {
+     "item": "Pan Con Tomate",
+     "price": "$10.00",
+     "course": "starter",
+     "note": "Brunch menu: tomato basil salsa, toasted house-made bread, Manchego cheese - vegetarian"
+    },
+    {
+     "item": "Brunchy salada",
+     "price": "$18.00",
+     "course": "starter",
+     "note": "Brunch menu: mixed aromatic greens, peaches, goat cheese, pecans, dried figs, citrus vinaigrette"
+    },
+    {
+     "item": "Andalusia Omelette",
+     "price": "$18.00",
+     "course": "main",
+     "note": "Brunch menu: artichokes, kalamata olives, goat cheese, marinated tomato, Mornay sauce, salad - vegetarian"
+    },
+    {
+     "item": "Persian Love Cake Waffle",
+     "price": "$18.00",
+     "course": "main",
+     "note": "Brunch menu: rose water cardamom waffle, pistachio whip, rose water saffron frosting - vegetarian"
     },
     {
      "item": "Flan",
-     "price": "$7"
+     "price": "$9.20",
+     "course": "dessert",
+     "note": "Traditional Spanish caramel custard"
+    },
+    {
+     "item": "Almond Nougat",
+     "price": "$11.50",
+     "course": "dessert",
+     "note": "Homemade almond nougat ice cream"
     },
     {
      "item": "Chuflan",
-     "price": "$9"
+     "price": "$10.35",
+     "course": "dessert",
+     "note": "Flourless chocolate delight"
+    },
+    {
+     "item": "Espresso",
+     "price": "$4.00",
+     "course": "drink",
+     "note": "From the beverages list on the drink menu"
+    },
+    {
+     "item": "Capuccino",
+     "price": "$5.00",
+     "course": "drink",
+     "note": "From the beverages list on the drink menu"
+    },
+    {
+     "item": "Iced Tea",
+     "price": "$3.00",
+     "course": "drink",
+     "note": "From the beverages list on the drink menu"
+    },
+    {
+     "item": "Juice",
+     "price": "$3.00",
+     "course": "drink",
+     "note": "From the beverages list on the drink menu"
     }
    ],
-   "avoid_note": "Avoid the shrimp/crab/mussel/calamari tapas and mariscos soup, the meat and seafood paellas, ham-and-sausage fabada, the chicken-broth garlic soup, and all lamb, pork, duck, and chicken mains.",
+   "avoid_note": "Skip the house signatures built on shellfish and pork: Garlic Shrimp, Crabmeat Tropical, Mussels in Vinaigrette, Calamari Steak, Mariscos soup, Fabada (ham and sausage), Garlic Soup (chicken broth), Shrimp Pasta, and the Seafood, Meat and Combination paellas. On brunch, skip the Oyster Pan Con Tomate, Lola's Shrimp & Grits, Fabada Jerk Chicken Waffle, Basic Breakfast, Bocadillo, Lamb Burger, Short Rib & Grits and Steak & Eggs.",
    "kosher_style_fit": "Solid for finned fish (trout, tuna, salmon) and vegetarian tapas, soups, salads, and the vegetarian paella—but shellfish is heavily used (paella pans, garlic shrimp), so request a clean pan. Not certified kosher.",
    "tags": [
     "fish",
@@ -5334,7 +7223,9 @@ window.DATA = {
    "website": "https://lolasneworleans.com",
    "reserveUrl": "https://tables.toasttab.com/restaurants/d688ca43-a6b8-4715-a7b3-42439f49d602/findTime",
    "reserve_priority": true,
-   "photoUrl": null
+   "photoUrl": null,
+   "menu_source": "https://lolasneworleans.com/new-orleans-lola-s-food-menu",
+   "menu_confidence": "approximate"
   }
  ],
  "schedule": [
@@ -6520,7 +8411,7 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 5,
+ "data_version": 6,
  "logistics": {
   "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
   "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
