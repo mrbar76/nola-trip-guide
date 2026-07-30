@@ -1,4 +1,4 @@
-/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published preview images, width-capped for mobile. */
+/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published previews; photoUrl=120px card thumb, coverUrl=500px detail hero. Day plan built around August heat (110-115F index), afternoon storms, and one base per day. */
 window.DATA = {
  "districts": [
   {
@@ -166,7 +166,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Jackson_Square,_New_Orleans",
    "hours_note": "Gates open daily ~8am, closing 6-7pm (seasonal); pedestrian mall always accessible",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Jackson_Square%2C_French_Quarter.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jackson_Square%2C_French_Quarter.jpg/250px-Jackson_Square%2C_French_Quarter.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Jackson_Square%2C_French_Quarter.jpg/500px-Jackson_Square%2C_French_Quarter.jpg"
   },
   {
    "id": "st-louis-cathedral",
@@ -180,7 +181,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/St._Louis_Cathedral,_New_Orleans",
    "hours_note": "Open to visitors daily ~9:30am-4pm (last entry 3:45pm); closed during Mass/weddings",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cathedral_new_orleans.jpg/960px-Cathedral_new_orleans.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cathedral_new_orleans.jpg/120px-Cathedral_new_orleans.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Cathedral_new_orleans.jpg/500px-Cathedral_new_orleans.jpg"
   },
   {
    "id": "french-market",
@@ -194,7 +196,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/French_Market",
    "hours_note": "Shops & farmers/flea market daily ~10am-6pm (flea vendors wind down by 5pm)",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/French_Market%2C_New_Orleans.JPG/960px-French_Market%2C_New_Orleans.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/French_Market%2C_New_Orleans.JPG/120px-French_Market%2C_New_Orleans.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/French_Market%2C_New_Orleans.JPG/500px-French_Market%2C_New_Orleans.JPG"
   },
   {
    "id": "royal-street",
@@ -208,7 +211,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Royal_Street,_New_Orleans",
    "hours_note": "Street always open; pedestrian mall 11am-4pm weekdays, 11am-7pm weekends; shops ~10am-5pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG/960px-Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG/120px-Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG/500px-Royal_Street%2C_New_Orleans_during_French_Quarter_Festival.JPG"
   },
   {
    "id": "old-ursuline-convent",
@@ -222,7 +226,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
    "hours_note": "Tue–Sat 10am–3pm; closed Sun–Mon. Adults $10",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/960px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/120px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/500px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "frenchmen-street",
@@ -236,7 +241,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Frenchmen_Street",
    "hours_note": "Public street, always open; clubs mostly nightly from evening",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Frenchman_Street_%2855148394755%29.jpg/960px-Frenchman_Street_%2855148394755%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Frenchman_Street_%2855148394755%29.jpg/120px-Frenchman_Street_%2855148394755%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Frenchman_Street_%2855148394755%29.jpg/500px-Frenchman_Street_%2855148394755%29.jpg"
   },
   {
    "id": "jazz-museum-old-mint",
@@ -250,7 +256,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Mint",
    "hours_note": "Tue–Sun 10am–4:30pm; closed Mon. Adults ~$11",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/1907_NOMintpostcard.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/1907_NOMintpostcard.jpg/120px-1907_NOMintpostcard.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/1907_NOMintpostcard.jpg/500px-1907_NOMintpostcard.jpg"
   },
   {
    "id": "historic-new-orleans-collection",
@@ -264,7 +271,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/The_Historic_New_Orleans_Collection",
    "hours_note": "Tue–Sat 9:30am–4:30pm, Sun 10:30am–4:30pm; closed Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f3/MerieultHouse.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/MerieultHouse.jpg/120px-MerieultHouse.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/MerieultHouse.jpg/500px-MerieultHouse.jpg"
   },
   {
    "id": "sazerac-house",
@@ -278,7 +286,8 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily 11–6, 21+ only",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/CardTheGrunewaldNewOr.jpg/960px-CardTheGrunewaldNewOr.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/CardTheGrunewaldNewOr.jpg/120px-CardTheGrunewaldNewOr.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/CardTheGrunewaldNewOr.jpg/500px-CardTheGrunewaldNewOr.jpg"
   },
   {
    "id": "pharmacy-museum",
@@ -292,7 +301,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Pharmacy_Museum",
    "hours_note": "Tue-Sat 11-4",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/New_Orleans_Pharmacy_Museum.jpg/960px-New_Orleans_Pharmacy_Museum.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/New_Orleans_Pharmacy_Museum.jpg/120px-New_Orleans_Pharmacy_Museum.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/New_Orleans_Pharmacy_Museum.jpg/500px-New_Orleans_Pharmacy_Museum.jpg"
   },
   {
    "id": "preservation-hall",
@@ -306,7 +316,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Preservation_Hall",
    "hours_note": "Shows nightly, sets around 5-10pm; doors ~30 min before each set",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/2/20/PreservationHall_2008.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/PreservationHall_2008.jpg/120px-PreservationHall_2008.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/PreservationHall_2008.jpg/500px-PreservationHall_2008.jpg"
   },
   {
    "id": "steamboat-natchez",
@@ -334,7 +345,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Louisiana_Music_Factory",
    "hours_note": "Daily 11-6",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg/960px-Louisiana_Music_Factory_%2855151878003%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg/120px-Louisiana_Music_Factory_%2855151878003%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Louisiana_Music_Factory_%2855151878003%29.jpg/500px-Louisiana_Music_Factory_%2855151878003%29.jpg"
   },
   {
    "id": "national-wwii-museum",
@@ -348,7 +360,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/National_WWII_Museum",
    "hours_note": "Open daily 9am-5pm; closed Thanksgiving, Christmas Eve/Day, and Mardi Gras Day",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/960px-B-17_at_the_National_World_War_II_Museum.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/120px-B-17_at_the_National_World_War_II_Museum.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/B-17_at_the_National_World_War_II_Museum.JPG/500px-B-17_at_the_National_World_War_II_Museum.JPG"
   },
   {
    "id": "ogden-museum",
@@ -362,7 +375,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Ogden_Museum_of_Southern_Art",
    "hours_note": "Daily 10–5, Thu until 8",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg/960px-Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg/120px-Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg/500px-Ogden_Museum_of_Southern_Art_%2855151866298%29.jpg"
   },
   {
    "id": "contemporary-arts-center",
@@ -376,7 +390,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Contemporary_Arts_Center_(New_Orleans)",
    "hours_note": "Wed–Mon 11–5, closed Tue",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Contemporary_Arts_Center_New_Orleans.jpg/960px-Contemporary_Arts_Center_New_Orleans.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Contemporary_Arts_Center_New_Orleans.jpg/120px-Contemporary_Arts_Center_New_Orleans.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Contemporary_Arts_Center_New_Orleans.jpg/500px-Contemporary_Arts_Center_New_Orleans.jpg"
   },
   {
    "id": "msje",
@@ -390,7 +405,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Museum_of_the_Southern_Jewish_Experience",
    "hours_note": "Open 10am-5pm, closed Tuesdays",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Museum_of_the_Southern_Jewish_Experience.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Museum_of_the_Southern_Jewish_Experience.jpg/120px-Museum_of_the_Southern_Jewish_Experience.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Museum_of_the_Southern_Jewish_Experience.jpg/500px-Museum_of_the_Southern_Jewish_Experience.jpg"
   },
   {
    "id": "julia-street-galleries",
@@ -404,7 +420,8 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Most galleries Tue-Sat ~11am-5pm; hours vary by gallery, many closed Sun-Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg/960px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg/120px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg/500px-New_Orleans_from_the_Air_September_2019_-_Central_Business_District_Skyline.jpg"
   },
   {
    "id": "lafayette-cemetery-1",
@@ -418,7 +435,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Lafayette_Cemetery",
    "hours_note": "Closed to the public for restoration as of 2026; call 504-658-3781 to confirm access",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg/960px-Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg/120px-Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg/500px-Memorial_Marker_for_reinterred_remains_from_Lafayette_Cemetery.jpg"
   },
   {
    "id": "st-charles-streetcar",
@@ -432,7 +450,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/St._Charles_Streetcar_Line",
    "hours_note": "Runs 24 hours daily; $1.25 exact change per ride, or $3 all-day Jazzy Pass",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg/960px-Streetcar_in_New_Orleans%2C_USA1.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg/120px-Streetcar_in_New_Orleans%2C_USA1.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Streetcar_in_New_Orleans%2C_USA1.jpg/500px-Streetcar_in_New_Orleans%2C_USA1.jpg"
   },
   {
    "id": "magazine-street",
@@ -460,7 +479,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Audubon_Park_(New_Orleans)",
    "hours_note": "Daily 5am-10pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/960px-AudubonPark1.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/120px-AudubonPark1.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/500px-AudubonPark1.JPG"
   },
   {
    "id": "garden-district-mansions",
@@ -474,7 +494,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Garden_District,_New_Orleans",
    "hours_note": "Streets accessible daily; daylight best",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/960px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/120px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/500px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "tipitinas",
@@ -488,7 +509,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Tipitina's",
    "hours_note": "Doors typically 8pm on show nights",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tip%27s_Building_2019.jpg/1280px-Tip%27s_Building_2019.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tip%27s_Building_2019.jpg/120px-Tip%27s_Building_2019.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Tip%27s_Building_2019.jpg/500px-Tip%27s_Building_2019.jpg"
   },
   {
    "id": "studio-be",
@@ -530,7 +552,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Museum_of_Art",
    "hours_note": "Tue-Sun 10am-5pm (Wed to 7pm); closed Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/120px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "besthoff-sculpture-garden",
@@ -558,7 +581,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/City_Park_(New_Orleans)",
    "hours_note": "Daily, 30 min before sunrise to 30 min after sunset (park grounds free; individual attractions charge)",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/960px-City_Park_Bayou_Bridge.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/120px-City_Park_Bayou_Bridge.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/500px-City_Park_Bayou_Bridge.JPG"
   },
   {
    "id": "bayou-st-john",
@@ -572,7 +596,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Bayou_St._John",
    "hours_note": "Open public waterway and banks, accessible year-round",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg/960px-Bayou_St_John_by_Spanish_Fort_2009.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg/120px-Bayou_St_John_by_Spanish_Fort_2009.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Bayou_St_John_by_Spanish_Fort_2009.jpg/500px-Bayou_St_John_by_Spanish_Fort_2009.jpg"
   },
   {
    "id": "faulkner-house-books",
@@ -614,7 +639,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Old_Ursuline_Convent",
    "hours_note": "Tue–Sat 10–3, closed Sun–Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/960px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/120px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG/500px-UrsulinesFQExtChartresSideFascadeMainDiagonal.JPG"
   },
   {
    "id": "arthur-roger-gallery",
@@ -642,7 +668,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Maple_Leaf_Bar",
    "hours_note": "Doors 7pm, shows 8pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/OakStreetParty16June2007B.jpg/960px-OakStreetParty16June2007B.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/OakStreetParty16June2007B.jpg/120px-OakStreetParty16June2007B.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/OakStreetParty16June2007B.jpg/500px-OakStreetParty16June2007B.jpg"
   },
   {
    "id": "garden-district-book-shop",
@@ -656,7 +683,8 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Mon–Sat 10–6, Sun 12–4",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/960px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/120px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG/500px-20080622_St._Charles_St._Trolley_behind_tree_with_Mardi_Gras_beads.JPG"
   },
   {
    "id": "the-fly-riverview-park",
@@ -670,7 +698,8 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily 5am-10pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/960px-AudubonPark1.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/120px-AudubonPark1.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AudubonPark1.JPG/500px-AudubonPark1.JPG"
   },
   {
    "id": "milton-h-latter-memorial-library",
@@ -726,7 +755,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/New_Orleans_Botanical_Garden",
    "hours_note": "Tue-Sun 10am-4:30pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/New_Orleans_Botanical_Garden_2011.jpg/960px-New_Orleans_Botanical_Garden_2011.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/New_Orleans_Botanical_Garden_2011.jpg/120px-New_Orleans_Botanical_Garden_2011.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/New_Orleans_Botanical_Garden_2011.jpg/500px-New_Orleans_Botanical_Garden_2011.jpg"
   },
   {
    "id": "sydney-and-walda-besthoff-sculpture-garden",
@@ -754,7 +784,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Pitot_House",
    "hours_note": "Wed–Fri 10–3, last tour 2pm; $5",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PitotHouseBayouStJohn.jpg/960px-PitotHouseBayouStJohn.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PitotHouseBayouStJohn.jpg/120px-PitotHouseBayouStJohn.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/PitotHouseBayouStJohn.jpg/500px-PitotHouseBayouStJohn.jpg"
   },
   {
    "id": "chickie-wah-wah",
@@ -796,7 +827,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Beauregard-Keyes_House",
    "hours_note": "Tours Mon-Sat on the hour, 10am-3pm; adults $10",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg/960px-BK_Historic_House_and_Gardens_%2855151949439%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg/120px-BK_Historic_House_and_Gardens_%2855151949439%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/BK_Historic_House_and_Gardens_%2855151949439%29.jpg/500px-BK_Historic_House_and_Gardens_%2855151949439%29.jpg"
   },
   {
    "id": "blaine-kerns-mardi-gras-world",
@@ -810,7 +842,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Mardi_Gras_World",
    "hours_note": "Daily 9am-5:30pm; last tour 4:30pm",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg/960px-Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg/120px-Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg/500px-Leviathan_float%2C_Orpheus%2C_Mardi_Gras.jpg"
   },
   {
    "id": "le-bon-temps-roule",
@@ -838,7 +871,8 @@ window.DATA = {
    "free": false,
    "wiki": "https://en.wikipedia.org/wiki/Prytania_Theatre",
    "hours_note": "Open daily per showtimes; box office opens ~30 min before first film",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg/960px-Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg/120px-Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg/500px-Prytania_Theater%2C_Uptown_New_Orleans%2C_22_Feb_2022.jpg"
   },
   {
    "id": "angelo-brocatos",
@@ -852,7 +886,8 @@ window.DATA = {
    "free": true,
    "wiki": "https://en.wikipedia.org/wiki/Angelo_Brocato's",
    "hours_note": "Tue–Sun 10am–10pm (Sun to 9pm), closed Mon",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/MidCityBrocatosOpen.jpg/960px-MidCityBrocatosOpen.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/MidCityBrocatosOpen.jpg/120px-MidCityBrocatosOpen.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/MidCityBrocatosOpen.jpg/500px-MidCityBrocatosOpen.jpg"
   },
   {
    "id": "couturie-forest",
@@ -866,7 +901,8 @@ window.DATA = {
    "free": true,
    "wiki": null,
    "hours_note": "Daily sunrise–sunset",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/960px-City_Park_Bayou_Bridge.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/120px-City_Park_Bayou_Bridge.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/City_Park_Bayou_Bridge.JPG/500px-City_Park_Bayou_Bridge.JPG"
   }
  ],
  "restaurants": [
@@ -950,7 +986,8 @@ window.DATA = {
    "reserveUrl": null,
    "reserve_priority": false,
    "website": "https://www.cafedumonde.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/960px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/120px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Caf%C3%A9_du_Monde_%2855151878663%29.jpg/500px-Caf%C3%A9_du_Monde_%2855151878663%29.jpg"
   },
   {
    "id": "galatoires",
@@ -1095,7 +1132,8 @@ window.DATA = {
    "reserveUrl": "https://www.galatoires.com/reservations",
    "reserve_priority": true,
    "website": "https://www.galatoires.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/960px-2009-0228-NOLA-004-Galatoires.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/120px-2009-0228-NOLA-004-Galatoires.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/2009-0228-NOLA-004-Galatoires.jpg/500px-2009-0228-NOLA-004-Galatoires.jpg"
   },
   {
    "id": "gw-fins",
@@ -1260,7 +1298,8 @@ window.DATA = {
    "reserveUrl": null,
    "reserve_priority": false,
    "website": "https://www.napoleonhouse.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/960px-The_Napoleon_House_-_New_Orleans_February_2026.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/120px-The_Napoleon_House_-_New_Orleans_February_2026.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/The_Napoleon_House_-_New_Orleans_February_2026.jpg/500px-The_Napoleon_House_-_New_Orleans_February_2026.jpg"
   },
   {
    "id": "sylvain",
@@ -1459,7 +1498,8 @@ window.DATA = {
    "website": "https://www.strochmarket.com",
    "reserveUrl": null,
    "reserve_priority": false,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/960px-MarignyAcrossFromSpigaJuly08.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/120px-MarignyAcrossFromSpigaJuly08.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/MarignyAcrossFromSpigaJuly08.jpg/250px-MarignyAcrossFromSpigaJuly08.jpg"
   },
   {
    "id": "peche-seafood-grill",
@@ -1568,7 +1608,8 @@ window.DATA = {
    "reserve_priority": true,
    "website": "https://www.pecherestaurant.com",
    "reserveUrl": "https://resy.com/cities/new-orleans-la/venues/peche-seafood-grill",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/960px-New_Orleans_CBD_1_Oct_2016_24.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/120px-New_Orleans_CBD_1_Oct_2016_24.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/New_Orleans_CBD_1_Oct_2016_24.jpg/500px-New_Orleans_CBD_1_Oct_2016_24.jpg"
   },
   {
    "id": "compere-lapin",
@@ -1647,7 +1688,8 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/compere-lapin",
    "website": "http://comperelapin.com/",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/960px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/120px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg/500px-Biscuits_from_Comp%C3%A8re_Lapin_%28cropped%29.jpg"
   },
   {
    "id": "seaworthy",
@@ -1755,7 +1797,8 @@ window.DATA = {
    "website": "https://seaworthynola.com",
    "reserveUrl": "https://www.opentable.com/r/seaworthy-new-orleans-2",
    "reserve_priority": true,
-   "photoUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg"
+   "photoUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg",
+   "coverUrl": "https://seaworthynola.com/assets/2024/11/The-Barnett-New-Orleans-Seaworthy-Upstairs-2.jpg"
   },
   {
    "id": "commanders-palace",
@@ -1848,7 +1891,8 @@ window.DATA = {
    "website": "https://www.commanderspalace.com",
    "reserveUrl": "https://www.opentable.com/r/commanders-palace-new-orleans",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/960px-2009-0301-NOLA-001-CommandersPalace.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/120px-2009-0301-NOLA-001-CommandersPalace.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/2009-0301-NOLA-001-CommandersPalace.jpg/500px-2009-0301-NOLA-001-CommandersPalace.jpg"
   },
   {
    "id": "la-petite-grocery",
@@ -2492,7 +2536,8 @@ window.DATA = {
    "website": "https://mas-arepas.placejoys.com",
    "reserveUrl": "https://www.opentable.com/r/mais-arepas-new-orleans",
    "reserve_priority": true,
-   "photoUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg"
+   "photoUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg",
+   "coverUrl": "https://cdn.placejoys.com/16048-oy-photo-1.jpg"
   },
   {
    "id": "bacchanal-wine",
@@ -2917,7 +2962,8 @@ window.DATA = {
    ],
    "reserveUrl": null,
    "website": "https://morningcallnola.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/960px-Morning_Call_NOLA_Interior_WPA.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/120px-Morning_Call_NOLA_Interior_WPA.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Morning_Call_NOLA_Interior_WPA.jpg/500px-Morning_Call_NOLA_Interior_WPA.jpg"
   },
   {
    "id": "ralphs-on-the-park",
@@ -3025,7 +3071,8 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/ralphs-on-the-park",
    "website": "https://www.ralphsonthepark.com",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/120px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "monas-cafe",
@@ -3499,7 +3546,8 @@ window.DATA = {
    "reserve_priority": false,
    "website": null,
    "reserveUrl": null,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/en/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG/120px-Pirates_Alley%2C_New_Orleans_-2009.JPG",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/e/eb/Pirates_Alley%2C_New_Orleans_-2009.JPG/500px-Pirates_Alley%2C_New_Orleans_-2009.JPG"
   },
   {
    "id": "carmo",
@@ -3854,7 +3902,8 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/cafe-degas",
    "website": "https://cafedegas.com",
    "reserve_priority": true,
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/960px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/120px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/New_Orleans_Museum_of_Art_%2855143750313%29.jpg/500px-New_Orleans_Museum_of_Art_%2855143750313%29.jpg"
   },
   {
    "id": "n7",
@@ -4250,7 +4299,8 @@ window.DATA = {
    "reserveUrl": "https://www.opentable.com/r/bayona",
    "website": "https://www.bayona.com",
    "reserve_priority": true,
-   "photoUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png"
+   "photoUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png",
+   "coverUrl": "https://www.bayona.com/wp-content/uploads/2026/07/julia-child-ad-1024x1024.png"
   },
   {
    "id": "brennans",
@@ -4359,7 +4409,8 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/brennans",
    "website": "https://www.brennansneworleans.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/960px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/120px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Brennan%27s_-_New_Orleans_%2855150819532%29.jpg/500px-Brennan%27s_-_New_Orleans_%2855150819532%29.jpg"
   },
   {
    "id": "herbsaint",
@@ -4467,7 +4518,8 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/herbsaint",
    "website": "https://herbsaint.com",
-   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/960px-Old_Absinthe_House_%2855151882008%29.jpg"
+   "photoUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/120px-Old_Absinthe_House_%2855151882008%29.jpg",
+   "coverUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Old_Absinthe_House_%2855151882008%29.jpg/500px-Old_Absinthe_House_%2855151882008%29.jpg"
   },
   {
    "id": "meril",
@@ -4645,7 +4697,8 @@ window.DATA = {
    "reserve_priority": true,
    "reserveUrl": "https://www.opentable.com/r/meril-new-orleans",
    "website": "https://bemeril.com",
-   "photoUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg"
+   "photoUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg",
+   "coverUrl": "https://bemeril.com/wp-content/uploads/2024/03/Meril_Oct2023-192-1024x682.jpg"
   },
   {
    "id": "gautreaus",
@@ -5334,27 +5387,132 @@ window.DATA = {
  "days": [
   {
    "day": "Fri",
+   "date": "Jul 31",
    "area": "French Quarter",
    "district": "fq",
-   "plan": "Land 9:25a → beignets, Jackson Square, Royal St, pool. Dinner <b>Galatoire's</b>. ~8pm ghost tour."
+   "headline": "Land, drop bags, Quarter on foot",
+   "base": "One base all day: everything is within a 10-minute walk of the hotel.",
+   "plan": "Land 9:25a → bags at the hotel → beignets → <b>AC museums through the worst heat</b> → check in 3p, pool → Jackson Sq &amp; Royal St at golden hour → Galatoire's → 8p ghost tour.",
+   "ac_block": "11a–3p, indoors and cool: Historic New Orleans Collection (free) → Pharmacy Museum → Sazerac House (free). Check-in is not until 3p, so this is where the hot hours go.",
+   "rain": "All three midday stops are indoors — a thunderstorm changes nothing.",
+   "walk_total": "~1.5 mi total, in short hops. No transit needed after the airport.",
+   "legs": [
+    {
+     "mode": "taxi",
+     "label": "MSY → hotel",
+     "detail": "Official flat rate, ~25 min. Uber is $25–45 and surges on arrivals.",
+     "cost": "$36 flat (1–2 people)"
+    },
+    {
+     "mode": "walk",
+     "label": "Everything else",
+     "detail": "Café du Monde 8 min · Historic NO Collection 5 min · Galatoire's 1 min · ghost tour meets in the Quarter",
+     "cost": "Free"
+    }
+   ]
   },
   {
    "day": "Sat",
-   "area": "Warehouse + Satchmo",
+   "date": "Aug 1",
+   "area": "Warehouse & Arts District — all day",
    "district": "wh",
-   "plan": "AM WWII Museum. Midday pool. Late-aft Satchmo Day 1. <b>6–9pm White Linen Night.</b> Later Frenchmen St."
+   "headline": "One neighbourhood, museums to gallery night",
+   "base": "Park yourselves in the Warehouse District. Every stop today is within 0.2 mi of the next — the museums are literally across the street from each other, and White Linen Night happens right there.",
+   "plan": "9:30a WWII Museum (3 hrs, AC) → lunch at Pêche <i>1 min away</i> → Ogden Museum <i>across the street</i> / CAC / Southern Jewish Experience → <b>6–9p White Linen Night on Julia St, a 4-min walk</b> → home.",
+   "ac_block": "The whole midday is museums — WWII, Ogden, CAC and MSJE are all air-conditioned and all within a couple of blocks. This is the single best heat-and-rain day of the trip.",
+   "rain": "Bulletproof: you can spend 11a–6p indoors without moving more than two blocks. White Linen Night runs rain or shine (it is a street party — locals just keep going).",
+   "walk_total": "~0.4 mi between stops, plus one 20-min leg each way (or skip that on transit).",
+   "legs": [
+    {
+     "mode": "transit",
+     "label": "Hotel → Warehouse District",
+     "detail": "20-min walk if you head out by 9a while it is still bearable; otherwise St Charles/Loyola streetcar or a short Uber.",
+     "cost": "Walk free · streetcar $1.25 · Uber $8–10"
+    },
+    {
+     "mode": "walk",
+     "label": "Between every stop",
+     "detail": "WWII ↔ Ogden 0.02 mi · WWII ↔ Pêche 0.06 mi · museums ↔ Julia St galleries 0.18 mi",
+     "cost": "Free"
+    },
+    {
+     "mode": "uber",
+     "label": "Julia St → hotel (~9:30p)",
+     "detail": "Worth it after a full day on your feet; 20-min walk if you would rather.",
+     "cost": "$8–10"
+    }
+   ],
+   "note": "Satchmo Day 1 is deliberately not here. It is free both days, and Day 2 has the Kermit Ruffins closer — chasing both days would add a 1.4-mi round trip across town in the worst heat for something you are already seeing. If you have energy to burn, catch an hour of it Sunday afternoon instead."
   },
   {
    "day": "Sun",
-   "area": "Garden + Satchmo",
+   "date": "Aug 2",
+   "area": "Garden District, then Satchmo",
    "district": "gd",
-   "plan": "Commander's brunch → Garden District & Magazine St → pool → Satchmo Day 2. <b>⭐ 6:40pm Kermit Ruffins.</b>"
+   "headline": "One trip out, one trip back, then music all evening",
+   "base": "Two clusters, one journey between them. Garden District in the morning (shaded), the Quarter's downriver edge all evening.",
+   "plan": "10:45a St Charles streetcar out → 11:30a Commander's brunch → Garden District mansions + Magazine St <i>4 min away</i> → back for a rest → walk to the Old Mint → <b>⭐ 6:40p Kermit Ruffins</b> → <b>Frenchmen St, a 3-min walk</b>.",
+   "ac_block": "Magazine St is your bolt-hole — a long run of air-conditioned shops and cafés right by Commander's. The Garden District walk itself is deep oak shade, which makes it one of the few outdoor things worth doing at midday.",
+   "rain": "If it storms: Magazine St shops, or the streetcar back early and rest before Satchmo. Kermit is at 6:40p under the Mint's stage cover, and Frenchmen St is all indoors.",
+   "walk_total": "~2 mi of walking, but split into two easy clusters — nothing over 0.2 mi between stops.",
+   "legs": [
+    {
+     "mode": "streetcar",
+     "label": "Canal St → Washington Ave",
+     "detail": "St Charles line, ~25 min. Shaded, breezy, and a genuine sight in its own right — better than an Uber here.",
+     "cost": "$1.25 each way · $3 all-day Jazzy Pass covers the whole day"
+    },
+    {
+     "mode": "walk",
+     "label": "Commander's → Magazine St",
+     "detail": "0.18 mi, 4 min",
+     "cost": "Free"
+    },
+    {
+     "mode": "streetcar",
+     "label": "Back to the Quarter (~3:30p)",
+     "detail": "Or Uber if you are flagging — it is 2.1 mi.",
+     "cost": "Streetcar $1.25 · Uber $13–15"
+    },
+    {
+     "mode": "walk",
+     "label": "Hotel → Old Mint → Frenchmen St",
+     "detail": "Hotel → Mint 16 min; Mint → Frenchmen 0.13 mi, 3 min. Do this on foot in the evening cool.",
+     "cost": "Free"
+    },
+    {
+     "mode": "uber",
+     "label": "Frenchmen St → hotel (late)",
+     "detail": "0.9 mi — walkable, but easy to grab a car late at night.",
+     "cost": "$8–10"
+    }
+   ]
   },
   {
    "day": "Mon",
-   "area": "FQ, then home",
+   "date": "Aug 3",
+   "area": "French Quarter, then home",
    "district": "fq",
-   "plan": "Checkout 11a → Sazerac House / Royal St gifts (or 11:30 harbor cruise) → MSY for 6:59pm."
+   "headline": "Cool, covered, and near the hotel",
+   "base": "Checkout is 11a and the flight is 6:59p, so leave the bags at the hotel and stay inside the Quarter.",
+   "plan": "11a checkout, bags with the front desk → 11:30a Steamboat Natchez harbour cruise (2 hrs, covered) → lunch → last Royal St gifts / Sazerac House → 4:30p taxi to MSY.",
+   "ac_block": "The Natchez is the smart call for a hot, possibly wet afternoon: covered decks, AC saloon, a breeze on the river, and it kills two hours without you carrying anything.",
+   "rain": "The cruise sails in the rain, and Royal St has deep balcony cover most of the way. Nothing today depends on clear skies.",
+   "walk_total": "~1 mi, all short hops from the hotel.",
+   "legs": [
+    {
+     "mode": "walk",
+     "label": "Hotel → Natchez dock → Royal St",
+     "detail": "Dock is 8 min from the hotel; Royal St is right there afterwards.",
+     "cost": "Free"
+    },
+    {
+     "mode": "taxi",
+     "label": "Hotel → MSY (~4:30p)",
+     "detail": "Leave 2h15 before the 6:59p flight. Flat rate again.",
+     "cost": "$36 flat (1–2 people)"
+    }
+   ]
   }
  ],
  "bookings": [
@@ -5413,7 +5571,8 @@ window.DATA = {
   "Ghost tour — French Quarter Phantoms $21/pp · Groupon",
   "WWII Museum $36/pp · nationalww2museum.org",
   "Boat — Steamboat Natchez $30.52 · Groupon &nbsp;or&nbsp; Creole Queen $45 · Groupon",
-  "Galatoire's (Fri) · Shaya · Commander's brunch (Sun) — Resy"
+  "Galatoire's (Fri) · Shaya · Commander's brunch (Sun) — Resy",
+  "Nothing to book for Satchmo — free entry both days. Sunday 6:40p Kermit Ruffins is the one to be there for."
  ],
  "deals": [
   {
@@ -6357,5 +6516,33 @@ window.DATA = {
   }
  ],
  "updated": "2026-07-30",
- "data_version": 4
+ "data_version": 5,
+ "logistics": {
+  "heat": "Highs near 92°F but a heat index of 110–115°F — that is the number that matters. Anything outdoors belongs before 11a or after 5p; 11a–4p is for air conditioning. Carry water, and expect to want a shower and a lie-down mid-afternoon. That is why every day here has a cool block built into the middle rather than a \"power through it\" schedule.",
+  "rain": "Rain falls on 14–18 days in an average August, almost always as a hard, short afternoon thunderstorm rather than all-day drizzle. You do not need to plan around it — you need an indoor option within a block or two at all times, which each day above has. Pack one light rain layer, skip the umbrella in a crowd.",
+  "strategy": "The plan is built around one base per day so you are not crossing town twice. Saturday in particular stays entirely in the Warehouse District (museums to gallery night, all within 0.2 mi), and Frenchmen St is paired with Satchmo on Sunday because the Old Mint is a 3-minute walk from it.",
+  "transit": [
+   {
+    "mode": "🚶 Walking",
+    "cost": "Free",
+    "note": "The Quarter and the Warehouse District are both flat and compact. Almost everything is under a 20-min walk — but in this heat, a 20-min walk is a real 20 minutes, so bank it for mornings and evenings."
+   },
+   {
+    "mode": "🚋 Streetcar & bus (RTA)",
+    "cost": "$1.25 a ride · $3 all-day Jazzy Pass",
+    "note": "Best for the Garden District run on St Charles. Buy in the RTA \"Le Pass\" app or exact change at the farebox. The $3 pass pays off the moment you take three rides in a day."
+   },
+   {
+    "mode": "🚕 Airport taxi",
+    "cost": "$36 flat, 1–2 people ($15/person for 3+)",
+    "note": "Official flat rate to the Quarter, traffic-proof. Usually the better call than Uber on arrival, when rideshare surges with the flights."
+   },
+   {
+    "mode": "🚗 Uber / Lyft",
+    "cost": "Quarter ↔ Warehouse $8–10 · Quarter ↔ Garden District $13–15 · MSY $25–45",
+    "note": "Worth it late at night, in a downpour, or when you are simply done walking. Short hops in the Quarter are rarely worth the wait."
+   }
+  ],
+  "budget_note": "Planned transit for the two of you: $36 in + $36 out + roughly $20 on Saturday and $3–28 on Sunday ≈ $95–120 total, which sits inside the transport line in the budget."
+ }
 };
