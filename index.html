@@ -89,6 +89,9 @@
   .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
   .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .srcline{font-size:12px;line-height:1.45;margin:-2px 2px 8px;color:#20443f}
+  .srcline b{font-weight:700}
+  .srcline.approx{color:#6b3410}
   .daybox{margin-top:8px;padding:8px 10px;border-radius:10px;font-size:13px;line-height:1.5;
     background:rgba(11,110,110,.10);border:1px solid rgba(11,110,110,.28);color:#20443f}
   .daybox b{color:#0b6e6e}
@@ -526,6 +529,7 @@
         ((p.menu||[]).length?'<span class="chip">'+(p.menu||[]).length+' items you can order</span>':'')+
       '</div>'+
       '<div class="sec-title" style="margin-top:4px">What you can eat</div>'+
+      menuSourceLine(p)+
       '<div class="menuwrap">'+(menu||'<div class="muted" style="padding:10px 0">Menu coming.</div>')+'</div>'+
       (p.avoid_note?'<div class="skipbox">🚫 Skip here: '+esc(p.avoid_note)+'</div>':'')+
       (p.kosher_style_fit?'<p class="muted" style="font-size:13px;margin-top:10px">'+esc(p.kosher_style_fit)+'</p>':'')+
@@ -535,6 +539,17 @@
         (p.website?'<a class="btn" href="'+esc(p.website)+'" target="_blank" rel="noopener">Website</a>':'')+
       '</div>'+
       ((p.lat&&p.lng)?'<div class="minimap" id="mini" style="margin-top:14px"></div>':'');
+  }
+  // Say plainly where the menu came from. "verified" = read off the restaurant's own
+  // current menu (their site or PDF); "approximate" = pieced together from aggregators.
+  function menuSourceLine(p){
+    if(!p.menu_confidence)return '';
+    var ok=p.menu_confidence==='verified';
+    var src=p.menu_source?' <a href="'+esc(p.menu_source)+'" target="_blank" rel="noopener">source ›</a>':'';
+    return '<div class="srcline'+(ok?'':' approx')+'">'+
+      (ok?'✓ <b>Read from their current menu.</b> Prices as printed'
+         :'≈ <b>Approximate.</b> Their menu was not machine-readable, so this is pieced together — double-check on the day')+
+      src+'</div>';
   }
   function coverBlock(p){
     // detail hero uses the larger coverUrl; cards use the ~6KB photoUrl thumb
