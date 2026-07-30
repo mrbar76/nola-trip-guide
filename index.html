@@ -89,6 +89,20 @@
   .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
   .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .daybox{margin-top:8px;padding:8px 10px;border-radius:10px;font-size:13px;line-height:1.5;
+    background:rgba(11,110,110,.10);border:1px solid rgba(11,110,110,.28);color:#20443f}
+  .daybox b{color:#0b6e6e}
+  .daybox.hot{background:rgba(194,87,31,.10);border-color:rgba(194,87,31,.30);color:#6b3410}
+  .daybox.hot b{color:#c2571f}
+  .daybox.wet{background:rgba(91,42,134,.09);border-color:rgba(91,42,134,.26);color:#3f2758}
+  .daybox.wet b{color:#5b2a86}
+  .leg{display:flex;gap:9px;padding:7px 0;border-bottom:1px dashed var(--line)}
+  .leg:last-of-type{border-bottom:0}
+  .leg-ic{flex:0 0 20px;font-size:15px;line-height:1.4}
+  .leg-b{flex:1;min-width:0}
+  .leg-t{font-size:13.5px;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+  .leg-cost{flex:0 0 auto;font-weight:700;color:#7a5300;font-size:12.5px;white-space:nowrap}
+  .leg-d{font-size:12px;color:var(--muted);margin-top:1px}
   .upd-banner{position:fixed;left:10px;right:10px;z-index:1200;
     bottom:calc(var(--tabbar) + var(--safe-b) + 10px);
     background:var(--iron);color:#f7f0e2;border:1px solid var(--gold2);border-radius:14px;
@@ -377,7 +391,10 @@
       qcard('#/d/fq','🏛️','Neighborhoods','History &amp; walks')+
       qcard('#/satchmo','🎺','Satchmo Fest','Best sets both days')+
     '</div>'+
-    '<div class="sec-title">The days</div>'+ daysList();
+    '<div class="sec-title">The days</div>'+
+      '<div class="muted" style="font-size:12px;margin:-4px 2px 8px">Built around a 110°F heat index and afternoon storms — '+
+      'one base per day. <span style="color:var(--purple);font-weight:600" data-nav="#/getting-around">Heat, rain &amp; transit costs ›</span></div>'+
+      daysList();
     return html;
   }
   function qcard(nav,ic,t,s){return '<div class="qcard" data-nav="'+nav+'"><span class="qic">'+ic+
@@ -398,13 +415,46 @@
       (next.nav?'<a class="btn block gold" style="margin-top:10px" data-nav="'+next.nav+'">'+
         esc(next.cta||'Open')+'</a>':'')+'</div>';
   }
+  var LEG_ICON={walk:'🚶',taxi:'🚕',uber:'🚗',streetcar:'🚋',transit:'🚋'};
   function daysList(){
     return (DATA.days||[]).map(function(d){
-      return '<div class="card pad"><div class="row" style="justify-content:space-between">'+
-        '<div style="font-weight:700">'+esc(d.day)+' · '+esc(d.area)+'</div>'+
-        (d.district?'<span class="chip sm" '+'data-nav="#/d/'+d.district+'">map ›</span>':'')+'</div>'+
-        '<div class="muted" style="font-size:14px;margin-top:4px">'+d.plan+'</div></div>';
+      var legs=(d.legs||[]).map(function(g){
+        return '<div class="leg"><span class="leg-ic">'+(LEG_ICON[g.mode]||'📍')+'</span>'+
+          '<div class="leg-b"><div class="leg-t">'+esc(g.label)+
+            '<span class="leg-cost">'+esc(g.cost||'')+'</span></div>'+
+            (g.detail?'<div class="leg-d">'+esc(g.detail)+'</div>':'')+'</div></div>';
+      }).join('');
+      return '<div class="card pad">'+
+        '<div class="row" style="justify-content:space-between;align-items:flex-start">'+
+          '<div><div style="font-weight:800;font-size:16px">'+esc(d.day)+
+            (d.date?' <span class="muted" style="font-weight:400;font-size:13px">'+esc(d.date)+'</span>':'')+'</div>'+
+            '<div style="font-size:13px;color:var(--gold2);font-weight:700">'+esc(d.area)+'</div></div>'+
+          (d.district?'<span class="chip sm" data-nav="#/d/'+d.district+'">map ›</span>':'')+'</div>'+
+        (d.headline?'<div style="font-weight:600;font-size:14px;margin-top:8px">'+esc(d.headline)+'</div>':'')+
+        '<div class="muted" style="font-size:14px;margin-top:4px">'+d.plan+'</div>'+
+        (d.base?'<div class="daybox"><b>📍 Staying put:</b> '+esc(d.base)+'</div>':'')+
+        (d.ac_block?'<div class="daybox hot"><b>🥵 Beat the heat:</b> '+esc(d.ac_block)+'</div>':'')+
+        (d.rain?'<div class="daybox wet"><b>🌧️ If it storms:</b> '+esc(d.rain)+'</div>':'')+
+        (legs?'<div class="sec-title" style="margin:12px 0 2px;font-size:11px">Getting around</div>'+legs:'')+
+        (d.walk_total?'<div class="muted" style="font-size:12px;margin-top:6px">🚶 '+esc(d.walk_total)+'</div>':'')+
+        (d.note?'<div class="skipbox" style="color:var(--muted)">'+esc(d.note)+'</div>':'')+
+      '</div>';
     }).join('');
+  }
+  function logisticsView(){
+    var g=DATA.logistics||{};
+    var modes=(g.transit||[]).map(function(t){
+      return '<div class="card pad"><div class="row" style="justify-content:space-between;align-items:flex-start">'+
+        '<div style="font-weight:700">'+esc(t.mode)+'</div>'+
+        '<div class="chip sm">'+esc(t.cost||'')+'</div></div>'+
+        '<div class="muted" style="font-size:13px;margin-top:6px">'+esc(t.note||'')+'</div></div>';
+    }).join('');
+    return '<div class="muted" style="font-size:13px;margin:6px 2px 10px">How to move around without wearing yourselves out.</div>'+
+      (g.strategy?'<div class="daybox"><b>📍 The shape of the trip:</b> '+esc(g.strategy)+'</div>':'')+
+      (g.heat?'<div class="daybox hot"><b>🥵 Heat:</b> '+esc(g.heat)+'</div>':'')+
+      (g.rain?'<div class="daybox wet"><b>🌧️ Rain:</b> '+esc(g.rain)+'</div>':'')+
+      '<div class="sec-title">Ways to get around</div>'+modes+
+      (g.budget_note?'<div class="card pad muted" style="font-size:12px">💵 '+esc(g.budget_note)+'</div>':'');
   }
 
   function eatView(state){
@@ -487,8 +537,10 @@
       ((p.lat&&p.lng)?'<div class="minimap" id="mini" style="margin-top:14px"></div>':'');
   }
   function coverBlock(p){
-    var bg=p.photoUrl?(' style="background-image:url(\''+esc(p.photoUrl)+'\')"'):'';
-    return '<div class="cover"'+bg+'>'+(p.photoUrl?'':'<div class="ph">'+catEmoji(p.category||'eat')+'</div>')+
+    // detail hero uses the larger coverUrl; cards use the ~6KB photoUrl thumb
+    var img=p.coverUrl||p.photoUrl;
+    var bg=img?(' style="background-image:url(\''+esc(img)+'\')"'):'';
+    return '<div class="cover"'+bg+'>'+(img?'':'<div class="ph">'+catEmoji(p.category||'eat')+'</div>')+
       '<div class="grad"></div><div class="cap"><h1 class="serif">'+esc(p.name)+'</h1>'+
       '<div class="m">'+esc(p.cuisine||p.category||'')+' · '+esc(p.area_label||dName(p.district))+'</div></div></div>';
   }
@@ -677,6 +729,7 @@
       '<div class="grid2">'+
         qcard('#/do','🎭','Things to do','Sights, museums, music')+
         qcard('#/whatson','🎉','What’s on','Events on your dates')+
+        qcard('#/getting-around','🚋','Getting around','Heat, rain &amp; transit costs')+
         qcard('#/search','⌕','Search','Find any place')+
         qcard('#/favorites','★','Favorites','Your saved spots')+
         qcard('#/satchmo','🎺','Satchmo Fest','Set times')+
@@ -771,6 +824,7 @@
     else if(route==='eat'){html=eatView(q);titleHTML='Where to eat';back=false;}
     else if(route==='do'){html=doView(q);titleHTML='Things to do';back=false;}
     else if(route==='whatson'){html=whatsOnView();titleHTML='What’s on';back=false;}
+    else if(route==='getting-around'){html=logisticsView();titleHTML='Getting around';back=true;}
     else if(route==='plan'){html=planView();titleHTML='Plan';back=false;}
     else if(route==='more'){html=moreView();titleHTML='More';back=false;}
     else if(route==='r'){var rr=findR(arg);html=restaurantView(arg);titleHTML=esc(rr?rr.name:'Not found');}
