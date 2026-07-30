@@ -1,11 +1,13 @@
 /* NOLA Guide service worker.
    Strategy:
-   - App shell (HTML) + data.js: NETWORK-FIRST, cache as fallback. Content updates
-     land automatically on the next load; the app still opens offline.
+   - App shell (HTML) + data.js: STALE-WHILE-REVALIDATE. The cached copy is served
+     immediately (instant open, works offline) while a fresh copy is fetched in the
+     background. If the fresh copy differs, clients are told so the app can offer a
+     reload. Network-first was tried here and made every launch wait on the network.
    - Icons + CDN libs: cache-first (stable, versioned URLs).
    - Map tiles: network-only with cache fallback; never bulk-cached.
    Bump VERSION on release to purge older caches. */
-const VERSION = 'nola-v3';
+const VERSION = 'nola-v4';
 
 // Precached individually (NOT addAll — that's atomic and one bad URL kills the whole batch).
 const PRECACHE = [
@@ -17,8 +19,11 @@ const PRECACHE = [
   './icon-512.png',
   './apple-touch-icon.png',
   './favicon-32.png',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+  // Leaflet is self-hosted, so it precaches reliably and works fully offline.
+  './vendor/leaflet.css',
+  './vendor/leaflet.js',
+  './vendor/images/marker-icon.png',
+  './vendor/images/layers.png'
 ];
 
 const isTile = (url) => /tile\.openstreetmap\.org|basemaps|tiles/.test(url.host + url.pathname);
@@ -56,6 +61,40 @@ self.addEventListener('message', (e) => {
   }
 });
 
+function versionTag(res) {
+  if (!res) return null;
+  return res.headers.get('etag') || res.headers.get('last-modified') || res.headers.get('content-length');
+}
+
+async function notifyContentUpdated() {
+  const clients = await self.clients.matchAll({ type: 'window' });
+  clients.forEach((c) => c.postMessage('CONTENT_UPDATED'));
+}
+
+async function staleWhileRevalidate(request) {
+  const cache = await caches.open(VERSION);
+  const hit = await cache.match(request);
+
+  const revalidate = fetch(request).then(async (res) => {
+    if (res && res.ok) {
+      const changed = hit && versionTag(hit) && versionTag(res) && versionTag(hit) !== versionTag(res);
+      await cache.put(request, res.clone()).catch(() => {});
+      if (changed) notifyContentUpdated();
+    }
+    return res;
+  });
+
+  if (hit) {
+    revalidate.catch(() => {});   // background refresh; failure is fine, we already answered
+    return hit;
+  }
+  try {
+    return await revalidate;
+  } catch (e) {
+    return (await cache.match('./index.html')) || Response.error();
+  }
+}
+
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   const url = new URL(e.request.url);
@@ -66,19 +105,9 @@ self.addEventListener('fetch', (e) => {
     return;
   }
 
-  // Shell + data: network-first so updates are picked up without a manual purge.
+  // Shell + data: stale-while-revalidate — instant from cache, refreshed behind the scenes.
   if (isFreshFirst(e.request, url)) {
-    e.respondWith(
-      fetch(e.request)
-        .then((res) => {
-          if (res && res.ok) {
-            const copy = res.clone();
-            caches.open(VERSION).then((c) => c.put(e.request, copy)).catch(() => {});
-          }
-          return res;
-        })
-        .catch(() => caches.match(e.request).then((hit) => hit || caches.match('./index.html')))
-    );
+    e.respondWith(staleWhileRevalidate(e.request));
     return;
   }
 
@@ -87,7 +116,7 @@ self.addEventListener('fetch', (e) => {
     caches.match(e.request).then((hit) => {
       if (hit) return hit;
       return fetch(e.request).then((res) => {
-        if (res && res.ok && (url.origin === location.origin || /unpkg\.com/.test(url.host))) {
+        if (res && res.ok && url.origin === location.origin) {
           const copy = res.clone();
           caches.open(VERSION).then((c) => c.put(e.request, copy)).catch(() => {});
         }

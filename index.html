@@ -12,8 +12,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="NOLA Guide" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<!-- Leaflet is self-hosted in vendor/ and injected on demand (see ensureLeaflet).
+     It used to be a render-blocking third-party <link>/<script> on every view, even
+     though only the map screens need it. -->
 <style>
   :root{
     --ink:#241b12; --paper:#f7f0e2; --paper2:#efe4cf; --card:#fffaef;
@@ -118,6 +119,7 @@
   .rowcard .thumb{width:96px;min-height:96px;flex:0 0 96px;background:var(--paper2);position:relative;
     background-size:cover;background-position:center}
   .rowcard .thumb .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px}
+  .rowcard .thumb .thumb-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
   .rowcard .body{flex:1;padding:10px 12px;min-width:0}
   .rowcard .body h3{font-size:16px;font-weight:700;line-height:1.2}
   .rowcard .meta{font-size:12px;color:var(--muted);margin-top:2px}
@@ -213,8 +215,6 @@
   </nav>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script src="data.js"></script>
 <script>
 (function(){
@@ -224,12 +224,13 @@
   var titleEl = document.getElementById('title');
   var backBtn = document.getElementById('backBtn');
   var liveMaps = [];
+  var mapGen = 0;   // bumped on every route change; stale async map mounts bail out
 
   // ---------- helpers ----------
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){
     return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function el(id){return document.getElementById(id);}
-  function clearMaps(){liveMaps.forEach(function(m){try{m.remove();}catch(e){}});liveMaps=[];}
+  function clearMaps(){mapGen++;liveMaps.forEach(function(m){try{m.remove();}catch(e){}});liveMaps=[];}
   var CATCOLOR={eat:'#c2571f',see:'#5b2a86',landmark:'#5b2a86',music:'#8a2231',museum:'#a1751b',
     park:'#0a7d4c',shop:'#0b6e6e'};
   function catColor(c){return CATCOLOR[c]||'#5b2a86';}
@@ -253,58 +254,101 @@
 
   // favorites & checks
   function ls(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}}
-  function favs(){return ls('nola_favs',[]);}
+  // favourites are read once per render pass, not once per card — starBtn() is called
+  // for every row and used to hit localStorage + JSON.parse twice each time.
+  var _favCache=null;
+  function favs(){if(!_favCache)_favCache=ls('nola_favs',[]);return _favCache;}
+  function invalidateFavs(){_favCache=null;}
   function isFav(id){return favs().indexOf(id)>=0;}
-  function toggleFav(id){var f=favs();var i=f.indexOf(id);if(i<0)f.push(id);else f.splice(i,1);
-    localStorage.setItem('nola_favs',JSON.stringify(f));}
+  function toggleFav(id){var f=favs().slice();var i=f.indexOf(id);if(i<0)f.push(id);else f.splice(i,1);
+    localStorage.setItem('nola_favs',JSON.stringify(f));_favCache=f;}
   function checks(){return ls('nola_checks',{});}
   function setCheck(k,v){var c=checks();c[k]=v;localStorage.setItem('nola_checks',JSON.stringify(c));}
 
-  function starBtn(id){return '<button class="star'+(isFav(id)?' on':'')+'" data-fav="'+esc(id)+
-    '" aria-label="Save">'+(isFav(id)?'★':'☆')+'</button>';}
+  function starBtn(id){var on=isFav(id);return '<button class="star'+(on?' on':'')+'" data-fav="'+esc(id)+
+    '" aria-label="Save">'+(on?'★':'☆')+'</button>';}
   function ratingBits(p){var s='';if(p.rating)s+='<span class="rating">★ '+p.rating+'</span> ';
     if(p.price)s+='<span class="price">'+esc(p.price)+'</span>';return s;}
 
-  // thumbnail with fallback emoji
+  // thumbnail with fallback emoji. Uses <img loading="lazy"> so off-screen cards
+  // don't download anything (CSS background-images would all fetch immediately).
   function thumbStyle(p){return p.photoUrl?(' style="background-image:url(\''+esc(p.photoUrl)+'\')"'):'';}
+  function thumbImg(p){return p.photoUrl
+    ? '<img class="thumb-img" src="'+esc(p.photoUrl)+'" alt="" loading="lazy" decoding="async">'
+    : '<span class="ph">'+catEmoji(p.category||'eat')+'</span>';}
   function catEmoji(c){return {eat:'🍽️',see:'📸',landmark:'🏛️',music:'🎷',museum:'🖼️',park:'🌳',shop:'🛍️'}[c]||'📍';}
 
   // filter/price helpers
   function priceNum(s){var m=String(s==null?'':s).match(/\$\s?([0-9]+(?:\.[0-9]+)?)/);return m?parseFloat(m[1]):null;}
-  function avgPlatePrice(r){var ps=(r.menu||[]).map(function(m){return priceNum(m.price);})
-    .filter(function(x){return x!=null;});
-    if(!ps.length)return null;return ps.reduce(function(a,b){return a+b;},0)/ps.length;}
+  // Memoised: this runs inside sort comparators (O(n log n) calls) and twice per card,
+  // and each raw call regex-parses every menu item.
+  var _avgCache=(typeof WeakMap!=='undefined')?new WeakMap():null;
+  function avgPlatePrice(r){
+    if(!r)return null;
+    if(_avgCache&&_avgCache.has(r))return _avgCache.get(r);
+    var ps=(r.menu||[]).map(function(m){return priceNum(m.price);})
+      .filter(function(x){return x!=null;});
+    var v=ps.length?ps.reduce(function(a,b){return a+b;},0)/ps.length:null;
+    if(_avgCache)_avgCache.set(r,v);
+    return v;}
   function priceBand(r){return (r.price||'').length||99;}
   // build a hash like '#/eat?d=gd&t=Seafood' by merging current state with overrides
   function qnav(base,state,keys,ov){var s=Object.assign({},state,ov);var parts=[];
     keys.forEach(function(k){if(s[k]&&s[k]!=='all')parts.push(k+'='+encodeURIComponent(s[k]));});
     return base+(parts.length?'?'+parts.join('&'):'');}
 
-  // ---------- Leaflet ----------
+  // ---------- Leaflet (self-hosted, loaded on first map use) ----------
+  var _leaflet=null;
+  function ensureLeaflet(){
+    if(window.L)return Promise.resolve(true);
+    if(_leaflet)return _leaflet;
+    _leaflet=new Promise(function(resolve){
+      var css=document.createElement('link');
+      css.rel='stylesheet';css.href='vendor/leaflet.css';
+      document.head.appendChild(css);
+      var s=document.createElement('script');
+      s.src='vendor/leaflet.js';s.async=true;
+      s.onload=function(){resolve(!!window.L);};
+      s.onerror=function(){_leaflet=null;resolve(false);};
+      document.head.appendChild(s);
+    });
+    return _leaflet;
+  }
   function tileLayer(){return L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {maxZoom:19,attribution:'&copy; OpenStreetMap'});}
+
+  // Async: Leaflet may still be loading. mapGen guards against a map finishing
+  // its load after the user has already navigated somewhere else.
   function mountMap(id,center,zoom,items){
     var node=el(id);if(!node)return null;
-    if(typeof L==='undefined'){node.innerHTML='<div class="map-fallback">🗺️<br>Map needs a connection to load.</div>';return null;}
-    try{
-    var m=L.map(node,{zoomControl:true,attributionControl:true}).setView(center,zoom);
-    tileLayer().addTo(m);
-    (items||[]).forEach(function(p){
-      if(!p.lat||!p.lng)return;
-      var mk=L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:catColor(p.category),
-        fillOpacity:.95});
-      var link=p.type==='e'
-        ? (p.url?'<a href="'+esc(p.url)+'" target="_blank" rel="noopener">Details ›</a>':'')
-        : '<a href="#/'+(p.type==='r'?'r':'s')+'/'+p.id+'">Details ›</a>';
-      mk.bindPopup('<div class="pp-t">'+esc(p.name)+'</div>'+
-        '<div class="muted" style="font-size:12px">'+esc(p.area_label||dName(p.district)||'')+'</div>'+
-        link);
-      mk.addTo(m);
+    var gen=mapGen;
+    if(!window.L)node.innerHTML='<div class="map-fallback">🗺️<br>Loading map…</div>';
+    ensureLeaflet().then(function(ok){
+      if(gen!==mapGen)return;                 // route changed while loading
+      var n=el(id);if(!n)return;
+      if(!ok||typeof L==='undefined'){
+        n.innerHTML='<div class="map-fallback">🗺️<br>Map needs a connection to load.</div>';return;}
+      n.innerHTML='';
+      try{
+        var m=L.map(n,{zoomControl:true,attributionControl:true}).setView(center,zoom);
+        tileLayer().addTo(m);
+        (items||[]).forEach(function(p){
+          if(!p.lat||!p.lng)return;
+          var mk=L.circleMarker([p.lat,p.lng],{radius:8,color:'#fff',weight:2,fillColor:catColor(p.category),
+            fillOpacity:.95});
+          var link=p.type==='e'
+            ? (p.url?'<a href="'+esc(p.url)+'" target="_blank" rel="noopener">Details ›</a>':'')
+            : '<a href="#/'+(p.type==='r'?'r':'s')+'/'+p.id+'">Details ›</a>';
+          mk.bindPopup('<div class="pp-t">'+esc(p.name)+'</div>'+
+            '<div class="muted" style="font-size:12px">'+esc(p.area_label||dName(p.district)||'')+'</div>'+
+            link);
+          mk.addTo(m);
+        });
+        liveMaps.push(m);
+        setTimeout(function(){try{m.invalidateSize();}catch(e){}},60);
+      }catch(err){n.innerHTML='<div class="map-fallback">🗺️<br>Map unavailable right now.</div>';}
     });
-    liveMaps.push(m);
-    setTimeout(function(){try{m.invalidateSize();}catch(e){}},60);
-    return m;
-    }catch(err){node.innerHTML='<div class="map-fallback">🗺️<br>Map unavailable right now.</div>';return null;}
+    return null;
   }
 
   // ---------- views ----------
@@ -404,7 +448,7 @@
   function rowCard(p){
     var type=p.menu?'r':'s';
     return '<div class="rowcard" data-nav="#/'+type+'/'+p.id+'">'+
-      '<div class="thumb"'+thumbStyle(p)+'>'+(p.photoUrl?'':'<span class="ph">'+catEmoji(p.category||'eat')+'</span>')+
+      '<div class="thumb">'+thumbImg(p)+
         '<div class="fav-abs">'+starBtn(p.id)+'</div></div>'+
       '<div class="body"><h3>'+esc(p.name)+'</h3>'+
         '<div class="meta">'+ratingBits(p)+(p.cuisine?' · '+esc(p.cuisine):'')+
@@ -791,12 +835,23 @@
             if(nw.state==='installed'&&navigator.serviceWorker.controller)showUpdateBanner();
           });
         });
-        // check for a new version on load and whenever the app is re-opened
-        reg.update().catch(function(){});
+        // Check for a new version on load, and on re-open — but at most every 15 min,
+        // so flipping in and out of the app doesn't fire a request each time.
+        var lastCheck=0;
+        function maybeCheck(){
+          var now=Date.now();
+          if(now-lastCheck<900000)return;
+          lastCheck=now;reg.update().catch(function(){});
+        }
+        maybeCheck();
         document.addEventListener('visibilitychange',function(){
-          if(!document.hidden)reg.update().catch(function(){});
+          if(!document.hidden)maybeCheck();
         });
       }).catch(function(){});
+    });
+    // the worker tells us when a background revalidation found newer content
+    navigator.serviceWorker.addEventListener('message',function(e){
+      if(e.data==='CONTENT_UPDATED')showUpdateBanner();
     });
   }
 
