@@ -1,4 +1,4 @@
-/* NOLA Guide data. Restaurants/sights/events/tours researched; prices, ratings, discounts & 2026 event dates approximate — verify on the day. Photos: Wikimedia Commons + restaurant-published previews; photoUrl=120px card thumb, coverUrl=500px detail hero. Day plan built around August heat (110-115F index), afternoon storms, and one base per day. */
+/* NOLA Guide data. Menus re-extracted from each restaurant's own current menu where machine-readable and flagged verified/approximate. Weather is a live NWS fetch with this baked snapshot as offline fallback. Prices, ratings, discounts & 2026 event dates approximate — verify on the day. photoUrl=120px card thumb, coverUrl=500px detail hero. */
 window.DATA = {
  "districts": [
   {
@@ -5409,7 +5409,8 @@ window.DATA = {
      "detail": "Café du Monde 8 min · Historic NO Collection 5 min · Galatoire's 1 min · ghost tour meets in the Quarter",
      "cost": "Free"
     }
-   ]
+   ],
+   "forecast_date": "2026-07-31"
   },
   {
    "day": "Sat",
@@ -5442,7 +5443,8 @@ window.DATA = {
      "cost": "$8–10"
     }
    ],
-   "note": "Satchmo Day 1 is deliberately not here. It is free both days, and Day 2 has the Kermit Ruffins closer — chasing both days would add a 1.4-mi round trip across town in the worst heat for something you are already seeing. If you have energy to burn, catch an hour of it Sunday afternoon instead."
+   "note": "Satchmo Day 1 is deliberately not here. It is free both days, and Day 2 has the Kermit Ruffins closer — chasing both days would add a 1.4-mi round trip across town in the worst heat for something you are already seeing. If you have energy to burn, catch an hour of it Sunday afternoon instead.",
+   "forecast_date": "2026-08-01"
   },
   {
    "day": "Sun",
@@ -5486,7 +5488,8 @@ window.DATA = {
      "detail": "0.9 mi — walkable, but easy to grab a car late at night.",
      "cost": "$8–10"
     }
-   ]
+   ],
+   "forecast_date": "2026-08-02"
   },
   {
    "day": "Mon",
@@ -5512,7 +5515,8 @@ window.DATA = {
      "detail": "Leave 2h15 before the 6:59p flight. Flat rate again.",
      "cost": "$36 flat (1–2 people)"
     }
-   ]
+   ],
+   "forecast_date": "2026-08-03"
   }
  ],
  "bookings": [
@@ -6544,5 +6548,65 @@ window.DATA = {
    }
   ],
   "budget_note": "Planned transit for the two of you: $36 in + $36 out + roughly $20 on Saturday and $3–28 on Sunday ≈ $95–120 total, which sits inside the transport line in the budget."
+ },
+ "forecast": {
+  "source": "National Weather Service (api.weather.gov)",
+  "gridpoint": "LIX/68,89",
+  "url": "https://api.weather.gov/gridpoints/LIX/68,89/forecast",
+  "fetched": "2026-07-30",
+  "days": [
+   {
+    "date": "2026-07-31",
+    "name": "Friday",
+    "hi": 93,
+    "lo": 79,
+    "precip": 49,
+    "precip_night": 49,
+    "heat_index": 106,
+    "short": "Chance Showers And Thunderstorms",
+    "detail": "A chance of showers and thunderstorms. Mostly sunny, with a high near 93. Heat index values as high as 106. West wind 5 to 10 mph. Chance of precipitation is 50%.",
+    "night_short": "Chance Showers And Thunderstorms then Mostly Cloudy",
+    "night_detail": "A chance of showers and thunderstorms before 7pm. Mostly cloudy, with a low around 79. Southwest wind 5 to 10 mph. Chance of precipitation is 50%."
+   },
+   {
+    "date": "2026-08-01",
+    "name": "Saturday",
+    "hi": 93,
+    "lo": 78,
+    "precip": 39,
+    "precip_night": 61,
+    "heat_index": null,
+    "short": "Partly Sunny then Chance Showers And Thunderstorms",
+    "detail": "A chance of showers and thunderstorms after 1pm. Partly sunny, with a high near 93. West wind 5 to 10 mph. Chance of precipitation is 40%.",
+    "night_short": "Chance Showers And Thunderstorms",
+    "night_detail": "A chance of showers and thunderstorms before 1am, then showers and thunderstorms likely. Mostly cloudy, with a low around 78. Southwest wind 5 to 10 mph. Chance of precipitation is 60%."
+   },
+   {
+    "date": "2026-08-02",
+    "name": "Sunday",
+    "hi": 89,
+    "lo": 76,
+    "precip": 76,
+    "precip_night": 53,
+    "heat_index": null,
+    "short": "Showers And Thunderstorms",
+    "detail": "Showers and thunderstorms before 1pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 89. West wind around 10 mph.",
+    "night_short": "Chance Showers And Thunderstorms",
+    "night_detail": "A chance of showers and thunderstorms before 1am, then a chance of showers and thunderstorms. Mostly cloudy, with a low around 76. West wind 5 to 10 mph."
+   },
+   {
+    "date": "2026-08-03",
+    "name": "Monday",
+    "hi": 90,
+    "lo": 78,
+    "precip": 41,
+    "precip_night": 41,
+    "heat_index": null,
+    "short": "Chance Showers And Thunderstorms",
+    "detail": "A chance of showers and thunderstorms before 7am, then a chance of showers and thunderstorms. Mostly sunny, with a high near 90. West wind around 5 mph.",
+    "night_short": "Chance Showers And Thunderstorms",
+    "night_detail": "A chance of showers and thunderstorms. Partly cloudy, with a low around 78. Southwest wind around 5 mph."
+   }
+  ]
  }
 };
