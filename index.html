@@ -88,6 +88,11 @@
   .filter{white-space:nowrap;font-size:13px;font-weight:600;padding:7px 12px;border-radius:999px;
     border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
   .filter.on{background:var(--iron);color:#f7f0e2;border-color:var(--iron)}
+  .upd-banner{position:fixed;left:10px;right:10px;z-index:1200;
+    bottom:calc(var(--tabbar) + var(--safe-b) + 10px);
+    background:var(--iron);color:#f7f0e2;border:1px solid var(--gold2);border-radius:14px;
+    box-shadow:0 6px 24px rgba(36,27,18,.35);padding:10px 12px;
+    display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:14px;font-weight:600}
   .filt-lbl{align-self:center;flex:0 0 auto;font-size:10px;font-weight:700;letter-spacing:.08em;
     text-transform:uppercase;color:var(--gold2);padding-right:2px}
   .pill-scroll .filt-lbl:first-child{padding-left:2px}
@@ -638,8 +643,47 @@
         '<div class="thumb" style="background:linear-gradient(150deg,var(--purple),var(--green))"><span class="ph" style="color:#fff">'+
         (d.emoji||'📍')+'</span></div><div class="body"><h3>'+esc(d.name)+'</h3>'+
         '<div class="vibe">'+esc(d.blurb||'')+'</div></div></div>';}).join('')+
+      '<div class="sec-title">App</div>'+
+      '<div class="card pad">'+
+        '<div class="row" style="justify-content:space-between">'+
+          '<div><div style="font-weight:700">Guide data</div>'+
+            '<div class="muted" style="font-size:12px" id="dataStamp">Updated '+esc(DATA.updated||'—')+
+            ' · v'+esc(String(DATA.data_version||1))+'</div></div>'+
+          '<button class="btn gold" id="refreshBtn">↻ Refresh</button>'+
+        '</div>'+
+        '<div class="muted" style="font-size:12px;margin-top:8px">Pulls the newest menus, events &amp; tours '+
+        'and clears the offline cache. Needs a connection.</div>'+
+      '</div>'+
       '<div class="card pad muted" style="font-size:12px;margin-top:8px">Menus, prices &amp; ratings are approximate '+
       'and may be dated — confirm on the day. Add to your home screen for an app-like, offline-friendly guide.</div>';
+  }
+
+  // Force-refresh: drop every cache, nudge the service worker, reload from network.
+  function hardRefresh(btn){
+    if(btn){btn.textContent='Refreshing…';btn.disabled=true;}
+    var jobs=[];
+    if(window.caches&&caches.keys){
+      jobs.push(caches.keys().then(function(keys){
+        return Promise.all(keys.map(function(k){return caches.delete(k);}));}).catch(function(){}));
+    }
+    if(navigator.serviceWorker&&navigator.serviceWorker.getRegistrations){
+      jobs.push(navigator.serviceWorker.getRegistrations().then(function(regs){
+        return Promise.all(regs.map(function(r){return r.update().catch(function(){});}));}).catch(function(){}));
+    }
+    Promise.all(jobs).then(function(){
+      // cache-busted reload so even a stale HTTP cache can't win
+      var u=location.pathname+'?r='+Date.now()+location.hash;
+      location.replace(u);
+    }).catch(function(){location.reload();});
+  }
+
+  function showUpdateBanner(){
+    if(el('updBanner'))return;
+    var d=document.createElement('div');
+    d.id='updBanner';d.className='upd-banner';
+    d.innerHTML='<span>New version available</span><button class="btn gold" id="updReload">Reload</button>';
+    document.body.appendChild(d);
+    d.querySelector('#updReload').addEventListener('click',function(){hardRefresh(this);});
   }
 
   function searchView(){
@@ -729,9 +773,32 @@
   backBtn.addEventListener('click',function(){history.length>1?history.back():navigate('#/');});
   window.addEventListener('hashchange',router);
 
-  // service worker
-  if('serviceWorker' in navigator){window.addEventListener('load',function(){
-    navigator.serviceWorker.register('sw.js').catch(function(){});});}
+  // refresh button (delegated — the More view is re-rendered on every route change)
+  document.addEventListener('click',function(e){
+    var rb=e.target.closest&&e.target.closest('#refreshBtn');
+    if(rb){e.preventDefault();hardRefresh(rb);}
+  });
+
+  // service worker + update detection
+  if('serviceWorker' in navigator){
+    window.addEventListener('load',function(){
+      navigator.serviceWorker.register('sw.js').then(function(reg){
+        // a worker already waiting means fresh files are ready to take over
+        if(reg.waiting&&navigator.serviceWorker.controller)showUpdateBanner();
+        reg.addEventListener('updatefound',function(){
+          var nw=reg.installing;if(!nw)return;
+          nw.addEventListener('statechange',function(){
+            if(nw.state==='installed'&&navigator.serviceWorker.controller)showUpdateBanner();
+          });
+        });
+        // check for a new version on load and whenever the app is re-opened
+        reg.update().catch(function(){});
+        document.addEventListener('visibilitychange',function(){
+          if(!document.hidden)reg.update().catch(function(){});
+        });
+      }).catch(function(){});
+    });
+  }
 
   router();
 })();

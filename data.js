@@ -6355,5 +6355,7 @@ window.DATA = {
    "t": "🚕 Night moves",
    "d": "The French Quarter/Marigny is very walkable by day. For Garden District ↔ Quarter at night, Uber/Lyft is easy and cheap (~$10–15)."
   }
- ]
+ ],
+ "updated": "2026-07-30",
+ "data_version": 3
 };
